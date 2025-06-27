@@ -128,7 +128,7 @@
     - name: GitHub
       url: "https://github.com/pr0meth4us/chat-analysis"
       active: true
-    - name: Demo
+    - name: Web App
       url: "https://chat-analysis-beryl.vercel.app/"
       active: true
   thumbnail: "https://res.cloudinary.com/dktzt7yn1/image/upload/v1749548452/ChatGPT_Image_Jun_10_2025_04_40_38_PM_oj20ug.png"
