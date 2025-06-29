@@ -2,9 +2,7 @@
   description: |
     Developed a specialized license plate recognition system for Cambodian vehicles.  
     Fine-tuned a YOLO-based segmentation and detection model to accurately locate license plates then segment the number and province regions.  
-    Integrated with OCR (PARSeq) for text recognition.  
-    Backend built with Flask, frontend with Next.js, deployed using Docker.  
-    Focused on optimizing detection precision and inference speed for real-time usage.
+    Integrated with OCR (PARSeq) for text recognition.
   tech:
     - Python
     - Flask
@@ -92,7 +90,7 @@
   thumbnail: "https://res.cloudinary.com/dktzt7yn1/image/upload/v1751178603/grouper_jdyvhs.png"
 
 - title: "Form Generator"
-  description: "It generates forms fast and lets you view results. Prioritize simplicity and accessibility. Use it for surveys (not quizzes). Better than Google Form when u need an image-select option—I created this because i needed to conduct a survey but Google butchered my images and surveyees couldn’t see them.  "
+  description: "It generates forms fast and lets you view results. Prioritize simplicity and accessibility. Use it for surveys (not quizzes). Better than Google Form when u need an image-select option. I created this because i needed to conduct a survey but Google butchered my images and surveyees couldn’t see them.  "
   tech:
     - NextJs
     - Mongo
