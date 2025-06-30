@@ -1,60 +1,65 @@
-objective: "Determined to pursue a career as a policy researcher focusing on digital governance, combining expertise in Information Technology and International Relations. Leveraging hands-on experience from CSEAS and Digital Government Committee, along with technical skills in programming, to develop evidence-based policy solutions for Cambodia's digital future."
+# data/cv.yml
+
+objective: >
+  Determined to pursue a dual career in digital governance and technology,
+  leveraging hands-on software development and policy research to drive
+  evidence-based solutions for Cambodia’s digital future.
 
 education:
   - institution: "American University of Phnom Penh"
-    period: "2022 - MAY 2025"
-    degree: "Bachelor of Science in Information and Communication Technology"
+    period: "2022 – Jul 2025"
+    degree: "B.Sc. Information & Communication Technology (Software Development)"
     details:
-      - "Skills: Full Stack Web Development, CI/CD, cybersecurity, Data Analysis & Visualization"
-
-  - institution: "Institute for International Studies and Public Policy"
-    period: "2021 - JULY 2025"
-    degree: "Bachelor of Arts in International Relations"
+      - "Full academic scholarship with monthly stipend"
+  - institution: "Institute for International Studies & Public Policy (IISPP)"
+    period: "2022 – Jul 2025"
+    degree: "B.A. International Studies (International Relations)"
+  - institution: "Paragon International School"
+    period: "2018 – 2022"
+    degree: "Senior High School Diploma (Bilingual Program)"
+    details:
+      - "Full boarding scholarship; Grade A on national examination"
 
 experience:
-  - organization: "Transparency International"
-    period: "Jan 2025 - March 2025"
-    position: "Young Research Fellow"
-    responsibilities:
-      - "Received comprehensive training and mentorship in climate governance."
-      - "Conducting in-depth research on climate issues and authoring a policy brief with actionable recommendations."
-
   - organization: "American University of Phnom Penh"
-    period: "Aug 2024 - Present"
-    position: "Tutor"
+    period: "Aug 2024 – May 2025"
+    position: "Tutor (Part-time)"
     responsibilities:
-      - "Delivering tailored one-on-one tutoring sessions in History and Political Science."
-      - "Facilitating knowledge-sharing workshops to familiarize freshmen with university environment."
-
+      - "Delivered one-on-one tutoring in History & Political Science, boosting student performance"
+      - "Designed & facilitated orientation workshops on research methods and study strategies for 200+ freshmen"
   - organization: "Center for Southeast Asian Studies (CSEAS), IISPP"
-    period: "Feb 2024 - Oct 2024"
+    period: "Feb 2024 – Oct 2024"
     position: "Young Research Fellow"
     responsibilities:
-      - "Gained specialized training and mentorship."
-      - "Conducted extensive research on Southeast Asia's socio-political issues."
-      - "Authored policy brief and commentary featured in the Center's publications."
-
-  - organization: "Digital Government Transformation Department, Digital Government Committee"
-    period: "Jun 2023 - Aug 2024"
-    position: "Intern"
+      - "Completed advanced research-methods mentorship: field-interview design, archival analysis & thematic coding"
+      - "Co-authored policy chapters on Cambodian surrogacy reform and Singapore’s 2024 PM transition"
+  - organization: "Digital Government Transformation Dept., Digital Government Committee"
+    period: "Jun 2023 – Aug 2024"
+    position: "Software Developer Intern"
     responsibilities:
-      - "Web scraping (Selenium, Scrapy) for Khmer-language data collection."
-      - "Contributed to Cambodia Government Design System (Jekyll, Sass, Bootstrap, Content Writing and Translation)."
-      - "Developed a WordPress theme (React, Bootstrap, CI/CD)."
-      - "Gained experience in technical documentation, diplomacy, and liaising."
+      - "Engineered a Scrapy pipeline to extract, parse & clean Khmer-language web pages for an AI-driven NLP dataset"
+      - "Drafted and translated bilingual (Khmer/English) documentation for the Cambodia Government Design System"
+      - "Developed a provincial WordPress theme with React-based Gutenberg blocks and Bootstrap; CI/CD pipelines"
+      - "Served as Liaison Officer to the Minister of Technology & Communications, Laos at the 2024 Digital Government Forum"
+  - organization: "AIESEC Organization"
+    period: "Feb 2024 – Aug 2024"
+    position: "Team Leader (Volunteer)"
+    responsibilities:
+      - "Conducted interviews & matched international teachers with local schools; managed full placement logistics"
+      - "Led & mentored a 10-member volunteer team, coordinating program goals and tracking outcomes"
 
 skills:
   - category: "Technical Skills"
     items:
-      - "<span class=\"font-medium\">Frontend Development:</span> React, Bootstrap, Tailwind, Next.js, WordPress Theme Development"
-      - "<span class=\"font-medium\">Backend Development:</span> Spring Boot, Node.js, Flask, MongoDB"
-      - "<span class=\"font-medium\">Data Analysis & Visualization:</span> Power BI, Matplotlib, Seaborn"
-
-  - category: "Other Skills & Certifications"
+      - "Frontend: React, Next.js, Bootstrap, Tailwind CSS, Jekyll, WordPress"
+      - "Backend: Node.js, Flask, FastAPI, Spring Boot, MongoDB"
+      - "DevOps & Cloud: Docker, AWS (EC2, S3, Lambda), GitHub Actions, GitLab CI/CD, Vercel"
+      - "Data & NLP: Scrapy, Selenium, Python NLP pipelines, Data Analysis & Visualization"
+  - category: "Policy & Research"
     items:
-      - "Research & Policy Development"
-      - "<span class=\"font-medium\">Certifications:</span> AWS Cloud Data Pipeline Builder, AWS Cloud Architecting, Cisco Networking Essentials, IBM
-                           - Data Analysis with Python"
-
-ir_pdf_url: "https://docs.google.com/presentation/d/1NRitWO8yetD6M1swKvSy2vQ-Z0PiS5AVrqFESCYNUTA/export/pdf"
-it_pdf_url: "https://docs.google.com/presentation/d/15KupKWc1YWgsSGbBFT2i07VsnUeUYW5NEeOx1UAReKg/export/pdf"
+      - "Qualitative Research: interview design, stakeholder mapping, thematic coding"
+      - "Policy Development: brief drafting, legislative analysis, workshop facilitation"
+  - category: "Certifications & Courses"
+    items:
+      - "AWS Cloud Data Pipeline Builder ∙ AWS Cloud Architecting ∙ AWS Cloud Developing"
+      - "Cisco Networking Essentials ∙ IBM Data Analysis with Python"
