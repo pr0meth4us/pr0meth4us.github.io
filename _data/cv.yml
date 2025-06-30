@@ -1,65 +1,99 @@
-# data/cv.yml
-
-objective: >
-  Determined to pursue a dual career in digital governance and technology,
-  leveraging hands-on software development and policy research to drive
-  evidence-based solutions for Cambodia’s digital future.
+# _data/cv.yml
+objective: "A dual degree in Information and Communication Technology and International Relations. Seeking an opportunity to blend analytical, research, and technical programming skills to contribute to Cambodia's progress toward digitalization."
 
 education:
   - institution: "American University of Phnom Penh"
-    period: "2022 – Jul 2025"
+    period: "2022 - JULY 2025"
     degree: "B.Sc. Information & Communication Technology (Software Development)"
     details:
-      - "Full academic scholarship with monthly stipend"
-  - institution: "Institute for International Studies & Public Policy (IISPP)"
-    period: "2022 – Jul 2025"
+      - "Rewarded full scholarship with monthly stipend"
+
+  - institution: "Institute for International Studies and Public Policy (IISPP)"
+    period: "2022 - JULY 2025"
     degree: "B.A. International Studies (International Relations)"
+    details:
+      - "Dual degree program focusing on digital governance and policy research"
+
   - institution: "Paragon International School"
-    period: "2018 – 2022"
+    period: "Class of 2021"
     degree: "Senior High School Diploma (Bilingual Program)"
     details:
-      - "Full boarding scholarship; Grade A on national examination"
+      - "Rewarded full boarding scholarship; achieved Grade A on the national examination"
 
 experience:
   - organization: "American University of Phnom Penh"
-    period: "Aug 2024 – May 2025"
-    position: "Tutor (Part-time)"
+    period: "Aug 2024 - May 2025"
+    position: "Tutor (part-time)"
     responsibilities:
-      - "Delivered one-on-one tutoring in History & Political Science, boosting student performance"
-      - "Designed & facilitated orientation workshops on research methods and study strategies for 200+ freshmen"
+      - "Delivered one-on-one tutoring in History and Political Science, adapting lesson plans to individual learning needs and boosting student performance"
+      - "Designed and facilitated freshman orientation workshops on effective study strategies, improving first-year engagement"
+
   - organization: "Center for Southeast Asian Studies (CSEAS), IISPP"
-    period: "Feb 2024 – Oct 2024"
-    position: "Young Research Fellow"
+    period: "Feb 2024 - Oct 2024"
+    position: "Young Research Fellow (project-based)"
     responsibilities:
-      - "Completed advanced research-methods mentorship: field-interview design, archival analysis & thematic coding"
-      - "Co-authored policy chapters on Cambodian surrogacy reform and Singapore’s 2024 PM transition"
+      - "Completed an intensive mentorship in advanced research methodologies"
+      - "Co-authored a policy chapter advocating legalization and regulation of surrogacy in Cambodia"
+      - "Authored a policy chapter analyzing Singapore's 2024 prime-ministerial transition and its regional implications"
+
   - organization: "Digital Government Transformation Dept., Digital Government Committee"
-    period: "Jun 2023 – Aug 2024"
-    position: "Software Developer Intern"
+    period: "Jun 2023 - Aug 2024"
+    position: "Software Developer (intern)"
     responsibilities:
-      - "Engineered a Scrapy pipeline to extract, parse & clean Khmer-language web pages for an AI-driven NLP dataset"
-      - "Drafted and translated bilingual (Khmer/English) documentation for the Cambodia Government Design System"
-      - "Developed a provincial WordPress theme with React-based Gutenberg blocks and Bootstrap; CI/CD pipelines"
-      - "Served as Liaison Officer to the Minister of Technology & Communications, Laos at the 2024 Digital Government Forum"
+      - "Engineered a Scrapy pipeline to extract, parse and clean Khmer-language web pages for an AI-driven Khmer NLP dataset"
+      - "Enhanced the Cambodia Government Design System (CGDS) by developing reusable Jekyll/Sass/Bootstrap UI components and authoring comprehensive, WCAG-compliant documentation in both English and Khmer"
+      - "Developed a provincial government WordPress theme by creating React-based Gutenberg blocks styled with Bootstrap, setting up automated CI/CD deployments"
+      - "Served as Liaison Officer to the Minister of Technology and Communications, Laos at the 2024 Digital Government Forum, coordinating cross-border policy discussions and workshops"
+
   - organization: "AIESEC Organization"
-    period: "Feb 2024 – Aug 2024"
-    position: "Team Leader (Volunteer)"
+    period: "Jun 2023 - Aug 2024"
+    position: "Team Leader (volunteer)"
     responsibilities:
-      - "Conducted interviews & matched international teachers with local schools; managed full placement logistics"
-      - "Led & mentored a 10-member volunteer team, coordinating program goals and tracking outcomes"
+      - "Forged partnerships with multiple overseas AIESEC chapters to align program goals and share best practices"
+      - "Conducted interviews and managed the selection of international teachers, matching candidates with local schools and coordinating logistics"
+      - "Led and mentored a 10-member volunteer team—setting objectives, delegating tasks, and tracking progress to ensure high-impact program delivery"
 
 skills:
-  - category: "Technical Skills"
+  - category: "Web & Frameworks"
     items:
-      - "Frontend: React, Next.js, Bootstrap, Tailwind CSS, Jekyll, WordPress"
-      - "Backend: Node.js, Flask, FastAPI, Spring Boot, MongoDB"
-      - "DevOps & Cloud: Docker, AWS (EC2, S3, Lambda), GitHub Actions, GitLab CI/CD, Vercel"
-      - "Data & NLP: Scrapy, Selenium, Python NLP pipelines, Data Analysis & Visualization"
+      - "React, Next.js"
+      - "Spring Boot, Flask, FastAPI, Express"
+      - "Jekyll, WordPress Development"
+
+  - category: "DevOps & Cloud"
+    items:
+      - "Docker, AWS (EC2, S3, Lambda)"
+      - "GitLab CI/CD, GitHub Actions"
+      - "Vercel, Heroku, PythonAnywhere"
+
+  - category: "Data & Practices"
+    items:
+      - "NLP, Data Analytics & Visualization"
+      - "Python data analysis"
+      - "Agile/Scrum, Technical documentation"
+      - "Postman API testing"
+
   - category: "Policy & Research"
     items:
-      - "Qualitative Research: interview design, stakeholder mapping, thematic coding"
-      - "Policy Development: brief drafting, legislative analysis, workshop facilitation"
-  - category: "Certifications & Courses"
+      - "Qualitative research, Research Design"
+      - "Policy brief drafting, Stakeholder mapping"
+      - "Data collection & Analysis"
+
+  - category: "Governance & Diplomacy"
     items:
-      - "AWS Cloud Data Pipeline Builder ∙ AWS Cloud Architecting ∙ AWS Cloud Developing"
-      - "Cisco Networking Essentials ∙ IBM Data Analysis with Python"
+      - "ASEAN processes, Event coordination"
+      - "Cross-border policy discussions"
+      - "Diplomatic liaison work"
+
+  - category: "Languages"
+    items:
+      - "Khmer (Native)"
+      - "English (Full Professional Proficiency)"
+
+  - category: "Certifications & Online Courses"
+    items:
+      - "AWS Cloud Data Pipeline Builder"
+      - "AWS Cloud Architecting"
+      - "AWS Cloud Developing"
+      - "Cisco Networking Essentials"
+      - "IBM Data Analysis with Python"
