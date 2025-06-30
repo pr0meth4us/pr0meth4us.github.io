@@ -253,3 +253,27 @@ a.bg-gray-800:hover {
         opacity: .5;
     }
 }
+
+.nav-link {
+  display: inline-block;
+  position: relative;
+}
+
+.active-nav::after {
+  content: '';
+  position: absolute;
+  bottom: -1.5rem; /* Matches header's padding-bottom (1rem) + nav's padding-bottom (0.5rem) */
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #2563eb; /* Tailwind's blue-600 */
+  z-index: 1; /* Ensures it appears above other elements if needed */
+}
+
+.collage-container {
+  overflow: hidden;
+}
+
+.collage-container:hover {
+  overflow: visible;
+}
