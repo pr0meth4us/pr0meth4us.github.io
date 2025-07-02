@@ -1,31 +1,33 @@
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM loaded, looking for download button...');
+// assets/js/download.js
 
+document.addEventListener('DOMContentLoaded', function() {
     const downloadBtn = document.getElementById('download-pdf');
     const cvContent = document.getElementById('cv-content');
 
-    console.log('Download button found:', downloadBtn);
-    console.log('CV content found:', cvContent);
-    console.log('html2pdf available:', typeof html2pdf !== 'undefined');
+    // This safety check is crucial. It ensures this code only runs on pages
+    // where the CV and download button exist, preventing errors on other pages.
+    if (downloadBtn && cvContent && typeof html2pdf !== 'undefined') {
 
-    if (downloadBtn && cvContent) {
         downloadBtn.addEventListener('click', function() {
-            console.log('Download button clicked');
-
-            // Show loading state
-            const originalContent = downloadBtn.innerHTML;
+            // --- 1. Provide User Feedback ---
+            // Store the button's original content
+            const originalButtonContent = downloadBtn.innerHTML;
+            // Update the button to show it's working and disable it
             downloadBtn.innerHTML = '<span class="animate-pulse">Generating PDF...</span>';
             downloadBtn.disabled = true;
 
-            // Clone the content and remove the download buttons for PDF
-            const clonedContent = cvContent.cloneNode(true);
-            const buttonsToRemove = clonedContent.querySelectorAll('#download-pdf, .text-center:last-child');
-            buttonsToRemove.forEach(btn => btn.remove());
+            // --- 2. Prepare Content for PDF ---
+            // Clone the CV content to avoid modifying the live page
+            const contentForPdf = cvContent.cloneNode(true);
+            // From the CLONED content, remove any elements you don't want in the PDF
+            const elementsToRemove = contentForPdf.querySelectorAll('.no-print');
+            elementsToRemove.forEach(el => el.remove());
 
+            // --- 3. Generate the PDF ---
             html2pdf()
                 .set({
                     margin: 15,
-                    filename: '{{ site.title | slugify | default: "CV" }}-CV.pdf',
+                    filename: 'SOEUNG-Phearaeron-CV.pdf',
                     image: { type: 'jpeg', quality: 0.98 },
                     html2canvas: {
                         scale: 2,
@@ -40,26 +42,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     },
                     pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
                 })
-                .from(clonedContent)
+                .from(contentForPdf)
                 .save()
                 .then(() => {
-                    console.log('PDF generated successfully');
-                    // Reset button state
-                    downloadBtn.innerHTML = originalContent;
+                    // --- 4. Success: Reset the button ---
+                    downloadBtn.innerHTML = originalButtonContent;
                     downloadBtn.disabled = false;
                 })
                 .catch((error) => {
-                    console.error('Error generating PDF:', error);
-                    alert('Error generating PDF. Please try again or use the pre-made downloads below.');
-                    // Reset button state
-                    downloadBtn.innerHTML = originalContent;
+                    // --- 5. Error: Alert the user and reset the button ---
+                    alert('An error occurred while generating the PDF. Please try again.');
+                    downloadBtn.innerHTML = originalButtonContent;
                     downloadBtn.disabled = false;
                 });
-        });
-    } else {
-        console.error('Required elements not found:', {
-            downloadBtn: !!downloadBtn,
-            cvContent: !!cvContent
         });
     }
 });
