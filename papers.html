@@ -17,14 +17,11 @@
     <link rel="stylesheet" href="/assets/css/main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="/assets/js/dropdown.js"></script>
-    <script src="/assets/js/scripts.js"></script>
-    <script src="/assets/js/download.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
 </head>
 <body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
 
-<header class="shadow-sm bg-white py-4 px-6 border-b border-gray-300">
+<header class="shadow-sm bg-white py-4 px-6 border-b border-gray-300 sticky top-0 z-40">
     <div class="container mx-auto flex justify-between items-center">
         <div>
             <a href="/" class="flex items-center space-x-3 text-2xl font-bold tracking-tight transition duration-300 hover:text-gray-700">
@@ -41,9 +38,8 @@
             
             
 
-            <div class=" nav-item">
-                <a href="/"
-                   class="text-gray-800 hover:text-blue-600 transition nav-link">
+            <div class=" nav-item relative">
+                <a href="/" class="text-gray-800 hover:text-blue-600 transition nav-link">
                     Home
                     
                 </a>
@@ -55,9 +51,8 @@
             
             
 
-            <div class="dropdown-container nav-item">
-                <a href="/about"
-                   class="text-gray-800 hover:text-blue-600 transition nav-link">
+            <div class="dropdown-container nav-item relative">
+                <a href="/about" class="text-gray-800 hover:text-blue-600 transition nav-link">
                     About Me
                     
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block ml-1 transform transition-transform duration-200 dropdown-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -67,13 +62,12 @@
                 </a>
 
                 
-                <div class="dropdown-content">
+                <div class="dropdown-content absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
                     
                     
                     
                     
-                    <a href="/about/cv"
-                       class="dropdown-item text-gray-700 hover:text-blue-600 transition">
+                    <a href="/about/cv" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition">
                         CV
                     </a>
                     
@@ -85,9 +79,8 @@
             
             
 
-            <div class=" nav-item">
-                <a href="/projects"
-                   class="text-gray-800 hover:text-blue-600 transition nav-link">
+            <div class=" nav-item relative">
+                <a href="/projects" class="text-gray-800 hover:text-blue-600 transition nav-link">
                     Coding Projects
                     
                 </a>
@@ -99,9 +92,8 @@
             
             
 
-            <div class=" nav-item">
-                <a href="/papers"
-                   class="text-blue-600 active-nav transition nav-link">
+            <div class=" nav-item relative">
+                <a href="/papers" class="text-blue-600 active-nav transition nav-link">
                     Papers
                     
                 </a>
@@ -113,9 +105,8 @@
             
             
 
-            <div class=" nav-item">
-                <a href="/misc"
-                   class="text-gray-800 hover:text-blue-600 transition nav-link">
+            <div class=" nav-item relative">
+                <a href="/misc" class="text-gray-800 hover:text-blue-600 transition nav-link">
                     Archive
                     
                 </a>
@@ -131,10 +122,100 @@
             </a>
         </nav>
 
-        <div class="md:hidden relative">
-            <button id="mobile-menu-button">...</button>
-            <div class="absolute right-0 top-full mt-2 w-72 bg-white rounded-lg shadow-xl hidden z-50 overflow-hidden border border-gray-200" id="mobile-menu">
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-gray-800 hover:text-blue-600 focus:outline-none" aria-label="Open main menu" aria-expanded="false">
+                <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+                <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            
+
+            
+
+            
+
+            
+            <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200">
+                Home
+            </a>
+
+            
+
+            
+
+            
+
+            
+
+            
+            <a href="/about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200">
+                About Me
+            </a>
+
+            
+            <div class="pl-4 border-l-2 border-gray-200 ml-3">
+                
+                
+                
+                <a href="/about/cv" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">
+                    CV
+                </a>
+                
             </div>
+            
+
+            
+
+            
+
+            
+
+            
+            <a href="/projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200">
+                Coding Projects
+            </a>
+
+            
+
+            
+
+            
+
+            
+
+            
+            <a href="/papers" class="block px-3 py-2 rounded-md text-base font-medium bg-blue-100 text-blue-700">
+                Papers
+            </a>
+
+            
+
+            
+
+            
+
+            
+
+            
+            <a href="/misc" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200">
+                Archive
+            </a>
+
+            
+
+            
+
+            <a href="https://github.com/pr0meth4us" target="_blank" rel="noopener noreferrer" class="text-gray-800 hover:bg-gray-200 block px-3 py-2 rounded-md text-base font-medium">
+                GitHub
+            </a>
         </div>
     </div>
 </header>
@@ -262,6 +343,6 @@
 </footer>
 
 
-
+<script src="/assets/js/nav.js"></script>
 </body>
 </html>
