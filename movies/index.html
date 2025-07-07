@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:description"
+          content="The Eternal Chronicle – A Portfolio Website of SOEUNG Phearaneron." />
+    <meta property="og:image" content="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741585138/prometheus_cju1pn.png" />
+    <title>
+        
+        Movie Log - SOEUNG Phearaeron
+        
+    </title>
+    <link rel="icon" href="/assets/images/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+</head>
+<body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
+
+<header class="shadow-sm bg-white py-4 px-6 border-b border-gray-300 sticky top-0 z-40">
+    <div class="container mx-auto flex justify-between items-center">
+        <div>
+            <a href="/" class="flex items-center space-x-3 text-2xl font-bold tracking-tight transition duration-300 hover:text-gray-700">
+                <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741585138/prometheus_cju1pn.png" alt="Prometheus Logo" class="h-12 w-auto">
+                <span class="lg:block hidden">SOEUNG Phearaeron</span>
+            </a>
+        </div>
+
+        
+
+        <nav class="hidden md:flex items-center space-x-6 py-2 font-medium desktop-nav">
+            
+            
+            
+            
+
+            <div class=" nav-item relative">
+                <a href="/" class="text-gray-800 hover:text-blue-600 transition nav-link">
+                    Home
+                    
+                </a>
+
+                
+            </div>
+            
+            
+            
+            
+
+            <div class="dropdown-container nav-item relative">
+                <a href="/about" class="text-gray-800 hover:text-blue-600 transition nav-link">
+                    About Me
+                    
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block ml-1 transform transition-transform duration-200 dropdown-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                    
+                </a>
+
+                
+                <div class="dropdown-content absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+                    
+                    
+                    
+                    
+                    <a href="/about/cv" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition">
+                        CV
+                    </a>
+                    
+                </div>
+                
+            </div>
+            
+            
+            
+            
+
+            <div class=" nav-item relative">
+                <a href="/projects" class="text-gray-800 hover:text-blue-600 transition nav-link">
+                    Coding Projects
+                    
+                </a>
+
+                
+            </div>
+            
+            
+            
+            
+
+            <div class=" nav-item relative">
+                <a href="/papers" class="text-gray-800 hover:text-blue-600 transition nav-link">
+                    Papers
+                    
+                </a>
+
+                
+            </div>
+            
+            
+            
+            
+
+            <div class=" nav-item relative">
+                <a href="/misc" class="text-gray-800 hover:text-blue-600 transition nav-link">
+                    Archive
+                    
+                </a>
+
+                
+            </div>
+            
+
+            <a href="https://github.com/pr0meth4us" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="text-gray-800 hover:text-blue-600 transition">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
+                </svg>
+            </a>
+        </nav>
+
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-gray-800 hover:text-blue-600 focus:outline-none" aria-label="Open main menu" aria-expanded="false">
+                <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+                <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            
+
+            
+
+            
+
+            
+            <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200">
+                Home
+            </a>
+
+            
+
+            
+
+            
+
+            
+
+            
+            <a href="/about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200">
+                About Me
+            </a>
+
+            
+            <div class="pl-4 border-l-2 border-gray-200 ml-3">
+                
+                
+                
+                <a href="/about/cv" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">
+                    CV
+                </a>
+                
+            </div>
+            
+
+            
+
+            
+
+            
+
+            
+            <a href="/projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200">
+                Coding Projects
+            </a>
+
+            
+
+            
+
+            
+
+            
+
+            
+            <a href="/papers" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200">
+                Papers
+            </a>
+
+            
+
+            
+
+            
+
+            
+
+            
+            <a href="/misc" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200">
+                Archive
+            </a>
+
+            
+
+            
+
+            <a href="https://github.com/pr0meth4us" target="_blank" rel="noopener noreferrer" class="text-gray-800 hover:bg-gray-200 block px-3 py-2 rounded-md text-base font-medium">
+                GitHub
+            </a>
+        </div>
+    </div>
+</header>
+
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow">
+    <div class="my-12 max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">Movie Log</h1>
+        <p class="text-lg text-gray-600">A personal collection of films I've watched and my thoughts on them.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+        
+        <div class="group bg-white border rounded-lg shadow-sm overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+            <div class="relative">
+                <img src="https://image.tmdb.org/t/p/original/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg" alt="Poster for Dune: Part Two" class="w-full h-96 object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
+                    <p class="text-white text-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm">
+                        A monumental cinematic achievement. The scale is breathtaking, and the sound design is a character in itself. A perfect continuation of the saga.
+                    </p>
+                </div>
+            </div>
+            <div class="p-4">
+                <h3 class="font-bold text-lg text-gray-800 truncate">Dune: Part Two</h3>
+                <div class="flex justify-between items-center text-sm text-gray-500 mt-1">
+                    <span>Denis Villeneuve</span>
+                    <span class="font-semibold">2024</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="group bg-white border rounded-lg shadow-sm overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+            <div class="relative">
+                <img src="https://image.tmdb.org/t/p/original/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg" alt="Poster for Oppenheimer" class="w-full h-96 object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
+                    <p class="text-white text-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm">
+                        An intense and masterfully crafted biographical thriller. The non-linear narrative and powerful performances make it an unforgettable experience.
+                    </p>
+                </div>
+            </div>
+            <div class="p-4">
+                <h3 class="font-bold text-lg text-gray-800 truncate">Oppenheimer</h3>
+                <div class="flex justify-between items-center text-sm text-gray-500 mt-1">
+                    <span>Christopher Nolan</span>
+                    <span class="font-semibold">2023</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="group bg-white border rounded-lg shadow-sm overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+            <div class="relative">
+                <img src="https://image.tmdb.org/t/p/original/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg" alt="Poster for Parasite" class="w-full h-96 object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
+                    <p class="text-white text-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm">
+                        A genre-bending masterpiece that is equal parts hilarious, thrilling, and tragic. The social commentary is razor-sharp and stays with you.
+                    </p>
+                </div>
+            </div>
+            <div class="p-4">
+                <h3 class="font-bold text-lg text-gray-800 truncate">Parasite</h3>
+                <div class="flex justify-between items-center text-sm text-gray-500 mt-1">
+                    <span>Bong Joon Ho</span>
+                    <span class="font-semibold">2019</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="group bg-white border rounded-lg shadow-sm overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+            <div class="relative">
+                <img src="https://image.tmdb.org/t/p/original/gajva2L0rPYkEWjzgFlPgr4aRG.jpg" alt="Poster for Blade Runner 2049" class="w-full h-96 object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
+                    <p class="text-white text-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm">
+                        Visually stunning and philosophically profound. A worthy successor to the original that expands on its themes in meaningful ways.
+                    </p>
+                </div>
+            </div>
+            <div class="p-4">
+                <h3 class="font-bold text-lg text-gray-800 truncate">Blade Runner 2049</h3>
+                <div class="flex justify-between items-center text-sm text-gray-500 mt-1">
+                    <span>Denis Villeneuve</span>
+                    <span class="font-semibold">2017</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="group bg-white border rounded-lg shadow-sm overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+            <div class="relative">
+                <img src="https://image.tmdb.org/t/p/original/eWdyYQreja6JGCzqHWXpWHDrrPo.jpg" alt="Poster for The Grand Budapest Hotel" class="w-full h-96 object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
+                    <p class="text-white text-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm">
+                        Wes Anderson's signature style at its most charming and whimsical. A visually delightful and surprisingly poignant story.
+                    </p>
+                </div>
+            </div>
+            <div class="p-4">
+                <h3 class="font-bold text-lg text-gray-800 truncate">The Grand Budapest Hotel</h3>
+                <div class="flex justify-between items-center text-sm text-gray-500 mt-1">
+                    <span>Wes Anderson</span>
+                    <span class="font-semibold">2014</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="group bg-white border rounded-lg shadow-sm overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+            <div class="relative">
+                <img src="https://image.tmdb.org/t/p/original/oYuLEt3zVCKq27gA9E2dhFomv4K.jpg" alt="Poster for Inception" class="w-full h-96 object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
+                    <p class="text-white text-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm">
+                        A mind-bending blockbuster that is both intelligent and immensely entertaining. The concept is original and executed flawlessly.
+                    </p>
+                </div>
+            </div>
+            <div class="p-4">
+                <h3 class="font-bold text-lg text-gray-800 truncate">Inception</h3>
+                <div class="flex justify-between items-center text-sm text-gray-500 mt-1">
+                    <span>Christopher Nolan</span>
+                    <span class="font-semibold">2010</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="group bg-white border rounded-lg shadow-sm overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+            <div class="relative">
+                <img src="https://image.tmdb.org/t/p/original/39wmItIW2zwAtoO7K4P7k344V3w.jpg" alt="Poster for Spirited Away" class="w-full h-96 object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
+                    <p class="text-white text-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm">
+                        A magical and enchanting animated film that captures the imagination. A timeless story about courage and identity.
+                    </p>
+                </div>
+            </div>
+            <div class="p-4">
+                <h3 class="font-bold text-lg text-gray-800 truncate">Spirited Away</h3>
+                <div class="flex justify-between items-center text-sm text-gray-500 mt-1">
+                    <span>Hayao Miyazaki</span>
+                    <span class="font-semibold">2001</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="group bg-white border rounded-lg shadow-sm overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+            <div class="relative">
+                <img src="https://image.tmdb.org/t/p/original/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg" alt="Poster for Pulp Fiction" class="w-full h-96 object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
+                    <p class="text-white text-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm">
+                        Changed the landscape of independent cinema. The non-linear structure, sharp dialogue, and unforgettable characters make it a classic.
+                    </p>
+                </div>
+            </div>
+            <div class="p-4">
+                <h3 class="font-bold text-lg text-gray-800 truncate">Pulp Fiction</h3>
+                <div class="flex justify-between items-center text-sm text-gray-500 mt-1">
+                    <span>Quentin Tarantino</span>
+                    <span class="font-semibold">1994</span>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+</main>
+
+<footer class="py-6 border-t border-gray-300">
+    <div class="flex justify-center items-center space-x-4 text-sm text-gray-600">
+        <span>© 2025 Prometheus</span>
+        <span class="text-gray-400">•</span>
+        <a href="https://github.com/pr0meth4us" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="transition hover:text-gray-900">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
+            </svg>
+        </a>
+        <span class="text-gray-400">•</span>
+        <span>Designed & Developed</span>
+    </div>
+</footer>
+
+
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>
