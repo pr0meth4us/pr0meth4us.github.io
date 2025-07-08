@@ -2,7 +2,6 @@
 layout: default
 ---
 
-<!-- Hero Section -->
 <div class="text-center mb-16">
     <h1 class="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
         Watch Log
@@ -30,7 +29,6 @@ layout: default
     </div>
 </div>
 
-<!-- Tabbed Interface -->
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
     <div class="flex justify-center mb-8">
         <div class="bg-gray-100 rounded-2xl p-2 inline-flex">
@@ -43,10 +41,8 @@ layout: default
         </div>
     </div>
 
-    <!-- Leaderboard Content -->
     <div id="leaderboard-content" class="tab-content hidden">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <!-- Movies Leaderboard -->
             <div>
                 <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
                     🎬 Top Movies by Genre
@@ -98,7 +94,6 @@ layout: default
                 {% endfor %}
             </div>
 
-            <!-- Series Leaderboard -->
             <div>
                 <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
                     📺 Top Series by Genre
@@ -152,84 +147,32 @@ layout: default
         </div>
     </div>
 
-    <!-- Full Collection Content -->
     <div id="collection-content" class="tab-content">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {% for item in site.data.watchlog %}
-            <div class="group relative">
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:scale-105 hover:rotate-1 border border-white/20">
-                    <div class="relative overflow-hidden">
-                        {% if item.poster %}
-                        <img src="{{ item.poster }}" alt="Poster for {{ item.title }}" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
-                        {% else %}
-                        <div class="w-full h-80 bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
-                            <span class="text-gray-600 text-lg">{{ item.title }}</span>
-                        </div>
-                        {% endif %}
-                        <div class="absolute top-4 left-4">
-                            {% if item.type == 'series' %}
-                            <span class="bg-blue-500/90 text-white px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm">📺 SERIES</span>
-                            {% else %}
-                            <span class="bg-red-500/90 text-white px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm">🎬 FILM</span>
-                            {% endif %}
-                        </div>
-                        {% if item.year %}
-                        <div class="absolute top-4 right-4 bg-black/80 text-white px-3 py-1 rounded-full text-sm font-medium backdrop-blur-sm">{{ item.year }}</div>
-                        {% endif %}
-                        {% if item.rating %}
-                        <div class="absolute top-16 left-4 bg-yellow-400 text-black px-2 py-1 rounded-lg text-small font-bold">⭐ {{ item.rating }}</div>
-                        {% endif %}
-                        <!-- Hover Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                            <div class="p-6 text-white">
-                                {% if item.comment %}
-                                <p class="text-sm leading-relaxed">{{ item.comment }}</p>
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-bold text-lg text-gray-800 truncate line-clamp-2 group-hover:text-purple-300 transition-colors">{{ item.title }}</h3>
-                        <div class="flex items-center justify-between">
-                            {% if item.type == 'series' %}
-                            <span class="text-gray-500 text-sm">{{ item.creator | default: item.director }}</span>
-                            {% else %}
-                            <span class="text-gray-500 text-sm">{{ item.director }}</span>
-                            {% endif %}
-                            {% if item.status %}
-                            <span class="text-xs px-2 py-1 rounded
-                {% if item.status == 'watching'   %}bg-green-500/20 text-green-300
-                {% elsif item.status == 'completed' %}bg-blue-500/20 text-blue-300
-                {% elsif item.status == 'rewatched' %}bg-purple-500/20 text-purple-300
-                {% elsif item.status == 'on-hold'   %}bg-yellow-500/20 text-yellow-300
-                {% elsif item.status contains 'dropped' %}bg-red-500/20   text-red-300
-                {% else %}bg-gray-500/20 text-gray-300{% endif %}">
-                {{ item.status | capitalize }}
-              </span>
-                            {% endif %}
-                        </div>
-                        <div class="flex items-center justify-between mt-4 pt-4 border-t border-white/10">
-                            <div class="flex items-center gap-2 text-xs text-gray-400">
-                                {% if item.type == 'series' %}<span>📺</span>{% else %}<span>🎬</span>{% endif %}
-                                {% if item.year %}<span>{{ item.year }}</span>{% endif %}
-                            </div>
-                            {% if item.genre %}
-                            <div class="flex items-center gap-2 text-xs text-gray-400">
-                                <span class="px-2 py-1 bg-gray-500/20 text-gray-300 rounded-full">{{ item.genre }}</span>
-                            </div>
-                            {% endif %}
-                        </div>
-                    </div>
+        <div class="bg-white/50 backdrop-blur-sm p-6 rounded-2xl shadow-md border border-gray-200 mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="lg:col-span-4">
+                    <label for="search-input" class="sr-only">Search</label>
+                    <input type="text" id="search-input" placeholder="Search by title..." class="w-full px-4 py-2 bg-gray-100 border-2 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition">
                 </div>
-                <div class="absolute -top-2 -right-2 w-6 h-6 bg-purple-500 rounded-full opacity-20 group-hover:opacity-40 transition-opacity"></div>
-                <div class="absolute -bottom-2 -left-2 w-4 h-4 bg-pink-500 rounded-full opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                <select id="type-filter" class="filter-select"><option value="">All Types</option></select>
+                <select id="genre-filter" class="filter-select"><option value="">All Genres</option></select>
+                <select id="status-filter" class="filter-select"><option value="">All Statuses</option></select>
+                <select id="country-filter" class="filter-select"><option value="">All Countries</option></select>
             </div>
-            {% endfor %}
+            <div class="flex justify-between items-center mt-4">
+                <button id="clear-filters" class="text-sm text-gray-600 hover:text-purple-600 transition">Clear Filters</button>
+                <div id="results-count" class="text-sm text-gray-500"></div>
+            </div>
+        </div>
+
+        <div id="watchlog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        </div>
+
+        <div id="pagination-controls" class="flex justify-center items-center gap-4 mt-12">
         </div>
     </div>
 </div>
 
-<!-- About Section -->
 <div class="text-center mb-20">
     <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200">
         <h3 class="text-2xl font-bold text-gray-900 mb-4">About This Collection</h3>
@@ -241,26 +184,54 @@ layout: default
 </div>
 
 <script>
+    const watchlogData = {{ site.data.watchlog | jsonify }};
     document.addEventListener('DOMContentLoaded', function() {
         const leaderboardTab = document.getElementById('leaderboard-tab');
         const collectionTab = document.getElementById('collection-tab');
         const leaderboardContent = document.getElementById('leaderboard-content');
         const collectionContent = document.getElementById('collection-content');
+        const searchInput = document.getElementById('search-input');
+        const typeFilter = document.getElementById('type-filter');
+        const genreFilter = document.getElementById('genre-filter');
+        const statusFilter = document.getElementById('status-filter');
+        const countryFilter = document.getElementById('country-filter');
+        const clearFiltersBtn = document.getElementById('clear-filters');
+        const watchlogGrid = document.getElementById('watchlog-grid');
+        const paginationControls = document.getElementById('pagination-controls');
+        const resultsCount = document.getElementById('results-count');
+        let currentPage = 1;
+        const itemsPerPage = 12;
 
-        // Set collection tab as default active
         collectionTab.classList.add('bg-white', 'text-purple-600', 'shadow-lg');
         leaderboardTab.classList.add('hover:bg-white/50');
+        collectionContent.classList.remove('hidden');
+
+        populateFilters();
+        renderCollection();
+
+        leaderboardTab.addEventListener('click', () => switchTab(leaderboardTab, collectionTab, leaderboardContent, collectionContent));
+        collectionTab.addEventListener('click', () => switchTab(collectionTab, leaderboardTab, collectionContent, leaderboardContent));
+
+        const filters = [searchInput, typeFilter, genreFilter, statusFilter, countryFilter];
+        filters.forEach(el => {
+            const eventType = el.tagName === 'INPUT' ? 'input' : 'change';
+            el.addEventListener(eventType, () => { currentPage = 1; renderCollection(); });
+        });
+
+        clearFiltersBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            filters.forEach(el => { if(el.tagName === 'SELECT') el.value = ''; });
+            currentPage = 1;
+            renderCollection();
+        });
 
         function switchTab(activeTab, inactiveTab, activeContent, inactiveContent) {
             activeTab.classList.add('bg-white', 'text-purple-600', 'shadow-lg');
             activeTab.classList.remove('hover:bg-white/50');
-
             inactiveTab.classList.remove('bg-white', 'text-purple-600', 'shadow-lg');
             inactiveTab.classList.add('hover:bg-white/50');
-
             activeContent.classList.remove('hidden');
             inactiveContent.classList.add('hidden');
-
             activeContent.style.opacity = '0';
             setTimeout(() => {
                 activeContent.style.transition = 'opacity 0.3s ease-in-out';
@@ -268,8 +239,86 @@ layout: default
             }, 10);
         }
 
-        leaderboardTab.addEventListener('click', () => switchTab(leaderboardTab, collectionTab, leaderboardContent, collectionContent));
-        collectionTab.addEventListener('click', () => switchTab(collectionTab, leaderboardTab, collectionContent, leaderboardContent));
+        function populateFilters() {
+            const genres = new Set(), statuses = new Set(), types = new Set(), countries = new Set();
+            watchlogData.forEach(item => {
+                if (item.genre) item.genre.split(',').forEach(g => genres.add(g.trim()));
+                if (item.status) statuses.add(item.status.split(' ')[0]);
+                if (item.type) types.add(item.type);
+                if (item.country) countries.add(item.country);
+            });
+            const populate = (selectEl, options) => {
+                [...options].sort().forEach(option => {
+                    const opt = document.createElement('option');
+                    opt.value = option;
+                    opt.textContent = option.charAt(0).toUpperCase() + option.slice(1);
+                    selectEl.appendChild(opt);
+                });
+            };
+            populate(typeFilter, types);
+            populate(genreFilter, genres);
+            populate(statusFilter, statuses);
+            populate(countryFilter, countries);
+        }
+
+        function filterData() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const selectedType = typeFilter.value;
+            const selectedGenre = genreFilter.value;
+            const selectedStatus = statusFilter.value;
+            const selectedCountry = countryFilter.value;
+            return watchlogData.filter(item => {
+                const titleMatch = item.title.toLowerCase().includes(searchTerm);
+                const typeMatch = !selectedType || item.type === selectedType;
+                const genreMatch = !selectedGenre || (item.genre && item.genre.includes(selectedGenre));
+                const statusMatch = !selectedStatus || (item.status && item.status.startsWith(selectedStatus));
+                const countryMatch = !selectedCountry || item.country === selectedCountry;
+                return titleMatch && typeMatch && genreMatch && statusMatch && countryMatch;
+            });
+        }
+
+        function renderCollection() {
+            const filteredItems = filterData();
+            resultsCount.textContent = `${filteredItems.length} result(s) found`;
+            watchlogGrid.innerHTML = '';
+            if (filteredItems.length === 0) {
+                watchlogGrid.innerHTML = `<p class="text-gray-500 lg:col-span-4 text-center">No items match your criteria.</p>`;
+                paginationControls.innerHTML = '';
+                return;
+            }
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const paginatedItems = filteredItems.slice(startIndex, startIndex + itemsPerPage);
+            paginatedItems.forEach(item => watchlogGrid.appendChild(createItemCard(item)));
+            renderPagination(filteredItems.length);
+        }
+
+        function renderPagination(totalItems) {
+            paginationControls.innerHTML = '';
+            const totalPages = Math.ceil(totalItems / itemsPerPage);
+            if (totalPages <= 1) return;
+            const createBtn = (text, disabled, onClick) => {
+                const btn = document.createElement('button');
+                btn.textContent = text;
+                btn.disabled = disabled;
+                btn.className = 'pagination-btn';
+                btn.addEventListener('click', onClick);
+                return btn;
+            };
+            const prev = createBtn('« Previous', currentPage === 1, () => { currentPage--; renderCollection(); });
+            const next = createBtn('Next »', currentPage === totalPages, () => { currentPage++; renderCollection(); });
+            const pageInfo = document.createElement('span');
+            pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+            pageInfo.className = 'text-gray-700 font-medium';
+            paginationControls.append(prev, pageInfo, next);
+        }
+
+        function createItemCard(item) {
+            const div = document.createElement('div');
+            div.className = 'group relative';
+            const statusColor = { 'watching': 'bg-green-500/20 text-green-300', 'completed': 'bg-blue-500/20 text-blue-300', 'rewatched': 'bg-purple-500/20 text-purple-300', 'on-hold': 'bg-yellow-500/20 text-yellow-300', 'dropped': 'bg-red-500/20 text-red-300' }[item.status ? item.status.split(' ')[0] : ''] || 'bg-gray-500/20 text-gray-300';
+            div.innerHTML = `<div class="bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:scale-105 hover:rotate-1 border border-white/20"><div class="relative overflow-hidden"><img src="${item.poster || ''}" alt="Poster for ${item.title}" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="w-full h-80 bg-gradient-to-br from-gray-300 to-gray-400 items-center justify-center hidden"><span class="text-gray-600 text-lg p-4 text-center">${item.title}</span></div><div class="absolute top-4 left-4"><span class="${item.type === 'series' ? 'bg-blue-500/90' : 'bg-red-500/90'} text-white px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm">${item.type === 'series' ? '📺 SERIES' : '🎬 FILM'}</span></div>${item.year ? `<div class="absolute top-4 right-4 bg-black/80 text-white px-3 py-1 rounded-full text-sm font-medium backdrop-blur-sm">${item.year}</div>` : ''}${item.rating ? `<div class="absolute top-16 left-4 bg-yellow-400 text-black px-2 py-1 rounded-lg text-xs font-bold">⭐ ${item.rating}</div>` : ''}<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"><div class="p-6 text-white">${item.comment ? `<p class="text-sm leading-relaxed">${item.comment}</p>` : ''}</div></div></div><div class="p-6"><h3 class="font-bold text-lg text-gray-800 truncate group-hover:text-purple-600 transition-colors">${item.title}</h3><div class="flex items-center justify-between"><span class="text-gray-500 text-sm truncate">${item.director || item.creator || ''}</span>${item.status ? `<span class="text-xs px-2 py-1 rounded capitalize ${statusColor}">${item.status}</span>` : ''}</div><div class="flex items-center justify-between mt-4 pt-4 border-t border-white/10"><div class="flex items-center gap-2 text-xs text-gray-400"><span>${item.type === 'series' ? '📺' : '🎬'}</span>${item.country ? `<span>${item.country}</span>` : ''}</div>${item.genre ? `<div class="text-xs text-gray-400"><span class="px-2 py-1 bg-gray-500/20 text-gray-300 rounded-full">${item.genre.split(',')[0]}</span></div>` : ''}</div></div></div>`;
+            return div;
+        }
     });
 </script>
 
@@ -277,4 +326,6 @@ layout: default
     .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
     .tab-content { animation: fadeIn 0.3s ease-in-out; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    .filter-select { @apply w-full px-4 py-2 bg-gray-100 border-2 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition text-gray-700 appearance-none; }
+    .pagination-btn { @apply px-4 py-2 bg-white border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition disabled:opacity-50 disabled:cursor-not-allowed; }
 </style>
