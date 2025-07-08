@@ -1,0 +1,1790 @@
+- title: Euphoria
+  year: 2019
+  creator: Sam Levinson
+  poster: "https://image.tmdb.org/t/p/w780/3Q0hd3heuWwDWpwcDkhQOA6TYWI.jpg"
+  type: series
+  genre: Drama
+  status: completed
+  ranking: 1
+  leaderboard_genre: Drama
+
+- title: Dark
+  year: 2017
+  creator: Baran bo Odar, Jantje Friese
+  poster: "https://upload.wikimedia.org/wikipedia/en/d/da/DarkNetflixPosterEnglish.jpg"
+  type: series
+  genre: Sci-Fi
+  status: completed
+  ranking: 1
+  leaderboard_genre: Sci-Fi
+
+
+
+- title: Sex Education
+  year: 2019
+  creator: Laurie Nunn
+  poster: "https://m.media-amazon.com/images/M/MV5BOTE0MjQ1NDU3OV5BMl5BanBnXkFtZTgwNTI4MTgwNzM@._V1_FMjpg_UX1000_.jpg"
+  type: series
+  genre: Comedy
+  status: completed
+
+- title: Young Sheldon
+  year: 2017
+  creator: Chuck Lorre, Steven Molaro
+  poster: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p13923679_b_v8_aa.jpg"
+  type: series
+  genre: Comedy
+  status: completed
+
+- title: Roman Empire
+  year: 2016
+  creator: Richard Lopez
+  poster: "https://www.classification.gov.au/sites/default/files/styles/poster_desktop_2x/public/posters/gr4hFhqfuGUQPyQ2a2dOTM1ewnm.jpg?itok=uHZ8TEfY"
+  type: series
+  genre: Docudrama
+  status: completed
+
+- title: Marco Polo
+  year: 2014
+  creator: John Fusco
+  poster: "https://m.media-amazon.com/images/M/MV5BMTcwMDU5NzMzOV5BMl5BanBnXkFtZTgwNzk5NTE0MzE@._V1_.jpg"
+  type: series
+  genre: Historical Drama
+  status: completed
+  ranking: 2
+  leaderboard_genre: Historical Drama
+
+- title: "Vikings: Valhalla"
+  year: 2022
+  creator: Jeb Stuart
+  poster: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQfboaHo1JLnuumHWiz7pzDGFvCFi89MBGYrXuEb1soxbsAe2Wd6umVI56SFjmg-sDhYM8FLw"
+  type: series
+  genre: Historical Drama
+  status: completed
+
+- title: Nevertheless
+  year: 2021
+  creator: Kim Ga-ram
+  poster: "https://upload.wikimedia.org/wikipedia/en/5/56/Nevertheless_%28TV_series%29.jpg"
+  type: series
+  genre: Romance
+  status: completed
+  ranking: 1
+  leaderboard_genre: Romance
+
+- title: Squid Game
+  year: 2021
+  creator: Hwang Dong-hyuk
+  poster: "https://image.tmdb.org/t/p/w500/dDlEmu3EZ0Pgg93K2SVNLCjCSvE.jpg"
+  type: series
+  genre: Thriller
+  status: completed
+
+- title: All of Us Are Dead
+  year: 2022
+  creator: Lee Jae-kyoo, Kim Nam-su
+  poster: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRpM8w4yQ076pMOwGCD1u2ih6MlJOxbFGaw25nMgruyNuT_XHATVrAPb_XmeKmfoBvLrXvIfg"
+  type: series
+  genre: Horror
+  status: completed
+
+- title: Kingdom
+  year: 2019
+  creator: Kim Eun-hee
+  poster: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQkKksk5g9T4F5WNjhQI7ld__d48m6xC9_RtpBGG2ZnGht81VSdM1x5i4SdYtbKF_mSAQONiA"
+  type: series
+  genre: Horror
+  status: completed
+
+- title: Narcos
+  year: 2015
+  creator: Chris Brancato, Carlo Bernard, Doug Miro
+  poster: "https://m.media-amazon.com/images/M/MV5BNzQwOTcwMzIwN15BMl5BanBnXkFtZTgwMjYxMTA0NjE@._V1_FMjpg_UX1000_.jpg"
+  type: series
+  genre: Crime
+  status: completed
+  ranking: 2
+  leaderboard_genre: Crime
+
+- title: Cunk on Earth
+  year: 2022
+  creator: Diane Morgan
+  poster: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRy8BtssZ-SxerIpcyDd0bAqMPDFPGW_S1SXaBg06aURLQyxvC3S_LQeL63nBZkJZv7n4QH"
+  type: series
+  genre: Mockumentary
+  status: completed
+
+- title: Breaking Bad
+  year: 2008
+  creator: Vince Gilligan
+  poster: "https://image.tmdb.org/t/p/w780/ggFHVNu6YYI5L9pCfOacjizRGt.jpg"
+  type: series
+  genre: Crime
+  status: completed
+  ranking: 1
+  leaderboard_genre: Crime
+
+- title: The Society
+  year: 2019
+  creator: Christopher Keyser
+  poster: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTrGt7NT_4uRZbfz86bThoYMFZYERvms_vMASXV9qi-EFE2ihLsfrRjf6cFpGwmf8mzcfKb"
+  type: series
+  genre: Mystery
+  status: completed
+  ranking: 1
+  leaderboard_genre: Mystery
+
+- title: Loki
+  year: 2021
+  creator: Michael Waldron
+  poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmJU0NvE9WrV6h08DZ3EOedYcKePiTf2cJbX01ZdZEst2A89x0UxlZ7H6lu8UDBGxetoQpyg"
+  type: series
+  genre: Action, Sci-Fi
+  status: completed
+  ranking: 2
+  leaderboard_genre: Sci-Fi
+
+- title: The Queen’s Gambit
+  year: 2020
+  creator: Scott Frank
+  poster: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTs9NwheWs1eVmbT1A8ujVb6XXXlQ_DI1ytdNv20snuXRtFPP_BNuNCE1h6oSpitTDUyYiM"
+  type: series
+  genre: Drama
+  status: completed
+
+- title: Outer Banks
+  year: 2020
+  creator: Shannon Burke, Jonas Pate, Josh Pate
+  poster: "https://dnm.nflximg.net/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABQ-JLdIftbjpq1egLdVnlCxSMHEk92lnsdyMVW1hlG112qc-W6-QFPzm212c5FYsjtjdIx9K7h2ZXZ5JMYF1OwVOXQ1Lw2G5dimNRWOFO_eOyc_Alh1n-wL3lN9OYvLIK_wvJQ.jpg?r=7d3"
+  type: series
+  genre: Adventure, Drama
+  status: completed
+
+- title: 13 Reasons Why
+  year: 2017
+  creator: Brian Yorkey
+  poster: "https://m.media-amazon.com/images/M/MV5BNThjYzQ3ZjYtM2I0ZC00OGNjLTlmNGItYjE3ZWI5MWIyMWYyXkEyXkFqcGc@._V1_.jpg"
+  type: series
+  genre: Drama, Mystery
+  status: dropped ss3
+
+- title: Riverdale
+  year: 2017
+  creator: Roberto Aguirre-Sacasa
+  poster: "https://m.media-amazon.com/images/I/61iczvxWiVL.jpg"
+  type: series
+  genre: Drama, Mystery
+  status: dropped ss3
+
+- title: One of Us Is Lying
+  year: 2021
+  creator: Erica Saleh
+  poster: "https://m.media-amazon.com/images/M/MV5BMDQxZGJkNGUtNDdmNS00Mzk4LThlNTAtN2UwNjlhMzYyYjVlXkEyXkFqcGc@._V1_.jpg"
+  type: series
+  genre: Mystery, Drama
+  status: completed
+
+- title: Ben 10
+  year: 2005
+  creator: Man of Action
+  poster: "https://m.media-amazon.com/images/M/MV5BYWVjODZjNDgtYjk4ZS00OTg5LTg5NDQtZDMxZDQ4ZmM5MGJmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  type: series
+  genre: Animation, Action
+  status: completed
+  ranking: 1
+  leaderboard_genre: Animation
+
+
+- title: "Ben 10: Alien Force"
+  year: 2008
+  creator: Man of Action
+  poster: "https://m.media-amazon.com/images/M/MV5BOGQ5YWFjYjItODE5OC00ZDQxLTk5ZmYtNzY0YzM4NjIyMWFlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  type: series
+  genre: Animation, Action
+  status: completed
+
+- title: "Ben 10: Ultimate Alien"
+  year: 2010
+  creator: Man of Action
+  poster: "https://mediaproxy.tvtropes.org/width/1200/https://static.tvtropes.org/pmwiki/pub/images/ben_10_ultimate_alien.png"
+  type: series
+  genre: Animation, Action
+  status: completed
+
+- title: Looking for Alaska
+  creator: Josh Schwartz
+  year: 2019
+  rating: 8.2
+  genre: romance
+  type: series
+  poster: "https://m.media-amazon.com/images/M/MV5BYTQ3ZDRjMmYtYWIwNi00N2IyLTg1YWUtMTZiY2ZiOGMxZGMzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  comment: "A beautiful adaptation of John Green's novel. Captures the intensity of first love and the pain of loss with remarkable authenticity."
+  ranking: 2
+  leaderboard_genre: Drama
+
+- title: Live Up to Your Name
+  year: 2017
+  creator: Kim Eun-hee
+  poster: "https://static.wikia.nocookie.net/the-dramas/images/4/4c/Live_Up_to_Your_Name_TV_Series-146793979-large.jpg"
+  type: series
+  genre: Historical Drama, Romance
+  status: completed
+  ranking: 2
+  leaderboard_genre: Romance
+
+- title: Anyone But You
+  year: 2023
+  director: Will Gluck
+  poster: "https://a.ltrbxd.com/resized/film-poster/9/6/6/9/9/0/966990-anyone-but-you-0-230-0-345-crop.jpg?v=62514c5b09"
+  type: movie
+  genre: Romance, Comedy
+
+- title: Ninja Assassin
+  year: 2009
+  director: James McTeigue
+  poster: "https://m.media-amazon.com/images/M/MV5BMTcxNDYzMjU1Ml5BMl5BanBnXkFtZTcwMTYzOTM3Mg@@._V1_.jpg"
+  type: movie
+  genre: Action, Thriller
+  ranking: 1
+  leaderboard_genre: Action
+
+- title: Shōgun
+  year: 2024
+  creator: Rachel Kondo, Justin Marks
+  poster: "https://www.assignmentx.com/wp-content/uploads/2024/02/SHOWGUN-miniseries-Key-Art.jpg"
+  type: series
+  genre: Historical Drama
+  status: completed
+  ranking: 3
+  leaderboard_genre: Historical Drama
+
+- title: "Age of Samurai: Battle for Japan"
+  year: 2021
+  creator: Netflix
+  poster: "https://m.media-amazon.com/images/M/MV5BYTIyOGYxMjktZjliZC00NTc3LTkzNDYtYjk0MWFiMjBlNzgxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  type: series
+  genre: Docudrama
+  status: to-watch
+
+- title: "Rise of Empires: Ottoman"
+  year: 2020
+  creator: Emre Şahin
+  poster: "https://upload.wikimedia.org/wikipedia/en/5/51/Rise_of_empires_ottoman.jpg"
+  type: series
+  genre: Docudrama
+  status: to-watch
+
+- title: Queen Cleopatra
+  year: 2023
+  creator: Jada Pinkett Smith
+  poster: "https://m.media-amazon.com/images/M/MV5BZjJiY2I0NDQtYjZmYy00ODYwLThmZDMtNmE4NmZhNDIwNGU1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  type: series
+  genre: Docudrama
+  status: to-watch
+
+- title: "Rurouni Kenshin: The Final"
+  year: 2021
+  director: Keishi Otomo
+  poster: "https://a.ltrbxd.com/resized/film-poster/5/2/9/3/7/3/529373-rurouni-kenshin-the-final-0-230-0-345-crop.jpg?v=aa93bd06ab"
+  type: movie
+  genre: Action, Historical
+
+- title: "Rurouni Kenshin: The Beginning"
+  year: 2021
+  director: Keishi Otomo
+  poster: "https://occ-0-43-999.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABcwqWDEYmqJmeGeLlRL3xZ_fsFXPX2EpVH3r1WE8YXiQomSttAPOnDgM8YHUnUS4USC7JzvA4rDRt9rcAnI2GO0cWqIdS3DS8hp4waLuih3RNh031wPsa_XGrXfWw2JanzizKA.jpg?r=af8"
+  type: movie
+  genre: Action, Historical
+
+- title: Barbarians
+  year: 2020
+  director: Andreas Heckmann, Arne Nolting & Jan Martin Scharf
+  poster: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS3P_rxa0mTiHd6FMUHk-mqCuTYcvtQdxhLNvudo8V2yDa0CsOrTOtG9gHPeG2mx-AQ_oG_"
+  type: movie
+  genre: Drama
+
+- title: The Outsider
+  year: 2018
+  director: Martin Zandvliet
+  poster: "https://i0.wp.com/teaser-trailer.com/wp-content/uploads/2018/03/Jared-Leto-The-Outsider.jpg?ssl=1"
+  type: movie
+  genre: Crime, Drama
+
+- title: Better Call Saul
+  year: 2015
+  creator: Vince Gilligan, Peter Gould
+  poster: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTlZudogDC96zcQ8h1btvghFoM6Y7qQd94UNUyceBqXslnarv260_Ij7QEvSp_FNmldAci5"
+  type: series
+  genre: Crime, Drama
+  status: completed
+  ranking: 3
+  leaderboard_genre: Drama
+
+- title: "El Camino: A Breaking Bad Movie"
+  year: 2019
+  director: Vince Gilligan
+  poster: "https://image.tmdb.org/t/p/w780/ePXuKdXZuJx8hHMNr2yM4jY2L7Z.jpg"
+  type: movie
+  genre: Crime, Drama
+
+- title: 100 Eyes
+  year: 2015
+  creator: John Fusco
+  poster: "https://m.media-amazon.com/images/M/MV5BZDFhYWQ0YzAtZTFhZC00ZGUyLTkxY2MtZWE3MmYzZTg1MDkxXkEyXkFqcGc@._V1_.jpg"
+  type: series
+  genre: Historical Drama
+  status: to-watch
+  comment: Marco Polo spin-off
+
+- title: Interstellar
+  year: 2014
+  director: Christopher Nolan
+  poster: "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg"
+  type: movie
+  genre: Sci-Fi, Drama, Adventure
+  ranking: 1
+  rating: 9.8
+  comment: "A masterpiece of visual storytelling and emotional depth. Nolan's exploration of time, love, and sacrifice through the lens of space travel is simply breathtaking."
+  leaderboard_genre: Sci-Fi
+
+- title: "Mr. Sunshine"
+  creator: "Kim Eun-sook"
+  year: 2018
+  genre: "Historical Drama"
+  poster: "https://upload.wikimedia.org/wikipedia/en/a/a5/Mr._Sunshine_%282018_TV_series%29.jpg"
+  ranking: 1
+  leaderboard_genre: Historical Drama
+  type: series
+
+
+- title: Doctor Strange in the Multiverse of Madness
+  year: 2022
+  director: Sam Raimi
+  poster: "https://image.tmdb.org/t/p/w500/9Gtg2DzBhmYamXBS1hKAhiwbBKS.jpg"
+  type: movie
+  genre: Sci-Fi, Action, Adventure
+  ranking: 2
+  rating: 9.5
+  comment: "The #1 sci-fi film that perfectly blends horror elements with multiverse storytelling. Raimi's direction brings a unique dark tone to the MCU with spectacular visuals."
+  leaderboard_genre: Sci-Fi
+
+- title: Oppenheimer
+  year: 2023
+  director: Christopher Nolan
+  poster: "https://image.tmdb.org/t/p/w780/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg"
+  type: movie
+  genre: Biographical Drama
+  ranking: 1
+  leaderboard_genre: Biographical Drama
+
+- title: Parasite
+  year: 2019
+  director: Bong Joon Ho
+  poster: "https://image.tmdb.org/t/p/w780/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg"
+  type: movie
+  genre: Thriller
+  ranking: 1
+  leaderboard_genre: Action
+
+
+- title: Blade Runner 2049
+  year: 2017
+  director: Denis Villeneuve
+  poster: "https://m.media-amazon.com/images/M/MV5BNzA1Njg4NzYxOV5BMl5BanBnXkFtZTgwODk5NjU3MzI@._V1_FMjpg_UX1000_.jpg"
+  type: movie
+  genre: Sci-Fi
+
+- title: Spirited Away
+  year: 2001
+  director: Hayao Miyazaki
+  poster: "https://m.media-amazon.com/images/M/MV5BNTEyNmEwOWUtYzkyOC00ZTQ4LTllZmUtMjk0Y2YwOGUzYjRiXkEyXkFqcGc@._V1_.jpg"
+  type: movie
+  genre: Animation
+
+- title: The Concubine
+  year: 2012
+  director: Kim Dae-seung
+  poster: "https://upload.wikimedia.org/wikipedia/en/b/b9/The_Concubine-poster.jpg"
+  type: movie
+  genre: Historical Drama
+
+- title: (500) Days of Summer
+  year: 2009
+  director: Marc Webb
+  poster: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p193428_p_v8_bb.jpg"
+  type: movie
+  genre: Rom-Com
+
+- title: Fifty Shades of Grey
+  year: 2015
+  director: Sam Taylor-Johnson
+  poster: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTPdMwnT7ZRQlu9R6lv_wMuAU1i6z8aiEp2Cg7tL1SIcsiKUTgq9PI_k6TW9uRsLUzufjvZ"
+  type: movie
+  genre: Erotic Romance
+
+- title: Fifty Shades Darker
+  year: 2017
+  director: James Foley
+  poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAdYO663RDs93AC-aB-ooCfqJKrzK3AM3sbBsaIWPNJ4ZIb4HlWu6b-21qHqnQVHI4645MSg"
+  type: movie
+  genre: Erotic Romance
+
+- title: Fifty Shades Freed
+  year: 2018
+  director: James Foley
+  poster: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQelgQYtjUJP-pubNu3btdXHDYDkO4exOmxZMg1n17LRU6Uu3CXdvD8CyMb-f6bcGPzqAOR"
+  type: movie
+  genre: Erotic Romance
+
+- title: First They Killed My Father
+  year: 2017
+  director: Angelina Jolie
+  poster: "https://upload.wikimedia.org/wikipedia/en/e/eb/First_They_Killed_My_Father.png"
+  type: movie
+  genre: Biographical Drama
+  ranking: 2
+  leaderboard_genre: Biographical Drama
+
+- title: Avatar
+  year: 2009
+  director: James Cameron
+  poster: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTwJPOxfRiaHwXkICnf6LKMHIPWJPGLx8wht-wZH-qFs0OXXUCBvOeCQTs79z7Bx9odsdsB"
+  type: movie
+  genre: Sci-Fi
+
+- title: "Avatar: The Way of Water"
+  year: 2022
+  director: James Cameron
+  poster: "https://image.tmdb.org/t/p/w780/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg"
+  type: movie
+  genre: Sci-Fi
+
+- title: How to Make Millions Before Grandma Dies
+  year: 2024
+  director: Pat Boonnitipat
+  poster: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQKyqfD178lxNPBoeOSuP-5YE8hau56xsz437vru63ee_QGQgEkOPUH-7gUMVJCK6cute4LQg"
+  type: movie
+  genre: Drama
+
+- title: The Avengers
+  year: 2012
+  director: Joss Whedon
+  poster: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQluFl3GfQDXohBaH-xG3GuRi8T4MDIQPRpCqUGLiE5tXdXbUO0hRFwnshvzg07igEgGg7i"
+  type: movie
+  genre: Action, Adventure
+
+- title: "Avengers: Age of Ultron"
+  year: 2015
+  director: Joss Whedon
+  poster: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT5HI3nlN9yhLTTOn8qXJzXK6sLnW5PrLKXohQO6UY27lz7IYLQsR70-yrN8XZe1LfyVo1X"
+  type: movie
+  genre: Action, Sci-Fi
+
+- title: "Avengers: Infinity War"
+  year: 2018
+  director: Anthony Russo, Joe Russo
+  poster: "https://image.tmdb.org/t/p/w780/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg"
+  type: movie
+  genre: Action, Adventure
+
+- title: "Avengers: Endgame"
+  year: 2019
+  director: Anthony Russo, Joe Russo
+  poster: "https://image.tmdb.org/t/p/w780/or06FN3Dka5tukK1e9sl16pB3iy.jpg"
+  type: movie
+  genre: Action, Adventure
+
+- title: Guardians of the Galaxy
+  year: 2014
+  director: James Gunn
+  poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5LmvEQ3u221y-8Qv0Qj-e7ORLVYZoq1Y-CyRSIi0WvFIvtNTcvICk-cG0YErJxw7PqeJ3"
+  type: movie
+  genre: Action, Adventure
+
+- title: Guardians of the Galaxy Vol. 2
+  year: 2017
+  director: James Gunn
+  poster: "https://image.tmdb.org/t/p/w780/y4MBh0EjBlMuOzv9axM4qJlmhzz.jpg"
+  type: movie
+  genre: Action, Adventure
+
+- title: "Spider-Man: Homecoming"
+  year: 2017
+  director: Jon Watts
+  poster: "https://image.tmdb.org/t/p/w780/c24sv2weTHPsmDa7jEMN0m2P3RT.jpg"
+  type: movie
+  genre: Action, Adventure
+
+- title: "Spider-Man: Far From Home"
+  year: 2019
+  director: Jon Watts
+  poster: "https://image.tmdb.org/t/p/w780/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg"
+  type: movie
+  genre: Action, Adventure
+
+- title: "Spider-Man: No Way Home"
+  year: 2021
+  director: Jon Watts
+  poster: "https://image.tmdb.org/t/p/w780/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg"
+  type: movie
+  genre: Action, Adventure
+
+- title: Iron Man
+  year: 2008
+  director: Jon Favreau
+  poster: "https://image.tmdb.org/t/p/w780/78lPtwv72eTNqFW9COBYI0dWDJa.jpg"
+  type: movie
+  genre: Action, Sci-Fi
+
+- title: Iron Man 2
+  year: 2010
+  director: Jon Favreau
+  poster: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRNSgb153S-3anJ2qS48rn9mZJV84J6ARiy35P7TvU-wPyhsRoADI0ri_5dfW0h8b87NX7HHg"
+  type: movie
+  genre: Action, Sci-Fi
+
+- title: Iron Man 3
+  year: 2013
+  director: Shane Black
+  poster: "https://image.tmdb.org/t/p/w780/qhPtAc1TKbMPqNvcdXSOn9Bn7hZ.jpg"
+  type: movie
+  genre: Action, Sci-Fi
+
+- title: "Captain America: The First Avenger"
+  year: 2011
+  director: Joe Johnston
+  poster: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR_Zvkfg2WDajJvlev56lJrq92UWj_qMOEdjDDqhIUSc-jh94KvDlFmjabhmg3-gTpjs8xRXg"
+  type: movie
+  genre: Action, Adventure
+
+- title: "Captain America: The Winter Soldier"
+  year: 2014
+  director: Anthony Russo, Joe Russo
+  poster: "https://image.tmdb.org/t/p/w780/tVxDe01Zy3kZqaZRNiXFGDICdZk.jpg"
+  type: movie
+  genre: Action, Thriller
+
+- title: "Captain America: Civil War"
+  year: 2016
+  director: Anthony Russo, Joe Russo
+  poster: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT4deWCcW67wZf2oL9_myl-cFgUBzVTcAYfDFONt635m_SHofnGV8veGVQ6U1-Izuf_h4PB_w"
+  type: movie
+  genre: Action, Adventure
+
+- title: Black Widow
+  year: 2021
+  director: Cate Shortland
+  poster: "https://image.tmdb.org/t/p/w780/qAZ0pzat24kLdO3o8ejmbLxyOac.jpg"
+  type: movie
+  genre: Action, Thriller
+
+- title: Thor
+  year: 2011
+  director: Kenneth Branagh
+  poster: "https://m.media-amazon.com/images/M/MV5BNjRhNGZjZjEtYTQzYS00OWUxLThjNGEtMTIwMTE2ZDFlZTZkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  type: movie
+  genre: Action, Fantasy
+
+- title: "Thor: The Dark World"
+  year: 2013
+  director: Alan Taylor
+  poster: "https://i.redd.it/vhc3yc0ps1z91.jpg"
+  type: movie
+  genre: Action, Fantasy
+
+- title: "Thor: Ragnarok"
+  year: 2017
+  director: Taika Waititi
+  poster: "https://image.tmdb.org/t/p/w780/kaIfm5ryEOwYg8mLbq8HkPuM1Fo.jpg"
+  type: movie
+  genre: Action, Adventure
+
+- title: "Thor: Love and Thunder"
+  year: 2022
+  director: Taika Waititi
+  poster: "https://image.tmdb.org/t/p/w780/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg"
+  type: movie
+  genre: Action, Fantasy
+
+- title: Final Destination
+  year: 2000
+  director: James Wong
+  poster: "https://m.media-amazon.com/images/M/MV5BMjE1MjlmOWYtYzdjMS00OTgwLThjMDctZWU4N2FkZjgyNTJiXkEyXkFqcGc@._V1_.jpg"
+  type: movie
+  genre: Horror
+
+- title: Final Destination 2
+  year: 2003
+  director: David R. Ellis
+  poster: "https://m.media-amazon.com/images/M/MV5BMjExMTMyODAzN15BMl5BanBnXkFtZTYwNjc5NDQ3._V1_FMjpg_UX1000_.jpg"
+  type: movie
+  genre: Horror
+
+- title: Final Destination 3
+  year: 2006
+  director: James Wong
+  poster: "https://upload.wikimedia.org/wikipedia/en/b/b2/Final_Destination_3.jpg"
+  type: movie
+  genre: Horror
+
+- title: The Final Destination
+  year: 2009
+  director: David R. Ellis
+  poster: "https://upload.wikimedia.org/wikipedia/en/9/99/Final_destination_09.jpg"
+  type: movie
+  genre: Horror
+
+- title: Final Destination 5
+  year: 2011
+  director: Steven Quale
+  poster: "https://upload.wikimedia.org/wikipedia/en/a/a0/FD5_poster.jpg"
+  type: movie
+  genre: Horror
+
+- title: "Final Destination: Bloodlines"
+  year: 2025
+  director: Zach Lipovsky and Adam Stein
+  poster: "https://i0.wp.com/aftercredits.com/wp-content/uploads/2025/05/FinalDestinationBloodlinesPoster.jpg?resize=280%2C350&ssl=1"
+  type: movie
+  genre: Supernatural Horror
+
+- title: X-Men
+  year: 2000
+  director: Bryan Singer
+  poster: "https://m.media-amazon.com/images/M/MV5BNzNjZjQwOTAtNWQ3NC00MmJlLThlZDEtZmUyMWQ3NmE4Y2Y5XkEyXkFqcGc@._V1_.jpg"
+  type: movie
+  genre: Action, Fantasy
+
+- title: "X2: X-Men United"
+  year: 2003
+  director: Bryan Singer
+  poster: "https://m.media-amazon.com/images/M/MV5BNDk0NjYxMzIzOF5BMl5BanBnXkFtZTYwMTc1MjU3._V1_.jpg"
+  type: movie
+  genre: Action, Fantasy
+
+- title: "X-Men: The Last Stand"
+  year: 2006
+  director: Brett Ratner
+  poster: "https://m.media-amazon.com/images/M/MV5BMThmOWE3OWEtODJmNC00ZDEzLTk4MWUtNzEzM2RiNmJiZmU3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  type: movie
+  genre: Action, Fantasy
+
+- title: "X-Men Origins: Wolverine"
+  year: 2009
+  director: Gavin Hood
+  poster: "https://m.media-amazon.com/images/M/MV5BZjQwOGEzNjUtNDgwYS00NzUzLWJhZjAtNmFlNzY2YTQyOTllXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  type: movie
+  genre: Action, Adventure
+
+- title: "X-Men: First Class"
+  year: 2011
+  director: Matthew Vaughn
+  poster: "https://m.media-amazon.com/images/M/MV5BMTg5OTMxNzk4Nl5BMl5BanBnXkFtZTcwOTk1MjAwNQ@@._V1_.jpg"
+  type: movie
+  genre: Action, Fantasy
+
+- title: The Wolverine
+  year: 2013
+  director: James Mangold
+  poster: "https://m.media-amazon.com/images/M/MV5BNzg1MDQxMTQ2OF5BMl5BanBnXkFtZTcwMTk3MjAzOQ@@._V1_.jpg"
+  type: movie
+  genre: Action, Adventure
+
+- title: "X-Men: Days of Future Past"
+  year: 2014
+  director: Bryan Singer
+  poster: "https://chrisreedfilm.com/wp-content/uploads/2014/05/xmen_days_of_future_past_ver7.jpg"
+  type: movie
+  genre: Action, Sci-Fi
+
+- title: "X-Men: Apocalypse"
+  year: 2016
+  director: Bryan Singer
+  poster: "https://www.deepfocusreview.com/wp-content/uploads/2016/12/x-men_7.jpg"
+  type: movie
+  genre: Action, Adventure
+
+- title: Logan
+  year: 2017
+  director: James Mangold
+  poster: "https://upload.wikimedia.org/wikipedia/en/3/37/Logan_2017_poster.jpg"
+  type: movie
+  genre: Action, Drama
+
+- title: Dark Phoenix
+  year: 2019
+  director: Simon Kinberg
+  poster: "https://m.media-amazon.com/images/M/MV5BZjcwMDIyNjctMDVmNS00MzkyLTgxMDMtNTFmNTk0NDkyNzdjXkEyXkFqcGc@._V1_.jpg"
+  type: movie
+  genre: Action, Fantasy
+
+- title: All Quiet on the Western Front
+  year: 2022
+  director: Edward Berger
+  poster: "https://m.media-amazon.com/images/M/MV5BOWJiYWMyYTktZThhOS00ZjgxLWE0YTQtZDMyNTQxMjMyYjI2XkEyXkFqcGc@._V1_.jpg"
+  type: movie
+  genre: War Drama
+
+- title: The Truman Show
+  year: 1998
+  director: Peter Weir
+  poster: "https://m.media-amazon.com/images/I/71zEnyA+49L.jpg"
+  type: movie
+  genre: Drama, Comedy
+
+- title: The Conjuring
+  year: 2013
+  director: James Wan
+  poster: "https://image.tmdb.org/t/p/w780/wVYREutTvI2tmxr6ujrHT704wGF.jpg"
+  type: movie
+  genre: Horror
+
+- title: Annabelle
+  year: 2014
+  director: John R. Leonetti
+  poster: "https://upload.wikimedia.org/wikipedia/en/9/90/Annabelle_film_poster.jpg"
+  type: movie
+  genre: Horror
+
+- title: The Conjuring 2
+  year: 2016
+  director: James Wan
+  poster: "https://image.tmdb.org/t/p/w780/zEqyD0SBt6HL7W9JQoWwtd5Do1T.jpg"
+  type: movie
+  genre: Horror
+
+- title: "Annabelle: Creation"
+  year: 2017
+  director: David F. Sandberg
+  poster: "https://m.media-amazon.com/images/M/MV5BMjA1MzIwMjMxNF5BMl5BanBnXkFtZTgwMDQ3NTc2MjI@._V1_.jpg"
+  type: movie
+  genre: Horror
+
+- title: The Nun
+  year: 2018
+  director: Corin Hardy
+  poster: "https://image.tmdb.org/t/p/w780/sFC1ElvoKGdHJIWRpNB3xWJ9lJA.jpg"
+  type: movie
+  genre: Horror
+
+- title: The Curse of La Llorona
+  year: 2019
+  director: Michael Chaves
+  poster: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT7QqYGu16lDhP8A9vFRJ5Z7z3_T83WPWYBeEqlp3fs4jSj0499bmmaCOLYewcFtX1Eh4rx"
+  type: movie
+  genre: Horror
+
+- title: Annabelle Comes Home
+  year: 2019
+  director: Gary Dauberman
+  poster: "https://image.tmdb.org/t/p/w780/qWsHMrbg9DsBY3bCMk9jyYCRVRs.jpg"
+  type: movie
+  genre: Horror
+
+- title: "The Conjuring: The Devil Made Me Do It"
+  year: 2021
+  director: Michael Chaves
+  poster: "https://m.media-amazon.com/images/M/MV5BNThkYWE3OGItNzAyNC00N2U4LThjY2QtMGQwYjZhYTI1MzMwXkEyXkFqcGc@._V1_.jpg"
+  type: movie
+  genre: Horror
+
+- title: The Nun II
+  year: 2023
+  director: Michael Chaves
+  poster: "https://image.tmdb.org/t/p/w780/5gzzkR7y3hnY8AD1wXjCnVlHba5.jpg"
+  type: movie
+  genre: Horror
+
+- title: Bad Genius
+  year: 2017
+  director: Nattawut Poonpiriya
+  poster: "https://m.media-amazon.com/images/M/MV5BMjJhNTYxOGUtYWQxMS00YjYwLWFmMWItOWViN2QyZmZhNDM3XkEyXkFqcGc@._V1_.jpg"
+  type: movie
+  genre: Thriller, Drama
+
+- title: Friend Zone
+  year: 2019
+  director: Chayanop Boonprakob
+  poster: "https://m.media-amazon.com/images/M/MV5BOTU1NWIzOGQtYjc5YS00MmU1LTlmNDQtMTA1MzUwZTAwYzlkXkEyXkFqcGc@._V1_.jpg"
+  type: movie
+  genre: Romance, Comedy
+
+- title: OMG! Oh My Girl
+  year: 2022
+  director: Poj Arnon
+  poster: "https://m.media-amazon.com/images/M/MV5BN2VhMGE2YmUtNmZjYi00NjM3LTkzZDYtYjc2YjI0OTM1ODRkXkEyXkFqcGc@._V1_.jpg"
+  type: movie
+  genre: Comedy
+  ranking: 2
+  leaderboard_genre: Drama
+  comment: Me fr
+
+- title: More than Blue
+  year: 2018
+  director: Gavin Lin
+  poster: "https://upload.wikimedia.org/wikipedia/en/a/af/More_Than_Blue%2C_2018_Poster.jpg"
+  type: movie
+  genre: Romance, Drama
+  ranking: 1
+  leaderboard_genre: Drama
+
+- title: Shang-Chi and the Legend of the Ten Rings
+  year: 2021
+  director: Destin Daniel Cretton
+  poster: "https://image.tmdb.org/t/p/w780/1BIoJGKbXjdFDAqUEiA2VHqkK1Z.jpg"
+  type: movie
+  genre: Action, Adventure
+  ranking: 2
+  leaderboard_genre: Action
+
+- title: "Ben 10: Secret of the Omnitrix"
+  year: 2007
+  director: Sebastian Montes
+  poster: "https://m.media-amazon.com/images/M/MV5BYTQxZTdhMmQtOTNiMS00ZjNmLThkNjktZDA0NzVjNDNjMDY5XkEyXkFqcGc@._V1_.jpg"
+  type: movie
+  genre: Animation, Action
+
+- title: "Ben 10: Race Against Time"
+  year: 2007
+  director: Alex Winter
+  poster: "https://m.media-amazon.com/images/M/MV5BZmJiZTdkNTItNjVkOC00NTViLWJhMjQtNWNmODUyY2E2ZTZiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  type: movie
+  genre: Action, Adventure
+
+- title: "Ben 10: Alien Swarm"
+  year: 2009
+  director: Alex Winter
+  poster: "https://upload.wikimedia.org/wikipedia/en/c/cf/Ben_10_Alien_Swarm_poster.jpg"
+  type: movie
+  genre: Action, Adventure
+
+- title: "Ben 10: Destroy All Aliens"
+  year: 2012
+  director: Victor Cook
+  poster: "https://a.ltrbxd.com/resized/film-poster/7/9/8/2/3/79823-ben-10-destroy-all-aliens-0-230-0-345-crop.jpg?v=73e432f9b6"
+  type: movie
+  genre: Animation, Action
+
+- title: The Killing Fields
+  year: 1984
+  director: Roland Joffé
+  poster: "https://m.media-amazon.com/images/M/MV5BYWFiNThiZjUtMzMxZS00MmY5LWE3NzYtYjU5NjAwOTEwZGMyXkEyXkFqcGc@._V1_.jpg"
+  type: "movie"
+
+- title: Troy Fall of a City
+
+- title: Love Destiny
+
+- title: Anyone But - title: Euphoria
+  year: 2019
+  creator: Sam Levinson
+  poster: "https://image.tmdb.org/t/p/w780/3Q0hd3heuWwDWpwcDkhQOA6TYWI.jpg"
+  type: series
+  genre: Drama
+  status: completed
+  ranking: 1
+  leaderboard_genre: Drama
+
+- title: Dark
+  year: 2017
+  creator: Baran bo Odar, Jantje Friese
+  poster: "https://upload.wikimedia.org/wikipedia/en/d/da/DarkNetflixPosterEnglish.jpg"
+  type: series
+  genre: Sci-Fi
+  status: completed
+  ranking: 1
+  leaderboard_genre: Sci-Fi
+
+
+
+- title: Sex Education
+  year: 2019
+  creator: Laurie Nunn
+  poster: "https://m.media-amazon.com/images/M/MV5BOTE0MjQ1NDU3OV5BMl5BanBnXkFtZTgwNTI4MTgwNzM@._V1_FMjpg_UX1000_.jpg"
+  type: series
+  genre: Comedy
+  status: completed
+
+- title: Young Sheldon
+  year: 2017
+  creator: Chuck Lorre, Steven Molaro
+  poster: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p13923679_b_v8_aa.jpg"
+  type: series
+  genre: Comedy
+  status: completed
+
+- title: Roman Empire
+  year: 2016
+  creator: Richard Lopez
+  poster: "https://www.classification.gov.au/sites/default/files/styles/poster_desktop_2x/public/posters/gr4hFhqfuGUQPyQ2a2dOTM1ewnm.jpg?itok=uHZ8TEfY"
+  type: series
+  genre: Docudrama
+  status: completed
+
+- title: Marco Polo
+  year: 2014
+  creator: John Fusco
+  poster: "https://m.media-amazon.com/images/M/MV5BMTcwMDU5NzMzOV5BMl5BanBnXkFtZTgwNzk5NTE0MzE@._V1_.jpg"
+  type: series
+  genre: Historical Drama
+  status: completed
+  ranking: 2
+  leaderboard_genre: Historical Drama
+
+- title: "Vikings: Valhalla"
+  year: 2022
+  creator: Jeb Stuart
+  poster: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQfboaHo1JLnuumHWiz7pzDGFvCFi89MBGYrXuEb1soxbsAe2Wd6umVI56SFjmg-sDhYM8FLw"
+  type: series
+  genre: Historical Drama
+  status: completed
+
+- title: Nevertheless
+  year: 2021
+  creator: Kim Ga-ram
+  poster: "https://upload.wikimedia.org/wikipedia/en/5/56/Nevertheless_%28TV_series%29.jpg"
+  type: series
+  genre: Romance
+  status: completed
+  ranking: 1
+  leaderboard_genre: Romance
+
+- title: Squid Game
+  year: 2021
+  creator: Hwang Dong-hyuk
+  poster: "https://image.tmdb.org/t/p/w500/dDlEmu3EZ0Pgg93K2SVNLCjCSvE.jpg"
+  type: series
+  genre: Thriller
+  status: completed
+
+- title: All of Us Are Dead
+  year: 2022
+  creator: Lee Jae-kyoo, Kim Nam-su
+  poster: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRpM8w4yQ076pMOwGCD1u2ih6MlJOxbFGaw25nMgruyNuT_XHATVrAPb_XmeKmfoBvLrXvIfg"
+  type: series
+  genre: Horror
+  status: completed
+
+- title: Kingdom
+  year: 2019
+  creator: Kim Eun-hee
+  poster: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQkKksk5g9T4F5WNjhQI7ld__d48m6xC9_RtpBGG2ZnGht81VSdM1x5i4SdYtbKF_mSAQONiA"
+  type: series
+  genre: Horror
+  status: completed
+
+- title: Narcos
+  year: 2015
+  creator: Chris Brancato, Carlo Bernard, Doug Miro
+  poster: "https://m.media-amazon.com/images/M/MV5BNzQwOTcwMzIwN15BMl5BanBnXkFtZTgwMjYxMTA0NjE@._V1_FMjpg_UX1000_.jpg"
+  type: series
+  genre: Crime
+  status: completed
+  ranking: 2
+  leaderboard_genre: Crime
+
+- title: Cunk on Earth
+  year: 2022
+  creator: Diane Morgan
+  poster: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRy8BtssZ-SxerIpcyDd0bAqMPDFPGW_S1SXaBg06aURLQyxvC3S_LQeL63nBZkJZv7n4QH"
+  type: series
+  genre: Mockumentary
+  status: completed
+
+- title: Breaking Bad
+  year: 2008
+  creator: Vince Gilligan
+  poster: "https://image.tmdb.org/t/p/w780/ggFHVNu6YYI5L9pCfOacjizRGt.jpg"
+  type: series
+  genre: Crime
+  status: completed
+  ranking: 1
+  leaderboard_genre: Crime
+
+- title: The Society
+  year: 2019
+  creator: Christopher Keyser
+  poster: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTrGt7NT_4uRZbfz86bThoYMFZYERvms_vMASXV9qi-EFE2ihLsfrRjf6cFpGwmf8mzcfKb"
+  type: series
+  genre: Mystery
+  status: completed
+  ranking: 1
+  leaderboard_genre: Mystery
+
+- title: Loki
+  year: 2021
+  creator: Michael Waldron
+  poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmJU0NvE9WrV6h08DZ3EOedYcKePiTf2cJbX01ZdZEst2A89x0UxlZ7H6lu8UDBGxetoQpyg"
+  type: series
+  genre: Action, Sci-Fi
+  status: completed
+  ranking: 2
+  leaderboard_genre: Sci-Fi
+
+- title: The Queen’s Gambit
+  year: 2020
+  creator: Scott Frank
+  poster: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTs9NwheWs1eVmbT1A8ujVb6XXXlQ_DI1ytdNv20snuXRtFPP_BNuNCE1h6oSpitTDUyYiM"
+  type: series
+  genre: Drama
+  status: completed
+
+- title: Outer Banks
+  year: 2020
+  creator: Shannon Burke, Jonas Pate, Josh Pate
+  poster: "https://dnm.nflximg.net/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABQ-JLdIftbjpq1egLdVnlCxSMHEk92lnsdyMVW1hlG112qc-W6-QFPzm212c5FYsjtjdIx9K7h2ZXZ5JMYF1OwVOXQ1Lw2G5dimNRWOFO_eOyc_Alh1n-wL3lN9OYvLIK_wvJQ.jpg?r=7d3"
+  type: series
+  genre: Adventure, Drama
+  status: completed
+
+- title: 13 Reasons Why
+  year: 2017
+  creator: Brian Yorkey
+  poster: "https://m.media-amazon.com/images/M/MV5BNThjYzQ3ZjYtM2I0ZC00OGNjLTlmNGItYjE3ZWI5MWIyMWYyXkEyXkFqcGc@._V1_.jpg"
+  type: series
+  genre: Drama, Mystery
+  status: dropped ss3
+
+- title: Riverdale
+  year: 2017
+  creator: Roberto Aguirre-Sacasa
+  poster: "https://m.media-amazon.com/images/I/61iczvxWiVL.jpg"
+  type: series
+  genre: Drama, Mystery
+  status: dropped ss3
+
+- title: One of Us Is Lying
+  year: 2021
+  creator: Erica Saleh
+  poster: "https://m.media-amazon.com/images/M/MV5BMDQxZGJkNGUtNDdmNS00Mzk4LThlNTAtN2UwNjlhMzYyYjVlXkEyXkFqcGc@._V1_.jpg"
+  type: series
+  genre: Mystery, Drama
+  status: completed
+
+- title: Ben 10
+  year: 2005
+  creator: Man of Action
+  poster: "https://m.media-amazon.com/images/M/MV5BYWVjODZjNDgtYjk4ZS00OTg5LTg5NDQtZDMxZDQ4ZmM5MGJmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  type: series
+  genre: Animation, Action
+  status: completed
+  ranking: 1
+  leaderboard_genre: Animation
+
+
+- title: "Ben 10: Alien Force"
+  year: 2008
+  creator: Man of Action
+  poster: "https://m.media-amazon.com/images/M/MV5BOGQ5YWFjYjItODE5OC00ZDQxLTk5ZmYtNzY0YzM4NjIyMWFlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  type: series
+  genre: Animation, Action
+  status: completed
+
+- title: "Ben 10: Ultimate Alien"
+  year: 2010
+  creator: Man of Action
+  poster: "https://mediaproxy.tvtropes.org/width/1200/https://static.tvtropes.org/pmwiki/pub/images/ben_10_ultimate_alien.png"
+  type: series
+  genre: Animation, Action
+  status: completed
+
+- title: Looking for Alaska
+  creator: Josh Schwartz
+  year: 2019
+  rating: 8.2
+  genre: romance
+  type: series
+  poster: "https://m.media-amazon.com/images/M/MV5BYTQ3ZDRjMmYtYWIwNi00N2IyLTg1YWUtMTZiY2ZiOGMxZGMzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  comment: "A beautiful adaptation of John Green's novel. Captures the intensity of first love and the pain of loss with remarkable authenticity."
+  ranking: 2
+  leaderboard_genre: Drama
+
+- title: Live Up to Your Name
+  year: 2017
+  creator: Kim Eun-hee
+  poster: "https://static.wikia.nocookie.net/the-dramas/images/4/4c/Live_Up_to_Your_Name_TV_Series-146793979-large.jpg"
+  type: series
+  genre: Historical Drama, Romance
+  status: completed
+  ranking: 2
+  leaderboard_genre: Romance
+
+- title: Anyone But You
+  year: 2023
+  director: Will Gluck
+  poster: "https://a.ltrbxd.com/resized/film-poster/9/6/6/9/9/0/966990-anyone-but-you-0-230-0-345-crop.jpg?v=62514c5b09"
+  type: movie
+  genre: Romance, Comedy
+
+- title: Ninja Assassin
+  year: 2009
+  director: James McTeigue
+  poster: "https://m.media-amazon.com/images/M/MV5BMTcxNDYzMjU1Ml5BMl5BanBnXkFtZTcwMTYzOTM3Mg@@._V1_.jpg"
+  type: movie
+  genre: Action, Thriller
+  ranking: 1
+  leaderboard_genre: Action
+
+- title: Shōgun
+  year: 2024
+  creator: Rachel Kondo, Justin Marks
+  poster: "https://www.assignmentx.com/wp-content/uploads/2024/02/SHOWGUN-miniseries-Key-Art.jpg"
+  type: series
+  genre: Historical Drama
+  status: completed
+  ranking: 3
+  leaderboard_genre: Historical Drama
+
+- title: "Age of Samurai: Battle for Japan"
+  year: 2021
+  creator: Netflix
+  poster: "https://m.media-amazon.com/images/M/MV5BYTIyOGYxMjktZjliZC00NTc3LTkzNDYtYjk0MWFiMjBlNzgxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  type: series
+  genre: Docudrama
+  status: to-watch
+
+- title: "Rise of Empires: Ottoman"
+  year: 2020
+  creator: Emre Şahin
+  poster: "https://upload.wikimedia.org/wikipedia/en/5/51/Rise_of_empires_ottoman.jpg"
+  type: series
+  genre: Docudrama
+  status: to-watch
+
+- title: Queen Cleopatra
+  year: 2023
+  creator: Jada Pinkett Smith
+  poster: "https://m.media-amazon.com/images/M/MV5BZjJiY2I0NDQtYjZmYy00ODYwLThmZDMtNmE4NmZhNDIwNGU1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  type: series
+  genre: Docudrama
+  status: to-watch
+
+- title: "Rurouni Kenshin: The Final"
+  year: 2021
+  director: Keishi Otomo
+  poster: "https://a.ltrbxd.com/resized/film-poster/5/2/9/3/7/3/529373-rurouni-kenshin-the-final-0-230-0-345-crop.jpg?v=aa93bd06ab"
+  type: movie
+  genre: Action, Historical
+
+- title: "Rurouni Kenshin: The Beginning"
+  year: 2021
+  director: Keishi Otomo
+  poster: "https://occ-0-43-999.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABcwqWDEYmqJmeGeLlRL3xZ_fsFXPX2EpVH3r1WE8YXiQomSttAPOnDgM8YHUnUS4USC7JzvA4rDRt9rcAnI2GO0cWqIdS3DS8hp4waLuih3RNh031wPsa_XGrXfWw2JanzizKA.jpg?r=af8"
+  type: movie
+  genre: Action, Historical
+
+- title: Barbarians
+  year: 2020
+  director: Andreas Heckmann, Arne Nolting & Jan Martin Scharf
+  poster: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS3P_rxa0mTiHd6FMUHk-mqCuTYcvtQdxhLNvudo8V2yDa0CsOrTOtG9gHPeG2mx-AQ_oG_"
+  type: movie
+  genre: Drama
+
+- title: The Outsider
+  year: 2018
+  director: Martin Zandvliet
+  poster: "https://i0.wp.com/teaser-trailer.com/wp-content/uploads/2018/03/Jared-Leto-The-Outsider.jpg?ssl=1"
+  type: movie
+  genre: Crime, Drama
+
+- title: Better Call Saul
+  year: 2015
+  creator: Vince Gilligan, Peter Gould
+  poster: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTlZudogDC96zcQ8h1btvghFoM6Y7qQd94UNUyceBqXslnarv260_Ij7QEvSp_FNmldAci5"
+  type: series
+  genre: Crime, Drama
+  status: completed
+  ranking: 3
+  leaderboard_genre: Drama
+
+- title: "El Camino: A Breaking Bad Movie"
+  year: 2019
+  director: Vince Gilligan
+  poster: "https://image.tmdb.org/t/p/w780/ePXuKdXZuJx8hHMNr2yM4jY2L7Z.jpg"
+  type: movie
+  genre: Crime, Drama
+
+- title: 100 Eyes
+  year: 2015
+  creator: John Fusco
+  poster: "https://m.media-amazon.com/images/M/MV5BZDFhYWQ0YzAtZTFhZC00ZGUyLTkxY2MtZWE3MmYzZTg1MDkxXkEyXkFqcGc@._V1_.jpg"
+  type: series
+  genre: Historical Drama
+  status: to-watch
+  comment: Marco Polo spin-off
+
+- title: Interstellar
+  year: 2014
+  director: Christopher Nolan
+  poster: "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg"
+  type: movie
+  genre: Sci-Fi, Drama, Adventure
+  ranking: 1
+  rating: 9.8
+  comment: "A masterpiece of visual storytelling and emotional depth. Nolan's exploration of time, love, and sacrifice through the lens of space travel is simply breathtaking."
+  leaderboard_genre: Sci-Fi
+
+- title: "Mr. Sunshine"
+  creator: "Kim Eun-sook"
+  year: 2018
+  genre: "Historical Drama"
+  poster: "https://upload.wikimedia.org/wikipedia/en/a/a5/Mr._Sunshine_%282018_TV_series%29.jpg"
+  ranking: 1
+  leaderboard_genre: Historical Drama
+  type: series
+
+
+- title: Doctor Strange in the Multiverse of Madness
+  year: 2022
+  director: Sam Raimi
+  poster: "https://image.tmdb.org/t/p/w500/9Gtg2DzBhmYamXBS1hKAhiwbBKS.jpg"
+  type: movie
+  genre: Sci-Fi, Action, Adventure
+  ranking: 2
+  rating: 9.5
+  comment: "The #1 sci-fi film that perfectly blends horror elements with multiverse storytelling. Raimi's direction brings a unique dark tone to the MCU with spectacular visuals."
+  leaderboard_genre: Sci-Fi
+
+- title: Oppenheimer
+  year: 2023
+  director: Christopher Nolan
+  poster: "https://image.tmdb.org/t/p/w780/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg"
+  type: movie
+  genre: Biographical Drama
+  ranking: 1
+  leaderboard_genre: Biographical Drama
+
+- title: Parasite
+  year: 2019
+  director: Bong Joon Ho
+  poster: "https://image.tmdb.org/t/p/w780/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg"
+  type: movie
+  genre: Thriller
+  ranking: 1
+  leaderboard_genre: Action
+
+
+- title: Blade Runner 2049
+  year: 2017
+  director: Denis Villeneuve
+  poster: "https://m.media-amazon.com/images/M/MV5BNzA1Njg4NzYxOV5BMl5BanBnXkFtZTgwODk5NjU3MzI@._V1_FMjpg_UX1000_.jpg"
+  type: movie
+  genre: Sci-Fi
+
+- title: Spirited Away
+  year: 2001
+  director: Hayao Miyazaki
+  poster: "https://m.media-amazon.com/images/M/MV5BNTEyNmEwOWUtYzkyOC00ZTQ4LTllZmUtMjk0Y2YwOGUzYjRiXkEyXkFqcGc@._V1_.jpg"
+  type: movie
+  genre: Animation
+
+- title: The Concubine
+  year: 2012
+  director: Kim Dae-seung
+  poster: "https://upload.wikimedia.org/wikipedia/en/b/b9/The_Concubine-poster.jpg"
+  type: movie
+  genre: Historical Drama
+
+- title: (500) Days of Summer
+  year: 2009
+  director: Marc Webb
+  poster: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p193428_p_v8_bb.jpg"
+  type: movie
+  genre: Rom-Com
+
+- title: Fifty Shades of Grey
+  year: 2015
+  director: Sam Taylor-Johnson
+  poster: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTPdMwnT7ZRQlu9R6lv_wMuAU1i6z8aiEp2Cg7tL1SIcsiKUTgq9PI_k6TW9uRsLUzufjvZ"
+  type: movie
+  genre: Erotic Romance
+
+- title: Fifty Shades Darker
+  year: 2017
+  director: James Foley
+  poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAdYO663RDs93AC-aB-ooCfqJKrzK3AM3sbBsaIWPNJ4ZIb4HlWu6b-21qHqnQVHI4645MSg"
+  type: movie
+  genre: Erotic Romance
+
+- title: Fifty Shades Freed
+  year: 2018
+  director: James Foley
+  poster: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQelgQYtjUJP-pubNu3btdXHDYDkO4exOmxZMg1n17LRU6Uu3CXdvD8CyMb-f6bcGPzqAOR"
+  type: movie
+  genre: Erotic Romance
+
+- title: First They Killed My Father
+  year: 2017
+  director: Angelina Jolie
+  poster: "https://upload.wikimedia.org/wikipedia/en/e/eb/First_They_Killed_My_Father.png"
+  type: movie
+  genre: Biographical Drama
+  ranking: 2
+  leaderboard_genre: Biographical Drama
+
+- title: Avatar
+  year: 2009
+  director: James Cameron
+  poster: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTwJPOxfRiaHwXkICnf6LKMHIPWJPGLx8wht-wZH-qFs0OXXUCBvOeCQTs79z7Bx9odsdsB"
+  type: movie
+  genre: Sci-Fi
+
+- title: "Avatar: The Way of Water"
+  year: 2022
+  director: James Cameron
+  poster: "https://image.tmdb.org/t/p/w780/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg"
+  type: movie
+  genre: Sci-Fi
+
+- title: How to Make Millions Before Grandma Dies
+  year: 2024
+  director: Pat Boonnitipat
+  poster: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQKyqfD178lxNPBoeOSuP-5YE8hau56xsz437vru63ee_QGQgEkOPUH-7gUMVJCK6cute4LQg"
+  type: movie
+  genre: Drama
+
+- title: The Avengers
+  year: 2012
+  director: Joss Whedon
+  poster: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQluFl3GfQDXohBaH-xG3GuRi8T4MDIQPRpCqUGLiE5tXdXbUO0hRFwnshvzg07igEgGg7i"
+  type: movie
+  genre: Action, Adventure
+
+- title: "Avengers: Age of Ultron"
+  year: 2015
+  director: Joss Whedon
+  poster: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT5HI3nlN9yhLTTOn8qXJzXK6sLnW5PrLKXohQO6UY27lz7IYLQsR70-yrN8XZe1LfyVo1X"
+  type: movie
+  genre: Action, Sci-Fi
+
+- title: "Avengers: Infinity War"
+  year: 2018
+  director: Anthony Russo, Joe Russo
+  poster: "https://image.tmdb.org/t/p/w780/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg"
+  type: movie
+  genre: Action, Adventure
+
+- title: "Avengers: Endgame"
+  year: 2019
+  director: Anthony Russo, Joe Russo
+  poster: "https://image.tmdb.org/t/p/w780/or06FN3Dka5tukK1e9sl16pB3iy.jpg"
+  type: movie
+  genre: Action, Adventure
+
+- title: Guardians of the Galaxy
+  year: 2014
+  director: James Gunn
+  poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5LmvEQ3u221y-8Qv0Qj-e7ORLVYZoq1Y-CyRSIi0WvFIvtNTcvICk-cG0YErJxw7PqeJ3"
+  type: movie
+  genre: Action, Adventure
+
+- title: Guardians of the Galaxy Vol. 2
+  year: 2017
+  director: James Gunn
+  poster: "https://image.tmdb.org/t/p/w780/y4MBh0EjBlMuOzv9axM4qJlmhzz.jpg"
+  type: movie
+  genre: Action, Adventure
+
+- title: "Spider-Man: Homecoming"
+  year: 2017
+  director: Jon Watts
+  poster: "https://image.tmdb.org/t/p/w780/c24sv2weTHPsmDa7jEMN0m2P3RT.jpg"
+  type: movie
+  genre: Action, Adventure
+
+- title: "Spider-Man: Far From Home"
+  year: 2019
+  director: Jon Watts
+  poster: "https://image.tmdb.org/t/p/w780/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg"
+  type: movie
+  genre: Action, Adventure
+
+- title: "Spider-Man: No Way Home"
+  year: 2021
+  director: Jon Watts
+  poster: "https://image.tmdb.org/t/p/w780/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg"
+  type: movie
+  genre: Action, Adventure
+
+- title: Iron Man
+  year: 2008
+  director: Jon Favreau
+  poster: "https://image.tmdb.org/t/p/w780/78lPtwv72eTNqFW9COBYI0dWDJa.jpg"
+  type: movie
+  genre: Action, Sci-Fi
+
+- title: Iron Man 2
+  year: 2010
+  director: Jon Favreau
+  poster: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRNSgb153S-3anJ2qS48rn9mZJV84J6ARiy35P7TvU-wPyhsRoADI0ri_5dfW0h8b87NX7HHg"
+  type: movie
+  genre: Action, Sci-Fi
+
+- title: Iron Man 3
+  year: 2013
+  director: Shane Black
+  poster: "https://image.tmdb.org/t/p/w780/qhPtAc1TKbMPqNvcdXSOn9Bn7hZ.jpg"
+  type: movie
+  genre: Action, Sci-Fi
+
+- title: "Captain America: The First Avenger"
+  year: 2011
+  director: Joe Johnston
+  poster: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR_Zvkfg2WDajJvlev56lJrq92UWj_qMOEdjDDqhIUSc-jh94KvDlFmjabhmg3-gTpjs8xRXg"
+  type: movie
+  genre: Action, Adventure
+
+- title: "Captain America: The Winter Soldier"
+  year: 2014
+  director: Anthony Russo, Joe Russo
+  poster: "https://image.tmdb.org/t/p/w780/tVxDe01Zy3kZqaZRNiXFGDICdZk.jpg"
+  type: movie
+  genre: Action, Thriller
+
+- title: "Captain America: Civil War"
+  year: 2016
+  director: Anthony Russo, Joe Russo
+  poster: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT4deWCcW67wZf2oL9_myl-cFgUBzVTcAYfDFONt635m_SHofnGV8veGVQ6U1-Izuf_h4PB_w"
+  type: movie
+  genre: Action, Adventure
+
+- title: Black Widow
+  year: 2021
+  director: Cate Shortland
+  poster: "https://image.tmdb.org/t/p/w780/qAZ0pzat24kLdO3o8ejmbLxyOac.jpg"
+  type: movie
+  genre: Action, Thriller
+
+- title: Thor
+  year: 2011
+  director: Kenneth Branagh
+  poster: "https://m.media-amazon.com/images/M/MV5BNjRhNGZjZjEtYTQzYS00OWUxLThjNGEtMTIwMTE2ZDFlZTZkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  type: movie
+  genre: Action, Fantasy
+
+- title: "Thor: The Dark World"
+  year: 2013
+  director: Alan Taylor
+  poster: "https://i.redd.it/vhc3yc0ps1z91.jpg"
+  type: movie
+  genre: Action, Fantasy
+
+- title: "Thor: Ragnarok"
+  year: 2017
+  director: Taika Waititi
+  poster: "https://image.tmdb.org/t/p/w780/kaIfm5ryEOwYg8mLbq8HkPuM1Fo.jpg"
+  type: movie
+  genre: Action, Adventure
+
+- title: "Thor: Love and Thunder"
+  year: 2022
+  director: Taika Waititi
+  poster: "https://image.tmdb.org/t/p/w780/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg"
+  type: movie
+  genre: Action, Fantasy
+
+- title: Final Destination
+  year: 2000
+  director: James Wong
+  poster: "https://m.media-amazon.com/images/M/MV5BMjE1MjlmOWYtYzdjMS00OTgwLThjMDctZWU4N2FkZjgyNTJiXkEyXkFqcGc@._V1_.jpg"
+  type: movie
+  genre: Horror
+
+- title: Final Destination 2
+  year: 2003
+  director: David R. Ellis
+  poster: "https://m.media-amazon.com/images/M/MV5BMjExMTMyODAzN15BMl5BanBnXkFtZTYwNjc5NDQ3._V1_FMjpg_UX1000_.jpg"
+  type: movie
+  genre: Horror
+
+- title: Final Destination 3
+  year: 2006
+  director: James Wong
+  poster: "https://upload.wikimedia.org/wikipedia/en/b/b2/Final_Destination_3.jpg"
+  type: movie
+  genre: Horror
+
+- title: The Final Destination
+  year: 2009
+  director: David R. Ellis
+  poster: "https://upload.wikimedia.org/wikipedia/en/9/99/Final_destination_09.jpg"
+  type: movie
+  genre: Horror
+
+- title: Final Destination 5
+  year: 2011
+  director: Steven Quale
+  poster: "https://upload.wikimedia.org/wikipedia/en/a/a0/FD5_poster.jpg"
+  type: movie
+  genre: Horror
+
+- title: "Final Destination: Bloodlines"
+  year: 2025
+  director: Zach Lipovsky and Adam Stein
+  poster: "https://i0.wp.com/aftercredits.com/wp-content/uploads/2025/05/FinalDestinationBloodlinesPoster.jpg?resize=280%2C350&ssl=1"
+  type: movie
+  genre: Supernatural Horror
+
+- title: X-Men
+  year: 2000
+  director: Bryan Singer
+  poster: "https://m.media-amazon.com/images/M/MV5BNzNjZjQwOTAtNWQ3NC00MmJlLThlZDEtZmUyMWQ3NmE4Y2Y5XkEyXkFqcGc@._V1_.jpg"
+  type: movie
+  genre: Action, Fantasy
+
+- title: "X2: X-Men United"
+  year: 2003
+  director: Bryan Singer
+  poster: "https://m.media-amazon.com/images/M/MV5BNDk0NjYxMzIzOF5BMl5BanBnXkFtZTYwMTc1MjU3._V1_.jpg"
+  type: movie
+  genre: Action, Fantasy
+
+- title: "X-Men: The Last Stand"
+  year: 2006
+  director: Brett Ratner
+  poster: "https://m.media-amazon.com/images/M/MV5BMThmOWE3OWEtODJmNC00ZDEzLTk4MWUtNzEzM2RiNmJiZmU3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  type: movie
+  genre: Action, Fantasy
+
+- title: "X-Men Origins: Wolverine"
+  year: 2009
+  director: Gavin Hood
+  poster: "https://m.media-amazon.com/images/M/MV5BZjQwOGEzNjUtNDgwYS00NzUzLWJhZjAtNmFlNzY2YTQyOTllXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  type: movie
+  genre: Action, Adventure
+
+- title: "X-Men: First Class"
+  year: 2011
+  director: Matthew Vaughn
+  poster: "https://m.media-amazon.com/images/M/MV5BMTg5OTMxNzk4Nl5BMl5BanBnXkFtZTcwOTk1MjAwNQ@@._V1_.jpg"
+  type: movie
+  genre: Action, Fantasy
+
+- title: The Wolverine
+  year: 2013
+  director: James Mangold
+  poster: "https://m.media-amazon.com/images/M/MV5BNzg1MDQxMTQ2OF5BMl5BanBnXkFtZTcwMTk3MjAzOQ@@._V1_.jpg"
+  type: movie
+  genre: Action, Adventure
+
+- title: "X-Men: Days of Future Past"
+  year: 2014
+  director: Bryan Singer
+  poster: "https://chrisreedfilm.com/wp-content/uploads/2014/05/xmen_days_of_future_past_ver7.jpg"
+  type: movie
+  genre: Action, Sci-Fi
+
+- title: "X-Men: Apocalypse"
+  year: 2016
+  director: Bryan Singer
+  poster: "https://www.deepfocusreview.com/wp-content/uploads/2016/12/x-men_7.jpg"
+  type: movie
+  genre: Action, Adventure
+
+- title: Logan
+  year: 2017
+  director: James Mangold
+  poster: "https://upload.wikimedia.org/wikipedia/en/3/37/Logan_2017_poster.jpg"
+  type: movie
+  genre: Action, Drama
+
+- title: Dark Phoenix
+  year: 2019
+  director: Simon Kinberg
+  poster: "https://m.media-amazon.com/images/M/MV5BZjcwMDIyNjctMDVmNS00MzkyLTgxMDMtNTFmNTk0NDkyNzdjXkEyXkFqcGc@._V1_.jpg"
+  type: movie
+  genre: Action, Fantasy
+
+- title: All Quiet on the Western Front
+  year: 2022
+  director: Edward Berger
+  poster: "https://m.media-amazon.com/images/M/MV5BOWJiYWMyYTktZThhOS00ZjgxLWE0YTQtZDMyNTQxMjMyYjI2XkEyXkFqcGc@._V1_.jpg"
+  type: movie
+  genre: War Drama
+
+- title: The Truman Show
+  year: 1998
+  director: Peter Weir
+  poster: "https://m.media-amazon.com/images/I/71zEnyA+49L.jpg"
+  type: movie
+  genre: Drama, Comedy
+
+- title: The Conjuring
+  year: 2013
+  director: James Wan
+  poster: "https://image.tmdb.org/t/p/w780/wVYREutTvI2tmxr6ujrHT704wGF.jpg"
+  type: movie
+  genre: Horror
+
+- title: Annabelle
+  year: 2014
+  director: John R. Leonetti
+  poster: "https://upload.wikimedia.org/wikipedia/en/9/90/Annabelle_film_poster.jpg"
+  type: movie
+  genre: Horror
+
+- title: The Conjuring 2
+  year: 2016
+  director: James Wan
+  poster: "https://image.tmdb.org/t/p/w780/zEqyD0SBt6HL7W9JQoWwtd5Do1T.jpg"
+  type: movie
+  genre: Horror
+
+- title: "Annabelle: Creation"
+  year: 2017
+  director: David F. Sandberg
+  poster: "https://m.media-amazon.com/images/M/MV5BMjA1MzIwMjMxNF5BMl5BanBnXkFtZTgwMDQ3NTc2MjI@._V1_.jpg"
+  type: movie
+  genre: Horror
+
+- title: The Nun
+  year: 2018
+  director: Corin Hardy
+  poster: "https://image.tmdb.org/t/p/w780/sFC1ElvoKGdHJIWRpNB3xWJ9lJA.jpg"
+  type: movie
+  genre: Horror
+
+- title: The Curse of La Llorona
+  year: 2019
+  director: Michael Chaves
+  poster: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT7QqYGu16lDhP8A9vFRJ5Z7z3_T83WPWYBeEqlp3fs4jSj0499bmmaCOLYewcFtX1Eh4rx"
+  type: movie
+  genre: Horror
+
+- title: Annabelle Comes Home
+  year: 2019
+  director: Gary Dauberman
+  poster: "https://image.tmdb.org/t/p/w780/qWsHMrbg9DsBY3bCMk9jyYCRVRs.jpg"
+  type: movie
+  genre: Horror
+
+- title: "The Conjuring: The Devil Made Me Do It"
+  year: 2021
+  director: Michael Chaves
+  poster: "https://m.media-amazon.com/images/M/MV5BNThkYWE3OGItNzAyNC00N2U4LThjY2QtMGQwYjZhYTI1MzMwXkEyXkFqcGc@._V1_.jpg"
+  type: movie
+  genre: Horror
+
+- title: The Nun II
+  year: 2023
+  director: Michael Chaves
+  poster: "https://image.tmdb.org/t/p/w780/5gzzkR7y3hnY8AD1wXjCnVlHba5.jpg"
+  type: movie
+  genre: Horror
+
+- title: Bad Genius
+  year: 2017
+  director: Nattawut Poonpiriya
+  poster: "https://m.media-amazon.com/images/M/MV5BMjJhNTYxOGUtYWQxMS00YjYwLWFmMWItOWViN2QyZmZhNDM3XkEyXkFqcGc@._V1_.jpg"
+  type: movie
+  genre: Thriller, Drama
+
+- title: Friend Zone
+  year: 2019
+  director: Chayanop Boonprakob
+  poster: "https://m.media-amazon.com/images/M/MV5BOTU1NWIzOGQtYjc5YS00MmU1LTlmNDQtMTA1MzUwZTAwYzlkXkEyXkFqcGc@._V1_.jpg"
+  type: movie
+  genre: Romance, Comedy
+
+- title: OMG! Oh My Girl
+  year: 2022
+  director: Poj Arnon
+  poster: "https://m.media-amazon.com/images/M/MV5BN2VhMGE2YmUtNmZjYi00NjM3LTkzZDYtYjc2YjI0OTM1ODRkXkEyXkFqcGc@._V1_.jpg"
+  type: movie
+  genre: Comedy
+  ranking: 2
+  leaderboard_genre: Drama
+  comment: Me fr
+
+- title: More than Blue
+  year: 2018
+  director: Gavin Lin
+  poster: "https://upload.wikimedia.org/wikipedia/en/a/af/More_Than_Blue%2C_2018_Poster.jpg"
+  type: movie
+  genre: Romance, Drama
+  ranking: 1
+  leaderboard_genre: Drama
+
+- title: Shang-Chi and the Legend of the Ten Rings
+  year: 2021
+  director: Destin Daniel Cretton
+  poster: "https://image.tmdb.org/t/p/w780/1BIoJGKbXjdFDAqUEiA2VHqkK1Z.jpg"
+  type: movie
+  genre: Action, Adventure
+  ranking: 2
+  leaderboard_genre: Action
+
+- title: "Ben 10: Secret of the Omnitrix"
+  year: 2007
+  director: Sebastian Montes
+  poster: "https://m.media-amazon.com/images/M/MV5BYTQxZTdhMmQtOTNiMS00ZjNmLThkNjktZDA0NzVjNDNjMDY5XkEyXkFqcGc@._V1_.jpg"
+  type: movie
+  genre: Animation, Action
+
+- title: "Ben 10: Race Against Time"
+  year: 2007
+  director: Alex Winter
+  poster: "https://m.media-amazon.com/images/M/MV5BZmJiZTdkNTItNjVkOC00NTViLWJhMjQtNWNmODUyY2E2ZTZiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  type: movie
+  genre: Action, Adventure
+
+- title: "Ben 10: Alien Swarm"
+  year: 2009
+  director: Alex Winter
+  poster: "https://upload.wikimedia.org/wikipedia/en/c/cf/Ben_10_Alien_Swarm_poster.jpg"
+  type: movie
+  genre: Action, Adventure
+
+- title: "Ben 10: Destroy All Aliens"
+  year: 2012
+  director: Victor Cook
+  poster: "https://a.ltrbxd.com/resized/film-poster/7/9/8/2/3/79823-ben-10-destroy-all-aliens-0-230-0-345-crop.jpg?v=73e432f9b6"
+  type: movie
+  genre: Animation, Action
+
+- title: The Killing Fields
+  year: 1984
+  director: Roland Joffé
+  poster: "https://m.media-amazon.com/images/M/MV5BYWFiNThiZjUtMzMxZS00MmY5LWE3NzYtYjU5NjAwOTEwZGMyXkEyXkFqcGc@._V1_.jpg"
+  type: "movie"
+
+- title: Troy Fall of a City
+
+- title: Love Destiny
+
+- title: Through my window 1
+
+- title: Through my window 2
+
+- title: Through my window 3
+
+- title: John Wick 1
+
+- title: John Wick 2
+
+- title: John Wick 3
+
+- title: John Wick 4
+
+- marriage story
+- kungfu panda 1-4
+
+- title: Jan dara beginning
+
+- title: jan dara finale
+
+  Knock Knock 2015
+
+-Prisoners
+
+- the platform
+- the platform 2
+- the king's affection
+- monsters dahmer
+- monsters menendez vbrother
+- five feets ap[art
+- gone girl
+- Manchester by the Sea
+- Spiderman vs superman
+
+
