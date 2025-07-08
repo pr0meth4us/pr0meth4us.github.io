@@ -13,7 +13,7 @@ layout: default
     <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-500">
         <div class="flex items-center gap-2">
             <span class="w-3 h-3 bg-blue-500 rounded-full"></span>
-            <span>{{ site.data.movies.size }} Titles Watched</span>
+            <span>{{ site.data.watchlog | size }} Titles Watched</span>
         </div>
         <div class="flex items-center gap-2">
             <span class="w-3 h-3 bg-green-500 rounded-full"></span>
@@ -44,7 +44,7 @@ layout: default
     </div>
 
     <!-- Leaderboard Content -->
-    <div id="leaderboard-content" class="tab-content">
+    <div id="leaderboard-content" class="tab-content hidden">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <!-- Movies Leaderboard -->
             <div>
@@ -52,7 +52,10 @@ layout: default
                     🎬 Top Movies by Genre
                 </h2>
 
-                {% assign movie_genres = site.data.leaderboard.movies | group_by: 'genre' %}
+                {% assign movies_with_leaderboard = site.data.watchlog
+                | where: "type", "movie"
+                | where_exp: "item", "item.leaderboard_genre != nil" %}
+                {% assign movie_genres = movies_with_leaderboard | group_by: 'leaderboard_genre' %}
                 {% for genre_group in movie_genres %}
                 <div class="mb-10">
                     <h3 class="text-xl font-semibold text-gray-800 mb-4 capitalize flex items-center gap-2">
@@ -60,27 +63,32 @@ layout: default
                         {{ genre_group.name }}
                     </h3>
                     <div class="space-y-4">
-                        {% for movie in genre_group.items limit:3 %}
+                        {% assign sorted_movies = genre_group.items | sort: 'ranking' %}
+                        {% for movie in sorted_movies limit:3 %}
                         <div class="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300">
                             <div class="flex items-start gap-4">
                                 <div class="flex-shrink-0 relative">
                                     <img src="{{ movie.poster }}" alt="{{ movie.title }}" class="w-16 h-24 object-cover rounded-lg">
                                     <div class="absolute -top-2 -right-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs font-bold px-2 py-1 rounded-full shadow-lg">
-                                        #{{ forloop.index }}
+                                        #{{ movie.ranking | default: forloop.index }}
                                     </div>
                                 </div>
                                 <div class="flex-1">
                                     <h4 class="font-bold text-gray-900 mb-1">{{ movie.title }}</h4>
                                     <p class="text-sm text-gray-600 mb-2">{{ movie.director }} • {{ movie.year }}</p>
                                     <div class="flex items-center gap-2 mb-2">
+                                        {% if movie.rating %}
                                         <div class="flex items-center gap-1">
                                             <span class="text-yellow-500">⭐</span>
                                             <span class="text-sm font-medium">{{ movie.rating }}</span>
                                         </div>
                                         <span class="text-gray-300">•</span>
+                                        {% endif %}
                                         <span class="text-xs bg-red-500/20 text-red-700 px-2 py-1 rounded-full">{{ movie.genre }}</span>
                                     </div>
+                                    {% if movie.comment %}
                                     <p class="text-sm text-gray-600 line-clamp-2">{{ movie.comment }}</p>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
@@ -96,7 +104,10 @@ layout: default
                     📺 Top Series by Genre
                 </h2>
 
-                {% assign series_genres = site.data.leaderboard.series | group_by: 'genre' %}
+                {% assign series_with_leaderboard = site.data.watchlog
+                | where: "type", "series"
+                | where_exp: "item", "item.leaderboard_genre != nil" %}
+                {% assign series_genres = series_with_leaderboard | group_by: 'leaderboard_genre' %}
                 {% for genre_group in series_genres %}
                 <div class="mb-10">
                     <h3 class="text-xl font-semibold text-gray-800 mb-4 capitalize flex items-center gap-2">
@@ -104,27 +115,32 @@ layout: default
                         {{ genre_group.name }}
                     </h3>
                     <div class="space-y-4">
-                        {% for series in genre_group.items limit:3 %}
+                        {% assign sorted_series = genre_group.items | sort: 'ranking' %}
+                        {% for series in sorted_series limit:3 %}
                         <div class="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300">
                             <div class="flex items-start gap-4">
                                 <div class="flex-shrink-0 relative">
                                     <img src="{{ series.poster }}" alt="{{ series.title }}" class="w-16 h-24 object-cover rounded-lg">
                                     <div class="absolute -top-2 -right-2 bg-gradient-to-r from-blue-400 to-purple-500 text-white text-xs font-bold px-2 py-1 rounded-full shadow-lg">
-                                        #{{ forloop.index }}
+                                        #{{ series.ranking | default: forloop.index }}
                                     </div>
                                 </div>
                                 <div class="flex-1">
                                     <h4 class="font-bold text-gray-900 mb-1">{{ series.title }}</h4>
-                                    <p class="text-sm text-gray-600 mb-2">{{ series.creator }} • {{ series.year }}</p>
+                                    <p class="text-sm text-gray-600 mb-2">{{ series.creator | default: series.director }} • {{ series.year }}</p>
                                     <div class="flex items-center gap-2 mb-2">
+                                        {% if series.rating %}
                                         <div class="flex items-center gap-1">
                                             <span class="text-yellow-500">⭐</span>
                                             <span class="text-sm font-medium">{{ series.rating }}</span>
                                         </div>
                                         <span class="text-gray-300">•</span>
+                                        {% endif %}
                                         <span class="text-xs bg-blue-500/20 text-blue-700 px-2 py-1 rounded-full">{{ series.genre }}</span>
                                     </div>
+                                    {% if series.comment %}
                                     <p class="text-sm text-gray-600 line-clamp-2">{{ series.comment }}</p>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
@@ -137,13 +153,19 @@ layout: default
     </div>
 
     <!-- Full Collection Content -->
-    <div id="collection-content" class="tab-content hidden">
+    <div id="collection-content" class="tab-content">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {% for item in site.data.movies %}
+            {% for item in site.data.watchlog %}
             <div class="group relative">
                 <div class="bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:scale-105 hover:rotate-1 border border-white/20">
                     <div class="relative overflow-hidden">
+                        {% if item.poster %}
                         <img src="{{ item.poster }}" alt="Poster for {{ item.title }}" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+                        {% else %}
+                        <div class="w-full h-80 bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
+                            <span class="text-gray-600 text-lg">{{ item.title }}</span>
+                        </div>
+                        {% endif %}
                         <div class="absolute top-4 left-4">
                             {% if item.type == 'series' %}
                             <span class="bg-blue-500/90 text-white px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm">📺 SERIES</span>
@@ -151,25 +173,36 @@ layout: default
                             <span class="bg-red-500/90 text-white px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm">🎬 FILM</span>
                             {% endif %}
                         </div>
+                        {% if item.year %}
                         <div class="absolute top-4 right-4 bg-black/80 text-white px-3 py-1 rounded-full text-sm font-medium backdrop-blur-sm">{{ item.year }}</div>
+                        {% endif %}
                         {% if item.rating %}
                         <div class="absolute top-16 left-4 bg-yellow-400 text-black px-2 py-1 rounded-lg text-small font-bold">⭐ {{ item.rating }}</div>
                         {% endif %}
                         <!-- Hover Overlay -->
                         <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                            <div class="p-6 text-white"><p class="text-sm leading-relaxed">{{ item.comment }}</p></div>
+                            <div class="p-6 text-white">
+                                {% if item.comment %}
+                                <p class="text-sm leading-relaxed">{{ item.comment }}</p>
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
                     <div class="p-6">
                         <h3 class="font-bold text-lg text-gray-800 truncate line-clamp-2 group-hover:text-purple-300 transition-colors">{{ item.title }}</h3>
                         <div class="flex items-center justify-between">
-                            {% if item.type == 'series' %}<span class="text-gray-500 text-sm">{{ item.creator | default: item.director }}</span>{% else %}<span class="text-gray-500 text-sm">{{ item.director }}</span>{% endif %}
-                            {% if item.type == 'series' and item.status %}
+                            {% if item.type == 'series' %}
+                            <span class="text-gray-500 text-sm">{{ item.creator | default: item.director }}</span>
+                            {% else %}
+                            <span class="text-gray-500 text-sm">{{ item.director }}</span>
+                            {% endif %}
+                            {% if item.status %}
                             <span class="text-xs px-2 py-1 rounded
                 {% if item.status == 'watching'   %}bg-green-500/20 text-green-300
                 {% elsif item.status == 'completed' %}bg-blue-500/20 text-blue-300
+                {% elsif item.status == 'rewatched' %}bg-purple-500/20 text-purple-300
                 {% elsif item.status == 'on-hold'   %}bg-yellow-500/20 text-yellow-300
-                {% elsif item.status == 'dropped'   %}bg-red-500/20   text-red-300
+                {% elsif item.status contains 'dropped' %}bg-red-500/20   text-red-300
                 {% else %}bg-gray-500/20 text-gray-300{% endif %}">
                 {{ item.status | capitalize }}
               </span>
@@ -178,7 +211,7 @@ layout: default
                         <div class="flex items-center justify-between mt-4 pt-4 border-t border-white/10">
                             <div class="flex items-center gap-2 text-xs text-gray-400">
                                 {% if item.type == 'series' %}<span>📺</span>{% else %}<span>🎬</span>{% endif %}
-                                <span>{{ item.year }}</span>
+                                {% if item.year %}<span>{{ item.year }}</span>{% endif %}
                             </div>
                             {% if item.genre %}
                             <div class="flex items-center gap-2 text-xs text-gray-400">
@@ -207,7 +240,6 @@ layout: default
     </div>
 </div>
 
-<!-- JavaScript for Tab Functionality -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const leaderboardTab = document.getElementById('leaderboard-tab');
@@ -215,8 +247,9 @@ layout: default
         const leaderboardContent = document.getElementById('leaderboard-content');
         const collectionContent = document.getElementById('collection-content');
 
-        leaderboardTab.classList.add('bg-white', 'text-purple-600', 'shadow-lg');
-        collectionTab.classList.add('hover:bg-white/50');
+        // Set collection tab as default active
+        collectionTab.classList.add('bg-white', 'text-purple-600', 'shadow-lg');
+        leaderboardTab.classList.add('hover:bg-white/50');
 
         function switchTab(activeTab, inactiveTab, activeContent, inactiveContent) {
             activeTab.classList.add('bg-white', 'text-purple-600', 'shadow-lg');
