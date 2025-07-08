@@ -5,6 +5,7 @@
   type: series
   genre: Drama
   status: completed
+  country: USA
   ranking: 1
   leaderboard_genre: Drama
 
@@ -15,6 +16,7 @@
   type: series
   genre: Sci-Fi
   status: completed
+  country: Germany
   ranking: 1
   leaderboard_genre: Sci-Fi
 
@@ -25,6 +27,7 @@
   type: series
   genre: Comedy
   status: completed
+  country: UK
 
 - title: Young Sheldon
   year: 2017
@@ -33,6 +36,7 @@
   type: series
   genre: Comedy
   status: completed
+  country: USA
 
 - title: Roman Empire
   year: 2016
@@ -41,6 +45,7 @@
   type: series
   genre: Docudrama
   status: completed
+  country: Canada/USA
 
 - title: Marco Polo
   year: 2014
@@ -49,6 +54,7 @@
   type: series
   genre: Historical Drama
   status: completed
+  country: USA
   ranking: 3
   leaderboard_genre: Historical Drama
 
@@ -59,6 +65,7 @@
   type: series
   genre: Historical Drama
   status: completed
+  country: Ireland/Canada/USA
 
 - title: Nevertheless
   year: 2021
@@ -67,6 +74,7 @@
   type: series
   genre: Romance
   status: completed
+  country: South Korea
   ranking: 1
   leaderboard_genre: Romance
 
@@ -77,6 +85,7 @@
   type: series
   genre: Thriller
   status: completed
+  country: South Korea
 
 - title: All of Us Are Dead
   year: 2022
@@ -85,6 +94,7 @@
   type: series
   genre: Horror
   status: completed
+  country: South Korea
 
 - title: Kingdom
   year: 2019
@@ -93,6 +103,7 @@
   type: series
   genre: Horror
   status: completed
+  country: South Korea
 
 - title: Narcos
   year: 2015
@@ -101,6 +112,7 @@
   type: series
   genre: Crime
   status: completed
+  country: USA/Colombia
   ranking: 2
   leaderboard_genre: Crime
 
@@ -111,6 +123,7 @@
   type: series
   genre: Mockumentary
   status: completed
+  country: UK
 
 - title: Breaking Bad
   year: 2008
@@ -119,6 +132,7 @@
   type: series
   genre: Crime
   status: completed
+  country: USA
   ranking: 1
   leaderboard_genre: Crime
 
@@ -129,6 +143,7 @@
   type: series
   genre: Mystery
   status: completed
+  country: USA
   ranking: 1
   leaderboard_genre: Mystery
 
@@ -139,6 +154,7 @@
   type: series
   genre: Action, Sci-Fi
   status: completed
+  country: USA
   ranking: 2
   leaderboard_genre: Sci-Fi
 
@@ -149,6 +165,7 @@
   type: series
   genre: Drama
   status: completed
+  country: USA
 
 - title: Outer Banks
   year: 2020
@@ -157,6 +174,7 @@
   type: series
   genre: Adventure, Drama
   status: completed
+  country: USA
 
 - title: 13 Reasons Why
   year: 2017
@@ -165,6 +183,7 @@
   type: series
   genre: Drama, Mystery
   status: dropped ss3
+  country: USA
 
 - title: Riverdale
   year: 2017
@@ -173,6 +192,7 @@
   type: series
   genre: Drama, Mystery
   status: dropped ss3
+  country: USA
 
 - title: One of Us Is Lying
   year: 2021
@@ -181,6 +201,7 @@
   type: series
   genre: Mystery, Drama
   status: completed
+  country: USA
 
 - title: Ben 10
   year: 2005
@@ -189,6 +210,7 @@
   type: series
   genre: Animation, Action
   status: completed
+  country: USA
   ranking: 1
   leaderboard_genre: Animation
 
@@ -199,6 +221,7 @@
   type: series
   genre: Animation, Action
   status: completed
+  country: USA
 
 - title: "Ben 10: Ultimate Alien"
   year: 2010
@@ -207,6 +230,7 @@
   type: series
   genre: Animation, Action
   status: completed
+  country: USA
 
 - title: Looking for Alaska
   creator: Josh Schwartz
@@ -216,6 +240,7 @@
   type: series
   poster: "https://m.media-amazon.com/images/M/MV5BYTQ3ZDRjMmYtYWIwNi00N2IyLTg1YWUtMTZiY2ZiOGMxZGMzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
   comment: "A beautiful adaptation of John Green's novel. Captures the intensity of first love and the pain of loss with remarkable authenticity."
+  country: USA
   ranking: 2
   leaderboard_genre: Drama
 
@@ -226,6 +251,7 @@
   type: series
   genre: Historical Drama, Romance
   status: completed
+  country: South Korea
   ranking: 2
   leaderboard_genre: Romance
 
@@ -235,6 +261,7 @@
   poster: "https://a.ltrbxd.com/resized/film-poster/9/6/6/9/9/0/966990-anyone-but-you-0-230-0-345-crop.jpg?v=62514c5b09"
   type: movie
   genre: Romance, Comedy
+  country: USA/Australia
 
 - title: Ninja Assassin
   year: 2009
@@ -242,6 +269,7 @@
   poster: "https://m.media-amazon.com/images/M/MV5BMTcxNDYzMjU1Ml5BMl5BanBnXkFtZTcwMTYzOTM3Mg@@._V1_.jpg"
   type: movie
   genre: Action, Thriller
+  country: Germany/USA
   ranking: 1
   leaderboard_genre: Action
 
@@ -252,6 +280,7 @@
   type: series
   genre: Historical Drama
   status: completed
+  country: USA
   ranking: 4
   leaderboard_genre: Historical Drama
 
@@ -262,6 +291,7 @@
   type: series
   genre: Docudrama
   status: to-watch
+  country: Canada/USA
 
 - title: "Rise of Empires: Ottoman"
   year: 2020
@@ -270,6 +300,7 @@
   type: series
   genre: Docudrama
   status: to-watch
+  country: Turkey
 
 - title: Queen Cleopatra
   year: 2023
@@ -278,6 +309,7 @@
   type: series
   genre: Docudrama
   status: to-watch
+  country: UK
 
 - title: "Rurouni Kenshin: The Final"
   year: 2021
@@ -285,6 +317,7 @@
   poster: "https://a.ltrbxd.com/resized/film-poster/5/2/9/3/7/3/529373-rurouni-kenshin-the-final-0-230-0-345-crop.jpg?v=aa93bd06ab"
   type: movie
   genre: Action, Historical
+  country: Japan
 
 - title: "Rurouni Kenshin: The Beginning"
   year: 2021
@@ -292,6 +325,7 @@
   poster: "https://occ-0-43-999.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABcwqWDEYmqJmeGeLlRL3xZ_fsFXPX2EpVH3r1WE8YXiQomSttAPOnDgM8YHUnUS4USC7JzvA4rDRt9rcAnI2GO0cWqIdS3DS8hp4waLuih3RNh031wPsa_XGrXfWw2JanzizKA.jpg?r=af8"
   type: movie
   genre: Action, Historical
+  country: Japan
 
 - title: Barbarians
   year: 2020
@@ -299,6 +333,7 @@
   poster: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS3P_rxa0mTiHd6FMUHk-mqCuTYcvtQdxhLNvudo8V2yDa0CsOrTOtG9gHPeG2mx-AQ_oG_"
   type: movie
   genre: Drama
+  country: Germany
 
 - title: The Outsider
   year: 2018
@@ -306,6 +341,7 @@
   poster: "https://i0.wp.com/teaser-trailer.com/wp-content/uploads/2018/03/Jared-Leto-The-Outsider.jpg?ssl=1"
   type: movie
   genre: Crime, Drama
+  country: USA/Japan
 
 - title: Better Call Saul
   year: 2015
@@ -314,6 +350,7 @@
   type: series
   genre: Crime, Drama
   status: completed
+  country: USA
   ranking: 3
   leaderboard_genre: Drama
 
@@ -323,6 +360,7 @@
   poster: "https://image.tmdb.org/t/p/w780/ePXuKdXZuJx8hHMNr2yM4jY2L7Z.jpg"
   type: movie
   genre: Crime, Drama
+  country: USA
 
 - title: 100 Eyes
   year: 2015
@@ -332,6 +370,7 @@
   genre: Historical Drama
   status: to-watch
   comment: Marco Polo spin-off
+  country: USA
 
 - title: Interstellar
   year: 2014
@@ -339,6 +378,7 @@
   poster: "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg"
   type: movie
   genre: Sci-Fi, Drama, Adventure
+  country: USA/UK
   ranking: 1
   rating: 9.8
   comment: "A masterpiece of visual storytelling and emotional depth. Nolan's exploration of time, love, and sacrifice through the lens of space travel is simply breathtaking."
@@ -352,6 +392,7 @@
   ranking: 2
   leaderboard_genre: Historical Drama
   type: series
+  country: South Korea
 
 - title: Doctor Strange in the Multiverse of Madness
   year: 2022
@@ -359,6 +400,7 @@
   poster: "https://image.tmdb.org/t/p/w500/9Gtg2DzBhmYamXBS1hKAhiwbBKS.jpg"
   type: movie
   genre: Sci-Fi, Action, Adventure
+  country: USA
   ranking: 2
   rating: 9.5
   comment: "The #1 sci-fi film that perfectly blends horror elements with multiverse storytelling. Raimi's direction brings a unique dark tone to the MCU with spectacular visuals."
@@ -370,6 +412,7 @@
   poster: "https://image.tmdb.org/t/p/w780/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg"
   type: movie
   genre: Biographical Drama
+  country: USA/UK
   ranking: 1
   leaderboard_genre: Biographical Drama
 
@@ -379,6 +422,7 @@
   poster: "https://image.tmdb.org/t/p/w780/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg"
   type: movie
   genre: Thriller
+  country: South Korea
   ranking: 1
   leaderboard_genre: Thriller
 
@@ -388,6 +432,7 @@
   poster: "https://m.media-amazon.com/images/M/MV5BNzA1Njg4NzYxOV5BMl5BanBnXkFtZTgwODk5NjU3MzI@._V1_FMjpg_UX1000_.jpg"
   type: movie
   genre: Sci-Fi
+  country: USA/UK
 
 - title: Spirited Away
   year: 2001
@@ -395,6 +440,7 @@
   poster: "https://m.media-amazon.com/images/M/MV5BNTEyNmEwOWUtYzkyOC00ZTQ4LTllZmUtMjk0Y2YwOGUzYjRiXkEyXkFqcGc@._V1_.jpg"
   type: movie
   genre: Animation
+  country: Japan
 
 - title: The Concubine
   year: 2012
@@ -402,6 +448,7 @@
   poster: "https://upload.wikimedia.org/wikipedia/en/b/b9/The_Concubine-poster.jpg"
   type: movie
   genre: Historical Drama
+  country: South Korea
 
 - title: (500) Days of Summer
   year: 2009
@@ -409,6 +456,7 @@
   poster: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p193428_p_v8_bb.jpg"
   type: movie
   genre: Rom-Com
+  country: USA
 
 - title: Fifty Shades of Grey
   year: 2015
@@ -416,6 +464,7 @@
   poster: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTPdMwnT7ZRQlu9R6lv_wMuAU1i6z8aiEp2Cg7tL1SIcsiKUTgq9PI_k6TW9uRsLUzufjvZ"
   type: movie
   genre: Erotic Romance
+  country: USA
 
 - title: Fifty Shades Darker
   year: 2017
@@ -423,6 +472,7 @@
   poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAdYO663RDs93AC-aB-ooCfqJKrzK3AM3sbBsaIWPNJ4ZIb4HlWu6b-21qHqnQVHI4645MSg"
   type: movie
   genre: Erotic Romance
+  country: USA
 
 - title: Fifty Shades Freed
   year: 2018
@@ -430,6 +480,7 @@
   poster: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQelgQYtjUJP-pubNu3btdXHDYDkO4exOmxZMg1n17LRU6Uu3CXdvD8CyMb-f6bcGPzqAOR"
   type: movie
   genre: Erotic Romance
+  country: USA
 
 - title: First They Killed My Father
   year: 2017
@@ -437,6 +488,7 @@
   poster: "https://upload.wikimedia.org/wikipedia/en/e/eb/First_They_Killed_My_Father.png"
   type: movie
   genre: Biographical Drama
+  country: Cambodia/USA
   ranking: 2
   leaderboard_genre: Biographical Drama
 
@@ -446,6 +498,7 @@
   poster: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTwJPOxfRiaHwXkICnf6LKMHIPWJPGLx8wht-wZH-qFs0OXXUCBvOeCQTs79z7Bx9odsdsB"
   type: movie
   genre: Sci-Fi
+  country: USA
 
 - title: "Avatar: The Way of Water"
   year: 2022
@@ -453,6 +506,7 @@
   poster: "https://image.tmdb.org/t/p/w780/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg"
   type: movie
   genre: Sci-Fi
+  country: USA
 
 - title: How to Make Millions Before Grandma Dies
   year: 2024
@@ -460,6 +514,7 @@
   poster: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQKyqfD178lxNPBoeOSuP-5YE8hau56xsz437vru63ee_QGQgEkOPUH-7gUMVJCK6cute4LQg"
   type: movie
   genre: Drama
+  country: Thailand
 
 - title: The Avengers
   year: 2012
@@ -467,6 +522,7 @@
   poster: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQluFl3GfQDXohBaH-xG3GuRi8T4MDIQPRpCqUGLiE5tXdXbUO0hRFwnshvzg07igEgGg7i"
   type: movie
   genre: Action, Adventure
+  country: USA
 
 - title: "Avengers: Age of Ultron"
   year: 2015
@@ -474,6 +530,7 @@
   poster: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT5HI3nlN9yhLTTOn8qXJzXK6sLnW5PrLKXohQO6UY27lz7IYLQsR70-yrN8XZe1LfyVo1X"
   type: movie
   genre: Action, Sci-Fi
+  country: USA
 
 - title: "Avengers: Infinity War"
   year: 2018
@@ -481,6 +538,7 @@
   poster: "https://image.tmdb.org/t/p/w780/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg"
   type: movie
   genre: Action, Adventure
+  country: USA
 
 - title: "Avengers: Endgame"
   year: 2019
@@ -488,6 +546,7 @@
   poster: "https://image.tmdb.org/t/p/w780/or06FN3Dka5tukK1e9sl16pB3iy.jpg"
   type: movie
   genre: Action, Adventure
+  country: USA
 
 - title: Guardians of the Galaxy
   year: 2014
@@ -495,6 +554,7 @@
   poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5LmvEQ3u221y-8Qv0Qj-e7ORLVYZoq1Y-CyRSIi0WvFIvtNTcvICk-cG0YErJxw7PqeJ3"
   type: movie
   genre: Action, Adventure
+  country: USA
 
 - title: Guardians of the Galaxy Vol. 2
   year: 2017
@@ -502,6 +562,7 @@
   poster: "https://image.tmdb.org/t/p/w780/y4MBh0EjBlMuOzv9axM4qJlmhzz.jpg"
   type: movie
   genre: Action, Adventure
+  country: USA
 
 - title: "Spider-Man: No Way Home"
   year: 2021
@@ -509,6 +570,7 @@
   poster: "https://image.tmdb.org/t/p/w780/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg"
   type: movie
   genre: Action, Adventure
+  country: USA
 
 - title: Iron Man
   year: 2008
@@ -516,6 +578,7 @@
   poster: "https://image.tmdb.org/t/p/w780/78lPtwv72eTNqFW9COBYI0dWDJa.jpg"
   type: movie
   genre: Action, Sci-Fi
+  country: USA
 
 - title: Iron Man 2
   year: 2010
@@ -523,6 +586,7 @@
   poster: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRNSgb153S-3anJ2qS48rn9mZJV84J6ARiy35P7TvU-wPyhsRoADI0ri_5dfW0h8b87NX7HHg"
   type: movie
   genre: Action, Sci-Fi
+  country: USA
 
 - title: Iron Man 3
   year: 2013
@@ -530,6 +594,7 @@
   poster: "https://image.tmdb.org/t/p/w780/qhPtAc1TKbMPqNvcdXSOn9Bn7hZ.jpg"
   type: movie
   genre: Action, Sci-Fi
+  country: USA
 
 - title: "Captain America: The First Avenger"
   year: 2011
@@ -537,6 +602,7 @@
   poster: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR_Zvkfg2WDajJvlev56lJrq92UWj_qMOEdjDDqhIUSc-jh94KvDlFmjabhmg3-gTpjs8xRXg"
   type: movie
   genre: Action, Adventure
+  country: USA
 
 - title: "Captain America: The Winter Soldier"
   year: 2014
@@ -544,6 +610,7 @@
   poster: "https://image.tmdb.org/t/p/w780/tVxDe01Zy3kZqaZRNiXFGDICdZk.jpg"
   type: movie
   genre: Action, Thriller
+  country: USA
 
 - title: "Captain America: Civil War"
   year: 2016
@@ -551,6 +618,7 @@
   poster: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT4deWCcW67wZf2oL9_myl-cFgUBzVTcAYfDFONt635m_SHofnGV8veGVQ6U1-Izuf_h4PB_w"
   type: movie
   genre: Action, Adventure
+  country: USA
 
 - title: Black Widow
   year: 2021
@@ -558,6 +626,7 @@
   poster: "https://image.tmdb.org/t/p/w780/qAZ0pzat24kLdO3o8ejmbLxyOac.jpg"
   type: movie
   genre: Action, Thriller
+  country: USA
 
 - title: Thor
   year: 2011
@@ -565,6 +634,7 @@
   poster: "https://m.media-amazon.com/images/M/MV5BNjRhNGZjZjEtYTQzYS00OWUxLThjNGEtMTIwMTE2ZDFlZTZkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
   type: movie
   genre: Action, Fantasy
+  country: USA
 
 - title: "Thor: The Dark World"
   year: 2013
@@ -572,6 +642,7 @@
   poster: "https://i.redd.it/vhc3yc0ps1z91.jpg"
   type: movie
   genre: Action, Fantasy
+  country: USA
 
 - title: "Thor: Ragnarok"
   year: 2017
@@ -579,6 +650,7 @@
   poster: "https://image.tmdb.org/t/p/w780/kaIfm5ryEOwYg8mLbq8HkPuM1Fo.jpg"
   type: movie
   genre: Action, Adventure
+  country: USA
 
 - title: "Thor: Love and Thunder"
   year: 2022
@@ -586,6 +658,7 @@
   poster: "https://image.tmdb.org/t/p/w780/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg"
   type: movie
   genre: Action, Fantasy
+  country: USA
 
 - title: Final Destination
   year: 2000
@@ -593,6 +666,7 @@
   poster: "https://m.media-amazon.com/images/M/MV5BMjE1MjlmOWYtYzdjMS00OTgwLThjMDctZWU4N2FkZjgyNTJiXkEyXkFqcGc@._V1_.jpg"
   type: movie
   genre: Horror
+  country: USA
 
 - title: Final Destination 2
   year: 2003
@@ -600,6 +674,7 @@
   poster: "https://m.media-amazon.com/images/M/MV5BMjExMTMyODAzN15BMl5BanBnXkFtZTYwNjc5NDQ3._V1_FMjpg_UX1000_.jpg"
   type: movie
   genre: Horror
+  country: USA
 
 - title: Final Destination 3
   year: 2006
@@ -607,6 +682,7 @@
   poster: "https://upload.wikimedia.org/wikipedia/en/b/b2/Final_Destination_3.jpg"
   type: movie
   genre: Horror
+  country: USA
 
 - title: The Final Destination
   year: 2009
@@ -614,6 +690,7 @@
   poster: "https://upload.wikimedia.org/wikipedia/en/9/99/Final_destination_09.jpg"
   type: movie
   genre: Horror
+  country: USA
 
 - title: Final Destination 5
   year: 2011
@@ -621,6 +698,7 @@
   poster: "https://upload.wikimedia.org/wikipedia/en/a/a0/FD5_poster.jpg"
   type: movie
   genre: Horror
+  country: USA
 
 - title: "Final Destination: Bloodlines"
   year: 2025
@@ -628,6 +706,7 @@
   poster: "https://i0.wp.com/aftercredits.com/wp-content/uploads/2025/05/FinalDestinationBloodlinesPoster.jpg?resize=280%2C350&ssl=1"
   type: movie
   genre: Supernatural Horror
+  country: USA
 
 - title: X-Men
   year: 2000
@@ -635,6 +714,7 @@
   poster: "https://m.media-amazon.com/images/M/MV5BNzNjZjQwOTAtNWQ3NC00MmJlLThlZDEtZmUyMWQ3NmE4Y2Y5XkEyXkFqcGc@._V1_.jpg"
   type: movie
   genre: Action, Fantasy
+  country: USA
 
 - title: "X2: X-Men United"
   year: 2003
@@ -642,6 +722,7 @@
   poster: "https://m.media-amazon.com/images/M/MV5BNDk0NjYxMzIzOF5BMl5BanBnXkFtZTYwMTc1MjU3._V1_.jpg"
   type: movie
   genre: Action, Fantasy
+  country: USA
 
 - title: "X-Men: The Last Stand"
   year: 2006
@@ -649,6 +730,7 @@
   poster: "https://m.media-amazon.com/images/M/MV5BMThmOWE3OWEtODJmNC00ZDEzLTk4MWUtNzEzM2RiNmJiZmU3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
   type: movie
   genre: Action, Fantasy
+  country: USA/UK
 
 - title: "X-Men Origins: Wolverine"
   year: 2009
@@ -656,6 +738,7 @@
   poster: "https://m.media-amazon.com/images/M/MV5BZjQwOGEzNjUtNDgwYS00NzUzLWJhZjAtNmFlNzY2YTQyOTllXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
   type: movie
   genre: Action, Adventure
+  country: USA
 
 - title: "X-Men: First Class"
   year: 2011
@@ -663,6 +746,7 @@
   poster: "https://m.media-amazon.com/images/M/MV5BMTg5OTMxNzk4Nl5BMl5BanBnXkFtZTcwOTk1MjAwNQ@@._V1_.jpg"
   type: movie
   genre: Action, Fantasy
+  country: USA/UK
 
 - title: The Wolverine
   year: 2013
@@ -670,6 +754,7 @@
   poster: "https://m.media-amazon.com/images/M/MV5BNzg1MDQxMTQ2OF5BMl5BanBnXkFtZTcwMTk3MjAzOQ@@._V1_.jpg"
   type: movie
   genre: Action, Adventure
+  country: USA
 
 - title: "X-Men: Days of Future Past"
   year: 2014
@@ -677,6 +762,7 @@
   poster: "https://chrisreedfilm.com/wp-content/uploads/2014/05/xmen_days_of_future_past_ver7.jpg"
   type: movie
   genre: Action, Sci-Fi
+  country: USA/UK
 
 - title: "X-Men: Apocalypse"
   year: 2016
@@ -684,6 +770,7 @@
   poster: "https://www.deepfocusreview.com/wp-content/uploads/2016/12/x-men_7.jpg"
   type: movie
   genre: Action, Adventure
+  country: USA
 
 - title: Logan
   year: 2017
@@ -691,6 +778,7 @@
   poster: "https://upload.wikimedia.org/wikipedia/en/3/37/Logan_2017_poster.jpg"
   type: movie
   genre: Action, Drama
+  country: USA
 
 - title: Dark Phoenix
   year: 2019
@@ -698,6 +786,7 @@
   poster: "https://m.media-amazon.com/images/M/MV5BZjcwMDIyNjctMDVmNS00MzkyLTgxMDMtNTFmNTk0NDkyNzdjXkEyXkFqcGc@._V1_.jpg"
   type: movie
   genre: Action, Fantasy
+  country: USA
 
 - title: All Quiet on the Western Front
   year: 2022
@@ -705,6 +794,7 @@
   poster: "https://m.media-amazon.com/images/M/MV5BOWJiYWMyYTktZThhOS00ZjgxLWE0YTQtZDMyNTQxMjMyYjI2XkEyXkFqcGc@._V1_.jpg"
   type: movie
   genre: War Drama
+  country: Germany
 
 - title: The Truman Show
   year: 1998
@@ -712,6 +802,7 @@
   poster: "https://m.media-amazon.com/images/I/71zEnyA+49L.jpg"
   type: movie
   genre: Drama, Comedy
+  country: USA
 
 - title: The Conjuring
   year: 2013
@@ -719,6 +810,7 @@
   poster: "https://image.tmdb.org/t/p/w780/wVYREutTvI2tmxr6ujrHT704wGF.jpg"
   type: movie
   genre: Horror
+  country: USA
 
 - title: Annabelle
   year: 2014
@@ -726,6 +818,7 @@
   poster: "https://upload.wikimedia.org/wikipedia/en/9/90/Annabelle_film_poster.jpg"
   type: movie
   genre: Horror
+  country: USA
 
 - title: The Conjuring 2
   year: 2016
@@ -733,6 +826,7 @@
   poster: "https://image.tmdb.org/t/p/w780/zEqyD0SBt6HL7W9JQoWwtd5Do1T.jpg"
   type: movie
   genre: Horror
+  country: USA
 
 - title: "Annabelle: Creation"
   year: 2017
@@ -740,6 +834,7 @@
   poster: "https://m.media-amazon.com/images/M/MV5BMjA1MzIwMjMxNF5BMl5BanBnXkFtZTgwMDQ3NTc2MjI@._V1_.jpg"
   type: movie
   genre: Horror
+  country: USA
 
 - title: The Nun
   year: 2018
@@ -747,6 +842,7 @@
   poster: "https://image.tmdb.org/t/p/w780/sFC1ElvoKGdHJIWRpNB3xWJ9lJA.jpg"
   type: movie
   genre: Horror
+  country: USA
   ranking: 2
   leaderboard_genre: Horror
   comment: should be the model for all horror movies
@@ -757,6 +853,7 @@
   poster: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT7QqYGu16lDhP8A9vFRJ5Z7z3_T83WPWYBeEqlp3fs4jSj0499bmmaCOLYewcFtX1Eh4rx"
   type: movie
   genre: Horror
+  country: USA
 
 - title: Annabelle Comes Home
   year: 2019
@@ -764,6 +861,7 @@
   poster: "https://image.tmdb.org/t/p/w780/qWsHMrbg9DsBY3bCMk9jyYCRVRs.jpg"
   type: movie
   genre: Horror
+  country: USA
 
 - title: "The Conjuring: The Devil Made Me Do It"
   year: 2021
@@ -771,6 +869,7 @@
   poster: "https://m.media-amazon.com/images/M/MV5BNThkYWE3OGItNzAyNC00N2U4LThjY2QtMGQwYjZhYTI1MzMwXkEyXkFqcGc@._V1_.jpg"
   type: movie
   genre: Horror
+  country: USA
 
 - title: The Nun II
   year: 2023
@@ -778,6 +877,7 @@
   poster: "https://image.tmdb.org/t/p/w780/5gzzkR7y3hnY8AD1wXjCnVlHba5.jpg"
   type: movie
   genre: Horror
+  country: USA
 
 - title: Bad Genius
   year: 2017
@@ -785,6 +885,7 @@
   poster: "https://m.media-amazon.com/images/M/MV5BMjJhNTYxOGUtYWQxMS00YjYwLWFmMWItOWViN2QyZmZhNDM3XkEyXkFqcGc@._V1_.jpg"
   type: movie
   genre: Thriller, Drama
+  country: Thailand
 
 - title: Friend Zone
   year: 2019
@@ -792,6 +893,7 @@
   poster: "https://m.media-amazon.com/images/M/MV5BOTU1NWIzOGQtYjc5YS00MmU1LTlmNDQtMTA1MzUwZTAwYzlkXkEyXkFqcGc@._V1_.jpg"
   type: movie
   genre: Romance, Comedy
+  country: Thailand
 
 - title: OMG! Oh My Girl
   year: 2022
@@ -799,6 +901,7 @@
   poster: "https://m.media-amazon.com/images/M/MV5BN2VhMGE2YmUtNmZjYi00NjM3LTkzZDYtYjc2YjI0OTM1ODRkXkEyXkFqcGc@._V1_.jpg"
   type: movie
   genre: Comedy
+  country: Thailand
   ranking: 2
   leaderboard_genre: Drama
   comment: Me fr
@@ -809,6 +912,7 @@
   poster: "https://upload.wikimedia.org/wikipedia/en/a/af/More_Than_Blue%2C_2018_Poster.jpg"
   type: movie
   genre: Romance, Drama
+  country: Taiwan
   ranking: 1
   leaderboard_genre: Drama
 
@@ -818,6 +922,7 @@
   poster: "https://image.tmdb.org/t/p/w780/1BIoJGKbXjdFDAqUEiA2VHqkK1Z.jpg"
   type: movie
   genre: Action, Adventure
+  country: USA
   ranking: 2
   leaderboard_genre: Action
 
@@ -827,6 +932,7 @@
   poster: "https://m.media-amazon.com/images/M/MV5BYTQxZTdhMmQtOTNiMS00ZjNmLThkNjktZDA0NzVjNDNjMDY5XkEyXkFqcGc@._V1_.jpg"
   type: movie
   genre: Animation, Action
+  country: USA
 
 - title: "Ben 10: Race Against Time"
   year: 2007
@@ -834,6 +940,7 @@
   poster: "https://m.media-amazon.com/images/M/MV5BZmJiZTdkNTItNjVkOC00NTViLWJhMjQtNWNmODUyY2E2ZTZiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
   type: movie
   genre: Action, Adventure
+  country: USA
 
 - title: "Ben 10: Alien Swarm"
   year: 2009
@@ -841,6 +948,7 @@
   poster: "https://upload.wikimedia.org/wikipedia/en/c/cf/Ben_10_Alien_Swarm_poster.jpg"
   type: movie
   genre: Action, Adventure
+  country: USA
 
 - title: "Ben 10: Destroy All Aliens"
   year: 2012
@@ -848,12 +956,14 @@
   poster: "https://a.ltrbxd.com/resized/film-poster/7/9/8/2/3/79823-ben-10-destroy-all-aliens-0-230-0-345-crop.jpg?v=73e432f9b6"
   type: movie
   genre: Animation, Action
+  country: USA
 
 - title: The Killing Fields
   year: 1984
   director: Roland Joffé
   poster: "https://m.media-amazon.com/images/M/MV5BYWFiNThiZjUtMzMxZS00MmY5LWE3NzYtYjU5NjAwOTEwZGMyXkEyXkFqcGc@._V1_.jpg"
   type: movie
+  country: UK
 
 - title: "Troy: Fall of a City"
   type: series
@@ -862,6 +972,7 @@
   genre: Historical Drama
   status: completed
   poster: "https://m.media-amazon.com/images/M/MV5BYzAwYWI5YTMtNDQwMC00YTg5LThmMmUtYmNhY2RmNTYyMTE4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  country: UK/USA
 
 - title: Love Destiny
   type: series
@@ -870,6 +981,7 @@
   genre: Romance
   status: completed
   poster: "https://m.media-amazon.com/images/M/MV5BMzFiYTAwNGMtNGVkZS00ZDdkLWE2ZjctZDFhZTI4MTYzZTM0XkEyXkFqcGc@._V1_.jpg"
+  country: Thailand
 
 - title: Through My Window
   type: movie
@@ -878,6 +990,7 @@
   genre: Romance
   status: completed
   poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqm0PjP7yd0JI_UQ2j5tzD-qf1krTWGtrlDKhVGd4O7ximYIqyRRgmtWMP-injpdvgqFn8uA"
+  country: Spain
 
 - title: "Through My Window: Across the Sea"
   type: movie
@@ -886,6 +999,7 @@
   genre: Romance
   status: completed
   poster: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSOyPkyIPVjlyV6cIrsZzJrxux-soP9DOnrcUbarRlDMcUh9WlhGxEq3Dm_0BtjMLiwTDMMTw"
+  country: Spain
 
 - title: "Through My Window 3: Looking at You"
   type: movie
@@ -894,6 +1008,7 @@
   genre: Romance
   status: completed
   poster: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSK0QXI3Ai-04tNAVTlpyVBE4zwn2WwjljZl8Ooayrk5XVPv1ZXddwiKF3fXgrnKz8BTbkKXA"
+  country: Spain
 
 - title: John Wick
   type: movie
@@ -902,6 +1017,7 @@
   genre: Action
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/fZPSd91yGE9fCcCe6OoQr6E3Bev.jpg"
+  country: USA
 
 - title: "John Wick: Chapter 2"
   type: movie
@@ -910,6 +1026,7 @@
   genre: Action
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/hXWBc0ioZP3cN4zCu6SN3YHXZVO.jpg"
+  country: USA
 
 - title: "John Wick: Chapter 3 - Parabellum"
   type: movie
@@ -918,6 +1035,7 @@
   genre: Action
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/ziEuG1essDuWuC5lpWUaw1uXY2O.jpg"
+  country: USA
 
 - title: "John Wick: Chapter 4"
   type: movie
@@ -926,6 +1044,7 @@
   genre: Action
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg"
+  country: USA
 
 - title: Marriage Story
   type: movie
@@ -934,6 +1053,7 @@
   genre: Drama
   status: completed
   poster: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS0RFyexrxd9M5SR_BmOCYxyfeB-zArmyqTytDpdmfxRyaeIstlPUuAgdWnRhhPQ6De9Td6xg"
+  country: USA/UK
 
 - title: "Jan Dara: The Beginning"
   type: movie
@@ -942,6 +1062,7 @@
   genre: Drama
   status: completed
   poster: "https://m.media-amazon.com/images/M/MV5BMmQ2NzQyOTgtZWI3MC00ODQyLThkNDUtNWJiOTM5MzczNGEzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  country: Thailand
 
 - title: "Jan Dara: The Finale"
   type: movie
@@ -950,6 +1071,7 @@
   genre: Drama
   status: completed
   poster: "https://d3tvwjfge35btc.cloudfront.net/Assets/63/368/L_p0025536863.jpg"
+  country: Thailand
 
 - title: Knock Knock
   type: movie
@@ -958,6 +1080,7 @@
   genre: Thriller
   status: completed
   poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKHj7cc_ot-HkLsNRkGYST31BMV_-63mqvRMjR0skfuTxFG2aTdRMXIqGEMt_0n2Zyf0xh"
+  country: USA/Chile
 
 - title: Prisoners
   type: movie
@@ -966,6 +1089,7 @@
   genre: Thriller
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/uhviyknTT5cEQXbn6vWIqfM4vGm.jpg"
+  country: USA
 
 - title: The Platform
   type: movie
@@ -974,6 +1098,7 @@
   genre: Sci-Fi
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/8ZX18L5m6rH5viSYpRnTSbb9eXh.jpg"
+  country: Spain
 
 - title: The Platform 2
   type: movie
@@ -982,6 +1107,7 @@
   genre: Sci-Fi
   status: completed
   poster: "https://m.media-amazon.com/images/M/MV5BNzI4YjkyODctMGJmNC00YjBjLTllNjAtNDkxNTJmZjg4MGZkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  country: Spain
 
 - title: "The King's Affection"
   type: series
@@ -990,6 +1116,7 @@
   genre: Historical Drama
   status: completed
   poster: "https://m.media-amazon.com/images/M/MV5BMjQ4OGFkZDItY2I2MC00YzI0LTliZmUtNGFhODUwYjZkZGM3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  country: South Korea
 
 - title: "Monster: The Jeffrey Dahmer Story"
   type: series
@@ -998,6 +1125,7 @@
   genre: Crime
   status: completed
   poster: "https://upload.wikimedia.org/wikipedia/en/2/28/Dahmer_netflix_series.jpg"
+  country: USA
 
 - title: "Monsters: The Lyle and Erik Menendez Story"
   type: series
@@ -1006,6 +1134,7 @@
   genre: Crime
   status: completed
   poster: "https://m.media-amazon.com/images/M/MV5BNDAzYzEzZDMtOWE3Ny00MTU3LWIwY2MtMDYzZmYzYTZkYjJkXkEyXkFqcGc@._V1_.jpg"
+  country: USA
 
 - title: Five Feet Apart
   type: movie
@@ -1014,6 +1143,7 @@
   genre: Romance
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/kreTuJBkUjVWePRfhHZuYfhNE1T.jpg"
+  country: USA
 
 - title: Gone Girl
   type: movie
@@ -1022,6 +1152,7 @@
   genre: Thriller
   status: completed
   poster: "https://m.media-amazon.com/images/M/MV5BMTk0MDQ3MzAzOV5BMl5BanBnXkFtZTgwNzU1NzE3MjE@._V1_.jpg"
+  country: USA
 
 - title: Manchester by the Sea
   type: movie
@@ -1030,6 +1161,7 @@
   genre: Drama
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/e8daDzP0vFOnGyKmve95Yv0D0io.jpg"
+  country: USA
 
 - title: "Batman v Superman: Dawn of Justice"
   type: movie
@@ -1038,6 +1170,7 @@
   genre: Action
   status: completed
   poster: "https://resizing.flixster.com/wliboVdo7cDC77pTzTCVk69_s18=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzM2NGE2MDdmLTU2YmYtNDU4ZC1iZGQzLTY4MWE0ZTgyODkyMy53ZWJw"
+  country: USA
 
 - title: Extracurricular
   type: series
@@ -1046,6 +1179,7 @@
   genre: Crime
   status: completed
   poster: "https://www.whats-on-netflix.com/wp-content/uploads/2020/03/Extracurricular-season-1-netflix-k-drama-plot-cast-trailer-and-netflix-and-release-date-poster.jpg"
+  country: South Korea
 
 - title: Kung Fu Panda
   type: movie
@@ -1054,6 +1188,7 @@
   genre: Animation
   status: rewatched
   poster: "https://image.tmdb.org/t/p/w500/wWt4JYXTg5Wr3xBW2phBrMKgp3x.jpg"
+  country: USA
 
 - title: Kung Fu Panda 2
   type: movie
@@ -1062,6 +1197,7 @@
   genre: Animation
   status: rewatched
   poster: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSKsUbzywe4iPKMCxbcHsOeSw-duI4CsKYc7X8V2ncM7fBarI1JC8pNePOhebGQyVT4r0eX"
+  country: USA
 
 - title: Kung Fu Panda 3
   type: movie
@@ -1070,6 +1206,7 @@
   genre: Animation
   status: rewatched
   poster: "https://image.tmdb.org/t/p/w500/oajNi4Su39WAByHI6EONu8G8HYn.jpg"
+  country: USA/China
 
 - title: Kung Fu Panda 4
   type: movie
@@ -1078,6 +1215,7 @@
   genre: Animation
   status: rewatched
   poster: "https://image.tmdb.org/t/p/w500/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg"
+  country: USA/China
 
 - title: The Notebook
   type: movie
@@ -1086,6 +1224,7 @@
   genre: Romance
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/qom1SZSENdmHFNZBXbtJAU0WTlC.jpg"
+  country: USA
   ranking: 1
   leaderboard_genre: Romance
 
@@ -1096,6 +1235,7 @@
   genre: Romance
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/eCOtqtfvn7mxGl6nfmq4b1exJRc.jpg"
+  country: USA
   ranking: 2
   leaderboard_genre: Romance
 
@@ -1106,6 +1246,7 @@
   genre: Crime Drama
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg"
+  country: USA
 
 - title: American Primeval
   type: series
@@ -1115,6 +1256,7 @@
   genre: Western Drama
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/ff0s9OHGNSZL6cVteIb7LNvTnJD.jpg"
+  country: USA
 
 - title: Death Note
   type: series
@@ -1124,6 +1266,7 @@
   genre: Animation, Mystery, Thriller
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/koBa94NxTaGe2FoDzlXMuJptsv0.jpg"
+  country: Japan
 
 - title: Inhuman Kiss
   type: movie
@@ -1132,6 +1275,7 @@
   genre: Drama, Horror, Romance
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/x1IrVoc9Q7Hn6NKP4jq77jN1cUU.jpg"
+  country: Thailand
   ranking: 3
   leaderboard_genre: Horror
   comment: it's devastatingly scary, not horrific
@@ -1143,6 +1287,7 @@
   genre: Romantic Comedy Drama
   status: dropped ss2
   poster: "https://image.tmdb.org/t/p/w500/qYGIf2QAhSIa5Xbf72QvLtte2e8.jpg"
+  country: USA/France
 
 - title: The Crown
   type: series
@@ -1151,6 +1296,7 @@
   genre: Historical Drama
   status: dropped ss2
   poster: "https://image.tmdb.org/t/p/w500/8VXhcrl5z2I1zEU9X3pkkNrZlD.jpg"
+  country: UK/USA
 
 - title: What If...?
   type: series
@@ -1159,6 +1305,7 @@
   genre: Action-adventure, Anthology, Science fiction, Superhero
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/lztz5XBMG1x6Y5ubz7CxfPFsAcW.jpg"
+  country: USA
 
 - title: Ready or Not
   type: movie
@@ -1167,6 +1314,7 @@
   genre: Horror, Comedy, Thriller
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/pCAPoXVqXegA5xbPTDD5h7SXixB.jpg"
+  country: USA
 
 - title: Thunderbolts
   type: movie
@@ -1175,6 +1323,7 @@
   genre: Action, Science Fiction, Adventure
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/hqcexYHbiTBfDIdDWxrxPtVndBX.jpg"
+  country: USA
 
 - title: "Ant-Man and the Wasp: Quantumania"
   type: movie
@@ -1183,6 +1332,7 @@
   genre: Action, Adventure, Science Fiction
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/qnqGbB22YJ7dSs4o6M7exTpNxPz.jpg"
+  country: USA
 
 - title: Black Panther
   type: movie
@@ -1191,6 +1341,7 @@
   genre: Action, Adventure, Drama
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/uxzzxijgPIY7slzFvMotPv8wjKA.jpg"
+  country: USA
 
 - title: Ant-Man
   type: movie
@@ -1199,6 +1350,7 @@
   genre: Action, Adventure, Science Fiction
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/rQRnQfUl3kfp78nCWq8Ks04vnq1.jpg"
+  country: USA
 
 - title: Captain Marvel
   type: movie
@@ -1207,6 +1359,7 @@
   genre: Action, Adventure, Science Fiction
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/AtsgWhDnHTq68L0lLsUrCnM7TjG.jpg"
+  country: USA
 
 - title: "Spider-Man: Far from Home"
   type: movie
@@ -1215,6 +1368,7 @@
   genre: Action, Adventure, Science Fiction
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/4q2NNj4S5dG2RLF9CpXsej7yXl.jpg"
+  country: USA
 
 - title: "Spider-Man: Homecoming"
   type: movie
@@ -1223,6 +1377,7 @@
   genre: Action, Adventure, Science Fiction
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/c24sv2weTHPsmDa7jEMN0m2P3RT.jpg"
+  country: USA
 
 - title: Spider-Man
   type: movie
@@ -1231,6 +1386,7 @@
   genre: Action, Adventure, Science Fiction
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/gh4cZbhZxyTbgxQPxD0dOudNPTn.jpg"
+  country: USA
 
 - title: Spider-Man 2
   type: movie
@@ -1239,6 +1395,7 @@
   genre: Action, Adventure, Science Fiction
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/aGuvNAaaZuWXYQQ6N2v7DeuP6mB.jpg"
+  country: USA
 
 - title: Spider-Man 3
   type: movie
@@ -1247,6 +1404,7 @@
   genre: Action, Adventure, Science Fiction
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/qFmwhVUoUSXjkKRmca5yGDEXBIj.jpg"
+  country: USA
 
 - title: "Spider-Man: Into the Spider-Verse"
   type: movie
@@ -1255,6 +1413,7 @@
   genre: Animation, Action, Adventure
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg"
+  country: USA
 
 - title: Deadpool
   type: movie
@@ -1263,6 +1422,7 @@
   genre: Action, Comedy, Science Fiction
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/3E53WEZJqP6aM84D8CckXx4pIHw.jpg"
+  country: USA
 
 - title: Deadpool & Wolverine
   type: movie
@@ -1271,6 +1431,7 @@
   genre: Action, Adventure, Comedy
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg"
+  country: USA
 
 - title: Deadpool 2
   type: movie
@@ -1279,6 +1440,7 @@
   genre: Action, Comedy
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/to0spRl1CMDvyUbOnbb4fTk3VAd.jpg"
+  country: USA
 
 - title: Free Guy
   type: movie
@@ -1287,6 +1449,7 @@
   genre: Action, Comedy, Science Fiction
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/6PFJrMvoQwBxQITLYHj09VeJ37q.jpg"
+  country: USA
 
 - title: Cunk on Life
   type: series
@@ -1295,6 +1458,7 @@
   genre: Mockumentary, Comedy
   status: completed
   poster: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTxsoH4JySJjQjSqj62H_GkdwVQtWMyNwei0Nv63pXrzI2lhuox_IrO7LHVxCrPanhJrNh9"
+  country: UK
 
 - title: Us
   type: movie
@@ -1303,6 +1467,7 @@
   genre: Horror, Mystery, Thriller
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/ux2dU1jQ2ACIMShzB3yP93Udpzc.jpg"
+  country: USA
 
 - title: Lights Out
   type: movie
@@ -1311,6 +1476,7 @@
   genre: Horror, Thriller
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/pOvxddYJScB3PMmaHp2ZnLChhrD.jpg"
+  country: USA
   ranking: 1
   leaderboard_genre: Horror
   comment: kinda haunted my ass for months
@@ -1322,6 +1488,7 @@
   genre: Horror
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/8eHhIEsSXMZ5Q502B4cKgdmEgOK.jpg"
+  country: USA
 
 - title: It Chapter Two
   type: movie
@@ -1330,6 +1497,7 @@
   genre: Horror
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/zfE0R94v1E8cuKAerbskfD3VfUt.jpg"
+  country: USA
 
 - title: Halloween Kills
   type: movie
@@ -1338,6 +1506,7 @@
   genre: Horror, Thriller
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/4CclCDyQXBBgz62Qtp3CoflQE5g.jpg"
+  country: USA
 
 - title: A Quiet Place
   type: movie
@@ -1346,6 +1515,7 @@
   genre: Drama, Horror, Science Fiction
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/nAU74GmpUk7t5iklEp3bufwDq4n.jpg"
+  country: USA
 
 - title: A Quiet Place Part II
   type: movie
@@ -1354,6 +1524,7 @@
   genre: Drama, Horror, Science Fiction
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/4q2hz2m8hubgvijz8Ez0T2Os2Yv.jpg"
+  country: USA
 
 - title: "Don't Breathe"
   type: movie
@@ -1362,6 +1533,7 @@
   genre: Horror, Thriller
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/dSxHyPZ2nipSfvdft4IhQKjk5eZ.jpg"
+  country: USA
 
 - title: "Don't Breathe 2"
   type: movie
@@ -1370,6 +1542,7 @@
   genre: Horror, Thriller
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/r7HEBkkRN93d3eFBZgPJfRaob5p.jpg"
+  country: USA
 
 - title: Texas Chainsaw Massacre
   type: movie
@@ -1378,6 +1551,7 @@
   genre: Horror
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/7sKiGNWFM15WNyY7LYd5vmb3brO.jpg"
+  country: USA
 
 - title: "Jumanji: The Next Level"
   type: movie
@@ -1386,6 +1560,7 @@
   genre: Action, Adventure, Comedy
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/4kh9dxAiClS2GMUpkRyzGwpNWWX.jpg"
+  country: USA
 
 - title: Shazam!
   type: movie
@@ -1394,6 +1569,7 @@
   genre: Action, Adventure, Comedy
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/xnopI5Xtky18MPhK40cZAGAOVeV.jpg"
+  country: USA
 
 - title: Aquaman
   type: movie
@@ -1402,6 +1578,7 @@
   genre: Action, Adventure, Fantasy
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/ufl63EFcc5XpByEV2Ecdw6WJZAI.jpg"
+  country: USA
 
 - title: London Fields
   type: movie
@@ -1410,6 +1587,7 @@
   genre: Drama, Mystery, Thriller
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/7OfQVm5GexlAREp8FoR4ILxp35T.jpg"
+  country: UK/USA
 
 - title: Crazy Rich Asians
   type: movie
@@ -1418,6 +1596,7 @@
   genre: Comedy, Drama, Romance
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/1XxL4LJ5WHdrcYcihEZUCgNCpAW.jpg"
+  country: USA
 
 - title: 365 Days
   type: movie
@@ -1426,6 +1605,7 @@
   genre: Drama, Romance
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/6KwrHucIE3CvNT7kTm2MAlZ4fYF.jpg"
+  country: Poland
 
 - title: Eternals
   type: movie
@@ -1434,6 +1614,7 @@
   genre: Action, Adventure, Drama
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/lFByFSLV5WDJEv3KabbdAF959F2.jpg"
+  country: USA
 
 - title: Doctor Strange
   type: movie
@@ -1442,6 +1623,7 @@
   genre: Action, Adventure, Fantasy
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/xf8PbyQcR5ucXErmZNzdKR0s8ya.jpg"
+  country: USA
 
 - title: "Black Panther: Wakanda Forever"
   type: movie
@@ -1450,6 +1632,7 @@
   genre: Action, Adventure, Drama
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/sv1xJUazXeYqALzczSZ3O6nkH75.jpg"
+  country: USA
 
 - title: "1917"
   type: movie
@@ -1458,6 +1641,7 @@
   genre: Drama, War
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/iZf0KyrE25z1sage4SYFLCCrMi9.jpg"
+  country: UK/USA
 
 - title: Midway
   type: movie
@@ -1466,6 +1650,7 @@
   genre: Action, Drama, History
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/hj8pyoNnynGeJTAbl7jcLZO8Uhx.jpg"
+  country: USA/China
 
 - title: The Boy in the Striped Pajamas
   type: movie
@@ -1474,6 +1659,7 @@
   genre: Drama, War
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/sLwYSEVVV3r047cjrpRAbGgNsfL.jpg"
+  country: UK/USA
   ranking: 3
   leaderboard_genre: Drama
   comment: absolutely devastating
@@ -1485,6 +1671,7 @@
   genre: Biography, Drama, Music
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/2hFvxCCWrTmCYwfy7yum0GKRi3Y.jpg"
+  country: France/UK/Poland/Germany
 
 - title: Three Kingdoms
   type: series
@@ -1493,6 +1680,7 @@
   genre: Historical Drama
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/nxr6UloLZw6nnsnjCzm5vLhMcfC.jpg"
+  country: China
   ranking: 1
   leaderboard_genre: Historical Drama
 
@@ -1503,6 +1691,7 @@
   genre: Action, Comedy
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/zDbrU0eSnRGh5gHc1iqTACTNNyT.jpg"
+  country: UK
 
 - title: Johnny English Strikes Again
   type: movie
@@ -1511,6 +1700,7 @@
   genre: Action, Comedy
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/tCBxnZwLiY1BOKw3tH6AxHZdqPh.jpg"
+  country: UK
 
 - title: Ice Age
   type: movie
@@ -1519,6 +1709,7 @@
   genre: Animation, Adventure, Comedy
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/gLhHHZUzeseRXShoDyC4VqLgsNv.jpg"
+  country: USA
 
 - title: Conclave
   type: movie
@@ -1527,6 +1718,7 @@
   genre: Thriller, Mystery
   status: completed
   poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ64k8VDL_1qv-UaSaSMPQlb0cKs9d2a0lAeBUAlwClz9MY0ja5NGKwboVB4l__2U6vds8qTQ"
+  country: UK/USA
 
 - title: Titanic
   type: movie
@@ -1535,6 +1727,7 @@
   genre: Drama, Romance
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg"
+  country: USA
 
 - title: The Wolf of Wall Street
   type: movie
@@ -1543,6 +1736,7 @@
   genre: Biography, Crime, Drama
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/kW9LmvYHAaS9iA0tHmZVq8hQYoq.jpg"
+  country: USA
 
 - title: Catch Me If You Can
   type: movie
@@ -1551,6 +1745,7 @@
   genre: Biography, Crime, Drama
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/ctjEj2xM32OvBXCq8zAdK3ZrsAj.jpg"
+  country: USA
 
 - title: Transformers
   type: movie
@@ -1559,6 +1754,7 @@
   genre: Action, Adventure, Science Fiction
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/lkZ9gqCEjzX85lKR6Jjd1uGAXNp.jpg"
+  country: USA
 
 - title: "Transformers: Revenge of the Fallen"
   type: movie
@@ -1567,6 +1763,7 @@
   genre: Action, Adventure, Science Fiction
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/pLBb0whOzVDtJvyD4DPeQyQNOqp.jpg"
+  country: USA
 
 - title: "Transformers: Dark of the Moon"
   type: movie
@@ -1575,6 +1772,7 @@
   genre: Action, Adventure, Science Fiction
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/28YlCLrFhONteYSs9hKjD1Km0Cj.jpg"
+  country: USA
 
 - title: "Transformers: Age of Extinction"
   type: movie
@@ -1583,6 +1781,7 @@
   genre: Action, Adventure, Science Fiction
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/jyzrfx2WaeY60kYZpPYepSjGz4S.jpg"
+  country: USA
 
 - title: Bumblebee
   type: movie
@@ -1591,6 +1790,7 @@
   genre: Action, Adventure, Science Fiction
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/fw02ONlDhrYjTSZV8XO6hhU3ds3.jpg"
+  country: USA
 
 - title: ថ្នាក់១២ង - 12E
   type: movie
@@ -1598,6 +1798,7 @@
   genre: Horror
   status: completed
   poster: "https://ldentertainmentkh.com/_next/image?url=https%3A%2F%2Fconsole.ldentertainmentkh.com%2Fuploads%2F500x750_12e_c44d23f62b.png&w=1080&q=75"
+  country: Cambodia
 
 - title: ក្រឡអីហ្នឹង - JAR
   type: movie
@@ -1605,6 +1806,7 @@
   genre: Comedy, Horror
   status: completed
   poster: "https://ldentertainmentkh.com/_next/image?url=https%3A%2F%2Fconsole.ldentertainmentkh.com%2Fuploads%2F4_8bad99574e.png&w=1080&q=75"
+  country: Cambodia
 
 - title: ជួបស៊យ - CHOB SOY
   type: movie
@@ -1612,6 +1814,7 @@
   genre: Comedy
   status: completed
   poster: "https://ldentertainmentkh.com/_next/image?url=https%3A%2F%2Fconsole.ldentertainmentkh.com%2Fuploads%2F11_62a44a1f87.png&w=1080&q=75"
+  country: Cambodia
 
 - title: "Neath's Love Story"
   type: movie
@@ -1621,6 +1824,7 @@
   status: completed
   poster: "https://m.media-amazon.com/images/M/MV5BYWE3NmE2NzUtOGMzMi00NWNjLWJhYmQtYjQ2MjI4YzAzN2JiXkEyXkFqcGc@._V1_.jpg"
   comment: absolutely ass. worst khmer movie ever
+  country: Cambodia
 
 - title: Mumu
   type: movie
@@ -1629,6 +1833,7 @@
   genre: Drama
   status: completed
   poster: "https://i.mydramalist.com/YYlwKK_4f.jpg"
+  country: China
 
 - title: Ban Lang Mek
   type: series
@@ -1637,6 +1842,7 @@
   genre: Drama
   status: completed
   poster: "https://m.media-amazon.com/images/M/MV5BZDc0OTBmNWYtNWM5Ny00NzhlLTgxNzgtYzMwNDZhN2U2ZDJjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  country: Thailand
 
 - title: ហ្វូតូកូពី | Photocopy
   type: movie
@@ -1644,6 +1850,7 @@
   genre: Horror
   status: completed
   poster: "https://ldentertainmentkh.com/_next/image?url=https%3A%2F%2Fconsole.ldentertainmentkh.com%2Fuploads%2F500x750_px_955f37ac71.jpg&w=1080&q=75"
+  country: Cambodia
 
 - title: Train to Busan
   type: movie
@@ -1652,6 +1859,7 @@
   genre: Horror, Action
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/vNVFt6dtcqnI7hqa6LFBUibuFiw.jpg"
+  country: South Korea
 
 - title: A Frozen Flower
   type: movie
@@ -1660,6 +1868,7 @@
   genre: Drama
   status: completed
   poster: "https://image.tmdb.org/t/p/w500/jvGmbNUh0eq9ShQmMSof0DXXHWY.jpg"
+  country: South Korea
 
 - title: The Last Czars
   type: series
@@ -1668,3 +1877,4 @@
   genre: Docudrama
   status: completed
   poster: https://image.tmdb.org/t/p/w500/quGmzISvzZeAd3ijCLbVMIfEHni.jpg
+  country: USA
