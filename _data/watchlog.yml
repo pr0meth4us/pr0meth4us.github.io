@@ -19,6 +19,8 @@
   country: Germany
   ranking: 1
   leaderboard_genre: Sci-Fi
+  overall_rank: 2
+  comment: keeps dropping twist after twist from beginning to end, very jaw dropping
 
 - title: Sex Education
   year: 2019
@@ -28,6 +30,17 @@
   genre: Comedy
   status: completed
   country: UK
+
+- title: Normal People
+  year: 2020
+  creator: Sally Rooney, Alice Birch, Mark O'Rowe
+  poster: "https://m.media-amazon.com/images/M/MV5BYWUzNjQ2YmYtNWI3Yi00NzNmLWJjYWYtMDFiM2RjYjNjZWZmXkEyXkFqcGc@._V1_.jpg"
+  type: series
+  genre: Drama
+  status: completed
+  country: Ireland
+  overall_rank: 3
+  comment: devastating, frustrating. The dynamic between them is truly felt and reflective. It's very people, very normal, very real. No proper ending, open to interpretation.
 
 - title: Young Sheldon
   year: 2017
@@ -415,6 +428,9 @@
   country: USA/UK
   ranking: 1
   leaderboard_genre: Biographical Drama
+  overall_rank: 1
+  comment: science, drama, adultery, occasionally sneaking off to the situationship after marriage, bombs. in just 3hr this movie has tastes. the most spicy thing of all is the drama between some egoistic genius men. HAIL NOLAN.
+  status: rewatched
 
 - title: Parasite
   year: 2019

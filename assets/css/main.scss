@@ -277,3 +277,38 @@ a.bg-gray-800:hover {
 .collage-container:hover {
   overflow: visible;
 }
+
+/* assets/css/main.scss */
+
+/* Loading state for images */
+.group\/poster img {
+  transition: opacity 0.3s ease;
+}
+
+.group\/poster img[src=""] {
+  opacity: 0;
+}
+
+/* Enhanced border effects */
+.border-white\/40 {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+}
+
+/* Hover state improvements */
+.group:hover .bg-white\/95 {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: rgba(147, 51, 234, 0.2);
+}
+
+/* Text selection styling */
+::selection {
+  background: rgba(147, 51, 234, 0.2);
+  color: rgb(147, 51, 234);
+}
+
+/* Focus states for accessibility */
+.group:focus-within .bg-white\/95 {
+  outline: 2px solid rgb(147, 51, 234);
+  outline-offset: 2px;
+}
