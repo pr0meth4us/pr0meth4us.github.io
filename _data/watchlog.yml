@@ -1894,3 +1894,18 @@
   status: completed
   poster: https://image.tmdb.org/t/p/w500/quGmzISvzZeAd3ijCLbVMIfEHni.jpg
   country: USA
+
+- title: Eternal Sunshine of the Spotless Mind
+  year: 2004
+  director: Michel Gondry
+  poster: https://image.tmdb.org/t/p/w500/5MwkWH9tYHv3mV9OdYTMR5qreIz.jpg
+  type: movie
+  genre: Sci-Fi, Drama, Romance
+  country: USA
+- title: Alita
+  year: 2019
+  director: Robert Rodriguez
+  poster: https://image.tmdb.org/t/p/w500/xRWht48C2V8XNfzvPehyClOvDni.jpg
+  type: movie
+  genre: Action, Sci-Fi
+  country: USA
