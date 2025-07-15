@@ -140,3 +140,17 @@
       url: "https://wordpress.rachana.gov.kh/"
       active: true
   thumbnail: "https://res.cloudinary.com/dktzt7yn1/image/upload/v1741625241/Untitled_design_1_zgzqng.jpg"
+
+- title: "Expenditure Tracker"
+  description: "Logs every bit of cash in & out straight from Telegram so I actually stay on top of my money and be more financially responsible. (still experimental, still thinking of features to add but perfectly running)"
+  tech:
+    - Flask
+    - Telegram Bot API
+  links:
+    - name: Telegram Bot
+      url: "https://t.me/expenditure_tracker_GUI_bot"
+      active: true
+    - name: GitHub
+      url: "https://github.com/pr0meth4us/monolith-services"
+      active: true
+  thumbnail: "https://res.cloudinary.com/dktzt7yn1/image/upload/v1752570368/ChatGPT_Image_Jul_15_2025_04_05_16_PM_ql96m6.png"
