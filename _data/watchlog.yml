@@ -1909,3 +1909,26 @@
   type: movie
   genre: Action, Sci-Fi
   country: USA
+- title: Poor Things
+  year: 2023
+  type: movie
+  poster: https://image.tmdb.org/t/p/w500/kCGlIMHnOm8JPXq3rXM6c5wMxcT.jpg
+  genre: Science Fiction, Romance, Comedy
+  country: IE
+  director: Yorgos Lanthimos
+  comment: watched it because Emma Stone, turned out to be absolutely fucking diabolical
+- title: La La Land
+  year: 2016
+  type: movie
+  poster: https://image.tmdb.org/t/p/w500/uDO8zWDhfWwoFdKS4fzkUJt0Rf0.jpg
+  genre: Comedy, Drama, Romance, Music
+  country: US
+  director: Damien Chazelle
+- title: Lady Bird
+  year: 2017
+  type: movie
+  poster: https://image.tmdb.org/t/p/w500/gl66K7zRdtNYGrxyS2YDUP5ASZd.jpg
+  genre: Drama, Comedy
+  country: US
+  director: Greta Gerwig
+  comment: me if my intrusive thoughts win
