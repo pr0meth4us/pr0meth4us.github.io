@@ -39,7 +39,6 @@
   genre: Drama
   status: completed
   country: Ireland
-  overall_rank: 3
   comment: devastating, frustrating. The dynamic between them is truly felt and reflective. It's very people, very normal, very real. No proper ending, open to interpretation.
 
 - title: Young Sheldon
@@ -1924,6 +1923,7 @@
   genre: Comedy, Drama, Romance, Music
   country: US
   director: Damien Chazelle
+
 - title: Lady Bird
   year: 2017
   type: movie
@@ -1932,3 +1932,4 @@
   country: US
   director: Greta Gerwig
   comment: me if my intrusive thoughts win
+  overall_rank: 3

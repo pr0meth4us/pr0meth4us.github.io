@@ -48,205 +48,7 @@ layout: default
         </div>
 
         <div id="leaderboard-content" class="tab-content hidden">
-            <div class="mb-20">
-                <div class="text-center mb-12">
-                    <h2 class="text-5xl font-black text-gray-900 mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent">
-                        👑 Top 5 Overall
-                    </h2>
-                    <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                        The ultimate collection of my most impactful cinematic experiences across all genres and formats.
-                    </p>
-                    <div class="w-32 h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 rounded-full mx-auto mt-4"></div>
-                </div>
-
-                {% assign top5_overall = site.data.watchlog | where_exp: "item", "item.overall_rank != nil" | sort: 'overall_rank' | limit: 5 %}
-
-                <div class="space-y-6">
-                    {% for item in top5_overall %}
-                    <div class="group relative overflow-hidden">
-                        <div class="bg-white/95 backdrop-blur-md rounded-3xl p-8 shadow-2xl border border-white/40 hover:shadow-3xl transition-all duration-700 hover:scale-[1.02] transform">
-                            <div class="absolute -top-4 -left-4 z-20">
-                                <div class="relative">
-                                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500 rounded-full flex items-center justify-center shadow-xl transform rotate-12 group-hover:rotate-0 transition-transform duration-500">
-                                        <span class="text-white font-black text-xl">#{{ item.overall_rank }}</span>
-                                    </div>
-                                    <div class="absolute inset-0 bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500 rounded-full opacity-30 animate-pulse"></div>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-8">
-                                <div class="flex-shrink-0 relative group/poster">
-                                    <img src="{{ item.poster }}" alt="{{ item.title }}" class="w-32 h-44 object-cover rounded-2xl shadow-2xl group-hover/poster:shadow-3xl transition-all duration-500 transform group-hover/poster:scale-105">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover/poster:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-
-                                    <div class="absolute bottom-3 left-3 z-10">
-                                        <span class="{% if item.type == 'series' %}bg-blue-500/95{% else %}bg-red-500/95{% endif %} text-white px-3 py-1.5 rounded-full text-xs font-bold backdrop-blur-sm shadow-lg">
-                                            {% if item.type == 'series' %}📺 SERIES{% else %}🎬 FILM{% endif %}
-                                        </span>
-                                    </div>
-                                </div>
-
-                                <div class="flex-1 space-y-4">
-                                    <div class="space-y-2">
-                                        <h3 class="text-3xl font-black text-gray-900 group-hover:text-purple-600 transition-colors duration-300">
-                                            {{ item.title }}
-                                        </h3>
-                                        <div class="flex items-center gap-4 text-gray-600">
-                                            <span class="font-semibold">{{ item.director | default: item.creator }}</span>
-                                            <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
-                                            <span class="font-medium">{{ item.year }}</span>
-                                            {% if item.country %}
-                                            <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
-                                            <span class="font-medium">{{ item.country }}</span>
-                                            {% endif %}
-                                        </div>
-                                    </div>
-
-                                    <div class="flex items-center gap-4">
-                                        {% if item.rating %}
-                                        <div class="flex items-center gap-2 bg-yellow-50 px-4 py-2 rounded-xl shadow-sm">
-                                            <span class="text-yellow-500 text-xl">⭐</span>
-                                            <span class="font-black text-yellow-700 text-lg">{{ item.rating }}</span>
-                                        </div>
-                                        {% endif %}
-                                        {% if item.genre %}
-                                        <span class="bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-700 px-4 py-2 rounded-xl font-bold">
-                                            {{ item.genre }}
-                                        </span>
-                                        {% endif %}
-                                    </div>
-
-                                    {% if item.comment %}
-                                    <div class="bg-gray-50 p-6 rounded-2xl border-l-4 border-purple-500">
-                                        <p class="text-gray-700 leading-relaxed font-medium text-lg italic">
-                                            "{{ item.comment }}"
-                                        </p>
-                                    </div>
-                                    {% endif %}
-
-                                    {% if item.status %}
-                                    <div class="flex items-center gap-2">
-                                        <span class="text-sm font-semibold text-gray-500">Status:</span>
-                                        <span class="{% if item.status contains 'completed' %}bg-green-500/20 text-green-700{% elsif item.status contains 'watching' %}bg-blue-500/20 text-blue-700{% elsif item.status contains 'dropped' %}bg-red-500/20 text-red-700{% else %}bg-gray-500/20 text-gray-700{% endif %} px-3 py-1 rounded-full text-sm font-bold capitalize">
-                                            {{ item.status }}
-                                        </span>
-                                    </div>
-                                    {% endif %}
-                                </div>
-                            </div>
-
-                            <div class="absolute top-4 right-4 text-6xl opacity-10 group-hover:opacity-20 transition-opacity duration-300">
-                                {% if item.overall_rank == 1 %}👑{% elsif item.overall_rank == 2 %}🥈{% elsif item.overall_rank == 3 %}🥉{% else %}⭐{% endif %}
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                <div class="space-y-8">
-                    <div class="text-center">
-                        <h2 class="text-4xl font-black text-gray-900 mb-4 bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">
-                            🎬 Top Movies by Genre
-                        </h2>
-                        <div class="w-24 h-1 bg-gradient-to-r from-red-500 to-pink-500 rounded-full mx-auto"></div>
-                    </div>
-
-                    {% assign movies_with_leaderboard = site.data.watchlog | where: "type", "movie" | where_exp: "item", "item.leaderboard_genre != nil" %}
-                    {% assign movie_genres = movies_with_leaderboard | group_by: 'leaderboard_genre' %}
-                    {% for genre_group in movie_genres %}
-                    <div class="group">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-6 capitalize flex items-center gap-3">
-                            <span class="w-3 h-3 bg-red-500 rounded-full animate-pulse"></span>
-                            <span class="bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">{{ genre_group.name }}</span>
-                        </h3>
-                        <div class="space-y-4">
-                            {% assign sorted_movies = genre_group.items | sort: 'ranking' %}
-                            {% for movie in sorted_movies limit:3 %}
-                            <div class="bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-white/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-500 group/card">
-                                <div class="flex items-start gap-6">
-                                    <div class="flex-shrink-0 relative group/poster">
-                                        <img src="{{ movie.poster }}" alt="{{ movie.title }}" class="w-20 h-28 object-cover rounded-xl shadow-lg group-hover/poster:shadow-xl transition-shadow duration-300">
-                                        <div class="absolute -top-3 -right-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-sm font-bold px-3 py-1.5 rounded-full shadow-lg transform rotate-12 group-hover/card:rotate-0 transition-transform duration-300">
-                                            #{{ movie.ranking | default: forloop.index }}
-                                        </div>
-                                    </div>
-                                    <div class="flex-1 space-y-3">
-                                        <h4 class="font-bold text-lg text-gray-900 group-hover/card:text-purple-600 transition-colors duration-300">{{ movie.title }}</h4>
-                                        <p class="text-gray-600 font-medium">{{ movie.director }} • {{ movie.year }}</p>
-                                        <div class="flex items-center gap-3">
-                                            {% if movie.rating %}
-                                            <div class="flex items-center gap-1 bg-yellow-50 px-2 py-1 rounded-lg">
-                                                <span class="text-yellow-500 text-lg">⭐</span>
-                                                <span class="font-bold text-yellow-700">{{ movie.rating }}</span>
-                                            </div>
-                                            {% endif %}
-                                            <span class="bg-red-500/20 text-red-700 px-3 py-1 rounded-full text-sm font-semibold">{{ movie.genre }}</span>
-                                        </div>
-                                        {% if movie.comment %}
-                                        <p class="text-gray-600 line-clamp-2 leading-relaxed">{{ movie.comment }}</p>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-
-                <div class="space-y-8">
-                    <div class="text-center">
-                        <h2 class="text-4xl font-black text-gray-900 mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                            📺 Top Series by Genre
-                        </h2>
-                        <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto"></div>
-                    </div>
-
-                    {% assign series_with_leaderboard = site.data.watchlog | where: "type", "series" | where_exp: "item", "item.leaderboard_genre != nil" %}
-                    {% assign series_genres = series_with_leaderboard | group_by: 'leaderboard_genre' %}
-                    {% for genre_group in series_genres %}
-                    <div class="group">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-6 capitalize flex items-center gap-3">
-                            <span class="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></span>
-                            <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">{{ genre_group.name }}</span>
-                        </h3>
-                        <div class="space-y-4">
-                            {% assign sorted_series = genre_group.items | sort: 'ranking' %}
-                            {% for series in sorted_series limit:3 %}
-                            <div class="bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-white/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-500 group/card">
-                                <div class="flex items-start gap-6">
-                                    <div class="flex-shrink-0 relative group/poster">
-                                        <img src="{{ series.poster }}" alt="{{ series.title }}" class="w-20 h-28 object-cover rounded-xl shadow-lg group-hover/poster:shadow-xl transition-shadow duration-300">
-                                        <div class="absolute -top-3 -right-3 bg-gradient-to-r from-blue-400 to-purple-500 text-white text-sm font-bold px-3 py-1.5 rounded-full shadow-lg transform rotate-12 group-hover/card:rotate-0 transition-transform duration-300">
-                                            #{{ series.ranking | default: forloop.index }}
-                                        </div>
-                                    </div>
-                                    <div class="flex-1 space-y-3">
-                                        <h4 class="font-bold text-lg text-gray-900 group-hover/card:text-purple-600 transition-colors duration-300">{{ series.title }}</h4>
-                                        <p class="text-gray-600 font-medium">{{ series.creator | default: series.director }} • {{ series.year }}</p>
-                                        <div class="flex items-center gap-3">
-                                            {% if series.rating %}
-                                            <div class="flex items-center gap-1 bg-yellow-50 px-2 py-1 rounded-lg">
-                                                <span class="text-yellow-500 text-lg">⭐</span>
-                                                <span class="font-bold text-yellow-700">{{ series.rating }}</span>
-                                            </div>
-                                            {% endif %}
-                                            <span class="bg-blue-500/20 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">{{ series.genre }}</span>
-                                        </div>
-                                        {% if series.comment %}
-                                        <p class="text-gray-600 line-clamp-2 leading-relaxed">{{ series.comment }}</p>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
+            {%- include watchlog_leaderboard.html -%}
         </div>
 
         <div id="collection-content" class="tab-content">
@@ -256,9 +58,7 @@ layout: default
                         <label for="search-input" class="sr-only">Search</label>
                         <div class="relative">
                             <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                <svg class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                                </svg>
+                                <svg class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                             </div>
                             <input type="text" id="search-input" placeholder="Search by title..." class="w-full pl-12 pr-4 py-4 bg-gray-50 border-2 border-transparent rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-gray-800 placeholder-gray-500 font-medium">
                         </div>
@@ -287,7 +87,7 @@ layout: default
             <div id="watchlog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             </div>
 
-            <div id="pagination-controls" class="flex justify-center items-center gap-6 mt-16">
+            <div id="pagination-controls" class="flex justify-center items-center flex-wrap gap-2 sm:gap-4 mt-16">
             </div>
         </div>
     </div>
@@ -302,7 +102,6 @@ layout: default
         const collectionTab = document.getElementById('collection-tab');
         const leaderboardContent = document.getElementById('leaderboard-content');
         const collectionContent = document.getElementById('collection-content');
-
         const searchInput = document.getElementById('search-input');
         const typeFilter = document.getElementById('type-filter');
         const genreFilter = document.getElementById('genre-filter');
@@ -310,7 +109,6 @@ layout: default
         const countryFilter = document.getElementById('country-filter');
         const sortBy = document.getElementById('sort-by');
         const clearFiltersBtn = document.getElementById('clear-filters');
-
         const watchlogGrid = document.getElementById('watchlog-grid');
         const paginationControls = document.getElementById('pagination-controls');
         const resultsCount = document.getElementById('results-count');
@@ -323,7 +121,6 @@ layout: default
         collectionTab.classList.add('bg-white', 'text-purple-600', 'shadow-lg', 'shadow-purple-500/20');
         leaderboardTab.classList.add('hover:bg-white/50');
         collectionContent.classList.remove('hidden');
-
         populateFilters();
         renderCollection();
 
@@ -352,7 +149,6 @@ layout: default
         });
 
         // --- Core Functions ---
-
         function switchTab(activeTab, inactiveTab, activeContent, inactiveContent) {
             activeTab.classList.add('bg-white', 'text-purple-600', 'shadow-lg', 'shadow-purple-500/20');
             activeTab.classList.remove('hover:bg-white/50');
@@ -391,25 +187,17 @@ layout: default
 
         function sortData(items) {
             const sortValue = sortBy.value;
-            items.sort((a, b) => {
+            return items.sort((a, b) => {
                 switch (sortValue) {
-                    case 'title-asc':
-                        return a.title.localeCompare(b.title);
-                    case 'title-desc':
-                        return b.title.localeCompare(a.title);
-                    case 'year-asc':
-                        return (a.year || 0) - (b.year || 0);
-                    case 'year-desc':
-                        return (b.year || 0) - (a.year || 0);
-                    case 'rating-asc':
-                        return (a.rating || 0) - (b.rating || 0);
-                    case 'rating-desc':
-                        return (b.rating || 0) - (a.rating || 0);
-                    default:
-                        return 0;
+                    case 'title-asc': return a.title.localeCompare(b.title);
+                    case 'title-desc': return b.title.localeCompare(a.title);
+                    case 'year-asc': return (a.year || 0) - (b.year || 0);
+                    case 'year-desc': return (b.year || 0) - (a.year || 0);
+                    case 'rating-asc': return (a.rating || 0) - (b.rating || 0);
+                    case 'rating-desc': return (b.rating || 0) - (a.rating || 0);
+                    default: return 0;
                 }
             });
-            return items;
         }
 
         function filterData() {
@@ -420,7 +208,7 @@ layout: default
             const selectedCountry = countryFilter.value;
 
             return watchlogData.filter(item => {
-                const titleMatch = item.title.toLowerCase().includes(searchTerm);
+                const titleMatch = !searchTerm || item.title.toLowerCase().includes(searchTerm);
                 const typeMatch = !selectedType || item.type === selectedType;
                 const genreMatch = !selectedGenre || (item.genre && item.genre.includes(selectedGenre));
                 const statusMatch = !selectedStatus || (item.status && item.status.startsWith(selectedStatus));
@@ -429,10 +217,15 @@ layout: default
             });
         }
 
-        function renderCollection() {
-            let items = filterData();
-            items = sortData(items);
+        function handlePageChange(newPage) {
+            currentPage = newPage;
+            renderCollection();
+            const collectionTop = collectionContent.getBoundingClientRect().top + window.pageYOffset - 80;
+            window.scrollTo({ top: collectionTop, behavior: 'smooth' });
+        }
 
+        function renderCollection() {
+            let items = sortData(filterData());
             resultsCount.textContent = `${items.length} result(s) found`;
             watchlogGrid.innerHTML = '';
 
@@ -444,7 +237,6 @@ layout: default
 
             const startIndex = (currentPage - 1) * itemsPerPage;
             const paginatedItems = items.slice(startIndex, startIndex + itemsPerPage);
-
             paginatedItems.forEach(item => {
                 const card = createItemCard(item);
                 watchlogGrid.appendChild(card);
@@ -458,32 +250,49 @@ layout: default
             const totalPages = Math.ceil(totalItems / itemsPerPage);
             if (totalPages <= 1) return;
 
-            const createBtn = (text, disabled, onClick) => {
+            const createButton = (content, page, { disabled = false, active = false } = {}) => {
                 const btn = document.createElement('button');
-                btn.textContent = text;
+                btn.innerHTML = content;
                 btn.disabled = disabled;
                 btn.className = 'pagination-btn';
-                btn.addEventListener('click', onClick);
+                if (active) btn.classList.add('active');
+                btn.addEventListener('click', () => handlePageChange(page));
                 return btn;
             };
 
-            const pageInfo = document.createElement('div');
-            pageInfo.innerHTML = `<span class="text-gray-700 font-bold text-lg bg-white/80 backdrop-blur-sm px-6 py-3 rounded-2xl shadow-lg border border-white/40">Page ${currentPage} of ${totalPages}</span>`;
+            const createEllipsis = () => {
+                const span = document.createElement('span');
+                span.innerHTML = '&hellip;';
+                span.className = 'pagination-ellipsis';
+                return span;
+            };
 
-            const prevButton = createBtn('« Previous', currentPage === 1, () => { currentPage--; renderCollection(); window.scrollTo(0,0); });
-            const nextButton = createBtn('Next »', currentPage === totalPages, () => { currentPage++; renderCollection(); window.scrollTo(0,0); });
+            // Previous Button
+            paginationControls.appendChild(createButton('&laquo;', currentPage - 1, { disabled: currentPage === 1 }));
 
-            paginationControls.append(prevButton, pageInfo, nextButton);
+            // Page Number Buttons
+            const pagesToShow = new Set([1, totalPages, currentPage, currentPage - 1, currentPage + 1]);
+            let lastPage = 0;
+            [...pagesToShow].sort((a, b) => a - b).forEach(p => {
+                if (p > 0 && p <= totalPages) {
+                    if (p > lastPage + 1) {
+                        paginationControls.appendChild(createEllipsis());
+                    }
+                    paginationControls.appendChild(createButton(p, p, { active: p === currentPage, disabled: p === currentPage }));
+                    lastPage = p;
+                }
+            });
+
+            // Next Button
+            paginationControls.appendChild(createButton('&raquo;', currentPage + 1, { disabled: currentPage === totalPages }));
         }
 
         function createItemCard(item) {
             const div = document.createElement('div');
             div.className = 'group relative';
             const statusColor = {
-                'watching': 'bg-green-500/20 text-green-700',
-                'completed': 'bg-blue-500/20 text-blue-700',
-                'rewatched': 'bg-purple-500/20 text-purple-700',
-                'on-hold': 'bg-yellow-500/20 text-yellow-700',
+                'watching': 'bg-green-500/20 text-green-700', 'completed': 'bg-blue-500/20 text-blue-700',
+                'rewatched': 'bg-purple-500/20 text-purple-700', 'on-hold': 'bg-yellow-500/20 text-yellow-700',
                 'dropped': 'bg-red-500/20 text-red-700'
             }[item.status ? item.status.split(' ')[0] : ''] || 'bg-gray-500/20 text-gray-700';
 
@@ -491,129 +300,66 @@ layout: default
                 <div class="bg-white/90 backdrop-blur-md rounded-3xl overflow-hidden shadow-xl transform transition-all duration-500 hover:scale-105 hover:-rotate-1 border border-white/50 group-hover:shadow-2xl group-hover:shadow-purple-500/20">
                     <div class="relative overflow-hidden">
                         <img src="${item.poster || ''}" alt="Poster for ${item.title}" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="w-full h-80 bg-gradient-to-br from-gray-300 to-gray-400 items-center justify-center hidden">
-                            <span class="text-gray-600 text-lg p-4 text-center font-bold">${item.title}</span>
-                        </div>
-                        <div class="absolute top-4 left-4">
-                            <span class="${item.type === 'series' ? 'bg-blue-500/95' : 'bg-red-500/95'} text-white px-3 py-1.5 rounded-full text-xs font-bold backdrop-blur-sm shadow-lg">
-                                ${item.type === 'series' ? '📺 SERIES' : '🎬 FILM'}
-                            </span>
-                        </div>
+                        <div class="w-full h-80 bg-gradient-to-br from-gray-300 to-gray-400 items-center justify-center hidden"><span class="text-gray-600 text-lg p-4 text-center font-bold">${item.title}</span></div>
+                        <div class="absolute top-4 left-4"><span class="${item.type === 'series' ? 'bg-blue-500/95' : 'bg-red-500/95'} text-white px-3 py-1.5 rounded-full text-xs font-bold backdrop-blur-sm shadow-lg">${item.type === 'series' ? '📺 SERIES' : '🎬 FILM'}</span></div>
                         ${item.year ? `<div class="absolute top-4 right-4 bg-black/90 text-white px-3 py-1.5 rounded-full text-sm font-bold backdrop-blur-sm shadow-lg">${item.year}</div>` : ''}
                         ${item.rating ? `<div class="absolute top-16 left-4 bg-yellow-400 text-black px-3 py-1.5 rounded-xl text-sm font-bold shadow-lg">⭐ ${item.rating}</div>` : ''}
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                            <div class="p-6 text-white">
-                                ${item.comment ? `<p class="text-sm leading-relaxed font-medium">${item.comment}</p>` : ''}
-                            </div>
-                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"><div class="p-6 text-white">${item.comment ? `<p class="text-sm leading-relaxed font-medium">${item.comment}</p>` : ''}</div></div>
                     </div>
                     <div class="p-6 space-y-4">
                         <h3 class="font-bold text-lg text-gray-800 group-hover:text-purple-600 transition-colors duration-300">${item.title}</h3>
-                        <div class="flex items-center justify-between">
-                            <span class="text-gray-600 text-sm font-medium">${item.director || item.creator || ''}</span>
-                            ${item.status ? `<span class="text-xs px-3 py-1.5 rounded-full capitalize font-semibold ${statusColor}">${item.status}</span>` : ''}
-                        </div>
+                        <div class="flex items-center justify-between"><span class="text-gray-600 text-sm font-medium">${item.director || item.creator || ''}</span>${item.status ? `<span class="text-xs px-3 py-1.5 rounded-full capitalize font-semibold ${statusColor}">${item.status}</span>` : ''}</div>
                         <div class="flex items-center justify-between pt-4 border-t border-gray-200">
-                            <div class="flex items-center gap-2 text-sm text-gray-500 font-medium">
-                                <span>${item.type === 'series' ? '📺' : '🎬'}</span>
-                                ${item.country ? `<span>${item.country}</span>` : ''}
-                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-500 font-medium"><span>${item.type === 'series' ? '📺' : '🎬'}</span>${item.country ? `<span>${item.country}</span>` : ''}</div>
                             ${item.genre ? `<div class="text-sm"><span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full font-semibold">${item.genre.split(',')[0]}</span></div>` : ''}
                         </div>
                     </div>
-                </div>
-            `;
+                </div>`;
             return div;
         }
     });
 </script>
 
 <style>
-    .line-clamp-2 {
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-
-    .tab-content {
-        animation: fadeIn 0.5s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
+    .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .tab-content { animation: fadeIn 0.5s ease-in-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     .filter-select {
-        width: 100%;
-        padding: 1rem; /* 16px */
-        background-color: #F9FAFB; /* bg-gray-50 */
-        border: 2px solid transparent;
-        border-radius: 1rem; /* rounded-2xl */
-        outline: none;
-        transition: all 0.3s;
-        color: #1F2937; /* text-gray-800 */
-        -webkit-appearance: none;
-        appearance: none;
-        font-weight: 500; /* font-medium */
-        box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); /* shadow-sm */
+        width: 100%; padding: 1rem; background-color: #F9FAFB; border: 2px solid transparent; border-radius: 1rem;
+        outline: none; transition: all 0.3s; color: #1F2937; -webkit-appearance: none; appearance: none;
+        font-weight: 500; box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     }
-
     .filter-select:focus {
-        --tw-ring-color: rgb(168 85 247); /* ring-purple-500 */
-        --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+        --tw-ring-color: rgb(168 85 247);
         --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
         box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
         border-color: transparent;
     }
-
     .pagination-btn {
-        padding: 0.75rem 1.5rem; /* px-6 py-3 */
-        background-color: rgba(255, 255, 255, 0.8); /* bg-white/80 */
-        -webkit-backdrop-filter: blur(16px);
-        backdrop-filter: blur(16px);
-        border: 1px solid rgba(255, 255, 255, 0.5); /* border-white/50 */
-        border-radius: 1rem; /* rounded-2xl */
-        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* shadow-lg */
-        font-size: 1rem; /* text-base */
-        font-weight: 700; /* font-bold */
-        color: #374151; /* text-gray-700 */
-        transition: all 0.3s;
+        padding: 0.5rem 1rem; /* Smaller padding */
+        min-width: 44px; /* Ensure consistent size */
+        background-color: rgba(255, 255, 255, 0.8); backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 0.75rem; /* rounded-xl */
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        font-size: 1rem; font-weight: 700; color: #374151;
+        transition: all 0.2s ease-in-out;
     }
-
-    .pagination-btn:hover {
-        background-color: #ffffff;
-        color: #9333ea; /* text-purple-600 */
-        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* hover:shadow-xl */
+    .pagination-btn:hover:not(:disabled) {
+        background-color: #ffffff; color: #9333ea;
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        transform: translateY(-2px);
     }
-
-    .pagination-btn:focus {
-        outline: none;
-        --tw-ring-color: rgb(168 85 247);
-        --tw-ring-offset-width: 2px;
-        --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-        --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-        box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+    .pagination-btn:focus { outline: none; --tw-ring-color: rgb(168 85 247); box-shadow: 0 0 0 2px var(--tw-ring-color); }
+    .pagination-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    .pagination-btn.active {
+        background-color: #9333ea; color: white; border-color: #9333ea;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgb(147 51 234 / 0.2), 0 4px 6px -4px rgb(147 51 234 / 0.2);
     }
-
-    .pagination-btn:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
+    .pagination-ellipsis {
+        display: flex; align-items: center; justify-content: center;
+        padding: 0.5rem 0.25rem; font-weight: 700; color: #4B5563;
     }
-
-    @keyframes pulse {
-        0%, 100% { opacity: 1; }
-        50% { opacity: .5; }
-    }
-
-    .animate-pulse {
-        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
+    .animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
 </style>
