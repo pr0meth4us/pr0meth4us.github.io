@@ -1,4 +1,3 @@
-# _data/cv.yml
 objective: "A dual degree in Information and Communication Technology and International Relations. Seeking an opportunity to blend analytical, research, and technical programming skills to contribute to Cambodia's progress toward digitalization."
 
 education:
@@ -36,6 +35,13 @@ experience:
       - "Co-authored a policy chapter advocating legalization and regulation of surrogacy in Cambodia"
       - "Authored a policy chapter analyzing Singapore's 2024 prime-ministerial transition and its regional implications"
 
+  - organization: "Transparency International"
+    period: "Jan 2025 - March 2025"
+    position: "Young Research Fellow (project-based)"
+    responsibilities:
+      - "Received comprehensive training and mentorship in climate governance."
+      - "Conducting in-depth research on climate issues and authoring a policy brief with actionable recommendations."
+
   - organization: "Digital Government Transformation Dept., Digital Government Committee"
     period: "Jun 2023 - Aug 2024"
     position: "Software Developer (intern)"
@@ -44,6 +50,14 @@ experience:
       - "Enhanced the Cambodia Government Design System (CGDS) by developing reusable Jekyll/Sass/Bootstrap UI components and authoring comprehensive, WCAG-compliant documentation in both English and Khmer"
       - "Developed a provincial government WordPress theme by creating React-based Gutenberg blocks styled with Bootstrap, setting up automated CI/CD deployments"
       - "Served as Liaison Officer to the Minister of Technology and Communications, Laos at the 2024 Digital Government Forum, coordinating cross-border policy discussions and workshops"
+
+  - organization: "Ministry of Education, Youths, and Sports"
+    period: "April 2023 - December 2023"
+    position: "Digital Literacy Trainer (Volunteer)"
+    responsibilities:
+      - "Completed a training the trainers' workshop on teaching digital skills to high school students with limited technological access."
+      - "Trained 320 high school students in a distant province."
+      - "Instructed 4 teams on video competition."
 
   - organization: "AIESEC Organization"
     period: "Jun 2023 - Aug 2024"
