@@ -1,18 +1,13 @@
 # .github/workflows/deploy.yaml
+# This entire file lives in your 'source' branch.
 
-name: Deploy Website to Main Branch
+name: Build and Deploy Site to Main Branch
 
 on:
-  # This workflow is now manually triggered.
-  workflow_dispatch:
-    inputs:
-      deployment_choice:
-        description: 'Which version do you want to deploy?'
-        required: true
-        type: choice
-        options:
-          - Portfolio # Build and deploy the full Jekyll site.
-          - Status Page # Deploy only the "I dont need a job" page.
+  # This workflow runs automatically whenever you push to the 'source' branch.
+  push:
+    branches:
+      - 'source'
 
 # A single concurrent deployment is allowed, cancelling runs in progress.
 concurrency:
@@ -23,6 +18,11 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     
+    # Environment Variable to control deployment
+    # EDIT THIS LINE: Change 'Portfolio' to 'Status Page' to deploy the other version.
+    env:
+      DEPLOY_CHOICE: 'Portfolio' 
+
     permissions:
       contents: write # Required to push to the main branch.
 
@@ -30,46 +30,49 @@ jobs:
       # Step 1: Checkout the source branch.
       - name: Checkout source code
         uses: actions/checkout@v4
-        with:
-          ref: 'source'
 
-      # Step 2: Build the Jekyll site (ONLY if "Portfolio" was chosen).
+      # Step 2: Build the Jekyll site (ONLY if "Portfolio" is chosen).
       - name: Build Jekyll site
-        if: github.event.inputs.deployment_choice == 'Portfolio'
+        if: env.DEPLOY_CHOICE == 'Portfolio'
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
           bundler-cache: true # Installs dependencies and caches them.
       - name: Run Jekyll Build
-        if: github.event.inputs.deployment_choice == 'Portfolio'
+        if: env.DEPLOY_CHOICE == 'Portfolio'
         run: bundle exec jekyll build
 
       # Step 3: Prepare the deployment directory based on the choice.
       - name: Prepare deployment directory
         run: |
           set -e
-          echo "Preparing deployment directory..."
+          echo "Preparing to deploy: ${{ env.DEPLOY_CHOICE }}"
           
           # Create a temporary directory for deployment files.
           mkdir deploy_temp
           
-          # Conditionally copy the correct files based on the manual choice.
-          if [[ "${{ github.event.inputs.deployment_choice }}" == "Portfolio" ]]; then
-            echo "Copying full Jekyll site from ./_site"
-            rsync -av ./_site/ deploy_temp/
-          else
-            echo "Copying status page from ./status_page"
-            rsync -av ./status_page/ deploy_temp/
-          fi
-          
-          # Add the .nojekyll file in all cases.
-          touch deploy_temp/.nojekyll
-          
-          # PRESERVATION: Copy the workflow file to ensure it's not deleted.
-          # This is simpler now because we only check out the source branch once.
+          # PRESERVATION FIRST: Copy the workflow file to ensure it's not deleted.
           echo "Preserving workflow file..."
           mkdir -p deploy_temp/.github/workflows
           cp .github/workflows/deploy.yaml deploy_temp/.github/workflows/deploy.yaml
+          
+          # Now, copy the correct site content into the temp directory.
+          if [[ "${{ env.DEPLOY_CHOICE }}" == "Portfolio" ]]; then
+            echo "Copying full Jekyll site from ./_site"
+            rsync -av --delete ./_site/ deploy_temp/
+          else
+            echo "Copying status page from ./status_page"
+            rsync -av --delete ./status_page/ deploy_temp/
+          fi
+          
+          # Add the .nojekyll file.
+          touch deploy_temp/.nojekyll
+          
+          # DEBUGGING: List the final contents of the deployment directory.
+          echo "--------------------------------------------------"
+          echo "Final contents of deploy_temp:"
+          ls -R deploy_temp
+          echo "--------------------------------------------------"
 
       # Step 4: Deploy the prepared files to the 'main' branch.
       - name: Deploy to GitHub Pages
@@ -77,8 +80,8 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./deploy_temp
-          publish_branch: main
-          force_orphan: true # Creates a clean, single-commit history for the site.
+          publish_branch: main # DEPLOYMENT TARGET IS NOW 'main'
+          force_orphan: true 
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_message: "Deploy: ${{ github.event.inputs.deployment_choice }} to pages"
+          commit_message: "Deploy: ${{ env.DEPLOY_CHOICE }} to pages"
