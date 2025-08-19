@@ -49,14 +49,20 @@ jobs:
         if: steps.deploy_choice.outputs.choice == 'Portfolio'
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1'
+          ruby-version: '3.2'
           bundler-cache: true
 
       - name: Build Jekyll site (Portfolio only)
         if: steps.deploy_choice.outputs.choice == 'Portfolio'
         run: |
           echo "📦 Building Jekyll site..."
-          bundle exec jekyll build
+          echo "Ruby version: $(ruby --version)"
+          echo "Bundler version: $(bundle --version)"
+          echo "Available gems:"
+          bundle list
+          echo ""
+          echo "Building site..."
+          bundle exec jekyll build --verbose
           echo "✅ Jekyll build completed"
 
       - name: Clean up stale files (Status Page only)
