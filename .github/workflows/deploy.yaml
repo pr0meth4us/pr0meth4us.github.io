@@ -1,40 +1,84 @@
-name: Deploy to GitHub Pages
+# .github/workflows/deploy.yaml
+
+name: Deploy Website to Main Branch
 
 on:
-  push:
-    branches:
-      - source
+  # This workflow is now manually triggered.
+  workflow_dispatch:
+    inputs:
+      deployment_choice:
+        description: 'Which version do you want to deploy?'
+        required: true
+        type: choice
+        options:
+          - Portfolio # Build and deploy the full Jekyll site.
+          - Status Page # Deploy only the "I dont need a job" page.
 
-permissions:
-  contents: write
+# A single concurrent deployment is allowed, cancelling runs in progress.
+concurrency:
+  group: "pages-deployment"
+  cancel-in-progress: true
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    
+    permissions:
+      contents: write # Required to push to the main branch.
 
-      - name: Setup Ruby
+    steps:
+      # Step 1: Checkout the source branch.
+      - name: Checkout source code
+        uses: actions/checkout@v4
+        with:
+          ref: 'source'
+
+      # Step 2: Build the Jekyll site (ONLY if "Portfolio" was chosen).
+      - name: Build Jekyll site
+        if: github.event.inputs.deployment_choice == 'Portfolio'
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
-          bundler-cache: true
+          bundler-cache: true # Installs dependencies and caches them.
+      - name: Run Jekyll Build
+        if: github.event.inputs.deployment_choice == 'Portfolio'
+        run: bundle exec jekyll build
 
-      - name: Install dependencies
+      # Step 3: Prepare the deployment directory based on the choice.
+      - name: Prepare deployment directory
         run: |
-          gem install bundler
-          bundle install
+          set -e
+          echo "Preparing deployment directory..."
+          
+          # Create a temporary directory for deployment files.
+          mkdir deploy_temp
+          
+          # Conditionally copy the correct files based on the manual choice.
+          if [[ "${{ github.event.inputs.deployment_choice }}" == "Portfolio" ]]; then
+            echo "Copying full Jekyll site from ./_site"
+            rsync -av ./_site/ deploy_temp/
+          else
+            echo "Copying status page from ./status_page"
+            rsync -av ./status_page/ deploy_temp/
+          fi
+          
+          # Add the .nojekyll file in all cases.
+          touch deploy_temp/.nojekyll
+          
+          # PRESERVATION: Copy the workflow file to ensure it's not deleted.
+          # This is simpler now because we only check out the source branch once.
+          echo "Preserving workflow file..."
+          mkdir -p deploy_temp/.github/workflows
+          cp .github/workflows/deploy.yaml deploy_temp/.github/workflows/deploy.yaml
 
-      - name: Build Jekyll site
-        run: bundle exec jekyll build --config _config.yml --baseurl ""
-        env:
-          JEKYLL_ENV: production
-
+      # Step 4: Deploy the prepared files to the 'main' branch.
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+          publish_dir: ./deploy_temp
           publish_branch: main
-        continue-on-error: true
+          force_orphan: true # Creates a clean, single-commit history for the site.
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: "Deploy: ${{ github.event.inputs.deployment_choice }} to pages"
