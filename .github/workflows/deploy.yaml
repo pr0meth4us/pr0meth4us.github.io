@@ -52,6 +52,11 @@ jobs:
 
             # Restore deploy_target.txt
             mv /tmp/deploy_target.txt ./deploy_target.txt
+
+            # ✅ configure bot identity
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+
             git add deploy_target.txt
             git commit -m "Set deploy target to $DEPLOY_CHOICE"
             git push -f origin deploy-state
