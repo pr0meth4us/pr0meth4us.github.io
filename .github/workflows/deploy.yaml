@@ -137,22 +137,43 @@ jobs:
             cp -r /tmp/workflow-backup/.github .
           fi
           
+          cd ..
+          echo "✅ Main branch cleanup completed"
+
+      - name: Deploy content to main branch
+        run: |
+          echo "📂 Copying deployment content to main branch..."
+          
+          cd main-branch
+          
+          # Copy all content from deployment directory to main branch
+          echo "📋 Copying from ${{ steps.prepare.outputs.deploy_dir }} to main branch..."
+          cp -r ../${{ steps.prepare.outputs.deploy_dir }}/* . 2>/dev/null || echo "No files to copy"
+          cp -r ../${{ steps.prepare.outputs.deploy_dir }}/.[^.]* . 2>/dev/null || echo "No hidden files to copy"
+          
+          # Make sure we don't overwrite the workflow
+          if [ -d "/tmp/workflow-backup/.github" ]; then
+            echo "🔒 Re-ensuring workflow files are preserved..."
+            cp -r /tmp/workflow-backup/.github .
+          fi
+          
           # Check what we have now
-          echo "📋 Main branch contents after cleanup:"
+          echo "📋 Main branch contents after deployment:"
           ls -la
           
-          # Add and commit changes if there are any
+          # Add and commit changes
           if [ -n "$(git status --porcelain)" ]; then
-            echo "💾 Committing main branch cleanup..."
+            echo "💾 Committing deployment to main branch..."
             git add -A
-            git commit -m "🧹 Clean main branch - preserve workflow only [skip ci]" || echo "No changes to commit"
-            git push origin main || echo "Push failed or no changes to push"
+            git commit -m "🚀 Deploy ${{ steps.deploy_choice.outputs.choice }} content [skip ci]"
+            git push origin main
+            echo "✅ Deployment committed and pushed to main branch"
           else
-            echo "✅ No changes detected in main branch"
+            echo "✅ No changes detected - content already up to date"
           fi
           
           cd ..
-          echo "✅ Main branch cleanup completed"
+          echo "✅ Main branch deployment completed"
       - name: Protect deployment from workflow conflicts
         run: |
           echo "🔒 Ensuring deployment doesn't conflict with main branch..."
@@ -184,11 +205,15 @@ jobs:
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
+        with:
+          # Deploy from main branch since we've copied content there
+          enablement: true
 
       - name: Upload to GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ steps.prepare.outputs.deploy_dir }}
+          # Upload from main branch where we've deployed the content
+          path: main-branch
 
       - name: Deploy to GitHub Pages
         id: deployment
@@ -203,6 +228,7 @@ jobs:
           echo "- **Source Description**: ${{ steps.prepare.outputs.source_desc }}" >> $GITHUB_STEP_SUMMARY
           echo "- **Deployment URL**: ${{ steps.deployment.outputs.page_url }}" >> $GITHUB_STEP_SUMMARY
           echo "- **Triggered by**: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Main Branch Status**: ✅ Content deployed to main branch" >> $GITHUB_STEP_SUMMARY
           echo "- **Workflow Protection**: ✅ Workflow files preserved on main branch" >> $GITHUB_STEP_SUMMARY
           
           if [ "${{ steps.deploy_choice.outputs.choice }}" = "portfolio" ]; then
