@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:description"
+          content="The Eternal Chronicle – A Portfolio Website of SOEUNG Phearaneron." />
+    <meta property="og:image" content="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741585138/prometheus_cju1pn.png" />
+    <title>
+        
+        Coding Projects - SOEUNG Phearaeron
+        
+    </title>
+    <link rel="icon" href="/assets/images/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+</head>
+<body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
+
+<header class="shadow-sm bg-white py-4 px-6 border-b border-gray-300 sticky top-0 z-40">
+    <div class="container mx-auto flex justify-between items-center">
+        <div>
+            <a href="/" class="flex items-center space-x-3 text-2xl font-bold tracking-tight transition duration-300 hover:text-gray-700">
+                <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741585138/prometheus_cju1pn.png" alt="Prometheus Logo" class="h-12 w-auto">
+                <span class="lg:block hidden">SOEUNG Phearaeron</span>
+            </a>
+        </div>
+
+        
+
+        <nav class="hidden md:flex items-center space-x-6 py-2 font-medium desktop-nav">
+            
+            
+            
+            
+
+            <div class=" nav-item relative">
+                <a href="/" class="text-gray-800 hover:text-blue-600 transition nav-link">
+                    Home
+                    
+                </a>
+
+                
+            </div>
+            
+            
+            
+            
+
+            <div class="dropdown-container nav-item relative">
+                <a href="/about" class="text-gray-800 hover:text-blue-600 transition nav-link">
+                    About Me
+                    
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block ml-1 transform transition-transform duration-200 dropdown-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                    
+                </a>
+
+                
+                <div class="dropdown-content absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+                    
+                    
+                    
+                    
+                    <a href="/about/cv" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition">
+                        CV
+                    </a>
+                    
+                </div>
+                
+            </div>
+            
+            
+            
+            
+
+            <div class=" nav-item relative">
+                <a href="/projects" class="text-blue-600 active-nav transition nav-link">
+                    Coding Projects
+                    
+                </a>
+
+                
+            </div>
+            
+            
+            
+            
+
+            <div class=" nav-item relative">
+                <a href="/papers" class="text-gray-800 hover:text-blue-600 transition nav-link">
+                    Papers
+                    
+                </a>
+
+                
+            </div>
+            
+            
+            
+            
+
+            <div class=" nav-item relative">
+                <a href="/misc" class="text-gray-800 hover:text-blue-600 transition nav-link">
+                    Archive
+                    
+                </a>
+
+                
+            </div>
+            
+
+            <a href="https://github.com/pr0meth4us" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="text-gray-800 hover:text-blue-600 transition">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
+                </svg>
+            </a>
+        </nav>
+
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-gray-800 hover:text-blue-600 focus:outline-none" aria-label="Open main menu" aria-expanded="false">
+                <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+                <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            
+
+            
+
+            
+
+            
+            <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200">
+                Home
+            </a>
+
+            
+
+            
+
+            
+
+            
+
+            
+            <a href="/about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200">
+                About Me
+            </a>
+
+            
+            <div class="pl-4 border-l-2 border-gray-200 ml-3">
+                
+                
+                
+                <a href="/about/cv" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">
+                    CV
+                </a>
+                
+            </div>
+            
+
+            
+
+            
+
+            
+
+            
+            <a href="/projects" class="block px-3 py-2 rounded-md text-base font-medium bg-blue-100 text-blue-700">
+                Coding Projects
+            </a>
+
+            
+
+            
+
+            
+
+            
+
+            
+            <a href="/papers" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200">
+                Papers
+            </a>
+
+            
+
+            
+
+            
+
+            
+
+            
+            <a href="/misc" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200">
+                Archive
+            </a>
+
+            
+
+            
+
+            <a href="https://github.com/pr0meth4us" target="_blank" rel="noopener noreferrer" class="text-gray-800 hover:bg-gray-200 block px-3 py-2 rounded-md text-base font-medium">
+                GitHub
+            </a>
+        </div>
+    </div>
+</header>
+
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    
+    <div class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
+        
+        <div class="h-48 bg-gray-100 overflow-hidden">
+            <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1747767907/Screenshot_2025-05-21_at_2.03.49_in_the_morning_qlq6s2.png" alt="Cambodia License Plate Recognition System" class="w-full h-full object-cover object-center">
+        </div>
+        
+
+        <div class="p-6">
+            <h2 class="text-2xl font-bold mb-3">Cambodia License Plate Recognition System</h2>
+
+            <p class="mb-4 text-gray-700">Developed a specialized license plate recognition system for Cambodian vehicles.  
+Fine-tuned a YOLO-based segmentation and detection model to accurately locate license plates then segment the number and province regions.  
+Integrated with OCR (PARSeq) for text recognition.
+</p>
+
+            <div class="mb-4 flex flex-wrap gap-2">
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Python</span>
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Flask</span>
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">YOLO</span>
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">PARSeq OCR</span>
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Next.js</span>
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Docker</span>
+                
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+                
+                
+                <a href="https://github.com/pr0meth4us/camlpr" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    GitHub
+                </a>
+                
+                
+                
+                <a href="https://camlpr.vercel.app/" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    Demo
+                </a>
+                
+                
+                
+                <a href="https://colab.research.google.com/drive/1Kihpf1Ze3Pq14FhVz0pr0iPukIo0pQM_?usp=sharing" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    Model Training
+                </a>
+                
+                
+            </div>
+        </div>
+    </div>
+    
+    <div class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
+        
+        <div class="h-48 bg-gray-100 overflow-hidden">
+            <img src="https://rachana.gov.kh/assets/uncompressed_images/rachana.svg" alt="Rachana.gov.kh" class="w-full h-full object-cover object-center">
+        </div>
+        
+
+        <div class="p-6">
+            <h2 class="text-2xl font-bold mb-3">Rachana.gov.kh</h2>
+
+            <p class="mb-4 text-gray-700">Government design system to universalize the interface of digital public services.</p>
+
+            <div class="mb-4 flex flex-wrap gap-2">
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">React</span>
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">BootStrap</span>
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Jekyll</span>
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Content Writing</span>
+                
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+                
+                
+                <a href="https://github.com/DGTDept/Rachana" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    GitHub
+                </a>
+                
+                
+                
+                <a href="https://rachana.gov.kh/" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    Demo
+                </a>
+                
+                
+            </div>
+        </div>
+    </div>
+    
+    <div class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
+        
+        <div class="h-48 bg-gray-100 overflow-hidden">
+            <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1749468613/cool_logo_yvc7jr.jpg" alt="AUPP eCampus" class="w-full h-full object-cover object-center">
+        </div>
+        
+
+        <div class="p-6">
+            <h2 class="text-2xl font-bold mb-3">AUPP eCampus</h2>
+
+            <p class="mb-4 text-gray-700">My final project. An eLearning portal designed to be cost efficient by utilizing the 'free trial' provisions from various providers.</p>
+
+            <div class="mb-4 flex flex-wrap gap-2">
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">React</span>
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Databases (Mongo, AWS, Cloudinary, Redis, Supabase)</span>
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Flask</span>
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">PayPal API</span>
+                
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+                
+                
+                <a href="https://auppecampus.vercel.app/" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    Frontend
+                </a>
+                
+                
+                
+                <a href="https://irrelevant-bonnibelle-aupp-6d0e6d6c.koyeb.app/" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    Backend
+                </a>
+                
+                
+                
+                <a href="https://github.com/pr0meth4us/AUPP-eCampus" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    GitHub
+                </a>
+                
+                
+            </div>
+        </div>
+    </div>
+    
+    <div class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
+        
+        <div class="h-48 bg-gray-100 overflow-hidden">
+            <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1749548452/ChatGPT_Image_Jun_10_2025_04_40_38_PM_oj20ug.png" alt="Chat Message Analyzer" class="w-full h-full object-cover object-center">
+        </div>
+        
+
+        <div class="p-6">
+            <h2 class="text-2xl font-bold mb-3">Chat Message Analyzer</h2>
+
+            <p class="mb-4 text-gray-700">A chat analysis tool that transforms exported chat logs into insights about communication patterns and relationship dynamics.  
+Supports Telegram, Facebook, Instagram, iMessage, Discord, and TikTok exports in HTML/JSON formats.
+</p>
+
+            <div class="mb-4 flex flex-wrap gap-2">
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Flask</span>
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">HTML/JSON Parsing</span>
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Natural Language Analysis</span>
+                
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+                
+                
+                <a href="https://github.com/pr0meth4us/chat-analysis" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    GitHub
+                </a>
+                
+                
+                
+                <a href="https://chat-analysis-beryl.vercel.app/" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    Web App
+                </a>
+                
+                
+                
+                <a href="https://chat-analysis-beryl.vercel.app/demo" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    Dashboard Demo
+                </a>
+                
+                
+            </div>
+        </div>
+    </div>
+    
+    <div class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
+        
+        <div class="h-48 bg-gray-100 overflow-hidden">
+            <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1751178603/grouper_jdyvhs.png" alt="Grouper" class="w-full h-full object-cover object-center">
+        </div>
+        
+
+        <div class="p-6">
+            <h2 class="text-2xl font-bold mb-3">Grouper</h2>
+
+            <p class="mb-4 text-gray-700">It sorts a list of names into random groups. It can saves lists for reuse later. Useful for when you are  team leader or class monitor.</p>
+
+            <div class="mb-4 flex flex-wrap gap-2">
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">SpringBoot</span>
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">NextJs</span>
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Mongo</span>
+                
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+                
+                
+                <a href="https://github.com/pr0meth4us/grouper" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    GitHub
+                </a>
+                
+                
+                
+                <a href="https://grouper-five.vercel.app/" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    Website
+                </a>
+                
+                
+            </div>
+        </div>
+    </div>
+    
+    <div class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
+        
+        <div class="h-48 bg-gray-100 overflow-hidden">
+            <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1751178610/form_suwmgv.png" alt="Form Generator" class="w-full h-full object-cover object-center">
+        </div>
+        
+
+        <div class="p-6">
+            <h2 class="text-2xl font-bold mb-3">Form Generator</h2>
+
+            <p class="mb-4 text-gray-700">It generates forms fast and lets you view results. Prioritize simplicity and accessibility. Use it for surveys (not quizzes). Better than Google Form when u need an image-select option. I created this because i needed to conduct a survey but Google butchered my images and surveyees couldn’t see them.  </p>
+
+            <div class="mb-4 flex flex-wrap gap-2">
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">NextJs</span>
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Mongo</span>
+                
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+                
+                
+                <a href="https://github.com/pr0meth4us/form-generator" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    GitHub
+                </a>
+                
+                
+                
+                <a href="https://coolform-generator.vercel.app/dashboard" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    Website
+                </a>
+                
+                
+                
+                <a href="https://coolform-generator.vercel.app/questionnaire/6860ef4aef31e80de610b325/" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    Surveyee View
+                </a>
+                
+                
+                
+                <a href="https://coolform-generator.vercel.app/test-view" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    Submission View
+                </a>
+                
+                
+            </div>
+        </div>
+    </div>
+    
+    <div class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
+        
+        <div class="h-48 bg-gray-100 overflow-hidden">
+            <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741504865/mnemosyne_y4vsar.png" alt="Mnemosyne" class="w-full h-full object-cover object-center">
+        </div>
+        
+
+        <div class="p-6">
+            <h2 class="text-2xl font-bold mb-3">Mnemosyne</h2>
+
+            <p class="mb-4 text-gray-700">Named after the goddess of memory. This app recreate TikTok conversation/chatlogs with a nice-looking interface (because TikTok automatically timebomb delete your texts). Processes are done on the client side, no server side process, no database.</p>
+
+            <div class="mb-4 flex flex-wrap gap-2">
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">NextJs</span>
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Tailwind</span>
+                
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+                
+                
+                <a href="https://github.com/pr0meth4us/Mnemosyne" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    GitHub
+                </a>
+                
+                
+                
+                <a href="https://mnemosyne-hazel.vercel.app/" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    Website
+                </a>
+                
+                
+            </div>
+        </div>
+    </div>
+    
+    <div class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
+        
+        <div class="h-48 bg-gray-100 overflow-hidden">
+            <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741625241/Untitled_design_1_zgzqng.jpg" alt="Rachana WordPress" class="w-full h-full object-cover object-center">
+        </div>
+        
+
+        <div class="p-6">
+            <h2 class="text-2xl font-bold mb-3">Rachana WordPress</h2>
+
+            <p class="mb-4 text-gray-700">Same purpose as Rachana but is based on WordPress.</p>
+
+            <div class="mb-4 flex flex-wrap gap-2">
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">WordPress</span>
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Node.js</span>
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">PHP</span>
+                
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+                
+                
+                <a href="https://github.com/MPTCDITR/rachana-demo" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    GitHub
+                </a>
+                
+                
+                
+                <a href="https://wordpress.rachana.gov.kh/" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    Demo (incomplete)
+                </a>
+                
+                
+            </div>
+        </div>
+    </div>
+    
+    <div class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
+        
+        <div class="h-48 bg-gray-100 overflow-hidden">
+            <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1752570368/ChatGPT_Image_Jul_15_2025_04_05_16_PM_ql96m6.png" alt="Expenditure Tracker" class="w-full h-full object-cover object-center">
+        </div>
+        
+
+        <div class="p-6">
+            <h2 class="text-2xl font-bold mb-3">Expenditure Tracker</h2>
+
+            <p class="mb-4 text-gray-700">Logs every bit of cash in & out straight from Telegram so I actually stay on top of my money and be more financially responsible. (still experimental, still thinking of features to add but perfectly running)</p>
+
+            <div class="mb-4 flex flex-wrap gap-2">
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Flask</span>
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Telegram Bot API</span>
+                
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+                
+                
+                <a href="https://t.me/expenditure_tracker_GUI_bot" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    Telegram Bot
+                </a>
+                
+                
+                
+                <a href="https://github.com/pr0meth4us/monolith-services" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    GitHub
+                </a>
+                
+                
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+</main>
+
+<footer class="py-6 border-t border-gray-300">
+    <div class="flex justify-center items-center space-x-4 text-sm text-gray-600">
+        <span>© 2025 Prometheus</span>
+        <span class="text-gray-400">•</span>
+        <a href="https://github.com/pr0meth4us" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="transition hover:text-gray-900">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
+            </svg>
+        </a>
+        <span class="text-gray-400">•</span>
+        <span>Designed & Developed</span>
+    </div>
+</footer>
+
+
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>
