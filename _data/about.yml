@@ -1,0 +1,23 @@
+skills:
+  - Data Analysis
+  - Policy Analysis
+  - International Relations
+  - Diplomacy
+  - Full-Stack Web Development
+
+interests:
+  - Public Policy
+  - Digital Governance
+  - Policy Research
+  - Backend Development
+
+languages:
+  - language: "Khmer"
+    proficiency: "Native"
+  - language: "English"
+    proficiency: "Full Professional Proficiency"
+
+birth_year: "2004"
+birthplace: "Kompong Thom"
+current_location: "Phnom Penh"
+personality_type: "ISTP"
