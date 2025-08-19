@@ -1,48 +1,49 @@
-# .github/workflows/deploy.yaml
-# This entire file lives in your 'source' branch.
-
 name: Build and Deploy Site to Main Branch
-
 on:
-  # This workflow runs automatically whenever you push to the 'source' branch.
   push:
     branches:
       - 'source'
-
-# A single concurrent deployment is allowed, cancelling runs in progress.
+  workflow_dispatch:
+    inputs:
+      deploy_choice:
+        description: 'Choose what to deploy'
+        required: true
+        default: 'Portfolio'
+        type: choice
+        options:
+          - Portfolio
+          - Status Page
 concurrency:
   group: "pages-deployment"
   cancel-in-progress: true
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     
-    # Environment Variable to control deployment
-    # EDIT THIS LINE: Change 'Portfolio' to 'Status Page' to deploy the other version.
     env:
-      DEPLOY_CHOICE: 'Portfolio' 
-
+      DEPLOY_CHOICE: ${{ github.event.inputs.deploy_choice || 'Portfolio' }}
     permissions:
-      contents: write # Required to push to the main branch.
-
+      contents: write
     steps:
-      # Step 1: Checkout the source branch.
       - name: Checkout source code
         uses: actions/checkout@v4
-
-      # Step 2: Build the Jekyll site (ONLY if "Portfolio" is chosen).
-      - name: Build Jekyll site
+      - name: Setup Ruby
         if: env.DEPLOY_CHOICE == 'Portfolio'
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
-          bundler-cache: true # Installs dependencies and caches them.
-      - name: Run Jekyll Build
-        if: env.DEPLOY_CHOICE == 'Portfolio'
-        run: bundle exec jekyll build
+          bundler-cache: true
 
-      # Step 3: Prepare the deployment directory based on the choice.
+      - name: Install dependencies
+        if: env.DEPLOY_CHOICE == 'Portfolio'
+        run: |
+          gem install bundler
+          bundle install
+      - name: Build Jekyll site
+        if: env.DEPLOY_CHOICE == 'Portfolio'
+        run: bundle exec jekyll build --config _config.yml --baseurl ""
+        env:
+          JEKYLL_ENV: production
       - name: Prepare deployment directory
         run: |
           set -e
@@ -73,15 +74,13 @@ jobs:
           echo "Final contents of deploy_temp:"
           ls -R deploy_temp
           echo "--------------------------------------------------"
-
-      # Step 4: Deploy the prepared files to the 'main' branch.
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./deploy_temp
-          publish_branch: main # DEPLOYMENT TARGET IS NOW 'main'
-          force_orphan: true 
+          publish_branch: main
+          force_orphan: true
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
           commit_message: "Deploy: ${{ env.DEPLOY_CHOICE }} to pages"
