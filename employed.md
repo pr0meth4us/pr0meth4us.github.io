@@ -1,0 +1,4 @@
+---
+layout: employed
+permalink: /no/
+---
