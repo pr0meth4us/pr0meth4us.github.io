@@ -37,29 +37,21 @@ jobs:
         id: choice
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            # Dispatcher run → set chosen mode and save it to branch
             DEPLOY_CHOICE="${{ github.event.inputs.deploy_choice }}"
             echo "DEPLOY_CHOICE=$DEPLOY_CHOICE" >> $GITHUB_ENV
-
-            # Save deploy target temporarily
             echo "$DEPLOY_CHOICE" > /tmp/deploy_target.txt
 
-            # Checkout or create the deploy-state branch
             git fetch origin
             git checkout deploy-state || git checkout --orphan deploy-state
             git reset --hard
             git rm -rf . || true
 
-            # Restore deploy_target.txt
             mv /tmp/deploy_target.txt ./deploy_target.txt
 
-            # ✅ configure bot identity
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
 
             git add deploy_target.txt
-
-            # ✅ Commit only if something changed
             if git diff --cached --quiet; then
               echo "No changes to commit"
             else
@@ -67,10 +59,8 @@ jobs:
               git push -f origin deploy-state
             fi
 
-            # Go back to main branch to keep site files
             git checkout main
           else
-            # Push run → read last saved state from branch
             git fetch origin deploy-state
             git show origin/deploy-state:deploy_target.txt > deploy_target.txt
             DEPLOY_CHOICE=$(cat deploy_target.txt)
@@ -79,8 +69,10 @@ jobs:
 
       - name: Debug deploy choice
         run: |
-          echo "Deploy choice is $DEPLOY_CHOICE"
-          ls -al
+          echo "--------------------------------------------------"
+          echo "Deploying choice: $DEPLOY_CHOICE"
+          cat deploy_target.txt || echo "No deploy_target.txt found"
+          echo "--------------------------------------------------"
 
       # -------------------
       # Portfolio pipeline
@@ -113,6 +105,7 @@ jobs:
           mkdir deploy_temp
           mkdir -p deploy_temp/.github/workflows
           cp .github/workflows/deploy.yaml deploy_temp/.github/workflows/deploy.yaml
+
           if [ "$DEPLOY_CHOICE" = "Portfolio" ]; then
             echo "Copying full Jekyll site from ./_site"
             rsync -av --delete --exclude='.github' ./_site/ deploy_temp/
@@ -120,6 +113,7 @@ jobs:
             echo "Copying status page from ./status_page"
             rsync -av --delete --exclude='.github' ./status_page/ deploy_temp/
           fi
+
           touch deploy_temp/.nojekyll
           echo "--------------------------------------------------"
           ls -R deploy_temp
