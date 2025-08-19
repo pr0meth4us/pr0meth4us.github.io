@@ -15,7 +15,7 @@ on:
           - 'portfolio'
 
 permissions:
-  contents: read
+  contents: write  # Need write permissions to clean main branch
   pages: write
   id-token: write
 
@@ -53,6 +53,7 @@ jobs:
         with:
           ref: main
           path: main-branch
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Ruby and Jekyll (Portfolio only)
         if: steps.deploy_choice.outputs.choice == 'portfolio'
@@ -109,21 +110,60 @@ jobs:
           
           echo "✅ Directory $DEPLOY_DIR exists and is ready for deployment"
 
-      - name: Protect workflow files
+      - name: Clean main branch (preserve workflow only)
         run: |
-          echo "🔒 Ensuring workflow files are not overwritten..."
+          echo "🧹 Cleaning main branch - preserving only workflow files..."
           
-          # Create a backup of the current workflow
-          mkdir -p .github/workflows
-          cp main-branch/.github/workflows/deploy.yaml .github/workflows/deploy.yaml 2>/dev/null || echo "No workflow file found in main branch"
+          cd main-branch
           
-          # Remove any workflow files from the deployment directory to prevent overwriting
+          # Configure git
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # Backup workflow files
+          echo "💾 Backing up workflow files..."
+          mkdir -p /tmp/workflow-backup
+          if [ -d ".github" ]; then
+            cp -r .github /tmp/workflow-backup/ || echo "No .github directory to backup"
+          fi
+          
+          # Remove everything from main branch (except .git)
+          echo "🗑️ Removing all files from main branch..."
+          find . -maxdepth 1 -not -name '.git' -not -name '.' -not -name '..' -exec rm -rf {} + 2>/dev/null || true
+          
+          # Restore workflow files
+          echo "🔄 Restoring workflow files..."
+          if [ -d "/tmp/workflow-backup/.github" ]; then
+            cp -r /tmp/workflow-backup/.github .
+          fi
+          
+          # Check what we have now
+          echo "📋 Main branch contents after cleanup:"
+          ls -la
+          
+          # Add and commit changes if there are any
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "💾 Committing main branch cleanup..."
+            git add -A
+            git commit -m "🧹 Clean main branch - preserve workflow only [skip ci]" || echo "No changes to commit"
+            git push origin main || echo "Push failed or no changes to push"
+          else
+            echo "✅ No changes detected in main branch"
+          fi
+          
+          cd ..
+          echo "✅ Main branch cleanup completed"
+      - name: Protect deployment from workflow conflicts
+        run: |
+          echo "🔒 Ensuring deployment doesn't conflict with main branch..."
+          
+          # Remove any workflow files from the deployment directory to prevent conflicts
           if [ -d "${{ steps.prepare.outputs.deploy_dir }}/.github" ]; then
-            echo "⚠️  Removing .github directory from deployment to protect workflows"
+            echo "⚠️  Removing .github directory from deployment to prevent conflicts"
             rm -rf "${{ steps.prepare.outputs.deploy_dir }}/.github"
           fi
           
-          echo "✅ Workflow protection completed"
+          echo "✅ Deployment protection completed"
 
       - name: Debug deployment contents
         run: |
