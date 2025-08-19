@@ -146,6 +146,10 @@ jobs:
           
           cd main-branch
           
+          # Configure git (ensure it's set in the right directory)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
           # Copy all content from deployment directory to main branch
           echo "📋 Copying from ${{ steps.prepare.outputs.deploy_dir }} to main branch..."
           cp -r ../${{ steps.prepare.outputs.deploy_dir }}/* . 2>/dev/null || echo "No files to copy"
@@ -160,6 +164,11 @@ jobs:
           # Check what we have now
           echo "📋 Main branch contents after deployment:"
           ls -la
+          
+          # Verify git config
+          echo "🔧 Git configuration:"
+          git config user.name
+          git config user.email
           
           # Add and commit changes
           if [ -n "$(git status --porcelain)" ]; then
