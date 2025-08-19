@@ -1,131 +1,130 @@
-name: Build and Deploy Site to Main Branch
+name: Deploy Site
 
 on:
   push:
-    branches:
-      - 'main'
+    branches: [ main ]
   workflow_dispatch:
     inputs:
       deploy_choice:
-        description: 'What to deploy'
+        description: 'Choose what to deploy'
         required: true
         default: 'Portfolio'
         type: choice
         options:
-          - Portfolio
-          - Status Page
+          - 'Portfolio'
+          - 'Status Page'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
-  group: "pages-deployment"
-  cancel-in-progress: true
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pages: write
-      id-token: write
-
     steps:
-      - name: Checkout repo
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Determine deploy choice
-        id: choice
+        id: deploy_choice
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            DEPLOY_CHOICE="${{ github.event.inputs.deploy_choice }}"
-            echo "DEPLOY_CHOICE=$DEPLOY_CHOICE" >> $GITHUB_ENV
-            echo "$DEPLOY_CHOICE" > /tmp/deploy_target.txt
-
-            git fetch origin
-            git checkout deploy-state || git checkout --orphan deploy-state
-            git reset --hard
-            git rm -rf . || true
-
-            mv /tmp/deploy_target.txt ./deploy_target.txt
-
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-
-            git add deploy_target.txt
-            if git diff --cached --quiet; then
-              echo "No changes to commit"
-            else
-              git commit -m "Set deploy target to $DEPLOY_CHOICE"
-              git push -f origin deploy-state
-            fi
-
-            git checkout main
+            CHOICE="${{ github.event.inputs.deploy_choice }}"
           else
-            git fetch origin deploy-state
-            git show origin/deploy-state:deploy_target.txt > deploy_target.txt
-            DEPLOY_CHOICE=$(cat deploy_target.txt)
-            echo "DEPLOY_CHOICE=$DEPLOY_CHOICE" >> $GITHUB_ENV
+            # Default to Portfolio for push events
+            CHOICE="Portfolio"
           fi
+          echo "choice=$CHOICE" >> $GITHUB_OUTPUT
+          echo "🚀 Deploy choice: $CHOICE"
 
-      - name: Debug deploy choice
-        run: |
-          echo "--------------------------------------------------"
-          echo "Deploying choice: $DEPLOY_CHOICE"
-          cat deploy_target.txt || echo "No deploy_target.txt found"
-          echo "--------------------------------------------------"
-
-      # -------------------
-      # Portfolio pipeline
-      # -------------------
-      - name: Setup Ruby
-        if: env.DEPLOY_CHOICE == 'Portfolio'
+      - name: Setup Ruby and Jekyll (Portfolio only)
+        if: steps.deploy_choice.outputs.choice == 'Portfolio'
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2'
+          ruby-version: '3.1'
           bundler-cache: true
 
-      - name: Install dependencies
-        if: env.DEPLOY_CHOICE == 'Portfolio'
+      - name: Build Jekyll site (Portfolio only)
+        if: steps.deploy_choice.outputs.choice == 'Portfolio'
         run: |
-          gem install bundler
-          bundle install --gemfile=Gemfile
+          echo "📦 Building Jekyll site..."
+          bundle exec jekyll build
+          echo "✅ Jekyll build completed"
 
-      - name: Build Jekyll site
-        if: env.DEPLOY_CHOICE == 'Portfolio'
-        run: bundle exec jekyll build --config _config.yml --baseurl ""
-        env:
-          JEKYLL_ENV: production
-
-      # -------------------
-      # Deployment prep
-      # -------------------
-      - name: Prepare deployment directory
+      - name: Clean up stale files (Status Page only)
+        if: steps.deploy_choice.outputs.choice == 'Status Page'
         run: |
-          echo "Preparing to deploy: $DEPLOY_CHOICE"
-          mkdir deploy_temp
-          mkdir -p deploy_temp/.github/workflows
-          cp .github/workflows/deploy.yaml deploy_temp/.github/workflows/deploy.yaml
-
-          if [ "$DEPLOY_CHOICE" = "Portfolio" ]; then
-            echo "Copying full Jekyll site from ./_site"
-            rsync -av --delete --exclude='.github' ./_site/ deploy_temp/
+          echo "🧹 Cleaning up stale _site/ files..."
+          if [ -d "_site" ]; then
+            rm -rf _site/
+            echo "✅ Removed existing _site/ directory"
           else
-            echo "Copying status page from ./status_page"
-            rsync -av --delete --exclude='.github' ./status_page/ deploy_temp/
+            echo "ℹ️ No _site/ directory found to clean"
           fi
 
-          touch deploy_temp/.nojekyll
-          echo "--------------------------------------------------"
-          ls -R deploy_temp
-          echo "--------------------------------------------------"
+      - name: Prepare deployment directory
+        id: prepare
+        run: |
+          if [ "${{ steps.deploy_choice.outputs.choice }}" = "Portfolio" ]; then
+            DEPLOY_DIR="_site"
+          else
+            DEPLOY_DIR="status_page"
+          fi
+          
+          echo "deploy_dir=$DEPLOY_DIR" >> $GITHUB_OUTPUT
+          echo "📁 Deployment directory: $DEPLOY_DIR"
+          
+          # Verify directory exists
+          if [ ! -d "$DEPLOY_DIR" ]; then
+            echo "❌ Error: Directory $DEPLOY_DIR does not exist!"
+            exit 1
+          fi
+          
+          echo "✅ Directory $DEPLOY_DIR exists and is ready for deployment"
+
+      - name: Debug deployment contents
+        run: |
+          echo "🔍 Debug: Contents of deployment directory '${{ steps.prepare.outputs.deploy_dir }}':"
+          ls -la "${{ steps.prepare.outputs.deploy_dir }}"
+          echo ""
+          echo "📊 File count in deployment directory:"
+          find "${{ steps.prepare.outputs.deploy_dir }}" -type f | wc -l
+          echo ""
+          echo "💾 Total size of deployment directory:"
+          du -sh "${{ steps.prepare.outputs.deploy_dir }}"
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload to GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ steps.prepare.outputs.deploy_dir }}
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./deploy_temp
-          publish_branch: gh-pages
-          force_orphan: true
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_message: "Deploy: $DEPLOY_CHOICE to pages"
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Create deployment summary
+        run: |
+          echo "## 🚀 Deployment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Deploy Choice**: ${{ steps.deploy_choice.outputs.choice }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Source Directory**: \`${{ steps.prepare.outputs.deploy_dir }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **Deployment URL**: ${{ steps.deployment.outputs.page_url }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Triggered by**: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ steps.deploy_choice.outputs.choice }}" = "Portfolio" ]; then
+            echo "- **Jekyll Build**: ✅ Completed" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "- **Jekyll Build**: ⏭️ Skipped (Status Page deployment)" >> $GITHUB_STEP_SUMMARY
+            echo "- **Cleanup**: ✅ Removed stale _site/ files" >> $GITHUB_STEP_SUMMARY
+          fi
