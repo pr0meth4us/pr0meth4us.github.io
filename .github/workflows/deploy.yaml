@@ -22,7 +22,6 @@ concurrency:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     permissions:
       contents: write
       pages: write
@@ -43,44 +42,46 @@ jobs:
             echo "DEPLOY_CHOICE=$DEPLOY_CHOICE" >> $GITHUB_ENV
 
             echo "$DEPLOY_CHOICE" > deploy_target.txt
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            git checkout --orphan deploy-state
+            git fetch origin
+            git checkout deploy-state || git checkout --orphan deploy-state
+            git reset --hard
             git rm -rf .
             mv ../deploy_target.txt ./deploy_target.txt || true
             git add deploy_target.txt
             git commit -m "Set deploy target to $DEPLOY_CHOICE"
             git push -f origin deploy-state
-
+            git checkout main
           else
             # Push run → read last saved state from branch
             git fetch origin deploy-state
-            git checkout deploy-state
+            git show origin/deploy-state:deploy_target.txt > deploy_target.txt
             DEPLOY_CHOICE=$(cat deploy_target.txt)
             echo "DEPLOY_CHOICE=$DEPLOY_CHOICE" >> $GITHUB_ENV
           fi
 
       - name: Debug deploy choice
-        run: echo "Deploy choice is $DEPLOY_CHOICE"
+        run: |
+          echo "Deploy choice is $DEPLOY_CHOICE"
+          ls -al
 
       # -------------------
       # Portfolio pipeline
       # -------------------
       - name: Setup Ruby
-        if: ${{ env.DEPLOY_CHOICE == 'Portfolio' }}
+        if: env.DEPLOY_CHOICE == 'Portfolio'
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
           bundler-cache: true
 
       - name: Install dependencies
-        if: ${{ env.DEPLOY_CHOICE == 'Portfolio' }}
+        if: env.DEPLOY_CHOICE == 'Portfolio'
         run: |
           gem install bundler
-          bundle install
+          bundle install --gemfile=Gemfile
 
       - name: Build Jekyll site
-        if: ${{ env.DEPLOY_CHOICE == 'Portfolio' }}
+        if: env.DEPLOY_CHOICE == 'Portfolio'
         run: bundle exec jekyll build --config _config.yml --baseurl ""
         env:
           JEKYLL_ENV: production
@@ -94,7 +95,6 @@ jobs:
           mkdir deploy_temp
           mkdir -p deploy_temp/.github/workflows
           cp .github/workflows/deploy.yaml deploy_temp/.github/workflows/deploy.yaml
-
           if [ "$DEPLOY_CHOICE" = "Portfolio" ]; then
             echo "Copying full Jekyll site from ./_site"
             rsync -av --delete --exclude='.github' ./_site/ deploy_temp/
@@ -102,9 +102,7 @@ jobs:
             echo "Copying status page from ./status_page"
             rsync -av --delete --exclude='.github' ./status_page/ deploy_temp/
           fi
-
           touch deploy_temp/.nojekyll
-
           echo "--------------------------------------------------"
           ls -R deploy_temp
           echo "--------------------------------------------------"
