@@ -6,27 +6,33 @@ on:
   workflow_dispatch:
     inputs:
       deploy_choice:
-        description: 'Choose what to deploy'
+        description: 'What to deploy'
         required: true
         default: 'Portfolio'
         type: choice
         options:
           - Portfolio
           - Status Page
+
 concurrency:
   group: "pages-deployment"
   cancel-in-progress: true
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    
+
     env:
+      # Use the input from workflow_dispatch if available, otherwise default to Portfolio
       DEPLOY_CHOICE: ${{ github.event.inputs.deploy_choice || 'Portfolio' }}
+
     permissions:
       contents: write
+
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4
+
       - name: Setup Ruby
         if: env.DEPLOY_CHOICE == 'Portfolio'
         uses: ruby/setup-ruby@v1
@@ -39,11 +45,13 @@ jobs:
         run: |
           gem install bundler
           bundle install
+
       - name: Build Jekyll site
         if: env.DEPLOY_CHOICE == 'Portfolio'
         run: bundle exec jekyll build --config _config.yml --baseurl ""
         env:
           JEKYLL_ENV: production
+
       - name: Prepare deployment directory
         run: |
           set -e
@@ -74,12 +82,13 @@ jobs:
           echo "Final contents of deploy_temp:"
           ls -R deploy_temp
           echo "--------------------------------------------------"
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./deploy_temp
-          publish_branch: main
+          publish_branch: gh-pages
           force_orphan: true
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
