@@ -41,15 +41,22 @@ jobs:
             DEPLOY_CHOICE="${{ github.event.inputs.deploy_choice }}"
             echo "DEPLOY_CHOICE=$DEPLOY_CHOICE" >> $GITHUB_ENV
 
-            echo "$DEPLOY_CHOICE" > deploy_target.txt
+            # Save deploy target temporarily
+            echo "$DEPLOY_CHOICE" > /tmp/deploy_target.txt
+
+            # Checkout or create the deploy-state branch
             git fetch origin
             git checkout deploy-state || git checkout --orphan deploy-state
             git reset --hard
-            git rm -rf .
-            mv ../deploy_target.txt ./deploy_target.txt || true
+            git rm -rf . || true
+
+            # Restore deploy_target.txt
+            mv /tmp/deploy_target.txt ./deploy_target.txt
             git add deploy_target.txt
             git commit -m "Set deploy target to $DEPLOY_CHOICE"
             git push -f origin deploy-state
+
+            # Go back to main branch to keep site files
             git checkout main
           else
             # Push run → read last saved state from branch
