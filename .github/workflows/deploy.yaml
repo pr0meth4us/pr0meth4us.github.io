@@ -1,8 +1,9 @@
 name: Build and Deploy Site to Main Branch
+
 on:
   push:
     branches:
-      - 'source'
+      - 'main'
   workflow_dispatch:
     inputs:
       deploy_choice:
@@ -22,64 +23,89 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
-    env:
-      # Use the input from workflow_dispatch if available, otherwise default to Portfolio
-      DEPLOY_CHOICE: ${{ github.event.inputs.deploy_choice || 'Portfolio' }}
-
     permissions:
       contents: write
+      pages: write
+      id-token: write
 
     steps:
-      - name: Checkout source code
+      - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
+      - name: Determine deploy choice
+        id: choice
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            # Dispatcher run → set chosen mode and save it to branch
+            DEPLOY_CHOICE="${{ github.event.inputs.deploy_choice }}"
+            echo "DEPLOY_CHOICE=$DEPLOY_CHOICE" >> $GITHUB_ENV
+
+            echo "$DEPLOY_CHOICE" > deploy_target.txt
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git checkout --orphan deploy-state
+            git rm -rf .
+            mv ../deploy_target.txt ./deploy_target.txt || true
+            git add deploy_target.txt
+            git commit -m "Set deploy target to $DEPLOY_CHOICE"
+            git push -f origin deploy-state
+
+          else
+            # Push run → read last saved state from branch
+            git fetch origin deploy-state
+            git checkout deploy-state
+            DEPLOY_CHOICE=$(cat deploy_target.txt)
+            echo "DEPLOY_CHOICE=$DEPLOY_CHOICE" >> $GITHUB_ENV
+          fi
+
+      - name: Debug deploy choice
+        run: echo "Deploy choice is $DEPLOY_CHOICE"
+
+      # -------------------
+      # Portfolio pipeline
+      # -------------------
       - name: Setup Ruby
-        if: env.DEPLOY_CHOICE == 'Portfolio'
+        if: ${{ env.DEPLOY_CHOICE == 'Portfolio' }}
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
           bundler-cache: true
 
       - name: Install dependencies
-        if: env.DEPLOY_CHOICE == 'Portfolio'
+        if: ${{ env.DEPLOY_CHOICE == 'Portfolio' }}
         run: |
           gem install bundler
           bundle install
 
       - name: Build Jekyll site
-        if: env.DEPLOY_CHOICE == 'Portfolio'
+        if: ${{ env.DEPLOY_CHOICE == 'Portfolio' }}
         run: bundle exec jekyll build --config _config.yml --baseurl ""
         env:
           JEKYLL_ENV: production
 
+      # -------------------
+      # Deployment prep
+      # -------------------
       - name: Prepare deployment directory
         run: |
-          set -e
-          echo "Preparing to deploy: ${{ env.DEPLOY_CHOICE }}"
-          
-          # Create a temporary directory for deployment files.
+          echo "Preparing to deploy: $DEPLOY_CHOICE"
           mkdir deploy_temp
-          
-          # PRESERVATION FIRST: Copy the workflow file to ensure it's not deleted.
-          echo "Preserving workflow file..."
           mkdir -p deploy_temp/.github/workflows
           cp .github/workflows/deploy.yaml deploy_temp/.github/workflows/deploy.yaml
-          
-          # Now, copy the correct site content into the temp directory.
-          if [[ "${{ env.DEPLOY_CHOICE }}" == "Portfolio" ]]; then
+
+          if [ "$DEPLOY_CHOICE" = "Portfolio" ]; then
             echo "Copying full Jekyll site from ./_site"
-            rsync -av --delete ./_site/ deploy_temp/
+            rsync -av --delete --exclude='.github' ./_site/ deploy_temp/
           else
             echo "Copying status page from ./status_page"
-            rsync -av --delete ./status_page/ deploy_temp/
+            rsync -av --delete --exclude='.github' ./status_page/ deploy_temp/
           fi
-          
-          # Add the .nojekyll file.
+
           touch deploy_temp/.nojekyll
-          
-          # DEBUGGING: List the final contents of the deployment directory.
+
           echo "--------------------------------------------------"
-          echo "Final contents of deploy_temp:"
           ls -R deploy_temp
           echo "--------------------------------------------------"
 
@@ -92,4 +118,4 @@ jobs:
           force_orphan: true
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_message: "Deploy: ${{ env.DEPLOY_CHOICE }} to pages"
+          commit_message: "Deploy: $DEPLOY_CHOICE to pages"
