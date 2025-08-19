@@ -1,15 +1,10 @@
-# .github/workflows/deploy.yaml
-# This entire file lives in your 'source' branch.
-
 name: Build and Deploy Site to Main Branch
 
 on:
-  # This workflow runs automatically whenever you push to the 'source' branch.
   push:
     branches:
       - 'source'
 
-# A single concurrent deployment is allowed, cancelling runs in progress.
 concurrency:
   group: "pages-deployment"
   cancel-in-progress: true
@@ -18,28 +13,23 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     
-    # Environment Variable to control deployment
-    # EDIT THIS LINE: Change 'Portfolio' to 'Status Page' to deploy the other version.
     env:
-      DEPLOY_CHOICE: 'Portfolio' 
+      DEPLOY_CHOICE: 'Status Page'
 
     permissions:
-      contents: write # Required to push to the main branch.
+      contents: write 
 
     steps:
-      # Step 1: Checkout the source branch.
       - name: Checkout source code
         uses: actions/checkout@v4
 
-      # Step 2: Build the Jekyll site (ONLY if "Portfolio" is chosen)
-      # This section is now based on your proven workflow for reliability.
       - name: Setup Ruby
         if: env.DEPLOY_CHOICE == 'Portfolio'
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
-          bundler-cache: true # Caches gems for faster builds.
-
+          bundler-cache: true 
+          
       - name: Install dependencies
         if: env.DEPLOY_CHOICE == 'Portfolio'
         run: |
@@ -52,7 +42,6 @@ jobs:
         env:
           JEKYLL_ENV: production
 
-      # Step 3: Prepare the deployment directory based on the choice.
       - name: Prepare deployment directory
         run: |
           set -e
@@ -84,13 +73,12 @@ jobs:
           ls -R deploy_temp
           echo "--------------------------------------------------"
 
-      # Step 4: Deploy the prepared files to the 'main' branch.
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./deploy_temp
-          publish_branch: main # DEPLOYMENT TARGET IS NOW 'main'
+          publish_branch: main 
           force_orphan: true 
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
