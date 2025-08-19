@@ -8,11 +8,11 @@ on:
       deploy_choice:
         description: 'Choose what to deploy'
         required: true
-        default: 'Portfolio'
+        default: 'employed'
         type: choice
         options:
-          - 'Portfolio'
-          - 'Status Page'
+          - 'employed'
+          - 'portfolio'
 
 permissions:
   contents: read
@@ -30,71 +30,100 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
       - name: Determine deploy choice
         id: deploy_choice
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             CHOICE="${{ github.event.inputs.deploy_choice }}"
           else
-            # Default to Portfolio for push events
-            CHOICE="Portfolio"
+            # Default to employed for push events to main
+            CHOICE="employed"
           fi
           echo "choice=$CHOICE" >> $GITHUB_OUTPUT
           echo "🚀 Deploy choice: $CHOICE"
 
+      - name: Checkout target branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.deploy_choice.outputs.choice }}
+          path: deploy-source
+
+      - name: Checkout main branch (for workflow protection)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main-branch
+
       - name: Setup Ruby and Jekyll (Portfolio only)
-        if: steps.deploy_choice.outputs.choice == 'Portfolio'
+        if: steps.deploy_choice.outputs.choice == 'portfolio'
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
           bundler-cache: true
+          working-directory: deploy-source
 
       - name: Build Jekyll site (Portfolio only)
-        if: steps.deploy_choice.outputs.choice == 'Portfolio'
+        if: steps.deploy_choice.outputs.choice == 'portfolio'
+        working-directory: deploy-source
         run: |
-          echo "📦 Building Jekyll site..."
+          echo "📦 Building Jekyll site from portfolio branch..."
           echo "Ruby version: $(ruby --version)"
           echo "Bundler version: $(bundle --version)"
-          echo "Available gems:"
-          bundle list
+          echo "Current directory: $(pwd)"
+          echo "Directory contents:"
+          ls -la
+          echo ""
+          echo "Installing dependencies..."
+          bundle install
           echo ""
           echo "Building site..."
           bundle exec jekyll build --verbose
           echo "✅ Jekyll build completed"
-
-      - name: Clean up stale files (Status Page only)
-        if: steps.deploy_choice.outputs.choice == 'Status Page'
-        run: |
-          echo "🧹 Cleaning up stale _site/ files..."
-          if [ -d "_site" ]; then
-            rm -rf _site/
-            echo "✅ Removed existing _site/ directory"
-          else
-            echo "ℹ️ No _site/ directory found to clean"
-          fi
+          echo ""
+          echo "Built site contents (_site/):"
+          ls -la _site/
 
       - name: Prepare deployment directory
         id: prepare
         run: |
-          if [ "${{ steps.deploy_choice.outputs.choice }}" = "Portfolio" ]; then
-            DEPLOY_DIR="_site"
+          if [ "${{ steps.deploy_choice.outputs.choice }}" = "portfolio" ]; then
+            DEPLOY_DIR="deploy-source/_site"
+            SOURCE_DESC="Jekyll site built from portfolio branch"
           else
-            DEPLOY_DIR="status_page"
+            DEPLOY_DIR="deploy-source"
+            SOURCE_DESC="Static files from employed branch"
           fi
           
           echo "deploy_dir=$DEPLOY_DIR" >> $GITHUB_OUTPUT
+          echo "source_desc=$SOURCE_DESC" >> $GITHUB_OUTPUT
           echo "📁 Deployment directory: $DEPLOY_DIR"
+          echo "📝 Source: $SOURCE_DESC"
           
           # Verify directory exists
           if [ ! -d "$DEPLOY_DIR" ]; then
             echo "❌ Error: Directory $DEPLOY_DIR does not exist!"
+            echo "Available directories:"
+            find . -maxdepth 2 -type d
             exit 1
           fi
           
           echo "✅ Directory $DEPLOY_DIR exists and is ready for deployment"
+
+      - name: Protect workflow files
+        run: |
+          echo "🔒 Ensuring workflow files are not overwritten..."
+          
+          # Create a backup of the current workflow
+          mkdir -p .github/workflows
+          cp main-branch/.github/workflows/deploy.yaml .github/workflows/deploy.yaml 2>/dev/null || echo "No workflow file found in main branch"
+          
+          # Remove any workflow files from the deployment directory to prevent overwriting
+          if [ -d "${{ steps.prepare.outputs.deploy_dir }}/.github" ]; then
+            echo "⚠️  Removing .github directory from deployment to protect workflows"
+            rm -rf "${{ steps.prepare.outputs.deploy_dir }}/.github"
+          fi
+          
+          echo "✅ Workflow protection completed"
 
       - name: Debug deployment contents
         run: |
@@ -106,6 +135,12 @@ jobs:
           echo ""
           echo "💾 Total size of deployment directory:"
           du -sh "${{ steps.prepare.outputs.deploy_dir }}"
+          echo ""
+          echo "📁 Directory structure (first 2 levels):"
+          find "${{ steps.prepare.outputs.deploy_dir }}" -maxdepth 2 -type d
+          echo ""
+          echo "📄 HTML files found:"
+          find "${{ steps.prepare.outputs.deploy_dir }}" -name "*.html" | head -10
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
@@ -124,13 +159,14 @@ jobs:
           echo "## 🚀 Deployment Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "- **Deploy Choice**: ${{ steps.deploy_choice.outputs.choice }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Source Directory**: \`${{ steps.prepare.outputs.deploy_dir }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **Source Branch**: \`${{ steps.deploy_choice.outputs.choice }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **Source Description**: ${{ steps.prepare.outputs.source_desc }}" >> $GITHUB_STEP_SUMMARY
           echo "- **Deployment URL**: ${{ steps.deployment.outputs.page_url }}" >> $GITHUB_STEP_SUMMARY
           echo "- **Triggered by**: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Workflow Protection**: ✅ Workflow files preserved on main branch" >> $GITHUB_STEP_SUMMARY
           
-          if [ "${{ steps.deploy_choice.outputs.choice }}" = "Portfolio" ]; then
-            echo "- **Jekyll Build**: ✅ Completed" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.deploy_choice.outputs.choice }}" = "portfolio" ]; then
+            echo "- **Jekyll Build**: ✅ Completed from portfolio branch" >> $GITHUB_STEP_SUMMARY
           else
-            echo "- **Jekyll Build**: ⏭️ Skipped (Status Page deployment)" >> $GITHUB_STEP_SUMMARY
-            echo "- **Cleanup**: ✅ Removed stale _site/ files" >> $GITHUB_STEP_SUMMARY
+            echo "- **Jekyll Build**: ⏭️ Skipped (employed branch deployment)" >> $GITHUB_STEP_SUMMARY
           fi
