@@ -3,208 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phearaneron SOEUNG - Digital Adoption Coordinator</title>
+    <title>SOEUNG Phearaneron - Digital Adoption Coordinator</title>
     <!-- Web standards styling -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;600;700&family=Roboto:wght@300;400;500;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
-        body {
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
             font-family: 'Roboto', sans-serif;
-            background-color: #0b0f19;
+            background-color: #050811;
             color: #f8fafc;
         }
         .khmer-font {
             font-family: 'Kantumruy Pro', 'Khmer OS', sans-serif;
         }
-        .bg-pattern {
-            background-image: radial-gradient(circle at 1px 1px, rgba(72, 200, 231, 0.08) 1px, transparent 0);
-            background-size: 24px 24px;
+        /* Dynamic radial glow background */
+        .bg-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(13, 26, 138, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(72, 200, 231, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 1) 0%, rgba(5, 8, 17, 1) 100%);
+            background-size: cover;
+            z-index: 1;
         }
-        .sig-card {
-            background-color: #0e1b54;
+        .grid-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 1px 1px, rgba(72, 200, 231, 0.04) 1px, transparent 0);
+            background-size: 32px 32px;
+            z-index: 2;
+        }
+        /* The giant business card container */
+        .biz-card {
+            background-color: rgba(14, 20, 43, 0.45);
             background-image: url('/assets/images/error_bg_image.jpg');
             background-size: cover;
             background-position: center;
-            border: 1px solid rgba(72, 200, 231, 0.2);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(72, 200, 231, 0.25);
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.6), 
+                inset 0 0 30px rgba(72, 200, 231, 0.15);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            z-index: 10;
+            position: relative;
+            transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
         }
-        .glow-border {
-            box-shadow: 0 0 15px rgba(72, 200, 231, 0.15);
-            border-color: rgba(72, 200, 231, 0.3);
+        .biz-card:hover {
+            box-shadow: 
+                0 40px 80px rgba(72, 200, 231, 0.15), 
+                inset 0 0 40px rgba(72, 200, 231, 0.25);
+            border-color: rgba(72, 200, 231, 0.45);
         }
         .text-cyan {
             color: #48c8e7;
         }
-        .border-cyan {
-            border-color: rgba(72, 200, 231, 0.3);
+        .bg-cyan-glow {
+            background-color: #48c8e7;
+            box-shadow: 0 0 15px rgba(72, 200, 231, 0.5);
+        }
+        .brand-badge {
+            background-color: rgba(5, 8, 17, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(4px);
+        }
+        /* Copy popups */
+        .copy-toast {
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.3s ease-in-out;
+        }
+        .copy-toast.show {
+            visibility: visible;
+            opacity: 1;
         }
     </style>
 </head>
-<body class="min-h-screen bg-pattern flex flex-col justify-between">
+<body class="flex items-center justify-center min-h-screen p-4 md:p-6 select-none relative">
 
-    <!-- Header Navigation -->
-    <header class="border-b border-white border-opacity-10 backdrop-filter backdrop-blur-sm sticky top-0 z-50 bg-opacity-80 bg-slate-950">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <img src="/assets/images/egd.svg" alt="EGD" class="h-8 w-auto rounded-full">
-                <span class="font-bold text-sm tracking-widest text-cyan uppercase">Enterprises Go Digital</span>
+    <!-- Background overlays -->
+    <div class="bg-glow"></div>
+    <div class="grid-overlay"></div>
+
+    <!-- Main Giant Card -->
+    <div class="biz-card w-full max-w-4xl rounded-3xl p-6 md:p-10 flex flex-col justify-between h-[85vh] md:h-auto md:min-h-[500px] overflow-hidden">
+        
+        <!-- Top Row: MEF / TSC / EGD Branding -->
+        <div class="flex items-center justify-between w-full mb-6 md:mb-10">
+            <div class="flex items-center space-x-3 brand-badge py-2 px-4 rounded-xl">
+                <img src="/assets/images/mef.png" alt="MEF" class="h-6 md:h-8 w-auto">
+                <div class="h-5 w-px bg-white bg-opacity-20"></div>
+                <img src="/assets/images/tsc.png" alt="TSC" class="h-6 md:h-8 w-auto">
+                <div class="h-5 w-px bg-white bg-opacity-20"></div>
+                <img src="/assets/images/egd.svg" alt="EGD" class="h-6 md:h-8 w-auto rounded-full">
             </div>
-            <div>
-                <a href="/" class="text-xs hover:text-cyan border border-white border-opacity-20 hover:border-cyan px-3 py-1.5 rounded-lg transition duration-200">
-                    &larr; Main Portfolio
-                </a>
+            
+            <div class="text-right flex flex-col justify-center">
+                <span class="text-[9px] md:text-[10px] tracking-widest font-bold text-cyan uppercase font-mono">Status &bull; Active</span>
+                <span class="text-[8px] md:text-[9px] text-slate-400 font-mono mt-0.5">Techo Startup Center</span>
             </div>
         </div>
-    </header>
 
-    <!-- Main Content Area -->
-    <main class="max-w-6xl mx-auto px-4 py-12 flex-grow w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        
-        <!-- Left Column: Biography and Highlights -->
-        <div class="lg:col-span-7 space-y-8">
-            <div>
-                <span class="text-xs font-bold text-cyan uppercase tracking-widest">// Profile Overview</span>
-                <h1 class="khmer-font text-4xl md:text-5xl font-bold mt-2 text-white">សឿង ភារ៉ានិរន្ត</h1>
-                <h2 class="text-xl md:text-2xl text-slate-300 mt-1 font-light">Phearaneron SOEUNG</h2>
-                <p class="text-cyan font-semibold text-sm uppercase tracking-wider mt-3">Digital Adoption Coordinator</p>
-                <p class="text-xs text-slate-400 mt-1">Enterprises Go Digital Dept. &bull; Techo Startup Center (TSC)</p>
-            </div>
-
-            <div class="border-t border-white border-opacity-10 pt-6">
-                <h3 class="text-lg font-bold text-white mb-3">Roles & Contributions</h3>
-                <p class="text-sm text-slate-300 leading-relaxed text-justify">
-                    A dual-major candidate in Information Technology and International Relations. Blending tech-savviness with analytical policy research to assist Cambodia's digital transformation journey. Coordinating digital adoption programs at Techo Startup Center, Ministry of Economy and Finance.
+        <!-- Middle Content: User details and QR code -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center my-auto">
+            
+            <!-- Left block: Name & Title -->
+            <div class="md:col-span-8 space-y-4">
+                <div>
+                    <h1 class="khmer-font text-3xl md:text-5xl font-extrabold tracking-wide text-white leading-tight">
+                        សឿង ភារ៉ានិរន្ត
+                    </h1>
+                    <h2 class="text-xl md:text-3xl text-slate-300 font-light mt-1 md:mt-2">
+                        Phearaneron SOEUNG
+                    </h2>
+                </div>
+                
+                <div class="flex items-center space-x-2">
+                    <span class="h-2 w-2 rounded-full bg-cyan-glow"></span>
+                    <span class="text-xs md:text-sm font-bold tracking-widest text-cyan uppercase font-mono">
+                        Digital Adoption Coordinator
+                    </span>
+                </div>
+                
+                <p class="text-xs md:text-sm text-slate-400 leading-relaxed max-w-lg">
+                    Enterprises Go Digital Department &bull; Techo Startup Center (TSC)<br>
+                    Ministry of Economy and Finance (MEF)
                 </p>
             </div>
 
-            <!-- Milestone grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="p-5 bg-slate-900 bg-opacity-50 border border-white border-opacity-5 rounded-xl hover:border-cyan hover:border-opacity-35 transition duration-300">
-                    <div class="w-8 h-8 rounded-lg bg-cyan-500 bg-opacity-10 flex items-center justify-center text-cyan mb-3">
-                        <i class="fa-solid fa-code"></i>
-                    </div>
-                    <h4 class="text-sm font-bold text-white">CGDS System Enhancement</h4>
-                    <p class="text-xs text-slate-400 mt-1">Helped build and document bootstrap components for the Cambodia Government Design System.</p>
+            <!-- Right block: QR Code / Branding visual -->
+            <div class="hidden md:col-span-4 md:flex flex-col items-center justify-center">
+                <div class="p-3 bg-white bg-opacity-5 rounded-2xl border border-white border-opacity-10 backdrop-filter backdrop-blur-md">
+                    <img src="/signatures/qr.png" alt="QR Code" class="h-32 w-32 rounded-lg object-contain">
                 </div>
-
-                <div class="p-5 bg-slate-900 bg-opacity-50 border border-white border-opacity-5 rounded-xl hover:border-cyan hover:border-opacity-35 transition duration-300">
-                    <div class="w-8 h-8 rounded-lg bg-cyan-500 bg-opacity-10 flex items-center justify-center text-cyan mb-3">
-                        <i class="fa-solid fa-database"></i>
-                    </div>
-                    <h4 class="text-sm font-bold text-white">Khmer NLP Pipeline</h4>
-                    <p class="text-xs text-slate-400 mt-1">Engineered custom Scrapy pipelines to aggregate Khmer web corpora for AI dataset training.</p>
-                </div>
-
-                <div class="p-5 bg-slate-900 bg-opacity-50 border border-white border-opacity-5 rounded-xl hover:border-cyan hover:border-opacity-35 transition duration-300">
-                    <div class="w-8 h-8 rounded-lg bg-cyan-500 bg-opacity-10 flex items-center justify-center text-cyan mb-3">
-                        <i class="fa-solid fa-globe"></i>
-                    </div>
-                    <h4 class="text-sm font-bold text-white">International Liaison</h4>
-                    <p class="text-xs text-slate-400 mt-1">Liaison officer coordinates with ministerial delegates at the Digital Government Forum.</p>
-                </div>
-
-                <div class="p-5 bg-slate-900 bg-opacity-50 border border-white border-opacity-5 rounded-xl hover:border-cyan hover:border-opacity-35 transition duration-300">
-                    <div class="w-8 h-8 rounded-lg bg-cyan-500 bg-opacity-10 flex items-center justify-center text-cyan mb-3">
-                        <i class="fa-solid fa-users-gear"></i>
-                    </div>
-                    <h4 class="text-sm font-bold text-white">Digital Literacy outreach</h4>
-                    <p class="text-xs text-slate-400 mt-1">Volunteered and trained high school students in distant provinces on key digital adoption skills.</p>
-                </div>
+                <span class="text-[10px] font-mono text-slate-500 mt-2 tracking-widest uppercase">Scan Profile Card</span>
             </div>
+
         </div>
 
-        <!-- Right Column: Interactive Digital Signature Card -->
-        <div class="lg:col-span-5 w-full">
-            <div class="sig-card rounded-2xl p-6 md:p-8 transition-all duration-300 glow-border">
-                
-                <!-- Logo Row -->
-                <div class="flex items-center space-x-3 mb-6 bg-slate-950 bg-opacity-65 p-3.5 rounded-xl border border-white border-opacity-5 backdrop-filter backdrop-blur-sm justify-between">
-                    <img src="/assets/images/mef.png" height="32" alt="MEF" class="h-8 w-auto">
-                    <div class="h-6 w-px bg-white bg-opacity-20"></div>
-                    <img src="/assets/images/tsc.png" height="32" alt="TSC" class="h-8 w-auto">
-                    <div class="h-6 w-px bg-white bg-opacity-20"></div>
-                    <img src="/assets/images/egd.svg" height="32" alt="EGD" class="h-8 w-auto rounded-full">
+        <!-- Bottom Row: Live Contacts & CTA Buttons -->
+        <div class="border-t border-cyan border-opacity-35 pt-6 mt-6 md:mt-10 flex flex-col md:flex-row md:items-center md:justify-between space-y-6 md:space-y-0">
+            
+            <!-- Contacts Details Row -->
+            <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-8 text-xs font-mono">
+                <div class="flex items-center space-x-2.5">
+                    <i class="fa-solid fa-phone text-cyan"></i>
+                    <a href="tel:+855962021314" class="text-slate-300 hover:text-white hover:underline">(+855) 96 202 1314</a>
                 </div>
-                
-                <!-- User Info -->
-                <div class="mb-6">
-                    <div class="flex flex-col md:flex-row md:items-baseline md:space-x-2">
-                        <h3 class="khmer-font text-xl md:text-2xl font-bold tracking-wide text-white leading-none">
-                            សឿង ភារ៉ានិរន្ត
-                        </h3>
-                        <span class="text-xs text-blue-200 mt-1 md:mt-0 font-medium">
-                            (Phearaneron SOEUNG)
-                        </span>
-                    </div>
-                    <div class="text-xs font-semibold text-cyan mt-1.5 tracking-wider uppercase">
-                        Digital Adoption Coordinator
-                    </div>
-                    <div class="text-[10px] text-blue-200 mt-1 opacity-80 leading-relaxed font-technical">
-                        Enterprises Go Digital Department &bull; Techo Startup Center (TSC) &bull; Ministry of Economy and Finance
-                    </div>
+                <div class="flex items-center space-x-2.5">
+                    <i class="fa-solid fa-envelope text-cyan"></i>
+                    <a href="mailto:phearaneron.soeung@tsc.gov.kh" class="text-slate-300 hover:text-white hover:underline">phearaneron.soeung@tsc.gov.kh</a>
                 </div>
-
-                <div class="border-t border-cyan border-opacity-35 my-4"></div>
-
-                <!-- Contacts Info List -->
-                <div class="space-y-3.5 text-xs mb-6">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-7 h-7 rounded-lg bg-white bg-opacity-10 flex items-center justify-center text-cyan">
-                            <i class="fa-solid fa-phone"></i>
-                        </div>
-                        <div>
-                            <span class="text-[10px] opacity-60 block">Mobile Phone</span>
-                            <a href="tel:+855962021314" class="font-medium hover:underline text-white">(+855) 96 202 1314</a>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center space-x-3">
-                        <div class="w-7 h-7 rounded-lg bg-white bg-opacity-10 flex items-center justify-center text-cyan">
-                            <i class="fa-solid fa-envelope"></i>
-                        </div>
-                        <div>
-                            <span class="text-[10px] opacity-60 block">Email Address</span>
-                            <a href="mailto:phearaneron.soeung@tsc.gov.kh" class="font-medium hover:underline text-white text-wrap">phearaneron.soeung@tsc.gov.kh</a>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center space-x-3">
-                        <div class="w-7 h-7 rounded-lg bg-white bg-opacity-10 flex items-center justify-center text-cyan">
-                            <i class="fa-solid fa-globe"></i>
-                        </div>
-                        <div>
-                            <span class="text-[10px] opacity-60 block">Official Website</span>
-                            <a href="https://www.tsc.gov.kh" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline text-white">www.tsc.gov.kh</a>
-                        </div>
-                    </div>
+                <div class="flex items-center space-x-2.5">
+                    <i class="fa-solid fa-globe text-cyan"></i>
+                    <a href="https://pr0meth4us.github.io/" class="text-slate-300 hover:text-white hover:underline">pr0meth4us.github.io</a>
                 </div>
-
-                <!-- Action Buttons -->
-                <div class="grid grid-cols-2 gap-3.5">
-                    <button onclick="downloadVCard()" class="flex items-center justify-center space-x-2 bg-cyan-500 hover:bg-cyan-400 text-slate-955 py-2.5 px-3 rounded-lg font-bold text-[10px] uppercase tracking-wider transition-all duration-300">
-                        <i class="fa-solid fa-address-card text-xs"></i>
-                        <span>Save Contact</span>
-                    </button>
-                    <a href="https://t.me/nernnnnnnn" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center space-x-2 bg-white bg-opacity-10 hover:bg-opacity-20 text-white py-2.5 px-3 rounded-lg font-bold text-[10px] uppercase tracking-wider transition-all duration-300 border border-white border-opacity-5">
-                        <i class="fa-brands fa-telegram text-xs text-cyan"></i>
-                        <span>Telegram Chat</span>
-                    </a>
-                </div>
-
             </div>
+
+            <!-- Action Triggers -->
+            <div class="flex space-x-3 w-full md:w-auto">
+                <button onclick="downloadVCard()" class="flex-1 md:flex-initial flex items-center justify-center space-x-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 py-3 px-5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all duration-300">
+                    <i class="fa-solid fa-address-card text-sm"></i>
+                    <span>Save Contact</span>
+                </button>
+                <a href="https://t.me/nernnnnnnn" target="_blank" rel="noopener noreferrer" class="flex-1 md:flex-initial flex items-center justify-center space-x-2 bg-white bg-opacity-10 hover:bg-opacity-20 text-white py-3 px-5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all duration-300 border border-white border-opacity-5">
+                    <i class="fa-brands fa-telegram text-sm text-cyan"></i>
+                    <span>Telegram</span>
+                </a>
+            </div>
+
         </div>
 
-    </main>
+    </div>
 
-    <!-- Footer -->
-    <footer class="border-t border-white border-opacity-5 py-6 bg-slate-950 bg-opacity-60 text-center text-xs text-slate-500">
-        <p>&copy; 2026 SOEUNG Phearaneron. Hosted on GitHub Pages.</p>
-    </footer>
+    <!-- Toast Popup -->
+    <div id="toast" class="copy-toast fixed bottom-6 right-6 bg-cyan-500 text-slate-900 font-bold text-xs py-3.5 px-6 rounded-xl shadow-2xl flex items-center space-x-2 z-50">
+        <i class="fa-solid fa-check-circle text-base"></i>
+        <span>Contact VCF Card Downloaded!</span>
+    </div>
 
-    <!-- Client-side vCard Download -->
+    <!-- Card tilt effect scripting -->
     <script>
+        const card = document.querySelector('.biz-card');
+        const container = document.body;
+
+        container.addEventListener('mousemove', (e) => {
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 45;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 45;
+            card.style.transform = `perspective(1000px) rotateY(${xAxis}deg) rotateX(${-yAxis}deg)`;
+        });
+
+        container.addEventListener('mouseleave', () => {
+            card.style.transform = `perspective(1000px) rotateY(0deg) rotateX(0deg)`;
+        });
+
         function downloadVCard() {
             const vcard = 
 `BEGIN:VCARD
@@ -226,6 +233,11 @@ END:VCARD`;
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
+
+            // Show Toast
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => { toast.classList.remove('show'); }, 2500);
         }
     </script>
 
