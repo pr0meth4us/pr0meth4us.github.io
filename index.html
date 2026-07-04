@@ -18,112 +18,112 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <script src="/assets/js/config.js"></script>
+    <style id="crt-styles" disabled>
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400&display=swap');
+        body.employed-mode {
+            font-family: 'Source Code Pro', monospace !important;
+            background-color: #000 !important;
+            color: #00FF00 !important;
+            line-height: 1.6 !important;
+            padding: 1rem !important;
+            margin: 0 !important;
+        }
+        body.employed-mode::after {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%);
+            background-size: 100% 4px;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: 0.4;
+        }
+        .employed-mode .terminal-container {
+            text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+            animation: flicker 0.15s infinite alternate;
+            max-width: 48rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .employed-mode .cursor {
+            display: inline-block;
+            width: 1ch;
+            height: 1.2rem;
+            background-color: #00FF00;
+            animation: blink 1s step-end infinite;
+            vertical-align: bottom;
+        }
+        @keyframes blink {
+            from, to { background-color: #00FF00; }
+            50% { background-color: transparent; }
+        }
+        @keyframes flicker {
+             0% { opacity: 0.95; }
+            100% { opacity: 1; }
+        }
+        .employed-mode a {
+            color: #39FF14 !important;
+            text-decoration: underline !important;
+        }
+        .employed-mode a:hover {
+            background-color: #00FF00 !important;
+            color: #000 !important;
+            text-decoration: none !important;
+        }
+    </style>
 </head>
 <body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
 
-<header class="shadow-sm bg-white py-4 px-6 border-b border-gray-300 sticky top-0 z-40">
+<div id="portfolio-container">
+<header class="bg-white py-4 px-6 border-b-2 border-black sticky top-0 z-40 font-technical text-sm">
     <div class="container mx-auto flex justify-between items-center">
         <div>
-            <a href="/" class="flex items-center space-x-3 text-2xl font-bold tracking-tight transition duration-300 hover:text-gray-700">
-                <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741585138/prometheus_cju1pn.png" alt="Prometheus Logo" class="h-12 w-auto">
-                <span class="lg:block hidden">SOEUNG Phearaeron</span>
+            <a href="/" class="flex items-center space-x-3 text-lg font-bold tracking-tight hover:underline text-black">
+                <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741585138/prometheus_cju1pn.png" alt="Prometheus Logo" class="h-8 w-auto grayscale border border-black">
+                <span>SOEUNG Phearaneron</span>
             </a>
         </div>
 
-        
-
-        <nav class="hidden md:flex items-center space-x-6 py-2 font-medium desktop-nav">
-            
-            
-            
-            
-
-            <div class=" nav-item relative">
-                <a href="/" class="text-blue-600 active-nav transition nav-link">
+        <nav class="hidden md:flex items-center space-x-6 py-2 font-medium">
+            <div class="nav-item relative">
+                <a href="/" class="text-black hover:underline nav-link active-nav">
                     Home
-                    
                 </a>
-
-                
             </div>
             
-            
-            
-            
-
-            <div class="dropdown-container nav-item relative">
-                <a href="/about" class="text-gray-800 hover:text-blue-600 transition nav-link">
+            <div class="nav-item relative">
+                <a href="/about/" class="text-black hover:underline nav-link">
                     About Me
-                    
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block ml-1 transform transition-transform duration-200 dropdown-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                    
                 </a>
-
-                
-                <div class="dropdown-content absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
-                    
-                    
-                    
-                    
-                    <a href="/about/cv" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition">
-                        CV
-                    </a>
-                    
-                </div>
-                
             </div>
             
-            
-            
-            
-
-            <div class=" nav-item relative">
-                <a href="/projects" class="text-gray-800 hover:text-blue-600 transition nav-link">
+            <div class="nav-item relative">
+                <a href="/projects/" class="text-black hover:underline nav-link">
                     Coding Projects
-                    
                 </a>
-
-                
             </div>
             
-            
-            
-            
-
-            <div class=" nav-item relative">
-                <a href="/papers" class="text-gray-800 hover:text-blue-600 transition nav-link">
+            <div class="nav-item relative">
+                <a href="/papers/" class="text-black hover:underline nav-link">
                     Papers
-                    
                 </a>
-
-                
             </div>
             
-            
-            
-            
-
-            <div class=" nav-item relative">
-                <a href="/misc" class="text-gray-800 hover:text-blue-600 transition nav-link">
+            <div class="nav-item relative">
+                <a href="/misc/" class="text-black hover:underline nav-link">
                     Archive
-                    
                 </a>
-
-                
             </div>
-            
 
-            <a href="https://github.com/pr0meth4us" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="text-gray-800 hover:text-blue-600 transition">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
-                </svg>
+            <a href="https://github.com/pr0meth4us" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="text-black hover:underline">
+                [GitHub]
             </a>
         </nav>
 
         <div class="md:hidden">
-            <button id="mobile-menu-button" class="text-gray-800 hover:text-blue-600 focus:outline-none" aria-label="Open main menu" aria-expanded="false">
+            <button id="mobile-menu-button" class="text-black focus:outline-none" aria-label="Open main menu" aria-expanded="false">
                 <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
@@ -134,183 +134,163 @@
         </div>
     </div>
 
-    <div id="mobile-menu" class="hidden md:hidden">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            
-
-            
-
-            
-
-            
-            <a href="/" class="block px-3 py-2 rounded-md text-base font-medium bg-blue-100 text-blue-700">
-                Home
-            </a>
-
-            
-
-            
-
-            
-
-            
-
-            
-            <a href="/about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200">
-                About Me
-            </a>
-
-            
-            <div class="pl-4 border-l-2 border-gray-200 ml-3">
-                
-                
-                
-                <a href="/about/cv" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">
-                    CV
-                </a>
-                
-            </div>
-            
-
-            
-
-            
-
-            
-
-            
-            <a href="/projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200">
-                Coding Projects
-            </a>
-
-            
-
-            
-
-            
-
-            
-
-            
-            <a href="/papers" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200">
-                Papers
-            </a>
-
-            
-
-            
-
-            
-
-            
-
-            
-            <a href="/misc" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200">
-                Archive
-            </a>
-
-            
-
-            
-
-            <a href="https://github.com/pr0meth4us" target="_blank" rel="noopener noreferrer" class="text-gray-800 hover:bg-gray-200 block px-3 py-2 rounded-md text-base font-medium">
-                GitHub
-            </a>
+    <div id="mobile-menu" class="hidden md:hidden border-t border-black mt-4 pt-4">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-technical text-sm">
+            <a href="/" class="block px-3 py-2 text-black hover:underline">Home</a>
+            <a href="/about/" class="block px-3 py-2 text-black hover:underline">About Me</a>
+            <a href="/projects/" class="block px-3 py-2 text-black hover:underline">Coding Projects</a>
+            <a href="/papers/" class="block px-3 py-2 text-black hover:underline">Papers</a>
+            <a href="/misc/" class="block px-3 py-2 text-black hover:underline">Archive</a>
+            <a href="https://github.com/pr0meth4us" target="_blank" rel="noopener noreferrer" class="block px-3 py-2 text-black hover:underline">GitHub</a>
         </div>
     </div>
 </header>
 
-<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow">
-    <main class="flex-grow container mx-auto py-16 px-6 text-center">
-    <div class="mb-8">
-        <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1750921794/output_sphfqh.jpg"
-             alt="SOEUNG Phearaeron"
-             class="mx-auto w-32 h-32 rounded-full shadow-lg border-4 border-white object-cover">
-    </div>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow font-technical">
+    <div class="brutalist-grid-container grid grid-cols-12">
+        
+        <!-- PANEL 1: Hero Block -->
+        <div class="brutalist-panel col-span-12 lg:col-span-8 p-8 flex flex-col justify-between border-b-2 border-black lg:border-r-2 lg:border-b-2">
+            <div>
+                <span class="text-xs uppercase opacity-50 font-technical">Selected Works // 24</span>
+                <h1 class="text-5xl md:text-7xl font-bold font-academic mt-4 tracking-tight leading-none">
+                    SOEUNG Phearaneron
+                </h1>
+                <p class="mt-4 text-base font-technical leading-relaxed opacity-75">
+                    Dual-major International Relations & IT student. Building digital architectures that merge governance with technology. I design raw, tryhard, and nonchalant systems.
+                </p>
+            </div>
+            
+            <div class="mt-8 flex flex-wrap gap-4 font-technical">
+                <a href="/about/" class="px-4 py-2 border-2 border-black hover:bg-black hover:text-white transition duration-200">
+                    About Me [->]
+                </a>
+                <a href="/projects/" class="px-4 py-2 border-2 border-black hover:bg-black hover:text-white transition duration-200">
+                    Coding Projects [->]
+                </a>
+                <a href="/papers/" class="px-4 py-2 border-2 border-black hover:bg-black hover:text-white transition duration-200">
+                    Papers [->]
+                </a>
+                <a href="/misc/" class="px-4 py-2 border-2 border-black hover:bg-black hover:text-white transition duration-200">
+                    Archive [->]
+                </a>
+            </div>
+        </div>
+        
+        <!-- PANEL 2: Stats & ASCII Data Analysis -->
+        <div class="brutalist-panel col-span-12 lg:col-span-4 p-8 flex flex-col justify-between border-b-2 border-black">
+            <div>
+                <span class="text-xs uppercase opacity-50 font-technical">System Status // V01</span>
+                <div class="mt-6 ascii-art leading-none">
++-------------------------+
+| METRIC      | STATUS    |
++-------------+-----------+
+| IR Major    | ACTIVE    |
+| IT Major    | ACTIVE    |
+| Platform    | ONLINE    |
+| Status      | OPEN      |
++-------------------------+
+                </div>
+                <div class="mt-6 ascii-art leading-none text-gray-500">
+ 150 |       #
+     |     # #   #
+ 100 |   # # # # # #
+     |   # # # # # # #
+  50 | # # # # # # # # #
+     +------------------
+       10  30  50  70  90
+                </div>
+            </div>
+            <div class="mt-6 text-xs border-t border-black pt-4">
+                // System logs: Form follows function.
+            </div>
+        </div>
 
-    <div class="mb-10">
-        <h1 class="text-5xl font-bold mb-3 text-gray-800">The Eternal Chronicle</h1>
-        <p class="text-lg font-medium text-gray-600 tracking-wide">
-            A Portfolio Website of SOEUNG Phearaneron
-        </p>
-    </div>
+        <!-- PANEL 3: Featured Project Polaroid -->
+        <div class="brutalist-panel col-span-12 lg:col-span-5 p-8 flex flex-col justify-center items-center border-b-2 lg:border-b-0 lg:border-r-2 border-black">
+            <div class="polaroid-frame bg-white">
+                <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1750921794/output_sphfqh.jpg" 
+                     alt="SOEUNG Phearaneron" 
+                     class="w-64 h-64 object-cover border border-black grayscale">
+                <p class="font-caption text-2xl mt-4 text-center text-black leading-none">
+                    SOEUNG Phearaneron. Portrait.
+                </p>
+            </div>
+            <div class="mt-4">
+                <span class="stamp-badge wip">WIP [2026]</span>
+            </div>
+        </div>
 
-    <p class="text-xl max-w-2xl mx-auto leading-relaxed text-gray-700 mb-12">
-        Dual-major IR/IT student. Open to opportunities in Full-Stack, DevOps, and Digital Governance.
-    </p>
+        <!-- PANEL 4: Detailed Project Block with Cursor Reveal -->
+        <div class="brutalist-panel col-span-12 lg:col-span-7 p-8 flex flex-col justify-between">
+            <div>
+                <span class="text-xs uppercase opacity-50 font-technical">Latest Work</span>
+                <div class="mt-4 space-y-6">
+                    <div class="border-b border-black pb-4 hover-reveal-trigger cursor-pointer" 
+                         data-preview-img="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741585138/prometheus_cju1pn.png" 
+                         data-preview-title="EGD PLATFORM" 
+                         data-preview-desc="Automating platform pipelines. Khmer auto-cleaning & unicode validation.">
+                         <div class="flex justify-between items-start">
+                             <h3 class="text-2xl font-bold font-academic hover:underline">
+                                 <a href="/projects/">EGD Platform Automation</a>
+                             </h3>
+                             <span class="stamp-badge approved">APPROVED</span>
+                         </div>
+                         <p class="mt-2 text-sm opacity-75">
+                             Unified Node.js/Python data pipeline stage management. Auto-cleans Khmer scripts, checks unicode safety, validates JWT tokens.
+                         </p>
+                     </div>
 
-    <div class="flex flex-wrap justify-center gap-4">
-        
-        <a href="/"
-           class="px-6 py-3 rounded-lg shadow-md transition duration-300 font-medium
-              
-                bg-gray-800 text-white hover:bg-gray-700
-              "
-           data-translate="">
-            Home
-        </a>
-        
-        <a href="/about"
-           class="px-6 py-3 rounded-lg shadow-md transition duration-300 font-medium
-              
-                bg-gray-300 text-gray-800 hover:bg-gray-200
-              "
-           data-translate="">
-            About Me
-        </a>
-        
-        <a href="/projects"
-           class="px-6 py-3 rounded-lg shadow-md transition duration-300 font-medium
-              
-                bg-gray-300 text-gray-800 hover:bg-gray-200
-              "
-           data-translate="">
-            Coding Projects
-        </a>
-        
-        <a href="/papers"
-           class="px-6 py-3 rounded-lg shadow-md transition duration-300 font-medium
-              
-                bg-gray-300 text-gray-800 hover:bg-gray-200
-              "
-           data-translate="">
-            Papers
-        </a>
-        
-        <a href="/misc"
-           class="px-6 py-3 rounded-lg shadow-md transition duration-300 font-medium
-              
-                bg-gray-300 text-gray-800 hover:bg-gray-200
-              "
-           data-translate="">
-            Archive
-        </a>
-        
+                     <div class="border-b border-black pb-4 hover-reveal-trigger cursor-pointer" 
+                          data-preview-img="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741585138/prometheus_cju1pn.png" 
+                          data-preview-title="PROMETHEUS" 
+                          data-preview-desc="Brutalist portfolio site. Built on one branch with smart features.">
+                         <div class="flex justify-between items-start">
+                             <h3 class="text-2xl font-bold font-academic hover:underline">
+                                 <a href="https://github.com/pr0meth4us" target="_blank" rel="noopener noreferrer">Portfolio System</a>
+                             </h3>
+                             <span class="stamp-badge approved">APPROVED</span>
+                         </div>
+                         <p class="mt-2 text-sm opacity-75">
+                             Combined brutalist and editorial design portfolio with custom responsive grid structure and automated build tracking.
+                         </p>
+                     </div>
 
-        <a href="https://github.com/pr0meth4us"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="flex items-center gap-2 px-6 py-3 bg-gray-300 text-gray-800 rounded-lg shadow-md transition duration-300 hover:bg-gray-200 font-medium">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" />
-            </svg>
-            <span>GitHub</span>
-        </a>
+                     <div class="hover-reveal-trigger cursor-pointer" 
+                          data-preview-img="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741585138/prometheus_cju1pn.png" 
+                          data-preview-title="IR DISSERTATION" 
+                          data-preview-desc="Digital Sovereignty & Governance papers.">
+                         <div class="flex justify-between items-start">
+                             <h3 class="text-2xl font-bold font-academic hover:underline">
+                                 <a href="/papers/">Digital Sovereignty Papers</a>
+                             </h3>
+                            <span class="stamp-badge wip">DRAFT</span>
+                        </div>
+                        <p class="mt-2 text-sm opacity-75">
+                            Academic analysis exploring the intersection of digital governance, sovereign clouds, and data protection laws in SEA.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-xs text-right opacity-50">
+                Hover project names for quick previews.
+            </div>
+        </div>
+
     </div>
 </main>
-</main>
 
-<footer class="py-6 border-t border-gray-300">
-    <div class="flex justify-center items-center space-x-4 text-sm text-gray-600">
+<footer class="py-12 border-t-2 border-black bg-white font-technical mt-auto">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm text-black">
         <span>© 2025 Prometheus</span>
-        <span class="text-gray-400">•</span>
-        <a href="https://github.com/pr0meth4us" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="transition hover:text-gray-900">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
-            </svg>
-        </a>
-        <span class="text-gray-400">•</span>
-        <span>Designed & Developed</span>
+        <div class="flex items-center space-x-4 mt-4 md:mt-0">
+            <a href="https://github.com/pr0meth4us" target="_blank" rel="noopener noreferrer" class="hover:underline font-bold">
+                GitHub
+            </a>
+            <span>•</span>
+            <span>Designed & Developed</span>
+        </div>
     </div>
 </footer>
 
@@ -386,6 +366,134 @@
         </form>
     </div>
 </div>
+
+<!-- Floating Hover Card Reveal Element -->
+<div id="floating-hover-card" style="position: fixed; pointer-events: none; z-index: 1000; display: none; background: #000; padding: 10px; border: 1px solid #fff; width: 200px;">
+    <img id="hover-card-img" src="" alt="Preview" class="w-full h-32 object-cover border border-white grayscale mb-2">
+    <div id="hover-card-title" class="font-bold text-white uppercase tracking-wider" style="font-size: 0.7rem;"></div>
+    <div id="hover-card-desc" class="text-gray-400 mt-1" style="font-size: 0.65rem;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const card = document.getElementById('floating-hover-card');
+    const cardImg = document.getElementById('hover-card-img');
+    const cardTitle = document.getElementById('hover-card-title');
+    const cardDesc = document.getElementById('hover-card-desc');
+    const triggers = document.querySelectorAll('.hover-reveal-trigger');
+
+    triggers.forEach(trigger => {
+        trigger.addEventListener('mouseenter', (e) => {
+            const img = trigger.getAttribute('data-preview-img');
+            const title = trigger.getAttribute('data-preview-title');
+            const desc = trigger.getAttribute('data-preview-desc');
+
+            cardImg.src = img;
+            cardTitle.textContent = title;
+            cardDesc.textContent = desc;
+            card.style.display = 'block';
+        });
+
+        trigger.addEventListener('mousemove', (e) => {
+            // Position the floating card next to the cursor
+            card.style.left = e.clientX + 15 + 'px';
+            card.style.top = e.clientY + 15 + 'px';
+        });
+
+        trigger.addEventListener('mouseleave', () => {
+            card.style.display = 'none';
+        });
+    });
+});
+</script>
+
+</div> <!-- End portfolio-container -->
+
+<div id="employed-container" class="hidden terminal-container py-8 antialiased">
+    <div id="terminal-body" class="p-6 md:p-8 text-base">
+        <div class="flex items-center">
+            <span>&gt;</span>
+            <p class="flex-1 ml-2" id="typewriter1"></p>
+            <span class="cursor" id="cursor1"></span>
+        </div>
+        <div id="status-content" class="hidden mt-4 mb-6">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Status: Employed.</h2>
+            <p class="mt-2">
+                I'm not looking for a job anytime soon and am content with my current one. But you can find me here.
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    if (typeof CONFIG !== 'undefined' && CONFIG.isEmployed) {
+        document.getElementById('portfolio-container').style.display = 'none';
+        document.getElementById('employed-container').classList.remove('hidden');
+        document.body.className = 'employed-mode';
+        document.getElementById('crt-styles').removeAttribute('disabled');
+
+        const terminalBody = document.getElementById('terminal-body');
+        const typewriter1 = document.getElementById('typewriter1');
+        const statusContent = document.getElementById('status-content');
+        const cursor1 = document.getElementById('cursor1');
+        
+        const text1 = "cat /status.txt";
+        const text2 = "cat /contact.info";
+        let i = 0, j = 0;
+
+        function typeWriter1() {
+            if (i < text1.length) {
+                typewriter1.innerHTML += text1.charAt(i);
+                i++;
+                setTimeout(typeWriter1, 120);
+            } else {
+                cursor1.style.display = 'none';
+                statusContent.classList.remove('hidden');
+                setTimeout(initTypeWriter2, 1000);
+            }
+        }
+
+        function initTypeWriter2() {
+            const commandLine2 = document.createElement('div');
+            commandLine2.className = 'flex items-center';
+            commandLine2.innerHTML = '<span>&gt;</span><p class="flex-1 ml-2" id="typewriter2"></p><span class="cursor" id="cursor2"></span>';
+            terminalBody.appendChild(commandLine2);
+            typeWriter2();
+        }
+
+        function typeWriter2() {
+            const typewriter2 = document.getElementById('typewriter2');
+            const cursor2 = document.getElementById('cursor2');
+            if (j < text2.length) {
+                typewriter2.innerHTML += text2.charAt(j);
+                j++;
+                setTimeout(typeWriter2, 120);
+            } else {
+                cursor2.style.display = 'none';
+                showContactInfo();
+            }
+        }
+
+        function showContactInfo() {
+            const contactContent = document.createElement('div');
+            contactContent.className = 'mt-4';
+            contactContent.innerHTML = \`
+                <ul class="space-y-2">
+                    <li><span class="opacity-75 w-24 inline-block">email:</span> <a href="mailto:phearaneron.soeung@gmail.com">phearaneron.soeung@gmail.com</a></li>
+                    <li><span class="opacity-75 w-24 inline-block">phone:</span> <a href="tel:+855962021314">+855 962021314</a></li>
+                    <li><span class="opacity-75 w-24 inline-block">github:</span> <a href="https://github.com/pr0meth4us" target="_blank" rel="noopener noreferrer">pr0meth4us</a></li>
+                    <li><span class="opacity-75 w-24 inline-block">linkedin:</span> <a href="https://linkedin.com/in/nernnnnnnn/" target="_blank" rel="noopener noreferrer">nernnnnnnn</a></li>
+                    <li><span class="opacity-75 w-24 inline-block">telegram:</span> <a href="https://t.me/nernnnnnnn" target="_blank" rel="noopener noreferrer">@nernnnnnnn</a></li>
+                    <li><span class="opacity-75 w-24 inline-block">facebook:</span> <a href="https://www.facebook.com/niron.soeung" target="_blank" rel="noopener noreferrer">Soeung Phearaneron</a></li>
+                </ul>
+                <p class="pt-6 opacity-50 text-sm">// This page will self-destruct when my employment status changes. Or maybe not.</p>
+            \`;
+            terminalBody.appendChild(contactContent);
+        }
+
+        setTimeout(typeWriter1, 500);
+    }
+</script>
 
 <script src="/assets/js/nav.js"></script>
 </body>

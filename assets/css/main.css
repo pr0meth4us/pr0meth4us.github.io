@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Caveat:wght@400..700&display=swap');
+
 body {
-  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: 'JetBrains Mono', "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 /* Improve responsive behavior */
@@ -266,12 +268,12 @@ a.bg-gray-800:hover {
 .active-nav::after {
   content: "";
   position: absolute;
-  bottom: -1.5rem; /* Matches header's padding-bottom (1rem) + nav's padding-bottom (0.5rem) */
+  bottom: -1rem;
   left: 0;
   right: 0;
   height: 2px;
-  background: #2563eb; /* Tailwind's blue-600 */
-  z-index: 1; /* Ensures it appears above other elements if needed */
+  background: #000000;
+  z-index: 1;
 }
 
 .collage-container {
@@ -317,3 +319,94 @@ a.bg-gray-800:hover {
 }
 
 /*# sourceMappingURL=main.css.map */
+
+/* Brutalist Redesign Styles */
+.brutalist-grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    background-color: #fff;
+    color: #000;
+    font-family: 'JetBrains Mono', monospace;
+    border: 3px solid #000;
+}
+
+.brutalist-panel {
+    border: 1.5px solid #000;
+    background-color: #fff;
+    transition: all 0.2s ease-in-out;
+}
+
+.brutalist-panel:hover {
+    box-shadow: 4px 4px 0px #000;
+    transform: translate(-2px, -2px);
+}
+
+.font-academic {
+    font-family: 'EB Garamond', serif;
+}
+
+.font-technical {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.font-caption {
+    font-family: 'Caveat', cursive;
+}
+
+.polaroid-frame {
+    background: #fff;
+    border: 1.5px solid #000;
+    padding: 12px 12px 24px 12px;
+    box-shadow: 3px 3px 0px rgba(0,0,0,0.15);
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+}
+
+.polaroid-frame:hover {
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.3);
+}
+
+.stamp-badge {
+    border: 2px solid currentColor;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 0.15rem 0.5rem;
+    display: inline-block;
+    border-radius: 4px;
+    font-size: 0.75rem;
+}
+
+.stamp-badge.wip {
+    color: #e11d48;
+    border-color: #e11d48;
+}
+
+.stamp-badge.approved {
+    color: #000;
+    border-color: #000;
+}
+
+#floating-hover-card {
+    position: fixed;
+    pointer-events: none;
+    z-index: 100;
+    width: 240px;
+    background: #000;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 8px;
+    display: none;
+    transform: translate(15px, 15px);
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.5);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+}
+
+.ascii-art {
+    white-space: pre;
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1.25;
+    font-size: 0.7rem;
+    overflow-x: auto;
+}

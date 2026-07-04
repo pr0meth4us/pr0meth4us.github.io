@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:description"
+          content="The Eternal Chronicle – A Portfolio Website of SOEUNG Phearaneron." />
+    <meta property="og:image" content="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741585138/prometheus_cju1pn.png" />
+    <title>
+        
+        Contact Me - SOEUNG Phearaeron
+        
+    </title>
+    <link rel="icon" href="/assets/images/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+</head>
+<body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
+
+<div id="portfolio-container">
+<header class="bg-white py-4 px-6 border-b-2 border-black sticky top-0 z-40 font-technical text-sm">
+    <div class="container mx-auto flex justify-between items-center">
+        <div>
+            <a href="/" class="flex items-center space-x-3 text-lg font-bold tracking-tight hover:underline text-black">
+                <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741585138/prometheus_cju1pn.png" alt="Prometheus Logo" class="h-8 w-auto grayscale border border-black">
+                <span>SOEUNG Phearaneron</span>
+            </a>
+        </div>
+
+        <nav class="hidden md:flex items-center space-x-6 py-2 font-medium">
+            <div class="nav-item relative">
+                <a href="/" class="text-black hover:underline nav-link">
+                    Home
+                </a>
+            </div>
+            
+            <div class="nav-item relative">
+                <a href="/about/" class="text-black hover:underline nav-link">
+                    About Me
+                </a>
+            </div>
+            
+            <div class="nav-item relative">
+                <a href="/projects.html" class="text-black hover:underline nav-link">
+                    Coding Projects
+                </a>
+            </div>
+            
+            <div class="nav-item relative">
+                <a href="/papers.html" class="text-black hover:underline nav-link">
+                    Papers
+                </a>
+            </div>
+            
+            <div class="nav-item relative">
+                <a href="/misc.html" class="text-black hover:underline nav-link">
+                    Archive
+                </a>
+            </div>
+
+            <a href="https://github.com/pr0meth4us" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="text-black hover:underline">
+                [GitHub]
+            </a>
+        </nav>
+
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-black focus:outline-none" aria-label="Open main menu" aria-expanded="false">
+                <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+                <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden border-t border-black mt-4 pt-4">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-technical text-sm">
+            <a href="/" class="block px-3 py-2 text-black hover:underline">Home</a>
+            <a href="/about/" class="block px-3 py-2 text-black hover:underline">About Me</a>
+            <a href="/projects.html" class="block px-3 py-2 text-black hover:underline">Coding Projects</a>
+            <a href="/papers.html" class="block px-3 py-2 text-black hover:underline">Papers</a>
+            <a href="/misc.html" class="block px-3 py-2 text-black hover:underline">Archive</a>
+            <a href="https://github.com/pr0meth4us" target="_blank" rel="noopener noreferrer" class="block px-3 py-2 text-black hover:underline">GitHub</a>
+        </div>
+    </div>
+</header>
+
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex-grow font-technical flex items-center justify-center">
+    <div class="w-full">
+        <div class="mb-10 text-center">
+            <span class="text-xs uppercase opacity-50">// Transmission Channels</span>
+            <h2 class="text-4xl md:text-5xl font-bold font-academic mt-2">Connect With Me</h2>
+        </div>
+
+        <div class="brutalist-grid-container grid grid-cols-12 gap-y-6 lg:gap-y-0">
+            <!-- CONTACT LIST -->
+            <div class="brutalist-panel col-span-12 p-8 border-b-2 border-black flex flex-col justify-between">
+                <div>
+                    <span class="text-xs uppercase opacity-50">Identity Info</span>
+                    <h3 class="text-2xl font-bold font-academic mt-2 mb-6">SOEUNG Phearaneron</h3>
+                    
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex border-b border-black pb-2 justify-between">
+                            <span class="opacity-60">Email:</span>
+                            <a href="mailto:phearaneron.soeung@gmail.com" class="font-bold hover:underline">[phearaneron.soeung@gmail.com]</a>
+                        </li>
+                        <li class="flex border-b border-black pb-2 justify-between">
+                            <span class="opacity-60">Phone:</span>
+                            <a href="tel:+855962021314" class="font-bold hover:underline">[+855 962021314]</a>
+                        </li>
+                        <li class="flex border-b border-black pb-2 justify-between">
+                            <span class="opacity-60">Telegram:</span>
+                            <a href="https://t.me/nernnnnnnn" target="_blank" rel="noopener noreferrer" class="font-bold hover:underline">[@nernnnnnnn]</a>
+                        </li>
+                        <li class="flex border-b border-black pb-2 justify-between">
+                            <span class="opacity-60">LinkedIn:</span>
+                            <a href="https://linkedin.com/in/nernnnnnnn/" target="_blank" rel="noopener noreferrer" class="font-bold hover:underline">[nernnnnnnn]</a>
+                        </li>
+                        <li class="flex border-b border-black pb-2 justify-between">
+                            <span class="opacity-60">GitHub:</span>
+                            <a href="https://github.com/pr0meth4us" target="_blank" rel="noopener noreferrer" class="font-bold hover:underline">[pr0meth4us]</a>
+                        </li>
+                        <li class="flex border-b border-black pb-2 justify-between">
+                            <span class="opacity-60">Facebook:</span>
+                            <a href="https://www.facebook.com/niron.soeung" target="_blank" rel="noopener noreferrer" class="font-bold hover:underline">[Soeung Phearaneron]</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <a href="/" class="px-4 py-2 border-2 border-black hover:bg-black hover:text-white transition font-bold text-xs inline-block">
+                        [<- Return Home]
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="py-12 border-t-2 border-black bg-white font-technical mt-auto">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm text-black">
+        <span>© 2025 Prometheus</span>
+        <div class="flex items-center space-x-4 mt-4 md:mt-0">
+            <a href="https://github.com/pr0meth4us" target="_blank" rel="noopener noreferrer" class="hover:underline font-bold">
+                GitHub
+            </a>
+            <span>•</span>
+            <span>Designed & Developed</span>
+        </div>
+    </div>
+</footer>
+
+</div> <!-- End portfolio-container -->
+
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

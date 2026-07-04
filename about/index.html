@@ -21,109 +21,54 @@
 </head>
 <body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
 
-<header class="shadow-sm bg-white py-4 px-6 border-b border-gray-300 sticky top-0 z-40">
+<div id="portfolio-container">
+<header class="bg-white py-4 px-6 border-b-2 border-black sticky top-0 z-40 font-technical text-sm">
     <div class="container mx-auto flex justify-between items-center">
         <div>
-            <a href="/" class="flex items-center space-x-3 text-2xl font-bold tracking-tight transition duration-300 hover:text-gray-700">
-                <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741585138/prometheus_cju1pn.png" alt="Prometheus Logo" class="h-12 w-auto">
-                <span class="lg:block hidden">SOEUNG Phearaeron</span>
+            <a href="/" class="flex items-center space-x-3 text-lg font-bold tracking-tight hover:underline text-black">
+                <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741585138/prometheus_cju1pn.png" alt="Prometheus Logo" class="h-8 w-auto grayscale border border-black">
+                <span>SOEUNG Phearaneron</span>
             </a>
         </div>
 
-        
-
-        <nav class="hidden md:flex items-center space-x-6 py-2 font-medium desktop-nav">
-            
-            
-            
-            
-
-            <div class=" nav-item relative">
-                <a href="/" class="text-gray-800 hover:text-blue-600 transition nav-link">
+        <nav class="hidden md:flex items-center space-x-6 py-2 font-medium">
+            <div class="nav-item relative">
+                <a href="/" class="text-black hover:underline nav-link">
                     Home
-                    
                 </a>
-
-                
             </div>
             
-            
-            
-            
-
-            <div class="dropdown-container nav-item relative">
-                <a href="/about" class="text-blue-600 active-nav transition nav-link">
+            <div class="nav-item relative">
+                <a href="/about/" class="text-black hover:underline nav-link active-nav">
                     About Me
-                    
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block ml-1 transform transition-transform duration-200 dropdown-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                    
                 </a>
-
-                
-                <div class="dropdown-content absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
-                    
-                    
-                    
-                    
-                    <a href="/about/cv" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition">
-                        CV
-                    </a>
-                    
-                </div>
-                
             </div>
             
-            
-            
-            
-
-            <div class=" nav-item relative">
-                <a href="/projects" class="text-gray-800 hover:text-blue-600 transition nav-link">
+            <div class="nav-item relative">
+                <a href="/projects.html" class="text-black hover:underline nav-link">
                     Coding Projects
-                    
                 </a>
-
-                
             </div>
             
-            
-            
-            
-
-            <div class=" nav-item relative">
-                <a href="/papers" class="text-gray-800 hover:text-blue-600 transition nav-link">
+            <div class="nav-item relative">
+                <a href="/papers.html" class="text-black hover:underline nav-link">
                     Papers
-                    
                 </a>
-
-                
             </div>
             
-            
-            
-            
-
-            <div class=" nav-item relative">
-                <a href="/misc" class="text-gray-800 hover:text-blue-600 transition nav-link">
+            <div class="nav-item relative">
+                <a href="/misc.html" class="text-black hover:underline nav-link">
                     Archive
-                    
                 </a>
-
-                
             </div>
-            
 
-            <a href="https://github.com/pr0meth4us" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="text-gray-800 hover:text-blue-600 transition">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
-                </svg>
+            <a href="https://github.com/pr0meth4us" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="text-black hover:underline">
+                [GitHub]
             </a>
         </nav>
 
         <div class="md:hidden">
-            <button id="mobile-menu-button" class="text-gray-800 hover:text-blue-600 focus:outline-none" aria-label="Open main menu" aria-expanded="false">
+            <button id="mobile-menu-button" class="text-black focus:outline-none" aria-label="Open main menu" aria-expanded="false">
                 <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
@@ -134,246 +79,131 @@
         </div>
     </div>
 
-    <div id="mobile-menu" class="hidden md:hidden">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            
-
-            
-
-            
-
-            
-            <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200">
-                Home
-            </a>
-
-            
-
-            
-
-            
-
-            
-
-            
-            <a href="/about" class="block px-3 py-2 rounded-md text-base font-medium bg-blue-100 text-blue-700">
-                About Me
-            </a>
-
-            
-            <div class="pl-4 border-l-2 border-gray-200 ml-3">
-                
-                
-                
-                <a href="/about/cv" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">
-                    CV
-                </a>
-                
-            </div>
-            
-
-            
-
-            
-
-            
-
-            
-            <a href="/projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200">
-                Coding Projects
-            </a>
-
-            
-
-            
-
-            
-
-            
-
-            
-            <a href="/papers" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200">
-                Papers
-            </a>
-
-            
-
-            
-
-            
-
-            
-
-            
-            <a href="/misc" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200">
-                Archive
-            </a>
-
-            
-
-            
-
-            <a href="https://github.com/pr0meth4us" target="_blank" rel="noopener noreferrer" class="text-gray-800 hover:bg-gray-200 block px-3 py-2 rounded-md text-base font-medium">
-                GitHub
-            </a>
+    <div id="mobile-menu" class="hidden md:hidden border-t border-black mt-4 pt-4">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-technical text-sm">
+            <a href="/" class="block px-3 py-2 text-black hover:underline">Home</a>
+            <a href="/about/" class="block px-3 py-2 text-black hover:underline">About Me</a>
+            <a href="/projects.html" class="block px-3 py-2 text-black hover:underline">Coding Projects</a>
+            <a href="/papers.html" class="block px-3 py-2 text-black hover:underline">Papers</a>
+            <a href="/misc.html" class="block px-3 py-2 text-black hover:underline">Archive</a>
+            <a href="https://github.com/pr0meth4us" target="_blank" rel="noopener noreferrer" class="block px-3 py-2 text-black hover:underline">GitHub</a>
         </div>
     </div>
 </header>
 
-<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow">
-    <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1750921780/output2_vhelhw.jpg" alt="SOEUNG Phearaeron" class="mx-auto w-44 h-44 rounded-full shadow-xl object-cover mb-8 border-4 border-white ring-2 ring-gray-200">
-
-<h1 class="text-4xl font-bold mb-8 pb-2 border-b-2 border-gray-200 inline-block">About Me</h1>
-<div class="text-justify prose prose-lg max-w-none mb-12 bg-gradient-to-r from-gray-50 to-white p-6 rounded-lg shadow-sm border border-gray-100 leading-relaxed">
-    <p></p>
-    <p><strong>Neron</strong></p>
-
-<p>Suffered through 3 years of academic indecision, I’m almost graduating with dual degrees in IR and IT. After deep contemplation, real-world experience, and existential crises, I found my sweet spot in <strong>Digital Governance</strong>.</p>
-
-<ul class="list-disc pl-5">
-  <li>I like IR and Politics because I like going down rabbit holes, and crafting policy solutions out of research.</li>
-  <li>I code, not for fun or to innovate, but to solve my own minor inconveniences - giving myself temporary solutions to my temporary problems at my fingertips, which makes me feel like a god.</li>
-</ul>
-
-</div>
-
-<!--<h2 class="text-2xl font-bold mb-5 text-gray-800">About Pr0meth4us</h2>-->
-<!--<div class="text-justify prose prose-lg max-w-none mb-12 bg-gradient-to-r from-gray-50 to-white p-6 rounded-lg shadow-sm border border-gray-100 leading-relaxed">-->
-<!--    -->
-<!--</div>-->
-
-<h2 class="text-2xl font-bold mb-5 text-gray-800">Personal Information</h2>
-<div class="bg-white rounded-xl p-8 shadow-md mb-12 border border-gray-100">
-    <div class="mb-8">
-        <h3 class="text-xl font-semibold mb-4 border-b border-gray-200 pb-2 text-gray-700">Basic Info</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <ul class="space-y-3 list-none pl-0">
-                <li class="flex items-center">
-                    <span class="font-medium w-36 text-gray-600">Current Location:</span>
-                    <span class="text-gray-800">Phnom Penh</span>
-                </li>
-                <li class="flex items-center">
-                    <span class="font-medium w-36 text-gray-600">Year of Birth:</span>
-                    <span class="text-gray-800">2004</span>
-                </li>
-                <li class="flex items-center">
-                    <span class="font-medium w-36 text-gray-600">Birthplace:</span>
-                    <span class="text-gray-800">Kompong Thom</span>
-                </li>
-            </ul>
-        </div>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow font-technical">
+    <div class="mb-10 text-center lg:text-left">
+        <span class="text-xs uppercase opacity-50">// Identity Dossier</span>
+        <h2 class="text-4xl md:text-6xl font-bold font-academic mt-2">SOEUNG Phearaneron</h2>
     </div>
 
-    <div class="mb-8">
-        <h3 class="text-xl font-semibold mb-4 border-b border-gray-200 pb-2 text-gray-700">Languages</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-            
-            <div class="flex items-center">
-                <span class="font-medium w-36 text-gray-600">Khmer:</span>
-                <span class="text-gray-800">Native</span>
+    <div class="brutalist-grid-container grid grid-cols-12">
+        
+        <!-- BIOGRAPHY PANEL -->
+        <div class="brutalist-panel col-span-12 lg:col-span-8 p-8 flex flex-col justify-between border-b-2 border-black lg:border-r-2">
+            <div>
+                <div class="flex flex-col md:flex-row md:items-start gap-8">
+                    <div class="polaroid-frame bg-white flex-shrink-0 mx-auto md:mx-0">
+                        <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1750921780/output2_vhelhw.jpg" alt="SOEUNG Phearaneron" class="w-36 h-36 object-cover border border-black grayscale">
+                        <p class="font-caption text-xs mt-1 text-center text-black leading-none">Neron. Portrait.</p>
+                    </div>
+                    <div>
+                        <span class="stamp-badge approved">DIGITAL GOVERNANCE</span>
+                        <h3 class="text-3xl font-bold font-academic mt-4">Biography</h3>
+                        <p class="mt-4 text-sm leading-relaxed text-justify opacity-90">
+                            Suffered through 3 years of academic indecision, I’m almost graduating with dual degrees in International Relations (IR) and Information Technology (IT). After deep contemplation, real-world experience, and existential crises, I found my sweet spot in **Digital Governance**.
+                        </p>
+                        <p class="mt-4 text-sm leading-relaxed text-justify opacity-90 font-technical">
+                            // I like IR and Politics because I like going down rabbit holes and crafting policy solutions out of research.
+                        </p>
+                        <p class="mt-4 text-sm leading-relaxed text-justify opacity-90 font-technical">
+                            // I code, not for fun or to innovate, but to solve my own minor inconveniences - giving myself temporary solutions to my temporary problems at my fingertips, which makes me feel like a god.
+                        </p>
+                    </div>
+                </div>
             </div>
             
-            <div class="flex items-center">
-                <span class="font-medium w-36 text-gray-600">English:</span>
-                <span class="text-gray-800">Full Professional Proficiency</span>
+            <div class="mt-8 border-t border-black pt-6">
+                <span class="text-xs uppercase opacity-50">// Connections</span>
+                <div class="mt-4 flex flex-wrap gap-4 text-xs font-bold">
+                    <a href="mailto:phearaneron.soeung@gmail.com" class="hover:underline">[Email]</a>
+                    <a href="tel:+855962021314" class="hover:underline">[Phone]</a>
+                    <a href="https://github.com/pr0meth4us" target="_blank" rel="noopener noreferrer" class="hover:underline">[GitHub]</a>
+                    <a href="https://linkedin.com/in/nernnnnnnn/" target="_blank" rel="noopener noreferrer" class="hover:underline">[LinkedIn]</a>
+                    <a href="https://t.me/nernnnnnnn" target="_blank" rel="noopener noreferrer" class="hover:underline">[Telegram]</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROFILE DATA PANEL -->
+        <div class="brutalist-panel col-span-12 lg:col-span-4 p-8 flex flex-col justify-between border-b-2 border-black">
+            <div>
+                <span class="text-xs uppercase opacity-50">System Logs // Basic Info</span>
+                
+                <ul class="mt-6 space-y-4 text-xs border-b border-black pb-6">
+                    <li class="flex justify-between"><span class="opacity-50">LOCATION:</span> <span class="font-bold">Phnom Penh, KH</span></li>
+                    <li class="flex justify-between"><span class="opacity-50">YEAR OF BIRTH:</span> <span class="font-bold">2004</span></li>
+                    <li class="flex justify-between"><span class="opacity-50">BIRTHPLACE:</span> <span class="font-bold">Kompong Thom</span></li>
+                    <li class="flex justify-between"><span class="opacity-50">KHMER:</span> <span class="font-bold">Native</span></li>
+                    <li class="flex justify-between"><span class="opacity-50">ENGLISH:</span> <span class="font-bold">Full Professional</span></li>
+                </ul>
+
+                <span class="text-xs uppercase opacity-50 block mt-6">Expertise Stack</span>
+                <div class="mt-4 flex flex-wrap gap-2 text-xs">
+                    <span class="border border-black px-2 py-1">Data Analysis</span>
+                    <span class="border border-black px-2 py-1">Policy Analysis</span>
+                    <span class="border border-black px-2 py-1">International Relations</span>
+                    <span class="border border-black px-2 py-1">Diplomacy</span>
+                    <span class="border border-black px-2 py-1">Full-Stack Development</span>
+                </div>
+                
+                <span class="text-xs uppercase opacity-50 block mt-6">Core Interests</span>
+                <div class="mt-4 flex flex-wrap gap-2 text-xs">
+                    <span class="border border-black px-2 py-1">Public Policy</span>
+                    <span class="border border-black px-2 py-1">Digital Governance</span>
+                    <span class="border border-black px-2 py-1">Policy Research</span>
+                    <span class="border border-black px-2 py-1">Backend Dev</span>
+                </div>
             </div>
             
+            <div class="mt-6 text-xs text-gray-500">
+                // System.out.println("Form follows function.");
+            </div>
         </div>
-    </div>
 
-    <div class="mb-8">
-        <h3 class="text-xl font-semibold mb-4 border-b border-gray-200 pb-2 text-gray-700">Skills</h3>
-        <div class="flex flex-wrap gap-3">
-            
-            <span class="inline-block bg-gray-100 text-gray-800 px-4 py-2 rounded-lg text-sm shadow-sm hover:bg-gray-200 transition-colors duration-200">Data Analysis</span>
-            
-            <span class="inline-block bg-gray-100 text-gray-800 px-4 py-2 rounded-lg text-sm shadow-sm hover:bg-gray-200 transition-colors duration-200">Policy Analysis</span>
-            
-            <span class="inline-block bg-gray-100 text-gray-800 px-4 py-2 rounded-lg text-sm shadow-sm hover:bg-gray-200 transition-colors duration-200">International Relations</span>
-            
-            <span class="inline-block bg-gray-100 text-gray-800 px-4 py-2 rounded-lg text-sm shadow-sm hover:bg-gray-200 transition-colors duration-200">Diplomacy</span>
-            
-            <span class="inline-block bg-gray-100 text-gray-800 px-4 py-2 rounded-lg text-sm shadow-sm hover:bg-gray-200 transition-colors duration-200">Full-Stack Web Development</span>
-            
+        <!-- CURRICULUM VITAE CALLOUT -->
+        <div class="brutalist-panel col-span-12 p-8 flex flex-col md:flex-row justify-between items-center border-t-2 border-black">
+            <div class="lg:w-2/3">
+                <span class="text-xs uppercase opacity-50">// Career Documentation</span>
+                <h3 class="text-3xl font-bold font-academic mt-2">Curriculum Vitae</h3>
+                <p class="mt-2 text-sm opacity-75">
+                    Explore my complete professional timeline, academic achievements, language proficiencies, and technical history.
+                </p>
+            </div>
+            <div class="mt-6 lg:mt-0 flex-shrink-0">
+                <a href="/about/cv.html" class="px-6 py-3 border-2 border-black hover:bg-black hover:text-white transition font-bold text-sm inline-block">
+                    [View Complete CV ->]
+                </a>
+            </div>
         </div>
-    </div>
 
-    <div class="mb-8">
-        <h3 class="text-xl font-semibold mb-4 border-b border-gray-200 pb-2 text-gray-700">Interests</h3>
-        <div class="flex flex-wrap gap-3">
-            
-            <span class="inline-block bg-gray-100 text-gray-800 px-4 py-2 rounded-lg text-sm shadow-sm hover:bg-gray-200 transition-colors duration-200">Public Policy</span>
-            
-            <span class="inline-block bg-gray-100 text-gray-800 px-4 py-2 rounded-lg text-sm shadow-sm hover:bg-gray-200 transition-colors duration-200">Digital Governance</span>
-            
-            <span class="inline-block bg-gray-100 text-gray-800 px-4 py-2 rounded-lg text-sm shadow-sm hover:bg-gray-200 transition-colors duration-200">Policy Research</span>
-            
-            <span class="inline-block bg-gray-100 text-gray-800 px-4 py-2 rounded-lg text-sm shadow-sm hover:bg-gray-200 transition-colors duration-200">Backend Development</span>
-            
-        </div>
     </div>
-
-    <div>
-        <h3 class="text-xl font-semibold mb-4 border-b border-gray-200 pb-2 text-gray-700">Connect With Me</h3>
-        <div class="flex flex-wrap gap-3">
-            
-            <a href="mailto:phearaneron.soeung@gmail.com" target="_blank" class="inline-flex items-center px-4 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-lg text-sm transition-all duration-200 shadow-sm hover:shadow transform hover:-translate-y-0.5">
-                
-                <svg class="w-5 h-5 mr-2 text-red-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
-                <span>Email</span>
-                
-            </a>
-            
-            <a href="tel:+855962021314" target="_blank" class="inline-flex items-center px-4 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-lg text-sm transition-all duration-200 shadow-sm hover:shadow transform hover:-translate-y-0.5">
-                
-                <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
-                <span>Phone</span>
-                
-            </a>
-            
-            <a href="https://github.com/pr0meth4us" target="_blank" class="inline-flex items-center px-4 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-lg text-sm transition-all duration-200 shadow-sm hover:shadow transform hover:-translate-y-0.5">
-                
-                <svg class="w-5 h-5 mr-2 text-purple-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 0C4.477 0 0 4.477 0 10c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V19c0 .27.16.59.67.5C17.14 18.16 20 14.42 20 10A10 10 0 0010 0z" clip-rule="evenodd"></path></svg>
-                <span>GitHub</span>
-                
-            </a>
-            
-            <a href="https://linkedin.com/in/nernnnnnnn/" target="_blank" class="inline-flex items-center px-4 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-lg text-sm transition-all duration-200 shadow-sm hover:shadow transform hover:-translate-y-0.5">
-                
-                <svg class="w-5 h-5 mr-2 text-blue-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-1-.02-2.28-1.39-2.28-1.39 0-1.6 1.08-1.6 2.2v4.258H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"></path></svg>
-                <span>LinkedIn</span>
-                
-            </a>
-            
-            <a href="https://t.me/nernnnnnnn" target="_blank" class="inline-flex items-center px-4 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-lg text-sm transition-all duration-200 shadow-sm hover:shadow transform hover:-translate-y-0.5">
-                
-                <svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-1.97 9.294c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.574-4.458c.536-.197.989.12.828.925z"></path></svg>
-                <span>Telegram</span>
-                
-            </a>
-            
-        </div>
-    </div>
-    <div class="text-center mt-8">
-        <a href="/cv" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-md font-medium hover:bg-blue-700 transition">View my complete CV</a>
-    </div>
-</div>
 </main>
 
-<footer class="py-6 border-t border-gray-300">
-    <div class="flex justify-center items-center space-x-4 text-sm text-gray-600">
+<footer class="py-12 border-t-2 border-black bg-white font-technical mt-auto">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm text-black">
         <span>© 2025 Prometheus</span>
-        <span class="text-gray-400">•</span>
-        <a href="https://github.com/pr0meth4us" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="transition hover:text-gray-900">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
-            </svg>
-        </a>
-        <span class="text-gray-400">•</span>
-        <span>Designed & Developed</span>
+        <div class="flex items-center space-x-4 mt-4 md:mt-0">
+            <a href="https://github.com/pr0meth4us" target="_blank" rel="noopener noreferrer" class="hover:underline font-bold">
+                GitHub
+            </a>
+            <span>•</span>
+            <span>Designed & Developed</span>
+        </div>
     </div>
 </footer>
 
+</div> <!-- End portfolio-container -->
 
 <script src="/assets/js/nav.js"></script>
 </body>
