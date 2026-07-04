@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phearaneron SOEUNG - Digital Adoption Coordinator</title>
+    <!-- Web standards styling -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0d1326;
+            color: #ffffff;
+        }
+        .khmer-font {
+            font-family: 'Kantumruy Pro', 'Khmer OS', sans-serif;
+        }
+        .sig-card {
+            background-color: #0d1a8a;
+            background-image: url('https://enterprisedigital.gov.kh/_nuxt/img/error_bg_image.2b56384.png');
+            background-size: cover;
+            background-position: center;
+            border: 2px solid #48c8e7;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(72, 200, 231, 0.2);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 15px rgba(72, 200, 231, 0.6);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 md:p-8">
+
+    <!-- Card Container -->
+    <div class="w-full max-w-xl">
+
+        <!-- The Interactive Business Card -->
+        <div class="sig-card rounded-2xl p-6 md:p-8 transition-all duration-300">
+            
+            <!-- User Info -->
+            <div class="mb-6">
+                <div class="flex flex-col md:flex-row md:items-baseline md:space-x-3">
+                    <h1 class="khmer-font text-2xl md:text-3xl font-bold tracking-wide text-white leading-none">
+                        សឿង ភារ៉ានិរន្ត
+                    </h1>
+                    <span class="text-sm text-blue-200 mt-1 md:mt-0 font-medium">
+                        (Phearaneron SOEUNG)
+                    </span>
+                </div>
+                <div class="text-sm font-semibold text-cyan-300 mt-2 tracking-wider uppercase">
+                    Digital Adoption Coordinator
+                </div>
+                <div class="text-xs text-blue-200 mt-1 opacity-80 leading-relaxed">
+                    Enterprises Go Digital Department &bull; Techo Startup Center (TSC) &bull; Ministry of Economy and Finance
+                </div>
+            </div>
+
+            <div class="border-t border-cyan-400 border-opacity-35 my-5"></div>
+
+            <!-- Contacts Info List -->
+            <div class="space-y-4 text-sm mb-8">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-lg bg-white bg-opacity-10 flex items-center justify-center text-cyan-300">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs opacity-60 block">Mobile Phone</span>
+                        <a href="tel:+855962021314" class="font-medium hover:underline text-white">(+855) 96 202 1314</a>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-lg bg-white bg-opacity-10 flex items-center justify-center text-cyan-300">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs opacity-60 block">Email Address</span>
+                        <a href="mailto:phearaneron.soeung@tsc.gov.kh" class="font-medium hover:underline text-white">phearaneron.soeung@tsc.gov.kh</a>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-lg bg-white bg-opacity-10 flex items-center justify-center text-cyan-300">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs opacity-60 block">Official Website</span>
+                        <a href="https://www.tsc.gov.kh" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline text-white">www.tsc.gov.kh</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="grid grid-cols-2 gap-4">
+                <button onclick="downloadVCard()" class="glow-hover flex items-center justify-center space-x-2 bg-cyan-400 hover:bg-cyan-300 text-slate-900 py-3 px-4 rounded-xl font-bold text-xs uppercase tracking-wider transition-all duration-300">
+                    <i class="fa-solid fa-address-card text-base"></i>
+                    <span>Save Contact</span>
+                </button>
+                <a href="https://t.me/nernnnnnnn" target="_blank" rel="noopener noreferrer" class="glow-hover flex items-center justify-center space-x-2 bg-white bg-opacity-15 hover:bg-opacity-25 text-white py-3 px-4 rounded-xl font-bold text-xs uppercase tracking-wider transition-all duration-300 border border-white border-opacity-10">
+                    <i class="fa-brands fa-telegram text-base text-cyan-300"></i>
+                    <span>Telegram Chat</span>
+                </a>
+            </div>
+
+        </div>
+        
+        <!-- Back to portfolio -->
+        <div class="mt-6 text-center">
+            <a href="/" class="text-xs text-gray-500 hover:text-white transition duration-200">
+                &larr; Back to Portfolio
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Client-side vCard Download -->
+    <script>
+        function downloadVCard() {
+            const vcard = 
+`BEGIN:VCARD
+VERSION:3.0
+N:SOEUNG;Phearaneron;;;
+FN:Phearaneron SOEUNG
+ORG:Techo Startup Center;Ministry of Economy and Finance
+TITLE:Digital Adoption Coordinator
+EMAIL;TYPE=PREF,INTERNET:phearaneron.soeung@tsc.gov.kh
+TEL;TYPE=CELL,VOICE:+855962021314
+URL:https://pr0meth4us.github.io/egd/
+REV:${new Date().toISOString()}
+END:VCARD`;
+
+            const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'Phearaneron_SOEUNG_EGD.vcf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+
+</body>
+</html>
