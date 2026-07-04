@@ -110,113 +110,111 @@
     <div class="grid-overlay"></div>
 
     <!-- Main Giant Card -->
-    <div class="biz-card w-full max-w-3xl rounded-3xl p-6 md:p-10 flex flex-col justify-between overflow-hidden">
+    <div class="biz-card w-full max-w-xl rounded-3xl p-6 md:p-9 flex flex-col justify-between overflow-hidden">
         
-        <!-- Main Grid Layout -->
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch w-full">
-            
-            <!-- Left Panel: User Profile, Contacts, and Actions (9 Columns) -->
-            <div class="md:col-span-9 flex flex-col justify-between space-y-6">
-                
-                <!-- User Profile Identification -->
-                <div>
-                    <span class="text-[9px] md:text-[10px] tracking-widest font-bold text-cyan uppercase font-mono mb-1.5 block">
-                        // Digital Identity
+        <!-- Card Header: Title + Logos -->
+        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between border-b border-white border-opacity-10 pb-5 mb-5 gap-4">
+            <!-- Left: User Identity -->
+            <div class="space-y-1">
+                <span class="text-[9px] md:text-[10px] tracking-widest font-bold text-cyan uppercase font-mono block mb-1">
+                    // Digital Identity
+                </span>
+                <h1 class="khmer-font text-3xl md:text-4xl font-extrabold tracking-wide text-white leading-tight">
+                    សឿង ភារ៉ានិរន្ត
+                </h1>
+                <h2 class="text-lg md:text-xl text-slate-300 font-light">
+                    Phearaneron SOEUNG
+                </h2>
+                <div class="flex items-center space-x-2 mt-2.5">
+                    <span class="h-2 w-2 rounded-full bg-cyan-glow"></span>
+                    <span class="text-xs md:text-sm font-bold tracking-widest text-cyan uppercase font-mono">
+                        Digital Adoption Coordinator
                     </span>
-                    <h1 class="khmer-font text-3xl md:text-5xl font-extrabold tracking-wide text-white leading-tight">
-                        សឿង ភារ៉ានិរន្ត
-                    </h1>
-                    <h2 class="text-xl md:text-3xl text-slate-300 font-light mt-1 md:mt-2">
-                        Phearaneron SOEUNG
-                    </h2>
-                    
-                    <div class="flex items-center space-x-2 mt-3.5">
-                        <span class="h-2 w-2 rounded-full bg-cyan-glow"></span>
-                        <span class="text-xs md:text-sm font-bold tracking-widest text-cyan uppercase font-mono">
-                            Digital Adoption Coordinator
-                        </span>
-                    </div>
                 </div>
-
-                <!-- Clean Vertical Contacts List -->
-                <div class="space-y-3.5 py-4 border-t border-b border-white border-opacity-10">
-                    <div class="flex items-center space-x-3.5">
-                        <div class="w-8 h-8 rounded-lg bg-white bg-opacity-5 flex items-center justify-center text-cyan">
-                            <i class="fa-solid fa-phone text-sm"></i>
-                        </div>
-                        <div class="font-mono text-xs md:text-sm">
-                            <span class="text-[9px] text-slate-500 block">Mobile Phone</span>
-                            <a href="tel:+855962021314" class="text-slate-300 hover:text-white hover:underline">(+855) 96 202 1314</a>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center space-x-3.5">
-                        <div class="w-8 h-8 rounded-lg bg-white bg-opacity-5 flex items-center justify-center text-cyan">
-                            <i class="fa-solid fa-envelope text-sm"></i>
-                        </div>
-                        <div class="font-mono text-xs md:text-sm">
-                            <span class="text-[9px] text-slate-500 block">Email Address</span>
-                            <a href="mailto:phearaneron.soeung@tsc.gov.kh" class="text-slate-300 hover:text-white hover:underline">phearaneron.soeung@tsc.gov.kh</a>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center space-x-3.5">
-                        <div class="w-8 h-8 rounded-lg bg-white bg-opacity-5 flex items-center justify-center text-cyan">
-                            <i class="fa-solid fa-globe text-sm"></i>
-                        </div>
-                        <div class="font-mono text-xs md:text-sm">
-                            <span class="text-[9px] text-slate-500 block">Website Hub</span>
-                            <a href="https://pr0meth4us.github.io/" class="text-slate-300 hover:text-white hover:underline">pr0meth4us.github.io</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Clean Action Buttons directly under details -->
-                <div class="flex space-x-3 w-full sm:w-auto">
-                    <button onclick="downloadVCard()" class="flex-1 sm:flex-initial flex items-center justify-center space-x-2.5 bg-cyan-500 hover:bg-cyan-400 text-slate-950 py-3 px-6 rounded-xl font-bold text-xs uppercase tracking-wider transition-all duration-300">
-                        <i class="fa-solid fa-address-card text-sm"></i>
-                        <span>Save Contact</span>
-                    </button>
-                    <a href="https://t.me/nernnnnnnn" target="_blank" rel="noopener noreferrer" class="flex-1 sm:flex-initial flex items-center justify-center space-x-2.5 bg-white bg-opacity-10 hover:bg-opacity-20 text-white py-3 px-6 rounded-xl font-bold text-xs uppercase tracking-wider transition-all duration-300 border border-white border-opacity-5">
-                        <i class="fa-brands fa-telegram text-sm text-cyan"></i>
-                        <span>Telegram</span>
-                    </a>
-                </div>
-
             </div>
             
-            <!-- Right Panel: Vertical Administrative Hierarchy of Logos (3 Columns) -->
-            <div class="md:col-span-3 flex flex-col items-center justify-center p-4 self-center">
-                
-                <!-- MEF (Top) -->
-                <div class="flex flex-col items-center">
-                    <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center p-1 shadow-lg border border-white border-opacity-20">
-                        <img src="/assets/images/mef.png" alt="MEF" class="h-full w-full object-contain">
-                    </div>
+            <!-- Right: Logos (Horizontal Lineage) -->
+            <div class="flex items-center space-x-2 bg-white bg-opacity-5 p-2 rounded-2xl border border-white border-opacity-5 self-start sm:self-auto shadow-inner">
+                <!-- MEF -->
+                <div class="w-9 h-9 rounded-full bg-white flex items-center justify-center p-0.5 shadow-md">
+                    <img src="/assets/images/mef.png" alt="MEF" class="h-full w-full object-contain">
                 </div>
-                
-                <!-- Connector -->
-                <div class="hierarchy-line my-3"></div>
-                
-                <!-- TSC (Middle) -->
-                <div class="flex flex-col items-center">
-                    <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center p-1 shadow-lg border border-white border-opacity-20">
-                        <img src="/assets/images/tsc.png" alt="TSC" class="h-full w-full object-contain">
-                    </div>
+                <!-- Connector Arrow/Line -->
+                <div class="w-2.5 h-[1px] bg-white opacity-20"></div>
+                <!-- TSC -->
+                <div class="w-9 h-9 rounded-full bg-white flex items-center justify-center p-0.5 shadow-md">
+                    <img src="/assets/images/tsc.png" alt="TSC" class="h-full w-full object-contain">
                 </div>
-                
-                <!-- Connector -->
-                <div class="hierarchy-line my-3"></div>
-                
-                <!-- EGD (Bottom - Circle Only) -->
-                <div class="flex flex-col items-center">
-                    <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center p-2 shadow-lg border border-white border-opacity-20">
-                        <img src="/assets/images/egd_circle.svg" alt="EGD" class="h-full w-full object-contain">
-                    </div>
+                <!-- Connector Arrow/Line -->
+                <div class="w-2.5 h-[1px] bg-white opacity-20"></div>
+                <!-- EGD -->
+                <div class="w-9 h-9 rounded-full bg-white flex items-center justify-center p-1.5 shadow-md">
+                    <img src="/assets/images/egd_circle.svg" alt="EGD" class="h-full w-full object-contain">
                 </div>
+            </div>
+        </div>
 
+        <!-- Middle Section: Official EGD Program Banner -->
+        <div class="mb-5 flex flex-row items-center justify-between bg-slate-900 bg-opacity-40 p-4 rounded-2xl border border-white border-opacity-5">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center p-1.5 shadow-md">
+                    <img src="/assets/images/egd_circle.svg" alt="EGD Logo" class="h-full w-full object-contain">
+                </div>
+                <div>
+                    <div class="text-[9px] text-slate-500 font-mono uppercase tracking-wider">Official Program</div>
+                    <div class="text-xs md:text-sm font-bold text-white font-sans tracking-wide">Enterprises Go Digital (EGD)</div>
+                </div>
+            </div>
+            <div>
+                <span class="text-[8px] md:text-[9px] text-cyan-400 bg-cyan-500 bg-opacity-10 border border-cyan-500 border-opacity-25 px-2.5 py-1 rounded-full font-mono uppercase tracking-wider font-semibold">
+                    TSC Portal
+                </span>
+            </div>
+        </div>
+
+        <!-- Clean Vertical Contacts List -->
+        <div class="space-y-4 mb-6 pb-5 border-b border-white border-opacity-10">
+            <div class="flex items-center space-x-3.5">
+                <div class="w-9 h-9 rounded-xl bg-white bg-opacity-5 flex items-center justify-center text-cyan">
+                    <i class="fa-solid fa-phone text-sm"></i>
+                </div>
+                <div class="font-mono text-xs md:text-sm">
+                    <span class="text-[9px] text-slate-500 block uppercase tracking-wider font-semibold">Mobile Phone</span>
+                    <a href="tel:+855962021314" class="text-slate-300 hover:text-white hover:underline">(+855) 96 202 1314</a>
+                </div>
             </div>
 
+            <div class="flex items-center space-x-3.5">
+                <div class="w-9 h-9 rounded-xl bg-white bg-opacity-5 flex items-center justify-center text-cyan">
+                    <i class="fa-solid fa-envelope text-sm"></i>
+                </div>
+                <div class="font-mono text-xs md:text-sm">
+                    <span class="text-[9px] text-slate-500 block uppercase tracking-wider font-semibold">Email Address</span>
+                    <a href="mailto:phearaneron.soeung@tsc.gov.kh" class="text-slate-300 hover:text-white hover:underline">phearaneron.soeung@tsc.gov.kh</a>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-3.5">
+                <div class="w-9 h-9 rounded-xl bg-white bg-opacity-5 flex items-center justify-center text-cyan">
+                    <i class="fa-solid fa-globe text-sm"></i>
+                </div>
+                <div class="font-mono text-xs md:text-sm">
+                    <span class="text-[9px] text-slate-500 block uppercase tracking-wider font-semibold">Website Hub</span>
+                    <a href="https://pr0meth4us.github.io/" class="text-slate-300 hover:text-white hover:underline">pr0meth4us.github.io</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Clean Action Buttons directly under details -->
+        <div class="flex flex-col sm:flex-row gap-3 w-full">
+            <button onclick="downloadVCard()" class="flex-1 flex items-center justify-center space-x-2.5 bg-cyan-500 hover:bg-cyan-400 text-slate-950 py-3.5 px-6 rounded-xl font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-lg shadow-cyan-500/10">
+                <i class="fa-solid fa-address-card text-sm"></i>
+                <span>Save Contact</span>
+            </button>
+            <a href="https://t.me/nernnnnnnn" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center space-x-2.5 bg-white bg-opacity-10 hover:bg-opacity-20 text-white py-3.5 px-6 rounded-xl font-bold text-xs uppercase tracking-wider transition-all duration-300 border border-white border-opacity-5">
+                <i class="fa-brands fa-telegram text-sm text-cyan"></i>
+                <span>Telegram</span>
+            </a>
         </div>
 
     </div>
