@@ -4,24 +4,15 @@ on:
   push:
     branches: [ main ]
   workflow_dispatch:
-    inputs:
-      deploy_choice:
-        description: 'Choose what to deploy'
-        required: true
-        default: 'employed'
-        type: choice
-        options:
-          - 'employed'
-          - 'portfolio'
 
 permissions:
-  contents: write  # Need write permissions to clean main branch
+  contents: read
   pages: write
   id-token: write
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -30,230 +21,18 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Determine deploy choice
-        id: deploy_choice
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            CHOICE="${{ github.event.inputs.deploy_choice }}"
-          else
-            # Default to employed for push events to main
-            CHOICE="employed"
-          fi
-          echo "choice=$CHOICE" >> $GITHUB_OUTPUT
-          echo "🚀 Deploy choice: $CHOICE"
-
-      - name: Checkout target branch
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          ref: ${{ steps.deploy_choice.outputs.choice }}
-          path: deploy-source
 
-      - name: Checkout main branch (for workflow protection)
-        uses: actions/checkout@v4
-        with:
-          ref: main
-          path: main-branch
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Setup Ruby and Jekyll (Portfolio only)
-        if: steps.deploy_choice.outputs.choice == 'portfolio'
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.2'
-          bundler-cache: true
-          working-directory: deploy-source
-
-      - name: Build Jekyll site (Portfolio only)
-        if: steps.deploy_choice.outputs.choice == 'portfolio'
-        working-directory: deploy-source
-        run: |
-          echo "📦 Building Jekyll site from portfolio branch..."
-          echo "Ruby version: $(ruby --version)"
-          echo "Bundler version: $(bundle --version)"
-          echo "Current directory: $(pwd)"
-          echo "Directory contents:"
-          ls -la
-          echo ""
-          echo "Installing dependencies..."
-          bundle install
-          echo ""
-          echo "Building site..."
-          bundle exec jekyll build --verbose
-          echo "✅ Jekyll build completed"
-          echo ""
-          echo "Built site contents (_site/):"
-          ls -la _site/
-
-      - name: Prepare deployment directory
-        id: prepare
-        run: |
-          if [ "${{ steps.deploy_choice.outputs.choice }}" = "portfolio" ]; then
-            DEPLOY_DIR="deploy-source/_site"
-            SOURCE_DESC="Jekyll site built from portfolio branch"
-          else
-            DEPLOY_DIR="deploy-source"
-            SOURCE_DESC="Static files from employed branch"
-          fi
-          
-          echo "deploy_dir=$DEPLOY_DIR" >> $GITHUB_OUTPUT
-          echo "source_desc=$SOURCE_DESC" >> $GITHUB_OUTPUT
-          echo "📁 Deployment directory: $DEPLOY_DIR"
-          echo "📝 Source: $SOURCE_DESC"
-          
-          # Verify directory exists
-          if [ ! -d "$DEPLOY_DIR" ]; then
-            echo "❌ Error: Directory $DEPLOY_DIR does not exist!"
-            echo "Available directories:"
-            find . -maxdepth 2 -type d
-            exit 1
-          fi
-          
-          echo "✅ Directory $DEPLOY_DIR exists and is ready for deployment"
-
-      - name: Clean main branch (preserve workflow only)
-        run: |
-          echo "🧹 Cleaning main branch - preserving only workflow files..."
-          
-          cd main-branch
-          
-          # Configure git
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          
-          # Backup workflow files
-          echo "💾 Backing up workflow files..."
-          mkdir -p /tmp/workflow-backup
-          if [ -d ".github" ]; then
-            cp -r .github /tmp/workflow-backup/ || echo "No .github directory to backup"
-          fi
-          
-          # Remove everything from main branch (except .git)
-          echo "🗑️ Removing all files from main branch..."
-          find . -maxdepth 1 -not -name '.git' -not -name '.' -not -name '..' -exec rm -rf {} + 2>/dev/null || true
-          
-          # Restore workflow files
-          echo "🔄 Restoring workflow files..."
-          if [ -d "/tmp/workflow-backup/.github" ]; then
-            cp -r /tmp/workflow-backup/.github .
-          fi
-          
-          cd ..
-          echo "✅ Main branch cleanup completed"
-
-      - name: Deploy content to main branch
-        run: |
-          echo "📂 Copying deployment content to main branch..."
-          
-          cd main-branch
-          
-          # Configure git with fallback handling
-          echo "🔧 Setting up git configuration..."
-          git config user.name "github-actions[bot]" || git config --global user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com" || git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          
-          # Copy all content from deployment directory to main branch
-          echo "📋 Copying from ${{ steps.prepare.outputs.deploy_dir }} to main branch..."
-          cp -r ../${{ steps.prepare.outputs.deploy_dir }}/* . 2>/dev/null || echo "No files to copy"
-          cp -r ../${{ steps.prepare.outputs.deploy_dir }}/.[^.]* . 2>/dev/null || echo "No hidden files to copy"
-          
-          # Make sure we don't overwrite the workflow
-          if [ -d "/tmp/workflow-backup/.github" ]; then
-            echo "🔒 Re-ensuring workflow files are preserved..."
-            cp -r /tmp/workflow-backup/.github .
-          fi
-          
-          # Check what we have now
-          echo "📋 Main branch contents after deployment:"
-          ls -la
-          
-          # Verify git config (with error handling)
-          echo "🔧 Verifying git configuration..."
-          echo "User name: $(git config user.name || echo 'Not set')"
-          echo "User email: $(git config user.email || echo 'Not set')"
-          
-          # Check for changes and commit
-          echo "📊 Checking for changes..."
-          git status --porcelain
-          
-          if [ -n "$(git status --porcelain)" ]; then
-            echo "💾 Committing deployment to main branch..."
-            git add -A
-            git status --short
-            git commit -m "🚀 Deploy ${{ steps.deploy_choice.outputs.choice }} content [skip ci]" || {
-              echo "❌ Commit failed, trying with different config..."
-              export GIT_AUTHOR_NAME="github-actions[bot]"
-              export GIT_AUTHOR_EMAIL="41898282+github-actions[bot]@users.noreply.github.com"
-              export GIT_COMMITTER_NAME="github-actions[bot]"
-              export GIT_COMMITTER_EMAIL="41898282+github-actions[bot]@users.noreply.github.com"
-              git commit -m "🚀 Deploy ${{ steps.deploy_choice.outputs.choice }} content [skip ci]"
-            }
-            git push origin main
-            echo "✅ Deployment committed and pushed to main branch"
-          else
-            echo "✅ No changes detected - content already up to date"
-          fi
-          
-          cd ..
-          echo "✅ Main branch deployment completed"
-      - name: Protect deployment from workflow conflicts
-        run: |
-          echo "🔒 Ensuring deployment doesn't conflict with main branch..."
-          
-          # Remove any workflow files from the deployment directory to prevent conflicts
-          if [ -d "${{ steps.prepare.outputs.deploy_dir }}/.github" ]; then
-            echo "⚠️  Removing .github directory from deployment to prevent conflicts"
-            rm -rf "${{ steps.prepare.outputs.deploy_dir }}/.github"
-          fi
-          
-          echo "✅ Deployment protection completed"
-
-      - name: Debug deployment contents
-        run: |
-          echo "🔍 Debug: Contents of deployment directory '${{ steps.prepare.outputs.deploy_dir }}':"
-          ls -la "${{ steps.prepare.outputs.deploy_dir }}"
-          echo ""
-          echo "📊 File count in deployment directory:"
-          find "${{ steps.prepare.outputs.deploy_dir }}" -type f | wc -l
-          echo ""
-          echo "💾 Total size of deployment directory:"
-          du -sh "${{ steps.prepare.outputs.deploy_dir }}"
-          echo ""
-          echo "📁 Directory structure (first 2 levels):"
-          find "${{ steps.prepare.outputs.deploy_dir }}" -maxdepth 2 -type d
-          echo ""
-          echo "📄 HTML files found:"
-          find "${{ steps.prepare.outputs.deploy_dir }}" -name "*.html" | head -10
-
-      - name: Setup GitHub Pages
+      - name: Setup Pages
         uses: actions/configure-pages@v4
-        with:
-          # Deploy from main branch since we've copied content there
-          enablement: true
 
-      - name: Upload to GitHub Pages
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload from main branch where we've deployed the content
-          path: main-branch
+          # Upload the static directory files
+          path: '.'
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-      - name: Create deployment summary
-        run: |
-          echo "## 🚀 Deployment Summary" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "- **Deploy Choice**: ${{ steps.deploy_choice.outputs.choice }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Source Branch**: \`${{ steps.deploy_choice.outputs.choice }}\`" >> $GITHUB_STEP_SUMMARY
-          echo "- **Source Description**: ${{ steps.prepare.outputs.source_desc }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Deployment URL**: ${{ steps.deployment.outputs.page_url }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Triggered by**: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Main Branch Status**: ✅ Content deployed to main branch" >> $GITHUB_STEP_SUMMARY
-          echo "- **Workflow Protection**: ✅ Workflow files preserved on main branch" >> $GITHUB_STEP_SUMMARY
-          
-          if [ "${{ steps.deploy_choice.outputs.choice }}" = "portfolio" ]; then
-            echo "- **Jekyll Build**: ✅ Completed from portfolio branch" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "- **Jekyll Build**: ⏭️ Skipped (employed branch deployment)" >> $GITHUB_STEP_SUMMARY
-          fi
