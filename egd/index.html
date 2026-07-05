@@ -159,34 +159,31 @@
     <!-- Main Giant Card -->
     <div class="biz-card w-full max-w-3xl rounded-3xl p-6 md:p-10 flex flex-col justify-between overflow-hidden">
         
-        <!-- Card Header: Profile Identity on Left, EGD Logo on Right -->
-        <div class="flex flex-row items-start justify-between border-b border-white border-opacity-10 pb-6 mb-6 gap-4 w-full">
-            
-            <!-- Left: User Identity -->
-            <div class="space-y-1.5 flex-1 min-w-0">
-                <h1 class="khmer-font text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-wide text-white leading-tight">
+        <!-- Card Header: EGD Logo stretched across the top -->
+        <div class="w-full mb-6">
+            <div class="corner-frame w-full">
+                <div class="corner-frame-inner bg-white px-5 py-3 rounded-lg shadow-inner flex items-center justify-center w-full">
+                    <img src="/assets/images/egd.svg" alt="Enterprises Go Digital" class="h-8 sm:h-12 md:h-14 object-contain">
+                </div>
+            </div>
+        </div>
+        
+        <!-- User Identity stretched across the width below EGD logo -->
+        <div class="w-full border-b border-white border-opacity-10 pb-6 mb-6">
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between w-full gap-2">
+                <h1 class="khmer-font text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-wide text-white leading-tight">
                     សឿង ភារ៉ានិរន្ត
                 </h1>
-                <h2 class="text-sm sm:text-2xl md:text-3xl text-gray-200 font-bold tracking-wide uppercase font-mono">
+                <h2 class="text-xl sm:text-2xl md:text-3xl text-gray-200 font-bold tracking-wide uppercase font-mono">
                     Phearaneron SOEUNG
                 </h2>
-                <div class="flex items-start space-x-2 pt-1">
-                    <span class="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-cyan-glow mt-1 flex-shrink-0"></span>
-                    <span class="text-[9px] sm:text-xs md:text-sm font-bold tracking-widest text-cyan uppercase font-mono">
-                        Digital Adoption Coordinator
-                    </span>
-                </div>
             </div>
-            
-            <!-- Right: EGD Logo (Enlarged inside High-Tech Corner Frame) -->
-            <div class="flex-shrink-0 pt-1 sm:pt-2">
-                <div class="corner-frame">
-                    <div class="corner-frame-inner bg-white px-3 py-1.5 sm:px-5 sm:py-2.5 rounded-lg shadow-inner flex items-center justify-center">
-                        <img src="/assets/images/egd.svg" alt="Enterprises Go Digital" class="w-24 sm:w-44 md:w-56 object-contain">
-                    </div>
-                </div>
+            <div class="flex items-center space-x-2 mt-3">
+                <span class="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-cyan-glow flex-shrink-0"></span>
+                <span class="text-xs sm:text-sm font-bold tracking-widest text-cyan uppercase font-mono">
+                    Digital Adoption Coordinator
+                </span>
             </div>
-
         </div>
 
         <!-- Body Grid Layout (Details and Parent Logos) -->
