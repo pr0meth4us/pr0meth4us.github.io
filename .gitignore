@@ -2,3 +2,5 @@
 _site
 !.github
 testing123
+.DS_Store
+.idea/
