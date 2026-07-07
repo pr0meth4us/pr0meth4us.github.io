@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="/assets/js/config.js"></script>
-    <script>
-        if (typeof CONFIG !== 'undefined' && CONFIG.isEmployed && window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
-            window.location.href = '/';
-        }
-    </script>
-
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:description"
           content="The Eternal Chronicle – A Portfolio Website of SOEUNG Phearaneron." />
@@ -27,8 +20,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
 </head>
 <body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
-
-<div id="portfolio-container">
 <header class="bg-white py-4 px-6 border-b-2 border-black sticky top-0 z-40 font-technical text-sm">
     <div class="container mx-auto flex justify-between items-center">
         <div>
@@ -97,6 +88,10 @@
         </div>
     </div>
 </header>
+<div id="portfolio-container">
+
+
+
 
 <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow font-technical">
     <div class="mb-10 text-center lg:text-left">
@@ -274,5 +269,52 @@
 </div> <!-- End portfolio-container -->
 
 <script src="/assets/js/nav.js"></script>
+
+<div id="employed-container" class="hidden terminal-container py-8 antialiased">
+    <div id="terminal-body" class="p-6 md:p-8 text-base">
+        <div class="flex items-center">
+            <span>&gt;</span>
+            <p class="flex-1 ml-2" id="typewriter1"></p>
+            <span class="cursor" id="cursor1"></span>
+        </div>
+        <div id="status-content" class="hidden mt-4 mb-6">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Status: Employed.</h2>
+            <p class="mt-2 whitespace-pre-wrap">Archived materials are offline during active employment.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    if (typeof CONFIG !== 'undefined' && CONFIG.isEmployed) {
+        document.getElementById('portfolio-container').style.display = 'none';
+        document.getElementById('employed-container').classList.remove('hidden');
+        document.body.className = 'employed-mode';
+        const crtStyles = document.getElementById('crt-styles');
+        if (crtStyles) {
+            crtStyles.removeAttribute('disabled');
+        }
+
+        const typewriter1 = document.getElementById('typewriter1');
+        const statusContent = document.getElementById('status-content');
+        const cursor1 = document.getElementById('cursor1');
+        
+        const text1 = "cat /archive.txt";
+        let i = 0;
+
+        function typeWriter1() {
+            if (i < text1.length) {
+                typewriter1.innerHTML += text1.charAt(i);
+                i++;
+                setTimeout(typeWriter1, 120);
+            } else {
+                cursor1.style.display = 'none';
+                statusContent.classList.remove('hidden');
+            }
+        }
+
+        setTimeout(typeWriter1, 500);
+    }
+</script>
+
 </body>
 </html>

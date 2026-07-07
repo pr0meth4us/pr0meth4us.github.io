@@ -410,3 +410,41 @@ a.bg-gray-800:hover {
     font-size: 0.7rem;
     overflow-x: auto;
 }
+
+/* Employed Mode CRT Terminal Styling */
+.employed-mode {
+  background-color: #000 !important;
+  color: #00FF00 !important;
+  font-family: monospace !important;
+}
+.employed-mode header {
+  background-color: #000 !important;
+  border-bottom: 2px solid #00FF00 !important;
+  color: #00FF00 !important;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+  font-family: monospace !important;
+}
+.employed-mode header a, .employed-mode header span {
+  color: #00FF00 !important;
+  font-family: monospace !important;
+}
+.employed-mode header img {
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(90deg) !important;
+  border-color: #00FF00 !important;
+}
+.employed-mode header .nav-link {
+  color: #00FF00 !important;
+}
+.employed-mode header .active-nav {
+  border-bottom: 2px solid #00FF00 !important;
+  padding-bottom: 2px;
+}
+.employed-mode footer {
+  background-color: #000 !important;
+  border-top: 2px solid #00FF00 !important;
+  color: #00FF00 !important;
+  font-family: monospace !important;
+}
+.employed-mode footer a, .employed-mode footer span {
+  color: #00FF00 !important;
+}
