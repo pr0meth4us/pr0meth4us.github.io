@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:description"
+          content="The Eternal Chronicle – A Portfolio Website of SOEUNG Phearaneron." />
+    <meta property="og:image" content="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741585138/prometheus_cju1pn.png" />
+    <title>
+        
+        Papers I've Written - SOEUNG Phearaeron
+        
+    </title>
+    <link rel="icon" href="/assets/images/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+</head>
+<body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
+
+<header class="shadow-sm bg-white py-4 px-6 border-b border-gray-300 sticky top-0 z-40">
+    <div class="container mx-auto flex justify-between items-center">
+        <div>
+            <a href="/" class="flex items-center space-x-3 text-2xl font-bold tracking-tight transition duration-300 hover:text-gray-700">
+                <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741585138/prometheus_cju1pn.png" alt="Prometheus Logo" class="h-12 w-auto">
+                <span class="lg:block hidden">SOEUNG Phearaeron</span>
+            </a>
+        </div>
+
+        
+
+        <nav class="hidden md:flex items-center space-x-6 py-2 font-medium desktop-nav">
+            
+            
+            
+            
+
+            <div class=" nav-item relative">
+                <a href="/" class="text-gray-800 hover:text-blue-600 transition nav-link">
+                    Home
+                    
+                </a>
+
+                
+            </div>
+            
+            
+            
+            
+
+            <div class="dropdown-container nav-item relative">
+                <a href="/about" class="text-gray-800 hover:text-blue-600 transition nav-link">
+                    About Me
+                    
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block ml-1 transform transition-transform duration-200 dropdown-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                    
+                </a>
+
+                
+                <div class="dropdown-content absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+                    
+                    
+                    
+                    
+                    <a href="/about/cv" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition">
+                        CV
+                    </a>
+                    
+                </div>
+                
+            </div>
+            
+            
+            
+            
+
+            <div class=" nav-item relative">
+                <a href="/projects" class="text-gray-800 hover:text-blue-600 transition nav-link">
+                    Coding Projects
+                    
+                </a>
+
+                
+            </div>
+            
+            
+            
+            
+
+            <div class=" nav-item relative">
+                <a href="/papers" class="text-blue-600 active-nav transition nav-link">
+                    Papers
+                    
+                </a>
+
+                
+            </div>
+            
+            
+            
+            
+
+            <div class=" nav-item relative">
+                <a href="/misc" class="text-gray-800 hover:text-blue-600 transition nav-link">
+                    Archive
+                    
+                </a>
+
+                
+            </div>
+            
+
+            <a href="https://github.com/pr0meth4us" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="text-gray-800 hover:text-blue-600 transition">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
+                </svg>
+            </a>
+        </nav>
+
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-gray-800 hover:text-blue-600 focus:outline-none" aria-label="Open main menu" aria-expanded="false">
+                <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+                <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            
+
+            
+
+            
+
+            
+            <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200">
+                Home
+            </a>
+
+            
+
+            
+
+            
+
+            
+
+            
+            <a href="/about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200">
+                About Me
+            </a>
+
+            
+            <div class="pl-4 border-l-2 border-gray-200 ml-3">
+                
+                
+                
+                <a href="/about/cv" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">
+                    CV
+                </a>
+                
+            </div>
+            
+
+            
+
+            
+
+            
+
+            
+            <a href="/projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200">
+                Coding Projects
+            </a>
+
+            
+
+            
+
+            
+
+            
+
+            
+            <a href="/papers" class="block px-3 py-2 rounded-md text-base font-medium bg-blue-100 text-blue-700">
+                Papers
+            </a>
+
+            
+
+            
+
+            
+
+            
+
+            
+            <a href="/misc" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200">
+                Archive
+            </a>
+
+            
+
+            
+
+            <a href="https://github.com/pr0meth4us" target="_blank" rel="noopener noreferrer" class="text-gray-800 hover:bg-gray-200 block px-3 py-2 rounded-md text-base font-medium">
+                GitHub
+            </a>
+        </div>
+    </div>
+</header>
+
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow">
+    <div class="space-y-6">
+    
+    <article class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+        <div class="flex flex-col md:flex-row h-full">
+            
+            <div class="md:w-1/3 lg:w-1/4 overflow-hidden">
+                <img
+                        src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741509629/SEA_and_Beyond_Analysis_and_Policy_Pathways_3__page-0001_elds0s.jpg"
+                        alt="Thumbnail for Why Cambodia should legalize surrogacy. In S. Po (Ed.), Southeast Asia and Beyond: Analysis & Policy Pathways (pp. 64-73). Center for Southeast Asian Studies, Royal University of Phnom Penh​"
+                        class="w-full h-full object-cover md:h-full"
+                        loading="lazy"
+                >
+            </div>
+            
+
+            <div class="md:w-2/3 lg:w-3/4 p-6 flex flex-col">
+                <h3 class="text-justify md:text-xl font-bold text-gray-900 mb-4 leading-tight">
+                    Why Cambodia should legalize surrogacy. In S. Po (Ed.), Southeast Asia and Beyond: Analysis & Policy Pathways (pp. 64-73). Center for Southeast Asian Studies, Royal University of Phnom Penh​
+                </h3>
+
+                <div class="text-justify prose prose-sm max-w-none text-gray-700 mb-4 flex-grow">
+                    The ethical, legal, and heath concerns around the ambiguous ban on surrogacy in Cambodia. This paper argues that Cambodia should revoke the ban and create a legal framework for surrogacy services.
+                </div>
+
+                <div class="mt-auto">
+                    <a href="https://rupp.edu.kh/iispp/cseas/CSEAS_Book/2024/documents/SEA%20and%20Beyond%20Analysis%20and%20Policy%20Pathways%20(3).pdf" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200" target="_blank">
+                        <span>Read Paper</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+    
+    <article class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+        <div class="flex flex-col md:flex-row h-full">
+            
+            <div class="md:w-1/3 lg:w-1/4 overflow-hidden">
+                <img
+                        src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741509629/Cambodian_Youth_s_Perspectives_on_International_Affairs_2_page-0001_owa11m.jpg"
+                        alt="Thumbnail for  Singapore’s Fourth Prime Minister: Navigating Challenges Under Lawrence Wong's Leadership. In S. Po (Ed.), Cambodian Youth's Perspectives on International Affairs (pp. 63-66). Royal University of Phnom Penh​"
+                        class="w-full h-full object-cover md:h-full"
+                        loading="lazy"
+                >
+            </div>
+            
+
+            <div class="md:w-2/3 lg:w-3/4 p-6 flex flex-col">
+                <h3 class="text-justify md:text-xl font-bold text-gray-900 mb-4 leading-tight">
+                     Singapore’s Fourth Prime Minister: Navigating Challenges Under Lawrence Wong's Leadership. In S. Po (Ed.), Cambodian Youth's Perspectives on International Affairs (pp. 63-66). Royal University of Phnom Penh​
+                </h3>
+
+                <div class="text-justify prose prose-sm max-w-none text-gray-700 mb-4 flex-grow">
+                    Singapore's PM change in 2024 was huge. For one, the timing was tough as the country in the middle of an unpredictable regional and international dynamics. Two, though this change had been pre-announced for months in advance, Singapore rarely changes its PM—during its lifetime, it has only had three and Singaporeans are seen to be allergic to political changes. This paper discusses the reasons behind this transition and what will happen with Wong.
+                </div>
+
+                <div class="mt-auto">
+                    <a href="https://rupp.edu.kh/iispp/cseas/CSEAS_Book/2024/documents/Cambodian_Youth's_Perspectives_on_International_Affairs_2.pdf" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200" target="_blank">
+                        <span>Read Paper</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+    
+    <article class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+        <div class="flex flex-col md:flex-row h-full">
+            
+            <div class="md:w-1/3 lg:w-1/4 overflow-hidden">
+                <img
+                        src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1751193874/mama_yfberl.png"
+                        alt="Thumbnail for Malaysia APSC Position Paper"
+                        class="w-full h-full object-cover md:h-full"
+                        loading="lazy"
+                >
+            </div>
+            
+
+            <div class="md:w-2/3 lg:w-3/4 p-6 flex flex-col">
+                <h3 class="text-justify md:text-xl font-bold text-gray-900 mb-4 leading-tight">
+                    Malaysia APSC Position Paper
+                </h3>
+
+                <div class="text-justify prose prose-sm max-w-none text-gray-700 mb-4 flex-grow">
+                    This is not a publication, but I’m including it here because it won me the Best PP award for 'thorough and accurate representation' with 'well-researched analysis and practical recommendations' in an ASEAN simulation where I also served as the chair (Malaysia 2025).
+                </div>
+
+                <div class="mt-auto">
+                    <a href="https://aupp-my.sharepoint.com/:b:/g/personal/2022296soeung_aupp_edu_kh/EZRp0-fSGZZEnjMjgWKK8YQBpo44cpOg8P72OBDetyMfwg?e=NjJu1W" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200" target="_blank">
+                        <span>Read Paper</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+    
+</div>
+</main>
+
+<footer class="py-6 border-t border-gray-300">
+    <div class="flex justify-center items-center space-x-4 text-sm text-gray-600">
+        <span>© 2025 Prometheus</span>
+        <span class="text-gray-400">•</span>
+        <a href="https://github.com/pr0meth4us" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="transition hover:text-gray-900">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
+            </svg>
+        </a>
+        <span class="text-gray-400">•</span>
+        <span>Designed & Developed</span>
+    </div>
+</footer>
+
+
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>
