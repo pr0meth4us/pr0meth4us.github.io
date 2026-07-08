@@ -6,6 +6,11 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - Added local profile image `assets/images/profile.png` and updated references in `index.html` and `about/index.html`.
+- Added `.github/workflows/deploy.yaml` to deploy the static employed status page to GitHub Pages.
+
+### Fixed
+- Fixed missing `config.js` script tag in all subpage HTML headers, enabling the `isEmployed` mode redirect and CRT terminal style on direct subpage navigation.
+- Removed "The 404 Project" from the coding projects view and adjusted the Savvify panel grid layout.
 
 ### Changed
 - Activated `isEmployed` mode in `assets/js/config.js` to enable the CRT terminal status screen on the main landing page.
