@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Changed
+- Added cache buster (`?v=2`) to `config.js` script tag across all HTML files to ensure clients fetch the latest `isEmployed` mode setting.
 - Deactivated `isEmployed` mode in `assets/js/config.js` to deploy the portfolio mode.
 
 ### Added
