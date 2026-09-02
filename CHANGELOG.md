@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Changed
+- Deactivated `isEmployed` mode in `assets/js/config.js` to deploy the portfolio mode.
+
 ### Added
 - Added local profile image `assets/images/profile.png` and updated references in `index.html` and `about/index.html`.
 - Added `.github/workflows/deploy.yaml` to deploy the static employed status page to GitHub Pages.
