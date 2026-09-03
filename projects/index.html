@@ -113,17 +113,144 @@
                 <p class="text-sm italic mt-1 opacity-75">Technical vocabulary for a low-resource language</p>
 
                 <p class="mt-4 text-sm leading-relaxed opacity-90">
-                    Khmer has almost no machine-readable technical vocabulary, which is the bottleneck under every downstream NLP task. A searchable lexicon, served as an API, built to be the layer other Khmer language tooling can sit on.
+                    5,929 approved Khmer renderings of technical, legal and administrative terms, drawn from 15 official sources that existed only as scanned paper — a person could look a term up, a program could not. Search works in Khmer or English and tolerates misspelling: when nothing matches exactly it looks one syllable away. 80% of entries carry a full Khmer definition. A second mode runs a draft document against the whole set in a single Aho-Corasick pass and flags unofficial wording.
+                </p>
+                <p class="mt-3 text-xs leading-relaxed opacity-70 font-technical">
+                    // Honest caveat: the dataset is OCR output parsed by an LLM. Nobody has checked it page by page against the source PDFs and there is no measured accuracy figure. Known-bad entries are listed in the repo README; corrections are ongoing.
                 </p>
                 <div class="mt-6 flex flex-wrap gap-2 text-xs">
                     <span class="border border-black px-2 py-1">Python</span>
-                    <span class="border border-black px-2 py-1">NLP</span>
+                    <span class="border border-black px-2 py-1">OCR</span>
+                    <span class="border border-black px-2 py-1">Aho-Corasick</span>
                     <span class="border border-black px-2 py-1">Cloud Run</span>
                 </div>
             </div>
             <div class="mt-8 flex gap-4 text-xs font-bold">
                 <a href="https://khmer-terminology-pd66re5pqq-as.a.run.app" target="_blank" class="hover:underline">[OPEN LEXICON]</a>
+                <a href="https://github.com/pr0meth4us/khmer-lexicon" target="_blank" class="hover:underline">[BLUEPRINT]</a>
+            </div>
+        </div>
+
+
+        <!-- PROJECT 0b: Prolong -->
+        <div class="brutalist-panel col-span-12 lg:col-span-6 p-8 flex flex-col justify-between border-b-2 border-black lg:border-r-2">
+            <div>
+                <div class="flex justify-between items-start">
+                    <span class="text-xs uppercase opacity-50">NLP // Pipeline</span>
+                    <span class="stamp-badge wip">IN PROGRESS</span>
+                </div>
+                <h3 class="text-3xl font-bold font-academic mt-4">Prolong</h3>
+                <p class="text-sm italic mt-1 opacity-75">Ministry exam prep, built out of scanned paper</p>
+
+                <p class="mt-4 text-sm leading-relaxed opacity-90">
+                    An OCR and LLM pipeline that turns scanned Khmer ministry exam material into a structured question bank, with each question mapped against the terminology lexicon so a dictionary correction can re-sync the whole bank. Recall is measured by hand-annotating a 50-question sample, not asserted.
+                </p>
+                <div class="mt-6 flex flex-wrap gap-2 text-xs">
+                    <span class="border border-black px-2 py-1">Next.js</span>
+                    <span class="border border-black px-2 py-1">Streamlit ETL</span>
+                    <span class="border border-black px-2 py-1">Supabase</span>
+                </div>
+            </div>
+            <div class="mt-8 flex gap-4 text-xs font-bold">
+                <a href="https://prolong-web.vercel.app" target="_blank" class="hover:underline">[VIEW SITE]</a>
                 <span class="opacity-50">[Source: Private]</span>
+            </div>
+        </div>
+
+        <!-- PROJECT 0c: Bifrost -->
+        <div class="brutalist-panel col-span-12 lg:col-span-6 p-8 flex flex-col justify-between border-b-2 border-black">
+            <div>
+                <div class="flex justify-between items-start">
+                    <span class="text-xs uppercase opacity-50">Infra // Identity</span>
+                    <span class="stamp-badge approved">LIVE</span>
+                </div>
+                <h3 class="text-3xl font-bold font-academic mt-4">Bifrost</h3>
+                <p class="text-sm italic mt-1 opacity-75">One login for everything else on this page</p>
+
+                <p class="mt-4 text-sm leading-relaxed opacity-90">
+                    An OIDC provider and payment gateway shared by the rest of these apps: email OTP, Telegram login, subscriptions through Gumroad and ABA PayWay, and a config vault the services read at startup. Written because building login a fourth time was worse than building it once properly.
+                </p>
+                <div class="mt-6 flex flex-wrap gap-2 text-xs">
+                    <span class="border border-black px-2 py-1">Flask</span>
+                    <span class="border border-black px-2 py-1">OIDC</span>
+                    <span class="border border-black px-2 py-1">MongoDB</span>
+                    <span class="border border-black px-2 py-1">Cloud Run</span>
+                </div>
+            </div>
+            <div class="mt-8 flex gap-4 text-xs font-bold">
+                <a href="https://github.com/pr0meth4us/bifrost" target="_blank" class="hover:underline">[BLUEPRINT]</a>
+            </div>
+        </div>
+
+        <!-- PROJECT 0d: Persona pipeline -->
+        <div class="brutalist-panel col-span-12 lg:col-span-6 p-8 flex flex-col justify-between border-b-2 border-black lg:border-r-2">
+            <div>
+                <div class="flex justify-between items-start">
+                    <span class="text-xs uppercase opacity-50">NLP // Privacy</span>
+                    <span class="stamp-badge approved">APPROVED</span>
+                </div>
+                <h3 class="text-3xl font-bold font-academic mt-4">Persona Clone Pipeline</h3>
+                <p class="text-sm italic mt-1 opacity-75">Anonymising bilingual chat data before it reaches a model</p>
+
+                <p class="mt-4 text-sm leading-relaxed opacity-90">
+                    English NER falls over on Latinised Khmer slang, so this does zero-shot entity recognition with an LLM to build a dialect-specific blocklist, scrubs the corpus to <span class="font-technical">[FRIEND]</span> placeholders, then red-teams the resulting persona with 25 adversarial prompts to check it does not leak what it was trained on.
+                </p>
+                <div class="mt-6 flex flex-wrap gap-2 text-xs">
+                    <span class="border border-black px-2 py-1">Python</span>
+                    <span class="border border-black px-2 py-1">Zero-shot NER</span>
+                    <span class="border border-black px-2 py-1">Red-teaming</span>
+                </div>
+            </div>
+            <div class="mt-8 flex gap-4 text-xs font-bold">
+                <a href="https://github.com/pr0meth4us/auto-texter-trainer" target="_blank" class="hover:underline">[BLUEPRINT]</a>
+            </div>
+        </div>
+
+        <!-- PROJECT 0e: Chat analyser -->
+        <div class="brutalist-panel col-span-12 lg:col-span-6 p-8 flex flex-col justify-between border-b-2 border-black">
+            <div>
+                <div class="flex justify-between items-start">
+                    <span class="text-xs uppercase opacity-50">Data // Text</span>
+                    <span class="stamp-badge approved">APPROVED</span>
+                </div>
+                <h3 class="text-3xl font-bold font-academic mt-4">Chat Analyzer</h3>
+                <p class="text-sm italic mt-1 opacity-75">Six export formats, one schema</p>
+
+                <p class="mt-4 text-sm leading-relaxed opacity-90">
+                    Parses Telegram, Messenger, Instagram, iMessage, Discord and TikTok exports into one message schema — including Khmer month names, which no off-the-shelf date parser handles — then reports response times, silent stretches, initiation balance and Khmer/English mixing.
+                </p>
+                <div class="mt-6 flex flex-wrap gap-2 text-xs">
+                    <span class="border border-black px-2 py-1">Python</span>
+                    <span class="border border-black px-2 py-1">Parsing</span>
+                    <span class="border border-black px-2 py-1">Flask API</span>
+                </div>
+            </div>
+            <div class="mt-8 flex gap-4 text-xs font-bold">
+                <span class="opacity-50">[Source: Private]</span>
+            </div>
+        </div>
+
+        <!-- PROJECT 0f: Puzzle portal -->
+        <div class="brutalist-panel col-span-12 p-8 flex flex-col justify-between border-b-2 border-black">
+            <div>
+                <div class="flex justify-between items-start">
+                    <span class="text-xs uppercase opacity-50">CV // Agents</span>
+                    <span class="stamp-badge wip">DRAFT</span>
+                </div>
+                <h3 class="text-3xl font-bold font-academic mt-4">Puzzle Portal</h3>
+                <p class="text-sm italic mt-1 opacity-75">A router that classifies a puzzle, then solves it</p>
+
+                <p class="mt-4 text-sm leading-relaxed opacity-90">
+                    Takes an image, works out what kind of puzzle it is, and hands it to the right worker: OpenCV for spot-the-difference, YOLO and OwlViT for counting objects in optical illusions, Khmer OCR plus an LLM for anything with text in it. Bolted to social channels so it answers without me.
+                </p>
+                <div class="mt-6 flex flex-wrap gap-2 text-xs">
+                    <span class="border border-black px-2 py-1">OpenCV</span>
+                    <span class="border border-black px-2 py-1">YOLO / OwlViT</span>
+                    <span class="border border-black px-2 py-1">Gemini</span>
+                </div>
+            </div>
+            <div class="mt-8 flex gap-4 text-xs font-bold">
+                <a href="https://github.com/pr0meth4us/puzzle-portal" target="_blank" class="hover:underline">[BLUEPRINT]</a>
             </div>
         </div>
 
