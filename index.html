@@ -159,7 +159,7 @@
                     SOEUNG Phearaneron
                 </h1>
                 <p class="mt-4 text-base font-technical leading-relaxed opacity-75">
-                    I work on Khmer-language NLP and the systems around it: a 5,929-term official terminology lexicon lifted off scanned government paper by OCR, an OCR-to-question-bank pipeline for exam prep, a Cambodian licence-plate recognizer, and the auth and deployment plumbing that keeps them online. Degree in International Relations; the day-to-day is engineering.
+                    I build Khmer-language NLP tools and the infrastructure behind them: a 6,702-term government terminology lexicon extracted from scanned documents with OCR, a mock-exam app that uses it, and a shared auth and payments service. Degree in International Relations; the day-to-day is engineering.
                 </p>
             </div>
             
@@ -190,7 +190,6 @@
 | NLP / OCR   | ACTIVE    |
 | Infra       | ACTIVE    |
 | Platform    | ONLINE    |
-| Status      | OPEN      |
 +-------------------------+
                 </div>
                 <div class="mt-6 ascii-art leading-none text-gray-500">
@@ -231,30 +230,30 @@
                     <div class="border-b border-black pb-4 hover-reveal-trigger cursor-pointer"
                          data-preview-img="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741585138/prometheus_cju1pn.png"
                          data-preview-title="KHMER TERMINOLOGY"
-                         data-preview-desc="5,929 official government terms, searchable. OCR'd off scanned paper.">
+                         data-preview-desc="6,702 Khmer–English government terms, extracted with OCR.">
                          <div class="flex justify-between items-start">
                              <h3 class="text-2xl font-bold font-academic hover:underline">
-                                 <a href="https://khmer-terminology-pd66re5pqq-as.a.run.app" target="_blank" rel="noopener noreferrer">Khmer Official Terminology</a>
+                                 <a href="https://khmer-terminology.onrender.com" target="_blank" rel="noopener noreferrer">Khmer Official Terminology</a>
                              </h3>
                              <span class="stamp-badge approved">LIVE</span>
                          </div>
                          <p class="mt-2 text-sm opacity-75">
-                             5,929 approved government terms from 15 official sources, digitised by OCR and served as a searchable API. The data is unverified OCR output and says so on the tin.
+                             6,702 official Khmer–English government terms from 22 scanned sources, extracted with OCR. Searchable web app and API; dataset on Zenodo with a DOI. Sample error rate: 20% of Khmer headwords.
                          </p>
                      </div>
 
                      <div class="border-b border-black pb-4 hover-reveal-trigger cursor-pointer"
                           data-preview-img="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741585138/prometheus_cju1pn.png"
                           data-preview-title="PROLONG"
-                          data-preview-desc="Scanned Khmer exam papers to a structured question bank.">
+                          data-preview-desc="Source-grounded exam question bank built on the lexicon.">
                          <div class="flex justify-between items-start">
                              <h3 class="text-2xl font-bold font-academic hover:underline">
-                                 <a href="/projects/">Prolong — Exam Prep Pipeline</a>
+                                 <a href="https://prolong-web.vercel.app" target="_blank" rel="noopener noreferrer">Prolong — Ministry Exam Prep</a>
                              </h3>
-                             <span class="stamp-badge wip">IN PROGRESS</span>
+                             <span class="stamp-badge approved">LIVE BETA</span>
                          </div>
                          <p class="mt-2 text-sm opacity-75">
-                             A question bank for the ministry exam, every question mapped back to the terminology lexicon, with publishing gated on human review. The OCR and drafting stages are still being built.
+                             Question bank for Cambodia's ministry entrance exams. Questions are drafted only from cited source passages, verified by a second model, and published only after human review.
                          </p>
                      </div>
 
@@ -269,7 +268,7 @@
                             <span class="stamp-badge approved">LIVE</span>
                         </div>
                         <p class="mt-2 text-sm opacity-75">
-                            One identity provider — OIDC, email OTP, Telegram login, subscription payments — shared by the rest of these apps so I only build login once.
+                            Shared auth and payments service: OIDC, email OTP, Telegram login, Gumroad and ABA PayWay subscriptions. Used by the other apps here.
                         </p>
                     </div>
                 </div>

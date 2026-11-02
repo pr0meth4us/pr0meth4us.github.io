@@ -101,7 +101,7 @@
     </div>
 
     <p class="mb-10 text-sm leading-relaxed opacity-80 max-w-3xl">
-        Most of this is Khmer-language tooling and the infrastructure under it. I'm looking for applied AI/NLP work — engineering or research — on low-resource languages.
+        Most of this is Khmer-language tooling and the infrastructure under it. I'm open to collaborating on Khmer NLP and OCR — engineering or research — and other low-resource language work.
         <a href="mailto:phearaneron.soeung@gmail.com" class="font-bold hover:underline">[Email me]</a>
     </p>
 
@@ -116,24 +116,25 @@
                     <span class="stamp-badge approved">LIVE</span>
                 </div>
                 <h3 class="text-3xl font-bold font-academic mt-4">Khmer Terminology Lexicon</h3>
-                <p class="text-sm italic mt-1 opacity-75">5,929 official government terms, searchable</p>
+                <p class="text-sm italic mt-1 opacity-75">6,702 official Khmer–English government terms</p>
 
                 <p class="mt-4 text-sm leading-relaxed opacity-90">
-                    Fifteen official sources that existed only as scanned paper. Search in Khmer or English; when nothing matches exactly it looks one syllable away, because Khmer is hard to type correctly. A second mode checks a whole draft document against the set in one pass and flags unofficial wording.
+                    Terms extracted with OCR from 22 scanned ministry and Royal Academy documents (7 recovered via the Wayback Machine), parsed into structured entries by an LLM. Search in Khmer or English, with a fallback to matches one syllable off. A document checker flags non-official terms in a full draft in one pass.
                 </p>
                 <p class="mt-3 text-xs leading-relaxed opacity-70 font-technical">
-                    // The data is OCR output parsed by an LLM. Nobody has checked it against the source PDFs, and there's no accuracy figure. Known-bad entries are listed in the README.
+                    // Data quality: in a sample check, 20.1% of Khmer headwords were wrong (95% CI 14.7–27.3%, n=153) and 0 of 158 English glosses were (95% CI 0.0–2.4%). The check was done by an AI annotator, not yet a native speaker. Known-bad entries are listed in the README. Dataset published on Zenodo with a DOI.
                 </p>
                 <div class="mt-6 flex flex-wrap gap-2 text-xs">
                     <span class="border border-black px-2 py-1">Python</span>
                     <span class="border border-black px-2 py-1">OCR</span>
                     <span class="border border-black px-2 py-1">Aho-Corasick</span>
-                    <span class="border border-black px-2 py-1">Cloud Run</span>
+                    <span class="border border-black px-2 py-1">Render</span>
                 </div>
             </div>
             <div class="mt-8 flex gap-4 text-xs font-bold">
-                <a href="https://khmer-terminology-pd66re5pqq-as.a.run.app" target="_blank" class="hover:underline">[OPEN LEXICON]</a>
-                <a href="https://github.com/pr0meth4us/khmer-lexicon" target="_blank" class="hover:underline">[BLUEPRINT]</a>
+                <a href="https://khmer-terminology.onrender.com" target="_blank" class="hover:underline">[LIVE SITE]</a>
+                <a href="https://github.com/pr0meth4us/khmer-lexicon" target="_blank" class="hover:underline">[SOURCE]</a>
+                <a href="https://doi.org/10.5281/zenodo.22746199" target="_blank" class="hover:underline">[DOI]</a>
             </div>
         </div>
 
@@ -142,48 +143,55 @@
             <div>
                 <div class="flex justify-between items-start">
                     <span class="text-xs uppercase opacity-50">NLP // Pipeline</span>
-                    <span class="stamp-badge wip">IN PROGRESS</span>
+                    <span class="stamp-badge approved">LIVE BETA</span>
                 </div>
                 <h3 class="text-3xl font-bold font-academic mt-4">Prolong</h3>
-                <p class="text-sm italic mt-1 opacity-75">Ministry exam prep, built out of scanned paper</p>
+                <p class="text-sm italic mt-1 opacity-75">Exam question bank for Cambodia's ministry entrance exams, built on the lexicon</p>
 
                 <p class="mt-4 text-sm leading-relaxed opacity-90">
-                    A question bank for the ministry exam, where every question is mapped to the terminology lexicon by longest-match extraction, so a dictionary correction re-syncs the whole bank. Publishing is gated on three human review checks the database refuses to publish without. The OCR and drafting stages that were meant to feed reviewers are still scaffolding — questions go in by hand today.
+                    Questions are drafted only from a supplied source passage, and the model must quote the sentence that answers each one; no quote, no question. A second model call, with no access to the draft step, verifies it. Source documents are OCR'd, split into passages and translated with lexicon terms forced into the output, then checked term by term. Each question stores its source excerpt, source document and who checked each control (model or human).
+                </p>
+                <p class="mt-3 text-xs leading-relaxed opacity-70 font-technical">
+                    // Lexicon terms are linked by longest-match extraction, and a rescan re-syncs the bank when the lexicon changes. Only 5,057 of 5,889 usable entries may be forced into generated text; OCR suspects and near-duplicate spellings are excluded. A Postgres constraint blocks publishing until three human review checks pass.
                 </p>
                 <div class="mt-6 flex flex-wrap gap-2 text-xs">
-                    <span class="border border-black px-2 py-1">Next.js</span>
-                    <span class="border border-black px-2 py-1">Streamlit ETL</span>
+                    <span class="border border-black px-2 py-1">Python</span>
                     <span class="border border-black px-2 py-1">Supabase</span>
+                    <span class="border border-black px-2 py-1">Cloud Vision</span>
+                    <span class="border border-black px-2 py-1">Next.js</span>
                 </div>
             </div>
             <div class="mt-8 flex gap-4 text-xs font-bold">
-                <a href="https://prolong-web.vercel.app" target="_blank" class="hover:underline">[VIEW SITE]</a>
-                <span class="opacity-50">[Source: Private]</span>
+                <a href="https://prolong-web.vercel.app" target="_blank" class="hover:underline">[LIVE SITE]</a>
+                <span class="opacity-50">[SOURCE: PRIVATE]</span>
             </div>
         </div>
 
-        <!-- LPR -->
+        <!-- EGD document pipeline -->
         <div class="brutalist-panel col-span-12 lg:col-span-6 p-8 flex flex-col justify-between border-black">
             <div>
                 <div class="flex justify-between items-start">
-                    <span class="text-xs uppercase opacity-50">CV // OCR</span>
-                    <span class="stamp-badge approved">LIVE</span>
+                    <span class="text-xs uppercase opacity-50">NLP // RAG · Work</span>
+                    <span class="stamp-badge approved">IN USE</span>
                 </div>
-                <h3 class="text-3xl font-bold font-academic mt-4">Cambodian Licence Plate Recognition</h3>
-                <p class="text-sm italic mt-1 opacity-75">Reading Khmer glyphs off moving traffic</p>
+                <h3 class="text-3xl font-bold font-academic mt-4">Khmer Document Pipeline</h3>
+                <p class="text-sm italic mt-1 opacity-75">RAG that drafts official Khmer letters and reports for the EGD program at Techo Startup Center</p>
 
                 <p class="mt-4 text-sm leading-relaxed opacity-90">
-                    Fine-tuned YOLO segmentation locates the plate; PARSeq reads it. Trained on Cambodian plates specifically, because the off-the-shelf models are trained on Latin characters and fail on Khmer ones.
+                    Retrieves the most similar past documents from a ChromaDB index of ~1,450 Khmer and English letters, reports and lexicon entries (multilingual-e5-base or gemini-embedding-001). Gemini 2.5 Pro writes each section from those exemplars and the source notes. Rule-based guards then check every section: required names and figures kept verbatim, unknown facts left as placeholders, register, loanword rendering, and wrong-script characters (a 205-pair table from Unicode names and UTS #39 confusables, generated by the lexicon library). Failures are retried with the fault list; output is a formatted .docx.
+                </p>
+                <p class="mt-3 text-xs leading-relaxed opacity-70 font-technical">
+                    // Register rules were mined from 273 reports (330K tokens) and 1,601 tracked-change edits by senior reviewers. At intake, 280 of 307 Khmer PDFs had broken font maps that extract as malformed Unicode; a detector for impossible sequences (dangling coeng, stacked vowel signs) sends those to OCR instead. Digits in OCR output are masked for manual checking, because Khmer OCR misreads them.
                 </p>
                 <div class="mt-6 flex flex-wrap gap-2 text-xs">
-                    <span class="border border-black px-2 py-1">YOLO</span>
-                    <span class="border border-black px-2 py-1">PARSeq</span>
-                    <span class="border border-black px-2 py-1">PyTorch</span>
+                    <span class="border border-black px-2 py-1">Python</span>
+                    <span class="border border-black px-2 py-1">ChromaDB</span>
+                    <span class="border border-black px-2 py-1">multilingual-e5</span>
+                    <span class="border border-black px-2 py-1">Gemini</span>
                 </div>
             </div>
             <div class="mt-8 flex gap-4 text-xs font-bold">
-                <a href="https://camlpr.vercel.app/" target="_blank" class="hover:underline">[LIVE FEED]</a>
-                <a href="https://github.com/pr0meth4us/camlpr" target="_blank" class="hover:underline">[BLUEPRINT]</a>
+                <span class="opacity-50">[SOURCE: PRIVATE]</span>
             </div>
         </div>
 
@@ -200,10 +208,10 @@
                     <span class="stamp-badge approved">LIVE</span>
                 </div>
                 <h3 class="text-3xl font-bold font-academic mt-4">Bifrost</h3>
-                <p class="text-sm italic mt-1 opacity-75">One login for everything else on this page</p>
+                <p class="text-sm italic mt-1 opacity-75">Shared auth and payments service</p>
 
                 <p class="mt-4 text-sm leading-relaxed opacity-90">
-                    An OIDC provider and payment gateway the other apps share: email OTP, Telegram login, subscriptions through Gumroad and ABA PayWay, and a config vault services read at startup. Built because a fourth bespoke login was worse than one done properly.
+                    OIDC provider used by the other apps on this page. Email OTP, password and Telegram login; subscriptions through Gumroad and ABA PayWay; a config vault that services read at startup; an admin console for users, apps and secrets.
                 </p>
                 <div class="mt-6 flex flex-wrap gap-2 text-xs">
                     <span class="border border-black px-2 py-1">Flask</span>
@@ -213,7 +221,7 @@
                 </div>
             </div>
             <div class="mt-8 flex gap-4 text-xs font-bold">
-                <a href="https://github.com/pr0meth4us/bifrost" target="_blank" class="hover:underline">[BLUEPRINT]</a>
+                <a href="https://github.com/pr0meth4us/bifrost" target="_blank" class="hover:underline">[SOURCE]</a>
             </div>
         </div>
 
@@ -225,10 +233,10 @@
                     <span class="stamp-badge approved">LIVE</span>
                 </div>
                 <h3 class="text-3xl font-bold font-academic mt-4">EDCORE</h3>
-                <p class="text-sm italic mt-1 opacity-75">A university portal running on free tiers</p>
+                <p class="text-sm italic mt-1 opacity-75">Learning management system for AUPP</p>
 
                 <p class="mt-4 text-sm leading-relaxed opacity-90">
-                    My final year project: a full learning management system for AUPP — courses, enrolment, materials, auth through Bifrost — deployed entirely on free-tier infrastructure. Hosting cost is zero.
+                    Final year project. Courses, enrolment, course materials and paid courses via PayPal. React frontend on Vercel, Flask API on Cloud Run, MongoDB and Redis, login through Bifrost. Runs entirely on free tiers.
                 </p>
                 <div class="mt-6 flex flex-wrap gap-2 text-xs">
                     <span class="border border-black px-2 py-1">React</span>
@@ -238,8 +246,8 @@
                 </div>
             </div>
             <div class="mt-8 flex gap-4 text-xs font-bold">
-                <a href="https://edcore-portal.vercel.app" target="_blank" class="hover:underline">[ACCESS PORTAL]</a>
-                <span class="opacity-50">[Source: Private]</span>
+                <a href="https://edcore-portal.vercel.app" target="_blank" class="hover:underline">[LIVE SITE]</a>
+                <span class="opacity-50">[SOURCE: PRIVATE]</span>
             </div>
         </div>
 
@@ -251,10 +259,10 @@
                     <span class="stamp-badge approved">LIVE</span>
                 </div>
                 <h3 class="text-3xl font-bold font-academic mt-4">Savvify</h3>
-                <p class="text-sm italic mt-1 opacity-75">Spending tracker that lives in Telegram</p>
+                <p class="text-sm italic mt-1 opacity-75">Expense tracker: Telegram bot and web dashboard</p>
 
                 <p class="mt-4 text-sm leading-relaxed opacity-90">
-                    Log an expense in the app you already have open, in Khmer or English. A web dashboard for the charts, a paid tier through Bifrost, and no bank connection to set up.
+                    Log income and expenses through a Telegram bot in Khmer or English, in USD or USD + KHR. A Next.js dashboard shows spending charts and money lent or borrowed. Flask and MongoDB backend; login and paid tier through Bifrost.
                 </p>
                 <div class="mt-6 flex flex-wrap gap-2 text-xs">
                     <span class="border border-black px-2 py-1">Flask</span>
@@ -263,8 +271,8 @@
                 </div>
             </div>
             <div class="mt-8 flex gap-4 text-xs font-bold">
-                <a href="https://savvify-web.vercel.app/" target="_blank" class="hover:underline">[Start Using Bot]</a>
-                <span class="opacity-50">[Source: Private]</span>
+                <a href="https://savvify-web.vercel.app/" target="_blank" class="hover:underline">[LIVE SITE]</a>
+                <span class="opacity-50">[SOURCE: PRIVATE]</span>
             </div>
         </div>
 
@@ -284,7 +292,7 @@
                 <p class="text-sm italic mt-1 opacity-75">Design system for Cambodian government sites</p>
 
                 <p class="mt-4 text-sm leading-relaxed opacity-90">
-                    My contribution to the Digital Government Committee: a shared component library and documentation so ministry sites look and behave the same way, including Khmer typography that most frameworks get wrong.
+                    Cambodia's government design system, run by the Digital Government Committee. I built components, implemented Figma designs and translated documentation pages. I also built a WordPress block plugin based on it.
                 </p>
                 <div class="mt-6 flex flex-wrap gap-2 text-xs">
                     <span class="border border-black px-2 py-1">React</span>
@@ -293,15 +301,19 @@
                 </div>
             </div>
             <div class="mt-8 flex gap-4 text-xs font-bold">
-                <a href="https://rachana.gov.kh/" target="_blank" class="hover:underline">[INSPECT SYSTEM]</a>
-                <a href="https://github.com/DGTDept/Rachana" target="_blank" class="hover:underline">[BLUEPRINT]</a>
+                <a href="https://rachana.gov.kh/" target="_blank" class="hover:underline">[LIVE SITE]</a>
+                <a href="https://github.com/DGTDept/Rachana" target="_blank" class="hover:underline">[SOURCE]</a>
+                <a href="https://github.com/DGTDept/Rachana/commits/dev?author=pr0meth4us" target="_blank" class="hover:underline">[MY COMMITS]</a>
             </div>
         </div>
 
     </div>
 
     <!-- HIDDEN FOR NOW: Persona Clone Pipeline (auto-texter-trainer) and Chat Analyzer.
-         Both written up in git history at eda958c if you want them back. -->
+         Both written up in git history at eda958c if you want them back.
+         Cambodian Licence Plate Recognition is hidden until the camlpr.vercel.app
+         backend answers again (its /api/inference returned 502 on 2026-11-02);
+         the card is in git history at f021eb8. -->
 
 </main>
 
@@ -331,8 +343,8 @@
             <span class="cursor" id="cursor1"></span>
         </div>
         <div id="status-content" class="hidden mt-4 mb-6">
-            <h2 class="text-xl md:text-2xl font-bold text-white">Status: Cryogenic Sleep.</h2>
-            <p class="mt-2 whitespace-pre-wrap">Access Denied: The projects archive is currently offline to prevent me from working on side projects during company hours. My employer watches.</p>
+            <h2 class="text-xl md:text-2xl font-bold text-white">Status: Offline.</h2>
+            <p class="mt-2 whitespace-pre-wrap">The projects archive is offline for now.</p>
         </div>
     </div>
 </div>
